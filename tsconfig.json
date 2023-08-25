@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "strictNullChecks": true,
+    "noUncheckedIndexedAccess": true,
+    "jsx": "preserve",
+    "rootDirs": ["types", "utils", "scripts", "envs", "assets"],
+    "esModuleInterop": true,
+    "declarationMap": true,
+    "composite": true,
+    "downlevelIteration": true,
+  
+    "declaration": true,
+    "declarationDir": "./declarations",
+    
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.tsx",
+    "./declarations/**/*.d.ts"
+  ],
+
+  "extends": "expo/tsconfig.base"
+}
+
+
