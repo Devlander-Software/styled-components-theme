@@ -2,8 +2,9 @@ import { ViewStyle } from "react-native";
 import { FontTypeEnum } from "./font-type.enum"
 import { textDecorationLineTypes, textTransformTypes } from "./text.types"
 import { FontWeightEnum, colorsInterface } from './theme.types';
+import { CustomStylePropsInterface } from "./custom-style-props.interface";
 
-export interface BaseButtonPropsInterface extends ViewStyle {
+export interface BaseButtonPropsInterface extends ViewStyle, CustomStylePropsInterface {
     onPress?: () => void;
 
 

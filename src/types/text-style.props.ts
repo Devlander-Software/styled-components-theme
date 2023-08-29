@@ -1,6 +1,6 @@
 import { FontTypeEnum } from "./font-type.enum"
 import { TextInterface, textDecorationLineTypes } from "./text.types"
-import { FontTypeWeight, ThemeInterface, colorsInterface } from "./theme.types"
+import { FontTypeWeight, ThemeInterface } from "./theme.types"
 
 export interface TextStyleProps extends   Partial<TextInterface>{
     fontType?: FontTypeEnum;
