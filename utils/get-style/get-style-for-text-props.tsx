@@ -1,5 +1,5 @@
-import { FontTypeEnum } from "../../../../../../../herb-design-system-react-native/packages/shared/types/font-type.enum"
-import { TextStylePropsWithTheme } from "../../../../../../../herb-design-system-react-native/packages/shared/types/text-style.props"
+import { FontTypeEnum } from "../font-type.enum"
+import { TextStylePropsWithTheme } from "../text-style.props"
 
 export const getStyleForTextProps = (props: TextStylePropsWithTheme): string => {
 	const { theme, fontSize, textColorFromTheme, fontType, fontTypeWeight, fontWeight, ...restProps } = props
