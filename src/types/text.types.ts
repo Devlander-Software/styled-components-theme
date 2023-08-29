@@ -1,7 +1,7 @@
 import { TextProps } from "react-native"
 import { ThemeInterface, FontTypeWeight, colorsInterface } from "./theme.types"
 import { FontTypeEnum } from "./font-type.enum"
-import { CustomTextStylesFromTheme } from './custom-style-props.interface';
+import { CustomTextStylesFromTheme } from './custom-style-props.interface'
 
 export enum textTransformTypes {
   none = "none",
@@ -30,9 +30,9 @@ export interface TextInterface extends TextProps, CustomTextStylesFromTheme {
   textDecoration?: textDecorationLineTypes;
   error?: boolean;
   fontFamily?: string;
-  textAlign?: "left" | "right" | "center" | "justify";
+  textAlign?: "auto" | "left" | "right" | "center" | "justify";
   maxFontSize?: number;
-  maxWidth?: number | string;
+  maxWidth?: number 
  
   theme?: ThemeInterface;
 }

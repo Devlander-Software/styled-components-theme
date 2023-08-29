@@ -13,6 +13,7 @@ export interface CustomTextStylesFromTheme {
   focused?: boolean;
   ghost?: boolean;
   destructive?: boolean;
+  boxShadowColorFromTheme?: keyof colorsInterface;
 
 
 
