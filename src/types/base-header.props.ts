@@ -1,17 +1,19 @@
+import { TextStyle, ViewProps } from "react-native"
 import { colorsInterface } from "./theme.types"
 
 export interface BaseHeaderPropsInterface {
     backgroundColorFromTheme: keyof colorsInterface;
     subTitle?: string;
-    applyGoBackToTitle?: boolean;
     nestedScreen?: boolean;
-    navigation: any;
     subHeader?: () => JSX.Element;
+    onGoBack: () => void;
+    title: string;
     titleOnPress?: () => void;
     titleFlex?: number;
     presentationModal?: boolean;
-    titleStyles?: any;
-    headerStyles?: any;
+    titleStyle?: TextStyle;
+    containerStyle?: ViewProps;
+    contentStyle?: ViewProps;
     headerRightButton?: () => JSX.Element;
     headerLeftButton?: () => JSX.Element;
 }
