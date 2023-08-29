@@ -1,7 +1,8 @@
 import { Platform } from 'react-native'
+import { FontTypeEnum } from '../../types/font-type.enum'
+import { FontTypeWeight, ThemeInterface } from 'types/theme.types'
 
-import { FontTypeEnum } from '../../../../../../../herb-design-system-react-native/packages/shared/types/font-type.enum'
-import { FontTypeWeight, ThemeInterface } from '../../../../../../../herb-design-system-react-native/packages/shared/types/theme.types'
+
 export const handleFontFromTheme = (
   fontType: FontTypeEnum = FontTypeEnum.Font2,
   fontTypeWeight: keyof FontTypeWeight = 'bold',

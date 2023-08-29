@@ -1,5 +1,6 @@
-import { FontTypeEnum } from "../font-type.enum"
-import { TextStylePropsWithTheme } from "../text-style.props"
+import { FontTypeEnum } from "../../types/font-type.enum"
+import { TextStylePropsWithTheme } from "../../types/text-style.props"
+
 
 export const getStyleForTextProps = (props: TextStylePropsWithTheme): string => {
 	const { theme, fontSize, textColorFromTheme, fontType, fontTypeWeight, fontWeight, ...restProps } = props
@@ -52,7 +53,7 @@ export const getStyleForTextProps = (props: TextStylePropsWithTheme): string => 
 	]
 
 	const css = cssProperties.filter(Boolean).join("\n")
-	console.log("css", css)
+	// console.log("css", css)
 
 
 	return css

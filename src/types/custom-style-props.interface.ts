@@ -16,6 +16,7 @@ export interface CustomTextStylesFromTheme {
   boxShadowColorFromTheme?: keyof colorsInterface;
 
 
+
 }
 
 
@@ -25,11 +26,17 @@ export interface CustomViewStylePropsInterface {
   boxShadowColorFromTheme?: keyof colorsInterface;
   ghost?: boolean;
   destructive?: boolean;
+}
 
+export interface CustomButtonTypes {
+  submitting?: boolean;
+  backgroundColorFromTheme?: keyof colorsInterface;
+ 
 
 }
 
-export interface CustomStylePropsInterface extends CustomTextStylesFromTheme, CustomViewStylePropsInterface {
+
+export interface CustomStylePropsInterface extends CustomTextStylesFromTheme, CustomViewStylePropsInterface, CustomButtonTypes {
  
 
 }

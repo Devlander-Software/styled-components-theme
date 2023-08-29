@@ -1,4 +1,4 @@
-import { colorsInterface } from "./theme.types";
+import { colorsInterface } from "./theme.types"
 
 export interface BaseHeaderPropsInterface {
     backgroundColorFromTheme: keyof colorsInterface;
