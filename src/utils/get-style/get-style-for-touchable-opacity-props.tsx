@@ -1,4 +1,4 @@
-import { TouchableOpacityStylePropsWithTheme } from '../../../../../../../herb-design-system-react-native/packages/shared/types/touchable-opacity.props'
+import { TouchableOpacityStylePropsInterfaceWithTheme } from "types/touchable-opacity.props.interface"
 
 export const getStyleForTouchableOpacityProps = ({
   borderBottomWidth,
@@ -20,7 +20,7 @@ export const getStyleForTouchableOpacityProps = ({
   flex,
   paddingTop,
   alignSelf,
-}: TouchableOpacityStylePropsWithTheme): string => {
+}: TouchableOpacityStylePropsInterfaceWithTheme): string => {
   const css: string[] = []
 
   if (backgroundColorFromTheme) {

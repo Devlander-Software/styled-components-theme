@@ -2,7 +2,7 @@ import "styled-components/native"
 import "styled-components"
 import { PlatformOSType } from "react-native"
 import { ContainerStyleInterfaceWithTheme } from "./container-style.props.interface"
-import { getStyleForTouchableOpacityProps } from '../utils/get-style/get-style-for-touchable-opacity-props';
+import { getStyleForTouchableOpacityProps } from './get-style/get-style-for-touchable-opacity-props';
 import { getStyleForGhostProps } from "./get-style/get-style-for-ghost-props";
 import { getStyleForTextProps } from "./get-style/get-style-for-text-props";
 import { handleColorFromTheme } from "./get-style/handle-color-from-theme";

@@ -27,5 +27,5 @@ export const handleUnitProps: handleUnitPropsInterface = (
     }
   }
 
-  return units.toString() as DimensionValue
+  return units.toString() as any
 }

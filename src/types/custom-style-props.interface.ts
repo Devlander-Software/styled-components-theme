@@ -5,7 +5,7 @@ export interface CustomTextStylesFromTheme {
   textDecorationColorFromTheme?: keyof colorsInterface;
   colorFromTheme?: keyof colorsInterface;
   textColorFromTheme?: keyof colorsInterface;
-  fontTypeWeight: keyof FontTypeWeight;
+  fontTypeWeight?: keyof FontTypeWeight;
   highlight?: boolean;
   onDark?: boolean;
   fontType?: FontTypeEnum;
@@ -13,6 +13,7 @@ export interface CustomTextStylesFromTheme {
   focused?: boolean;
   ghost?: boolean;
   destructive?: boolean;
+
 
 
 }
@@ -24,11 +25,17 @@ export interface CustomViewStylePropsInterface {
   boxShadowColorFromTheme?: keyof colorsInterface;
   ghost?: boolean;
   destructive?: boolean;
+}
 
+export interface CustomButtonTypes {
+  submitting?: boolean;
+  backgroundColorFromTheme?: keyof colorsInterface;
+ 
 
 }
 
-export interface CustomStylePropsInterface extends CustomTextStylesFromTheme, CustomViewStylePropsInterface {
+
+export interface CustomStylePropsInterface extends CustomTextStylesFromTheme, CustomViewStylePropsInterface, CustomButtonTypes {
  
 
 }
