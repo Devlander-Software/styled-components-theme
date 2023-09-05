@@ -1,7 +1,7 @@
 import hexToRgba from 'hex-to-rgba'
 
 import { isValidHex } from './is-valid-hex'
-import { ThemeInterface, colorsInterface, elevationObjType } from 'types/theme.types'
+import { ThemeInterface, colorsInterface, elevationObjType }from '../../types/theme.types'
 
 export interface handleColorFromThemeInterface {
   (

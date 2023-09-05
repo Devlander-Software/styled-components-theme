@@ -1,4 +1,5 @@
-import { ThemeInterface, colorsInterface } from "types/theme.types";
+import { ThemeInterface, colorsInterface }from '../../types/theme.types'
+
 
 export const getStyleForGhostProps = (
   ghost: boolean,

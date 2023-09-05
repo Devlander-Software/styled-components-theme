@@ -3,12 +3,10 @@
     "strictNullChecks": true,
     "noUncheckedIndexedAccess": true,
     "jsx": "preserve",
-    "rootDirs": ["src/types", "utils", "scripts", "envs", "assets"],
     "esModuleInterop": true,
     "declarationMap": true,
     "composite": true,
     "downlevelIteration": true,
-    "baseUrl": "./src",
   
     "declaration": true,
     "declarationDir": "./declarations",

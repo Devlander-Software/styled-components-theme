@@ -1,4 +1,4 @@
-import { ContainerStyleInterfaceWithTheme } from "../container-style.props.interface"
+import { ContainerStyleInterfaceWithTheme } from "../../types/container-style.props.interface"
 
 export const getStyleForContainerProps = ({
   maxWidth,

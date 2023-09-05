@@ -1,5 +1,5 @@
 import { Dimensions, Platform } from 'react-native'
-import { paddingForThemeType } from 'types/theme.types'
+import { paddingForThemeType }from '../../types/theme.types'
 
 
 export const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 20 : 0

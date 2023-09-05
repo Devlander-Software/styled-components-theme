@@ -1,22 +1,22 @@
 import { ThemeInterface } from "./theme.types"
-import { CustomStylePropsInterface } from './custom-style-props.interface';
-export interface ContainerStyleProps {
+import { CustomStylePropsInterface, CustomViewStylePropsInterface } from './custom-style-props.interface';
+import { ViewStyle } from "react-native";
+export interface ContainerStyleProps extends ViewStyle, CustomViewStylePropsInterface {
     paddingLeft?: number;
     paddingRight?: number;
     marginTop?: number;
     marginBottom?: number;
-    height?: number | string;
     opacity?: number;
     flex?: number;
     
-    width?: number | string;
-    maxWidth?: number | string;
-    maxHeight?: number | string;
-    marginLeft?: number | string;
-    marginRight?: number | string;
-    paddingTop?: number | string;
-    padding?: number | string;
-    borderBottomWidth?: number | string;
+    width?: number;
+    paddingTop?: number;
+    marginLeft?: number;
+    marginRight?: number;
+    paddingBottom?: number;
+    height?: number;
+    maxWidth?: number;
+    maxHeight?: number;
 
     minHeight?: number;
   

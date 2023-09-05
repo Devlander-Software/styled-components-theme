@@ -1,4 +1,5 @@
-import { ThemeInterface } from "types/theme.types"
+import { ThemeInterface } from "../../types/theme.types"
+
 
 export interface handleSnackbarColorInterface {
   (colorType?: string | number, theme?: ThemeInterface): string | number
