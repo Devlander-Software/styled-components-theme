@@ -9,14 +9,14 @@ export interface TextStyleProps extends   Partial<TextInterface>{
     onDark?: boolean;
     fontStyle?: "normal" | "italic";
     numberOfLines?: number;
-    paddingLeft?: number | string;
+    paddingLeft?: number 
     highlight?: boolean;
-    paddingTop?: number | string;
-    marginTop?: number | string;
-    marginBottom?: number | string;
-    marginLeft?: number | string;
-    marginRight?: number | string;
-    width?: number | string;
+    paddingTop?: number 
+    marginTop?: number 
+    marginBottom?: number 
+    marginLeft?: number 
+    marginRight?: number 
+    width?: number 
     lineHeight?: number;
     fontSize?:  number;
     opacity?: number;
@@ -33,7 +33,6 @@ export interface TextStyleProps extends   Partial<TextInterface>{
     textAlign?: "left" | "center" | "right";
     textDecorationLine?: textDecorationLineTypes;
    
-    textTransform?: "uppercase" | "lowercase" | "capitalize";
 }
 
 export interface TextStylePropsWithTheme extends TextStyleProps {

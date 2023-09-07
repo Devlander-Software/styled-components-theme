@@ -1,14 +1,16 @@
 import { FontTypeEnum } from "../../types/font-type.enum"
 import { TextStylePropsWithTheme } from "../../types/text-style.props"
+import { capFontSize } from './cap-font-size';
 
 
 export const getStyleForTextProps = (props: TextStylePropsWithTheme): string => {
-	const { theme, fontSize, textColorFromTheme, fontType, fontTypeWeight, fontWeight, ...restProps } = props
+	const { theme, fontSize,maxFontSize, textColorFromTheme, fontType, fontTypeWeight, fontWeight, ...restProps } = props
 
 	const handleUnitProps = theme?.handleUnitProps ?? null
 	const handleColorFromTheme = theme?.handleColorFromTheme ?? null
 	const handleFontSizeProps = theme?.handleFontSizeProps ?? null
 	const handleFontFromTheme = theme?.handleFontFromTheme ?? null
+	const capFontSizeFunc = theme?.capFontSize ?? capFontSize
 
 	const getColor = () => {
 		if (restProps.onDark) {
@@ -27,9 +29,10 @@ export const getStyleForTextProps = (props: TextStylePropsWithTheme): string => 
 	}
 
 	const cssProperties = [
+
 		fontType && fontTypeWeight && handleFontFromTheme ? `font-family: ${handleFontFromTheme(fontType, fontTypeWeight, theme)};` : `font-family: ${handleFontFromTheme(FontTypeEnum.Font1, "bold", theme)};`,
 		restProps.textDecorationLine && restProps.textDecorationLine !== "none" ? `text-decoration-line: ${restProps.textDecorationLine};` : null,
-		fontSize && handleFontSizeProps ? `font-size: ${handleFontSizeProps(fontSize)};` : null,
+		fontSize &&  typeof maxFontSize === undefined ? `font-size: ${handleFontSizeProps(fontSize)};` : fontSize && maxFontSize? `font-size: ${handleFontSizeProps(capFontSizeFunc(fontSize, maxFontSize))};`: null,
 		textColorFromTheme && handleColorFromTheme ? `color: ${handleColorFromTheme(textColorFromTheme, 1, theme)};` : `color: ${getColor()};`,
 		restProps.flex ? `flex: ${restProps.flex};` : null,
 		fontWeight ? `font-weight: ${fontWeight};` : null,

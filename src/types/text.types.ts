@@ -20,13 +20,29 @@ export enum textDecorationLineTypes {
   underlineLineThrough = "underline line-through",
 }
 export interface TextInterface extends TextProps, CustomTextStylesFromTheme {
-  fontSize?: number | string;
+  fontSize?: number;
   color?: string;
   maxLineHeight?: number;
+  marginTop?: number;
   boxShadowX?: number | string;
   boxShadowY?: number | string;
   boxShadowBlurRadius?: number | string;
-
+  paddingLeft?: number;
+  paddingRight?: number;
+  maxFontSizeMultiplier?: number;
+  marginBottom?: number;
+  marginLeft?: number;
+  marginRight?: number;
+  opacity?: number;
+  lineHeight?: number;
+  letterSpacing?: number;
+  textTransform?: textTransformTypes;
+  textDecorationLine?: textDecorationLineTypes;
+  flex?: number;
+  width?: number;
+  fontWeight?: "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900" | "bold" | "normal" | "light";
+  paddingTop?: number;
+  paddingBottom?: number;
   textDecoration?: textDecorationLineTypes;
   error?: boolean;
   fontFamily?: string;
