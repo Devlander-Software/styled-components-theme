@@ -37,8 +37,6 @@ export interface TextInterface extends TextProps, CustomTextStylesFromTheme {
   opacity?: number;
   lineHeight?: number;
   letterSpacing?: number;
-  textTransform?: textTransformTypes;
-  textDecorationLine?: textDecorationLineTypes;
   flex?: number;
   width?: number;
   fontWeight?: TextFontWeightTypesEnum;
