@@ -20,7 +20,7 @@ export interface GhostBaseButton extends BaseButtonPropsInterface {
 
    
 
-    textColorFromTheme?: keyof colorsInterface
-    backgroundColorFromTheme?: keyof  colorsInterface
+    textColorFromTheme: keyof colorsInterface
+    backgroundColorFromTheme: keyof  colorsInterface
 
 }
