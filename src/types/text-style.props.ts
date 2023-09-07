@@ -1,4 +1,5 @@
 import { FontTypeEnum } from "./font-type.enum"
+import { TextFontWeightTypesEnum } from "./font-weight.types"
 import { TextInterface, textDecorationLineTypes } from "./text.types"
 import { FontTypeWeight, ThemeInterface } from "./theme.types"
 
@@ -25,7 +26,7 @@ export interface TextStyleProps extends   Partial<TextInterface>{
     shadowOpacity?: number;
     shadowColor?: string;
     shadowOffsetX?: number;
-    fontWeight?:  "normal" | "bold" | "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
+    fontWeight?: TextFontWeightTypesEnum;
     shadowOffsetY?: number;
     shadowRadius?: number;
     maxFontSize?: number;

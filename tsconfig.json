@@ -7,19 +7,24 @@
     "declarationMap": true,
     "composite": true,
     "downlevelIteration": true,
-  
+    "sourceMap": true,
     "declaration": true,
-    "declarationDir": "./declarations",
-    
+    "noEmit": false,
+    "strict": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "rootDir": "./src",
+    "outDir": "./dist/esm",
+    "declarationDir": "./dist/declarations",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true
   },
-  "include": [
-    "./**/*.ts",
-    "./**/*.tsx",
-    "./**/*.tsx",
-    "./declarations/**/*.d.ts"
-  ],
+  "include": ["./**/*.ts", "./**/*.tsx"],
+  "exclude": ["node_modules", "dist"],
 
   "extends": "expo/tsconfig.base"
 }
-
-

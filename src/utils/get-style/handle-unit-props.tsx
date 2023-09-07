@@ -1,4 +1,3 @@
-import { DimensionValue } from 'react-native'
 
 export interface handleUnitPropsInterface {
   (units: any): any

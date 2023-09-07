@@ -89,4 +89,5 @@ export enum AutoCompleteTypeEnum {
     "username",
     "username-new",
     "off",
+    undefined
   }

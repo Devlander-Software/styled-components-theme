@@ -2,6 +2,7 @@ import { TextProps } from "react-native"
 import { ThemeInterface, FontTypeWeight, colorsInterface } from "./theme.types"
 import { FontTypeEnum } from "./font-type.enum"
 import { CustomTextStylesFromTheme } from './custom-style-props.interface'
+import { TextFontWeightTypesEnum } from "./font-weight.types"
 
 export enum textTransformTypes {
   none = "none",
@@ -40,7 +41,7 @@ export interface TextInterface extends TextProps, CustomTextStylesFromTheme {
   textDecorationLine?: textDecorationLineTypes;
   flex?: number;
   width?: number;
-  fontWeight?: "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900" | "bold" | "normal" | "light";
+  fontWeight?: TextFontWeightTypesEnum;
   paddingTop?: number;
   paddingBottom?: number;
   textDecoration?: textDecorationLineTypes;

@@ -4,16 +4,18 @@ import { FontTypeWeight, ThemeInterface }from '../../types/theme.types'
 
 
 export const handleFontFromTheme = (
-  fontType: FontTypeEnum = FontTypeEnum.Font2,
+  fontType: keyof ThemeInterface['fonts'],
   fontTypeWeight: keyof FontTypeWeight = 'bold',
   theme: ThemeInterface
 ): string => {
+
+  const tempFontType = fontType? fontType : FontTypeEnum.Font2
   if (
     fontType &&
     fontTypeWeight &&
     Platform.OS === 'web' &&
-    theme.fonts[fontType] &&
-    theme.fonts[fontType].name
+    theme.fonts[tempFontType] &&
+    theme.fonts[tempFontType].name
   ) {
     return theme.fonts[fontType].name as string
   } else if (fontType && fontTypeWeight && Platform.OS !== 'web') {

@@ -2,10 +2,10 @@ import { ThemeInterface } from "../../types/theme.types"
 
 
 export interface handleSnackbarColorInterface {
-  (colorType?: string | number, theme?: ThemeInterface): string | number
+  (colorType?: undefined | 'none' | 'success' | 'error', theme?: ThemeInterface): string
 }
-export const handleSnackbarColor = (
-  type?: string,
+export const handleSnackbarColor: handleSnackbarColorInterface = (
+  type?: undefined | 'none' | 'success' | 'error' ,
   theme?: ThemeInterface,
 ): string => {
   if (!type || !theme) {

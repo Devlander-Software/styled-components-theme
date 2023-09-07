@@ -1,6 +1,11 @@
 import { TouchableOpacityStylePropsInterfaceWithTheme } from "../../types/touchable-opacity.props.interface"
 
-export const getStyleForTouchableOpacityProps = ({
+
+export interface GetStyleForTouchableOpacityInterface  {
+  (props: TouchableOpacityStylePropsInterfaceWithTheme): string
+}
+
+export const getStyleForTouchableOpacityProps: GetStyleForTouchableOpacityInterface = ({
   borderBottomWidth,
   maxWidth,
   borderRadius,

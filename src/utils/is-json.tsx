@@ -1,10 +1,10 @@
  function isJson(str: string): boolean {
     try {
-        JSON.parse(str);
+        JSON.parse(str)
     } catch (e) {
-        return false;
+        return false
     }
-    return true;
+    return true
 }
 
-export default isJson;
+export default isJson

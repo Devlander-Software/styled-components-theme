@@ -2,37 +2,28 @@ import "styled-components/native"
 import "styled-components"
 import { PlatformOSType } from "react-native"
 import { ContainerStyleInterfaceWithTheme } from "./container-style.props.interface"
-import { getStyleForTouchableOpacityProps } from "../utils/get-style/get-style-for-touchable-opacity-props"
+import { GetStyleForTouchableOpacityInterface } from "../utils/get-style/get-style-for-touchable-opacity-props"
 import { getStyleForGhostProps } from "../utils/get-style/get-style-for-ghost-props"
 import { getStyleForTextProps } from "../utils/get-style/get-style-for-text-props"
-import { handleColorFromTheme } from "../utils/get-style/handle-color-from-theme"
+import { handleColorFromThemeInterface } from "../utils/get-style/handle-color-from-theme"
 import { handleFontFromTheme } from "../utils//get-style/handle-font-for-theme"
+import { handleSnackbarColorInterface } from "../utils/get-style/handle-snackbar-color"
+import { capFontSizeInterface } from "../utils/get-style/cap-font-size"
+import { handleUnitPropsInterface } from "../utils/get-style/handle-unit-props"
+import { handleFontSizePropsInterface } from "../utils/get-style/handle-font-size-props"
+import { boxShadowFuncInterface } from "../utils/get-style/handle-box-shadows"
 
-export interface handleFontSizePropsInterface {
-  (fontSize: string | number | undefined): string
-}
 
-export interface handleUnitPropsInterface {
-  (fontSize: string | number | undefined): string | number
-}
 
-export interface handleSnackbarColorInterface {
-  (colorType?: string | number, theme?: ThemeInterface): string | number
-}
 
-export interface capFontSizeInterface {
-  (fontSize: string | number, maxFontSize: number): string | number
-}
 
-export interface handleColorFromThemeInterface {
-  (color: keyof colorsInterface, opacity: number, theme: ThemeInterface):
-    | string
-    | elevationObjType
-}
+// export interface handleColorFromThemeInterface {
+//   (color: keyof colorsInterface, opacity: number, theme: ThemeInterface):
+//     | string
+//     | elevationObjType
+// }
 
-export interface boxShadowFuncInterface {
-  (fontSize: string): string
-}
+
 
 export type elevationObjType = {
   level1: string
@@ -171,22 +162,7 @@ export interface fontsInterface {
   Font2: FontTypeWeight
   CondensedFont: FontTypeWeight
   Font1: FontTypeWeight
-  regular: {
-    fontFamily: string
-    fontWeight: string
-  }
-  medium: {
-    fontFamily: string
-    fontWeight: string
-  }
-  light: {
-    fontFamily: string
-    fontWeight: string
-  }
-  thin: {
-    fontFamily: string
-    fontWeight: string
-  }
+  Font3: FontTypeWeight
 }
 
 export interface fontConfigItemInterface {
@@ -234,7 +210,7 @@ export interface ThemeInterface {
   handleSnackbarColor: handleSnackbarColorInterface
   handleFontSizeProps: handleFontSizePropsInterface
   handleUnitProps: handleUnitPropsInterface
-  getStyleForTouchableOpacityProps: typeof getStyleForTouchableOpacityProps
+  getStyleForTouchableOpacityProps: GetStyleForTouchableOpacityInterface
   getStyleForContainerProps: (props: ContainerStyleInterfaceWithTheme) => string
   handleGhost: typeof getStyleForGhostProps
   getStyleForTextProps: typeof getStyleForTextProps
@@ -242,7 +218,7 @@ export interface ThemeInterface {
   boxShadowTwo?: boxShadowFuncInterface
   elevation?: elevationObjType
   boxShadowThree?: boxShadowFuncInterface
-  handleColorFromTheme: typeof handleColorFromTheme
+  handleColorFromTheme: handleColorFromThemeInterface
   handleFontFromTheme: typeof handleFontFromTheme
   colors: colorsInterface
   fonts: fontsInterface
