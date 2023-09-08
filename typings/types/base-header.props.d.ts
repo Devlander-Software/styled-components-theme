@@ -1,8 +1,7 @@
-/// <reference types="react" />
 import { TextStyle, ViewProps } from "react-native";
-import { colorsInterface } from "./theme.types";
+import { ColorsInterface } from "./theme.types";
 export interface BaseHeaderPropsInterface {
-    backgroundColorFromTheme?: keyof colorsInterface;
+    backgroundColorFromTheme?: keyof ColorsInterface;
     subTitle?: string;
     nestedScreen?: boolean;
     subHeader?: () => JSX.Element;

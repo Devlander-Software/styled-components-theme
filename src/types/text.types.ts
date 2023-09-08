@@ -1,5 +1,5 @@
 import { TextProps } from "react-native"
-import { ThemeInterface, FontTypeWeight, colorsInterface } from "./theme.types"
+import { ThemeInterface, FontTypeWeight, ColorsInterface } from "./theme.types"
 import { FontTypeEnum } from "./font-type.enum"
 import { CustomTextStylesFromTheme } from './custom-style-props.interface'
 import { TextFontWeightTypesEnum } from "./font-weight.types"
@@ -59,8 +59,8 @@ export interface GhostTextInterface extends Partial<TextInterface> {
   fontTypeWeight: keyof FontTypeWeight;
   ghost: boolean;
   disabled: boolean;
-  textColorFromTheme: keyof colorsInterface
-  backgroundColorFromTheme: keyof colorsInterface
+  textColorFromTheme: keyof ColorsInterface
+  backgroundColorFromTheme: keyof ColorsInterface
 
   theme: ThemeInterface;
 }

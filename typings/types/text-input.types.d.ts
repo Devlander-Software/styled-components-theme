@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { TextInputProps, ViewStyle } from 'react-native';
 import { AutoCapitalizeEnum, DataDetectorEnum, KeyBoardTypeEnum, TextContentTypeEnum } from './text-field.types';
 import { ContainerStyleProps } from './container-style.props.interface';

@@ -1,5 +1,5 @@
 import { ViewStyle } from "react-native"
-import {  colorsInterface } from './theme.types'
+import {  ColorsInterface } from './theme.types'
 import { CustomStylePropsInterface } from "./custom-style-props.interface"
 
 export interface BaseButtonPropsInterface extends ViewStyle, CustomStylePropsInterface {
@@ -20,7 +20,7 @@ export interface GhostBaseButton extends BaseButtonPropsInterface {
 
    
 
-    textColorFromTheme: keyof colorsInterface
-    backgroundColorFromTheme: keyof  colorsInterface
+    textColorFromTheme: keyof ColorsInterface
+    backgroundColorFromTheme: keyof  ColorsInterface
 
 }
