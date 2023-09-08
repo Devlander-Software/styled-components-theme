@@ -1,8 +1,7 @@
 import { ViewProps } from "react-native";
-import { BaseThemeInterface } from "./base-theme.interface"
+import { BaseThemeInterface } from "./base-theme.interface";
 import { CustomViewStylePropsInterface } from "./custom-style-props.interface";
-import { ThemeInterface } from "./theme.types"
-
+import { ThemeInterface } from "./theme.types";
 export interface BaseViewInterface extends ViewProps, BaseThemeInterface, CustomViewStylePropsInterface {
     theme: ThemeInterface;
     padding?: number;
@@ -19,7 +18,8 @@ export interface BaseViewInterface extends ViewProps, BaseThemeInterface, Custom
     marginRight?: number;
     paddingBottom?: number;
     height?: number;
-    borderWidth?: number 
+    borderWidth?: number;
     borderColor?: string;
     backgroundOpacity?: number;
 }
+//# sourceMappingURL=base-view.interface.d.ts.map
