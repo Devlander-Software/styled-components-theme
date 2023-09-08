@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import { TextStyle, ViewProps } from "react-native";
 import { colorsInterface } from "./theme.types";
 export interface BaseHeaderPropsInterface {

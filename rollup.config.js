@@ -31,6 +31,7 @@ export default {
       outputFolder: "dist",
       baseContents: (pkg) => ({
         name: pkg.name,
+        version: pkg.version,
         main: "/dist/index.js",
         peerDependencies: {
           react: "^18.2.0",
