@@ -68,7 +68,7 @@ export default {
     generatePackageJSON({
       outputFolder: "dist",
       baseContents: (pkg) => ({
-        name: pkg.name,
+        name: `${pkg.name}-core`,
         version: pkg.version,
         main: "/dist/index.js",
         peerDependencies: {
