@@ -1,21 +1,21 @@
 import hexToRgba from 'hex-to-rgba'
 
 import { isValidHex } from './is-valid-hex'
-import { ThemeInterface, colorsInterface, elevationObjType }from '../../types/theme.types'
+import { ThemeInterface, ColorsInterface, ElevationObjType }from '../../types/theme.types'
 
 export interface handleColorFromThemeInterface {
   (
-    color: keyof colorsInterface,
+    color: keyof ColorsInterface,
     opacity: number,
     theme: ThemeInterface,
-  ): string | elevationObjType | any
+  ): string | ElevationObjType | any
 }
 
 export const handleColorFromTheme = (
-  color: keyof colorsInterface,
+  color: keyof ColorsInterface,
   opacity: number = 1,
   theme: ThemeInterface,
-): string | elevationObjType | any => {
+): string | ElevationObjType | any => {
   if (
     color &&
     theme.colors[color] &&

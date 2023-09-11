@@ -15,6 +15,8 @@ export interface BaseViewInterface extends ViewProps, BaseThemeInterface, Custom
     opacity?: number;
     paddingRight?: number;
     maxHeight?: number;
+    marginLeft?: number;
+    marginRight?: number;
     paddingBottom?: number;
     height?: number;
     borderWidth?: number 

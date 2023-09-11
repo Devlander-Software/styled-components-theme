@@ -1,0 +1,7 @@
+interface ErrorMessages {
+    [key: string]: any;
+    message?: string[];
+}
+declare const getErrorMessageByField: (fieldsToCheck: string | string[], errors: ErrorMessages) => string | undefined;
+export default getErrorMessageByField;
+//# sourceMappingURL=get-error-message-by-field.d.ts.map

@@ -32,6 +32,7 @@ export interface TextStyleProps extends   Partial<TextInterface>{
     maxFontSize?: number;
     paddingRight?: number;
     textAlign?: "left" | "center" | "right";
+    textTransform?: "uppercase" | "lowercase" | "capitalize" | "none" | undefined
     textDecorationLine?: textDecorationLineTypes;
    
 }

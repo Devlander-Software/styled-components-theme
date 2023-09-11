@@ -1,10 +1,10 @@
 import { FontTypeEnum } from './font-type.enum';
-import { colorsInterface, FontTypeWeight } from './theme.types';
+import { ColorsInterface, FontTypeWeight } from './theme.types';
 
 export interface CustomTextStylesFromTheme {
-  textDecorationColorFromTheme?: keyof colorsInterface;
-  colorFromTheme?: keyof colorsInterface;
-  textColorFromTheme?: keyof colorsInterface;
+  textDecorationColorFromTheme?: keyof ColorsInterface;
+  colorFromTheme?: keyof ColorsInterface;
+  textColorFromTheme?: keyof ColorsInterface;
   fontTypeWeight?: keyof FontTypeWeight;
   highlight?: boolean;
   onDark?: boolean;
@@ -13,7 +13,7 @@ export interface CustomTextStylesFromTheme {
   focused?: boolean;
   ghost?: boolean;
   destructive?: boolean;
-  boxShadowColorFromTheme?: keyof colorsInterface;
+  boxShadowColorFromTheme?: keyof ColorsInterface;
 
 
 
@@ -21,16 +21,16 @@ export interface CustomTextStylesFromTheme {
 
 
 export interface CustomViewStylePropsInterface {
-  borderColorFromTheme?: keyof colorsInterface;
-  backgroundColorFromTheme?: keyof colorsInterface;
-  boxShadowColorFromTheme?: keyof colorsInterface;
+  borderColorFromTheme?: keyof ColorsInterface;
+  backgroundColorFromTheme?: keyof ColorsInterface;
+  boxShadowColorFromTheme?: keyof ColorsInterface;
   ghost?: boolean;
   destructive?: boolean;
 }
 
 export interface CustomButtonTypes {
   submitting?: boolean;
-  backgroundColorFromTheme?: keyof colorsInterface;
+  backgroundColorFromTheme?: keyof ColorsInterface;
  
 
 }

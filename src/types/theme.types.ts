@@ -1,12 +1,11 @@
-import "styled-components/native"
-import "styled-components"
+
 import { PlatformOSType } from "react-native"
 import { ContainerStyleInterfaceWithTheme } from "./container-style.props.interface"
 import { GetStyleForTouchableOpacityInterface } from "../utils/get-style/get-style-for-touchable-opacity-props"
 import { getStyleForGhostProps } from "../utils/get-style/get-style-for-ghost-props"
 import { getStyleForTextProps } from "../utils/get-style/get-style-for-text-props"
 import { handleColorFromThemeInterface } from "../utils/get-style/handle-color-from-theme"
-import { handleFontFromTheme } from "../utils//get-style/handle-font-for-theme"
+import { handleFontFromTheme } from "../utils/get-style/handle-font-for-theme"
 import { handleSnackbarColorInterface } from "../utils/get-style/handle-snackbar-color"
 import { capFontSizeInterface } from "../utils/get-style/cap-font-size"
 import { handleUnitPropsInterface } from "../utils/get-style/handle-unit-props"
@@ -17,22 +16,16 @@ import { boxShadowFuncInterface } from "../utils/get-style/handle-box-shadows"
 
 
 
-// export interface handleColorFromThemeInterface {
-//   (color: keyof colorsInterface, opacity: number, theme: ThemeInterface):
-//     | string
-//     | elevationObjType
-// }
 
 
-
-export type elevationObjType = {
+export type ElevationObjType = {
   level1: string
   level2: string
   level3: string
   level4: string
   level5: string
 }
-export type colorsInterface = {
+export interface ColorsInterface  {
   disabled: string
   backdrop: string
   placeholder: string
@@ -158,14 +151,14 @@ export type FontTypeWeight = {
   bold: string
 }
 
-export interface fontsInterface {
+export interface FontsInterface {
   Font2: FontTypeWeight
   CondensedFont: FontTypeWeight
   Font1: FontTypeWeight
   Font3: FontTypeWeight
 }
 
-export interface fontConfigItemInterface {
+export interface FontConfigItemInterface {
   regular: {
     fontFamily: string
     fontWeight: string
@@ -184,18 +177,18 @@ export interface fontConfigItemInterface {
   }
 }
 
-export interface fontConfigInterface {
-  web: fontConfigItemInterface
-  ios: fontConfigItemInterface
-  default: fontConfigItemInterface
+export interface FontConfigInterface {
+  web: FontConfigItemInterface
+  ios: FontConfigItemInterface
+  default: FontConfigItemInterface
 }
 
-export type paddingForThemeType = {
+export type PaddingOnThemeType = {
   paddingForScrollView: number
   paddingForScrollViewTwo: number
 }
 
-export type deviceOnThemeType = {
+export type DeviceOnTheme = {
   screenWidth: number
   statusBarHeight: number
   screenHeight: number
@@ -205,7 +198,7 @@ export type deviceOnThemeType = {
   platform: PlatformOSType
 }
 export interface ThemeInterface {
-  padding: paddingForThemeType
+  padding: PaddingOnThemeType
 
   handleSnackbarColor: handleSnackbarColorInterface
   handleFontSizeProps: handleFontSizePropsInterface
@@ -216,17 +209,14 @@ export interface ThemeInterface {
   getStyleForTextProps: typeof getStyleForTextProps
   boxShadowOne: boxShadowFuncInterface
   boxShadowTwo?: boxShadowFuncInterface
-  elevation?: elevationObjType
+  elevation?: ElevationObjType
   boxShadowThree?: boxShadowFuncInterface
   handleColorFromTheme: handleColorFromThemeInterface
   handleFontFromTheme: typeof handleFontFromTheme
-  colors: colorsInterface
-  fonts: fontsInterface
+  colors: ColorsInterface
+  fonts: FontsInterface
 
   darkThemeEnabled?: boolean
-  deviceOnTheme: deviceOnThemeType
+  deviceOnTheme: DeviceOnTheme
   capFontSize: capFontSizeInterface
-}
-declare module "styled-components/native" {
-  export interface DefaultTheme extends ThemeInterface {}
 }
