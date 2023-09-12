@@ -1,11 +1,19 @@
 {
-  "name": "shared-react-native-types",
-  "version": "1.0.0",
+  "name": "@devlander/shared-react-native-types",
+  "version": "1.0.1",
   "description": "Shared npm modules between the design system, and expo app",
   "main": "./src/index.ts",
   "module": "./dist/esm/index.js",
   "types": "./typings/index.d.ts",
   "type": "module",
+  "tags": [
+    "react",
+    "react-native",
+    "expo",
+    "typescript",
+    "design-system",
+    "devlander"
+  ],
   "scripts": {
     "build:esm": "tsc",
     "build": "yarn build:esm && yarn build:cjs",
@@ -95,7 +103,7 @@
   "resolutions": {
     "react-refresh": "~0.14.0"
   },
-  "private": true,
-  "author": "",
+  "private": false,
+  "author": "devlander-software",
   "license": "ISC"
 }
