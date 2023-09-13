@@ -1,12 +1,12 @@
 {
   "name": "@devlander/shared-react-native-types",
-  "version": "1.0.1",
+  "version": "1.0.9",
   "description": "Shared npm modules between the design system, and expo app",
   "main": "./src/index.ts",
-  "module": "./dist/esm/index.js",
+  "module": "./dist/index.js",
   "types": "./typings/index.d.ts",
   "type": "module",
-  "tags": [
+  "keywords": [
     "react",
     "react-native",
     "expo",
@@ -15,14 +15,26 @@
     "devlander"
   ],
   "scripts": {
+    "patch": "yarn version  --new-version patch",
+    "clear-build": "rm -rf ./dist && rm -rf ./typings",
     "build:esm": "tsc",
-    "build": "yarn build:esm && yarn build:cjs",
-    "build:cjs": "rollup -c",
-    "postinstall": "yarn build"
+    "build": "yarn run clear-build && yarn build:esm && yarn build:cjs",
+    "build:cjs": "yarn run patch && rollup -c && yarn run push-main",
+    "push-main": "git add -A && git commit -m 'pushing new build' && git push origin main"
   },
   "dependencies": {
+    "@babel/core": "^7.20.0",
+    "@babel/preset-typescript": "^7.22.15",
     "@expo/vector-icons": "13.0.0",
     "@jwplayer/jwplayer-react": "^1.1.3",
+    "@rollup/plugin-auto-install": "^3.0.4",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-commonjs": "^25.0.4",
+    "@rollup/plugin-json": "^6.0.0",
+    "@rollup/plugin-node-resolve": "^15.2.1",
+    "@rollup/plugin-terser": "0.4.3",
+    "@rollup/plugin-typescript": "^11.1.3",
+    "@swc/core": "^1.3.83",
     "@types/cssnano": "^5.1.0",
     "@types/lodash": "^4.14.197",
     "@types/react": "18.2.0",
@@ -46,23 +58,15 @@
     "react-native-svg": "13.9.0",
     "react-native-web": "0.19.6",
     "react-responsive": "^9.0.2",
-    "rollup": "^3.29.0",
-    "styled-components": "6.0.7",
-    "typescript": "^5.1.3",
-    "use-count-up": "^3.0.1",
-    "rollup-plugin-babel": "^4.4.0",
-    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup": "^3.29.1",
     "rollup-plugin-generate-package-json": "^3.2.0",
     "rollup-plugin-styles": "^4.0.0",
-    "rollup-plugin-terser": "^7.0.2",
     "rollup-swc-preserve-directives": "^0.5.0",
-    "@rollup/plugin-node-resolve": "^15.2.1",
-    "@swc/core": "^1.3.83"
-
-
+    "styled-components": "6.0.7",
+    "typescript": "^5.1.3",
+    "use-count-up": "^3.0.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.0",
     "@types/hoist-non-react-statics": "^3.3.1",
     "@types/jest": "^29.5.3",
     "@types/styled-components": "^5.1.26",
@@ -79,23 +83,7 @@
     "jest-expo": "~49.0.0",
     "prettier": "^3.0.1",
     "react-test-renderer": "18.2.0",
-    "@babel/preset-typescript": "^7.22.15",
-    "@rollup/plugin-auto-install": "^3.0.4",
-    "@rollup/plugin-json": "^6.0.0",
-    "@rollup/plugin-node-resolve": "^15.2.1",
-    "@rollup/plugin-typescript": "^11.1.3",
-    "rollup": "^3.29.1",
-    "rollup-plugin-babel": "^4.4.0",
-    "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-generate-package-json": "^3.2.0",
-    "rollup-plugin-json": "^4.0.0",
-    "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-replace": "^2.2.0",
-    "rollup-plugin-sourcemaps": "^0.6.3",
-    "rollup-plugin-terser": "^7.0.2",
-    "rollup-swc-preserve-directives": "^0.5.0",
     "tslib": "^2.6.2"
- 
   },
   "overrides": {
     "react-refresh": "~0.14.0"
@@ -105,5 +93,6 @@
   },
   "private": false,
   "author": "devlander-software",
-  "license": "ISC"
+  "license": "ISC",
+  "sideEffects": false
 }
