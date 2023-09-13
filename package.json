@@ -1,11 +1,14 @@
 {
   "name": "@devlander/shared-react-native-types",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "description": "Shared npm modules between the design system, and expo app",
-  "main": "./src/index.ts",
-  "module": "./dist/index.js",
-  "types": "./typings/index.d.ts",
-  "type": "module",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts",
+  "type": "commonjs",
   "keywords": [
     "react",
     "react-native",
@@ -16,7 +19,8 @@
   ],
   "scripts": {
     "patch": "yarn version  --new-version patch",
-    "clear-build": "rm -rf ./dist && rm -rf ./typings",
+    "lint": "eslint .",
+    "clear-build": "rm -rf ./dist && rm -rf ./types",
     "build:esm": "tsc",
     "build": "yarn run clear-build && yarn build:esm && yarn build:cjs",
     "build:cjs": "yarn run patch && rollup -c && yarn run push-main",
