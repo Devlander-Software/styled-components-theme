@@ -1,1 +1,1 @@
-{"version":3,"file":"get-line-height.d.ts","sourceRoot":"./","sources":["utils/get-style/get-line-height.tsx"],"names":[],"mappings":"AAAA,eAAO,MAAM,aAAa,0DAEzB,CAAA"}
+{"version":3,"file":"get-line-height.d.ts","sourceRoot":"","sources":["../../../src/utils/get-style/get-line-height.tsx"],"names":[],"mappings":"AAAA,eAAO,MAAM,aAAa,0DAEzB,CAAA"}

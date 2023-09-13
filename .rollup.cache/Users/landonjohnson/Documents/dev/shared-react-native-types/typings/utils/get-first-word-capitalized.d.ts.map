@@ -1,1 +1,1 @@
-{"version":3,"file":"get-first-word-capitalized.d.ts","sourceRoot":"./","sources":["utils/get-first-word-capitalized.ts"],"names":[],"mappings":"AAAA,wBAAgB,uBAAuB,CAAC,GAAG,EAAE,MAAM,GAAG,MAAM,CAmB3D"}
+{"version":3,"file":"get-first-word-capitalized.d.ts","sourceRoot":"","sources":["../../src/utils/get-first-word-capitalized.ts"],"names":[],"mappings":"AAAA,wBAAgB,uBAAuB,CAAC,GAAG,EAAE,MAAM,GAAG,MAAM,CAmB3D"}

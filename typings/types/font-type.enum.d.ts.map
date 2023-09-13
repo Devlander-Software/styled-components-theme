@@ -1,1 +1,1 @@
-{"version":3,"file":"font-type.enum.d.ts","sourceRoot":"./","sources":["types/font-type.enum.ts"],"names":[],"mappings":"AAAA,oBAAY,YAAY;IACpB,KAAK,UAAU;IACf,KAAK,UAAU;IACf,KAAK,UAAU;IACf,aAAa,kBAAkB;CAClC"}
+{"version":3,"file":"font-type.enum.d.ts","sourceRoot":"","sources":["../../src/types/font-type.enum.ts"],"names":[],"mappings":"AAAA,oBAAY,YAAY;IACpB,KAAK,UAAU;IACf,KAAK,UAAU;IACf,KAAK,UAAU;IACf,aAAa,kBAAkB;CAClC"}

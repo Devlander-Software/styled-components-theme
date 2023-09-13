@@ -1,1 +1,1 @@
-{"version":3,"file":"get-error-from-errors-object.d.ts","sourceRoot":"./","sources":["utils/errors/get-error-from-errors-object.ts"],"names":[],"mappings":"AACA,QAAA,MAAM,8BAA8B,UAAW,MAAM;;SAMlD,CAAC;AAEJ,eAAe,8BAA8B,CAAC"}
+{"version":3,"file":"get-error-from-errors-object.d.ts","sourceRoot":"","sources":["../../../src/utils/errors/get-error-from-errors-object.ts"],"names":[],"mappings":"AACA,QAAA,MAAM,8BAA8B,UAAW,MAAM;;SAMlD,CAAC;AAEJ,eAAe,8BAA8B,CAAC"}

@@ -19,7 +19,6 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "rootDir": "./src",
-    "sourceRoot": "./",
     "outDir": "./dist/esm",
     "declarationDir": "./typings",
     "emitDecoratorMetadata": true,
@@ -30,3 +29,8 @@
 
   "extends": "expo/tsconfig.base"
 }
+
+
+
+
+

@@ -1,1 +1,1 @@
-{"version":3,"file":"handle-box-shadows.d.ts","sourceRoot":"./","sources":["utils/get-style/handle-box-shadows.tsx"],"names":[],"mappings":"AAAA,MAAM,WAAW,sBAAsB;IACrC,CAAC,QAAQ,EAAE,MAAM,GAAG,GAAG,CAAA;CACxB;AACD,eAAO,MAAM,YAAY,EAAE,sBAE1B,CAAA"}
+{"version":3,"file":"handle-box-shadows.d.ts","sourceRoot":"","sources":["../../../src/utils/get-style/handle-box-shadows.tsx"],"names":[],"mappings":"AAAA,MAAM,WAAW,sBAAsB;IACrC,CAAC,QAAQ,EAAE,MAAM,GAAG,GAAG,CAAA;CACxB;AACD,eAAO,MAAM,YAAY,EAAE,sBAE1B,CAAA"}

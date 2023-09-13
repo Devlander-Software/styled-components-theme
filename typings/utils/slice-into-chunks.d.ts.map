@@ -1,1 +1,1 @@
-{"version":3,"file":"slice-into-chunks.d.ts","sourceRoot":"./","sources":["utils/slice-into-chunks.ts"],"names":[],"mappings":"AAAA,wBAAgB,eAAe,CAAC,GAAG,EAAE,GAAG,EAAE,EAAE,SAAS,EAAE,MAAM,SAO5D"}
+{"version":3,"file":"slice-into-chunks.d.ts","sourceRoot":"","sources":["../../src/utils/slice-into-chunks.ts"],"names":[],"mappings":"AAAA,wBAAgB,eAAe,CAAC,GAAG,EAAE,GAAG,EAAE,EAAE,SAAS,EAAE,MAAM,SAO5D"}
