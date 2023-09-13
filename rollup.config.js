@@ -95,16 +95,11 @@ const rollUpConfig = {
                 name: `${pkg.name}`,
                 version: `${pkg.version}`,
                 main: "/dist/index.js",
-               
-                dependencies: {
-                    ...filteredPackage.dependencies
+                peerDependencies: {
+                    react: "^18.2.0",
+                    "styled-components": "^6.0.0-rc.3"
                 },
-                devDependencies: {
-                    ...filteredPackage.devDependencies
-                },
-                sideEffects: false,
-                overrides: filteredPackage.overrides,
-                resolutions: filteredPackage.resolutions
+              
             })
         }),
         generateGitVersion({ fileName: "gitVersion.json" }),
