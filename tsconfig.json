@@ -25,7 +25,7 @@
     "experimentalDecorators": true
   },
   "include": ["./**/*.ts", "./**/*.tsx"],
-  "exclude": ["node_modules", "dist", "typings"],
+  "exclude": ["node_modules", "dist", "typings", "*/**/.d.ts"],
 
   "extends": "expo/tsconfig.base"
 }
