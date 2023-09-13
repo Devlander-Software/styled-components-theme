@@ -1,6 +1,6 @@
 {
   "name": "@devlander/shared-react-native-types",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Shared npm modules between the design system, and expo app",
   "main": "./src/index.ts",
   "module": "./dist/index.js",
@@ -59,6 +59,7 @@
     "react-native-web": "0.19.6",
     "react-responsive": "^9.0.2",
     "rollup": "^3.29.1",
+    "rollup-plugin-delete": "^2.0.0",
     "rollup-plugin-generate-git-version": "^1.0.0",
     "rollup-plugin-generate-package-json": "^3.2.0",
     "rollup-plugin-styles": "^4.0.0",
