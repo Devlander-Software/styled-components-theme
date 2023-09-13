@@ -95,10 +95,7 @@ const rollUpConfig = {
                 name: `${pkg.name}`,
                 version: `${pkg.version}`,
                 main: "/dist/index.js",
-                peerDependencies: {
-                    react: "^18.2.0",
-                    "styled-components": "^6.0.0-rc.3"
-                },
+               
                 dependencies: {
                     ...filteredPackage.dependencies
                 },
