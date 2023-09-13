@@ -1,33 +1,44 @@
 {
   "compileOnSave": true,
   "compilerOptions": {
-    "strictNullChecks": true,
-    "noUncheckedIndexedAccess": true,
     "jsx": "preserve",
-    "esModuleInterop": true,
-    "declarationMap": true,
-    "composite": true,
-    "downlevelIteration": true,
-    "sourceMap": true,
-    "declaration": true,
-    "noEmit": false,
-    "strict": true,
-    "noImplicitReturns": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "moduleResolution": "node",
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "rootDir": "./src",
-    "outDir": "./dist/esm",
-    "declarationDir": "./typings",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true
-  },
-  "include": ["./**/*.ts", "./**/*.tsx"],
-  "exclude": ["node_modules", "dist", "typings", "*/**/.d.ts"],
 
-  "extends": "expo/tsconfig.base"
+    "allowJs": true,
+    // If you're not exporting something by default, then assume that you are.
+    "allowSyntheticDefaultImports": true,
+    // "baseUrl": "src",
+    "checkJs": false,
+    // Allows us to generate .d.ts files.
+    "declaration": true,
+    // Tells Typescript where to place the .d.ts files.
+    // In other words, it will put them in dist/cjs/types & dist/esm/types.
+    // dist will also contain a dist/index.d.ts (also occurred in Alex Eagleson tutorial).
+    "declarationDir": "types",
+    // We will be using Rollup to bundle are javascript files.
+    // Thus we don't need Typescript to bundle the javascript files
+    // for us.
+    "emitDeclarationOnly": true,
+    "esModuleInterop": true, // default: true
+    // Typescript needs to be instructed to process JSX.
+    // Convert JSX into a createElement function call.
+    // Ensure that casing is correct in imports.
+    "forceConsistentCasingInFileNames": true, // default: true
+    "module": "ESNEXT", // default: "commonjs"
+    // Tell Typescript what process to use to look for modules.
+    "moduleResolution": "Node",
+    // Tells Typescript where to output the transpiled/bundled code.
+    "outDir": "dist", // Or "./dist"
+    // "removeComments": true,
+    "skipLibCheck": true, // default: true
+    // Useful for debugging.
+    "sourceMap": true,
+    "strict": true, // default: true
+    "target": "ESNext"
+  },
+  "include": ["**/*.ts", "**/*.tsx", "src/rollup.config.js"],
+  "exclude": ["node_modules", "dist", "types", "*/**/.d.ts"],
+
+
 }
 
 
