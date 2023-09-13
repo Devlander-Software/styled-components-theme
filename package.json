@@ -1,6 +1,6 @@
 {
   "name": "@devlander/shared-react-native-types",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "Shared npm modules between the design system, and expo app",
   "main": "./src/index.ts",
   "module": "./dist/index.js",
