@@ -1,0 +1,1 @@
+{"version":3,"file":"base-scrollview.interface.js","sourceRoot":"","sources":["../../../src/types/base-scrollview.interface.ts"],"names":[],"mappings":"","sourcesContent":["import { BaseViewInterface } from \"./base-view.interface\";\n\nexport interface BaseScrollViewInterface extends BaseViewInterface {\n    \n}"]}

@@ -6,6 +6,8 @@ import dts from 'rollup-plugin-dts';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import terser from '@rollup/plugin-terser';
 import packageJson from './package.json' assert { type: 'json' };
+import babelJson from './babel.config.json' assert { type: 'json' };
+
 import babel from "@rollup/plugin-babel";
 import generateGitVersion from "rollup-plugin-generate-git-version";
 // @ts-ignore
@@ -50,13 +52,7 @@ const generalPlugins =   [
     ...stylingPlugins,
  
    
-    babel({
-        babelHelpers: 'runtime',
-        plugins: ["@babel/plugin-transform-runtime"],
-        extensions: [".ts", ".d.ts"],
-        exclude: "node_modules/**",
-        presets: ["@babel/preset-typescript"],
-    }),
+    babel(babelJson),
     terser({
         ecma: 2020,
         mangle: { toplevel: true },
@@ -68,7 +64,7 @@ const generalPlugins =   [
         output: { quote_style: 1 },
     }),
  
-    generateGitVersion({ fileName: "./gitVersion.json" }),
+    generateGitVersion({ fileName: "gitVersion.json" }),
     swcPreserveDirectives(),
     auto(),
     peerDepsExternal(),

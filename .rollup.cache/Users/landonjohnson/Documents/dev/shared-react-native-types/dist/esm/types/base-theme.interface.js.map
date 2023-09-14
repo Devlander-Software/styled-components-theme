@@ -1,0 +1,1 @@
+{"version":3,"file":"base-theme.interface.js","sourceRoot":"","sources":["../../../src/types/base-theme.interface.ts"],"names":[],"mappings":"","sourcesContent":["import { ThemeInterface } from \"./theme.types\"\n\nexport interface BaseThemeInterface {\n    theme?: ThemeInterface\n}"]}
