@@ -68,7 +68,7 @@ const generalPlugins =   [
         output: { quote_style: 1 },
     }),
  
-    generateGitVersion({ fileName: "gitVersion.json" }),
+    generateGitVersion({ fileName: "./gitVersion.json" }),
     swcPreserveDirectives(),
     auto(),
     peerDepsExternal(),
