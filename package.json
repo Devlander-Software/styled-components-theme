@@ -24,7 +24,7 @@
     "build:esm": "tsc",
     "build": "yarn run clear-build && yarn build:esm && yarn build:cjs",
     "build:cjs": "yarn run patch && rollup -c && yarn run push-main",
-    "push-main": "git add -A && git commit -m 'pushing new build' && git push origin "
+    "push-main": "git add -A && git status && git commit -m 'pushing new build' && git push origin main"
   },
   "dependencies": {
     "@babel/core": "^7.22.17",
