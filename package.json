@@ -1,6 +1,6 @@
 {
   "name": "@devlander/shared-react-native-types",
-  "version": "1.0.36",
+  "version": "1.0.37",
   "description": "Shared npm modules between the design system, and expo app",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -8,7 +8,7 @@
     "dist"
   ],
   "types": "dist/index.d.ts",
-  "type": "module",
+  "type": "commonjs",
   "keywords": [
     "react",
     "react-native",
@@ -111,6 +111,5 @@
   },
   "private": false,
   "author": "devlander-software",
-  "license": "ISC",
-  "sideEffects": false
+  "license": "ISC"
 }
