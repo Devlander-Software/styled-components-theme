@@ -229,3 +229,5 @@ export enum FontAwesomeIconNames  {
 }
 
 export type IconNames = keyof typeof IoniconNames | keyof typeof MaterialIconNames | keyof typeof FontAwesomeIconNames;
+
+export const AllIconNames = Object.keys(IoniconNames).concat(Object.keys(MaterialIconNames)).concat(Object.keys(FontAwesomeIconNames));

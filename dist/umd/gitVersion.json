@@ -1,7 +1,7 @@
 {
-	"Branch": "(HEAD -> main, tag: v1.0.52)",
-	"Hash": "8b62321df1eb3ced866dd713c79d8ff74e279de4",
+	"Branch": "(HEAD -> main, tag: v1.0.53)",
+	"Hash": "2896ccb9d0e59ecfe59631d7b187a8e09ebf188d",
 	"CommitUser": "Landon Johnson(landonwjohnson@gmail.com)",
-	"CommitContent": "v1.0.52",
-	"Date": "Thu Sep 14 16:13:23 2023 -0600"
+	"CommitContent": "v1.0.53",
+	"Date": "Thu Sep 14 16:14:43 2023 -0600"
 }

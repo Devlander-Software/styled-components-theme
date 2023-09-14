@@ -2566,3 +2566,4 @@ export declare enum FontAwesomeIconNames {
     "meetup" = 785
 }
 export type IconNames = keyof typeof IoniconNames | keyof typeof MaterialIconNames | keyof typeof FontAwesomeIconNames;
+export declare const AllIconNames: string[];
