@@ -2,7 +2,7 @@
 import { TextInputProps, ViewStyle } from 'react-native'
 import { AutoCapitalizeEnum, DataDetectorEnum, KeyBoardTypeEnum, TextContentTypeEnum } from './text-field.types'
 import { ContainerStyleProps } from './container-style.props.interface'
-import { IoniconNames } from './icon-names.enum';
+import { IconNames, IoniconNames } from './icon-names.enum';
 
 export interface FormInputGroupProps extends TextInputProps {
     opacity?: number;
@@ -34,8 +34,8 @@ export interface FormInputGroupProps extends TextInputProps {
 
 
 export interface SecureInputProps extends FormInputGroupProps {
-    secureTextOnIcon?: IoniconNames | string;
-    secureTextOffIcon?: IoniconNames | string;
+    secureTextOnIcon?: IconNames;
+    secureTextOffIcon?: IconNames;
     securePressOnChange: () => void
 }
 

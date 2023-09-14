@@ -1522,8 +1522,8 @@ interface FormInputGroupProps extends TextInputProps {
     onSubmitEditing?: () => void;
 }
 interface SecureInputProps extends FormInputGroupProps {
-    secureTextOnIcon?: IoniconNames | string;
-    secureTextOffIcon?: IoniconNames | string;
+    secureTextOnIcon?: IconNames;
+    secureTextOffIcon?: IconNames;
     securePressOnChange: () => void;
 }
 

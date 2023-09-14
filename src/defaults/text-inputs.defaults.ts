@@ -1,3 +1,4 @@
+import { IconNames } from '../types/icon-names.enum';
 import { AutoCapitalizeEnum, AutoCompleteTypeEnum, KeyBoardTypeEnum, TextContentTypeEnum } from '../types/text-field.types';
 import {  FormInputGroupProps, SecureInputProps } from '../types/text-input.types';
 
@@ -25,7 +26,7 @@ export const FormInputGroupDefaultProps: FormInputGroupProps = {
 
 export const SecureInputDefaultProps: SecureInputProps = {
     securePressOnChange: () => console.log("this is secure"),
-	secureTextOffIcon: "eye-off-outline",
-	secureTextOnIcon: "eye-outline",
+	secureTextOffIcon: "eye-off-outline" as IconNames,
+	secureTextOnIcon: "eye-outline" as IconNames,
 	...FormInputGroupDefaultProps
 }
