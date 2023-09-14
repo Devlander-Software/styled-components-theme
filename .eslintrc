@@ -10,9 +10,14 @@
       "plugin:testing-library/react",
       "prettier"
     ],
-    "plugins": ["jest-native", "testing-library", "promise", "prettier"],
+    "plugins": ["jest-native", "testing-library", "promise", "prettier",
+  
+    "simple-import-sort"
+  ],
   
     "rules": {
+      "simple-import-sort/imports": "error",
+      "simple-import-sort/exports": "error",
       "prettier/prettier": "warn",
       "arrow-body-style": "off",
       "prefer-arrow-callback": "off",

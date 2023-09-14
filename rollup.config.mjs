@@ -32,7 +32,12 @@ const nodePlugins = [
         ignoreTryCatch: false,
         include: 'node_modules/**'
     }),
-    typescript()
+    typescript({
+        tsconfig: './tsconfig.json',
+        sourceMap: true,
+        inlineSources: true,
+      
+    }),
 ];
 
 
@@ -62,12 +67,7 @@ const generalPlugins =   [
         },
         output: { quote_style: 1 },
     }),
-    typescript({
-        tsconfig: './tsconfig.json',
-        sourceMap: true,
-        inlineSources: true,
-      
-    }),
+ 
     generateGitVersion({ fileName: "gitVersion.json" }),
     swcPreserveDirectives(),
     auto(),
@@ -90,11 +90,7 @@ const config = [
                 format: 'esm',
                 sourcemap: true
             },
-            {
-                file: packageJson.module,
-                format: 'esm',
-                sourcemap: true
-            },
+       
             {
                 file: packageJson.browser,
                 format: 'umd',

@@ -1,7 +1,6 @@
 {
   "compileOnSave": true,
   "compilerOptions": {
-    "jsx": "preserve",
 
     "allowJs": true,
     // If you're not exporting something by default, then assume that you are.
