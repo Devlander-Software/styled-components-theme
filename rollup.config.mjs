@@ -89,13 +89,27 @@ const config = [
                 file: packageJson.module,
                 format: 'esm',
                 sourcemap: true
+            },
+            {
+                file: packageJson.module,
+                format: 'esm',
+                sourcemap: true
+            },
+            {
+                file: packageJson.browser,
+                format: 'umd',
+                name: packageJson.name,
             }
         ],
         plugins: [
             ...generalPlugins,
            
            
-        ]
+        ],
+        external: [
+            ...Object.keys(packageJson.dependencies || {}),
+            ...Object.keys(packageJson.peerDependencies || {}),
+        ],
     },
     {
         treeshake,
