@@ -2565,5 +2565,4 @@ export declare enum FontAwesomeIconNames {
     "wpexplorer" = 784,
     "meetup" = 785
 }
-export type IconNames = keyof typeof IoniconNames | keyof typeof MaterialIconNames | keyof typeof FontAwesomeIconNames;
-export declare const AllIconNames: string[];
+export type IconNames = IoniconNames | keyof typeof MaterialIconNames | keyof typeof FontAwesomeIconNames;
