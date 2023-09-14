@@ -35,8 +35,8 @@
     "strict": true, // default: true
     "target": "ESNext"
   },
-  "include": ["**/*.ts", "**/*.tsx", "src/rollup.config.js"],
-  "exclude": ["node_modules", "dist", "types", "*/**/.d.ts"],
+  "include": ["./src/**/*", "./src/**/*.ts", "./src/**/*.tsx", "./src/rollup.config.js", "./src/**/*.d.ts" ],
+  "exclude": ["node_modules", "./dist/**/*", "./types/**/*"],
 
 
 }
