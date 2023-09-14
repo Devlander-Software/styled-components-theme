@@ -1,6 +1,6 @@
 {
   "name": "@devlander/shared-react-native-types",
-  "version": "1.0.30",
+  "version": "1.0.31",
   "description": "Shared npm modules between the design system, and expo app",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -23,8 +23,7 @@
     "clear-build": "rm -rf ./dist && rm -rf ./types",
     "build:esm": "tsc",
     "build": "yarn run clear-build && yarn build:esm && yarn build:cjs",
-    "build:cjs": "yarn run patch && rollup -c && yarn run push-main",
-    "push-main": "git add -A && git pull origin main &&  git commit -m 'pushing new build' && git push"
+    "build:cjs": "yarn run patch && rollup -c"
   },
   "dependencies": {
     "@babel/core": "^7.22.17",
