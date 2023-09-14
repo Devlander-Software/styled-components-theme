@@ -18,6 +18,7 @@ export * from './types/text-input.types';
 export * from './types/text-style.props';
 export * from './types/text.types';
 export * from './types/theme.types';
+export * from './types/touchable-opacity.props.interface';
 export * from './utils/calculate-percentage-by-part-and-whole';
 export * from './utils/dash-to-camel-case';
 export * from './utils/errors/get-error-from-errors-object';

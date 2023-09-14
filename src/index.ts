@@ -18,6 +18,10 @@ export * from './types/text-input.types';
 export * from './types/text-style.props';
 export * from './types/text.types';
 export * from './types/theme.types';
+export * from './types/touchable-opacity.props.interface';
+
+
+
 export * from './utils/calculate-percentage-by-part-and-whole';
 export * from './utils/dash-to-camel-case';
 export * from './utils/errors/get-error-from-errors-object';
@@ -28,6 +32,7 @@ export * from './utils/get-style/cap-font-size';
 export * from './utils/get-style/constant-units-for-theme';
 export * from './utils/get-style/get-line-height';
 export * from './utils/get-style/is-valid-hex';
+
 
 export * from './utils/get-style/get-style-for-container-props';
 export * from './utils/get-style/get-style-for-ghost-props';
