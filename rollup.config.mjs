@@ -91,6 +91,7 @@ const config = [
                 file: packageJson.module,
                 format: 'esm',
                 sourcemap: true,
+                exports: 'named'
                
             },
        
