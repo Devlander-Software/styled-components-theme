@@ -89,5 +89,13 @@ export enum AutoCompleteTypeEnum {
     "username",
     "username-new",
     "off",
-    undefined
+  }
+
+  export default {
+    AutoCapitalizeEnum,
+    KeyBoardTypeEnum,
+    DataDetectorEnum,
+    TextContentTypeEnum,
+    AutoCompleteTypeEnum
+    
   }

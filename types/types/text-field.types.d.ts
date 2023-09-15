@@ -85,6 +85,13 @@ export declare enum AutoCompleteTypeEnum {
     "tel-device" = 33,
     "username" = 34,
     "username-new" = 35,
-    "off" = 36,
-    undefined = 37
+    "off" = 36
 }
+declare const _default: {
+    AutoCapitalizeEnum: typeof AutoCapitalizeEnum;
+    KeyBoardTypeEnum: typeof KeyBoardTypeEnum;
+    DataDetectorEnum: typeof DataDetectorEnum;
+    TextContentTypeEnum: typeof TextContentTypeEnum;
+    AutoCompleteTypeEnum: typeof AutoCompleteTypeEnum;
+};
+export default _default;
