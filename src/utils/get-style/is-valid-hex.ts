@@ -15,3 +15,6 @@ export function isValidHex(color: string) {
       return false
   }
 }
+
+
+export default isValidHex

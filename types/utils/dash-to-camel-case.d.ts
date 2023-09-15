@@ -1,2 +1,2 @@
-declare function dashToCamelCase(dashName: string): string;
+export declare function dashToCamelCase(dashName: string): string;
 export default dashToCamelCase;

@@ -29,3 +29,6 @@ export const handleColorFromTheme = (
     return theme.colors.primaryTextColor
   }
 }
+
+
+export default handleColorFromTheme

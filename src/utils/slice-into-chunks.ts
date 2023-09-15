@@ -6,3 +6,6 @@ export function sliceIntoChunks(arr: any[], chunkSize: number) {
     }
     return res
 }
+
+
+export default sliceIntoChunks

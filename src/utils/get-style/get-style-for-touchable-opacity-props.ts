@@ -93,3 +93,6 @@ export const getStyleForTouchableOpacityProps: GetStyleForTouchableOpacityInterf
 
   return css.join(' ')
 }
+
+
+export default getStyleForTouchableOpacityProps

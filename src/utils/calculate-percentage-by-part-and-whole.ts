@@ -7,3 +7,5 @@ export function calculatePercentageByPartAndWhole(partial: number, whole: number
     return percentage
   }
   
+
+export default calculatePercentageByPartAndWhole;

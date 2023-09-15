@@ -3,3 +3,4 @@ export interface GetStyleForTouchableOpacityInterface {
     (props: TouchableOpacityStylePropsInterfaceWithTheme): string;
 }
 export declare const getStyleForTouchableOpacityProps: GetStyleForTouchableOpacityInterface;
+export default getStyleForTouchableOpacityProps;

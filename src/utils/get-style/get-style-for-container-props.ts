@@ -62,3 +62,6 @@ export const getStyleForContainerProps = ({
 
   return css    
 }
+
+
+export default getStyleForContainerProps

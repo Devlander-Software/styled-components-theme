@@ -23,3 +23,6 @@ export const handleSnackbarColor: handleSnackbarColorInterface = (
     }
   }
 }
+
+
+export default handleSnackbarColor

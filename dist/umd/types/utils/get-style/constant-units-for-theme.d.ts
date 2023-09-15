@@ -7,3 +7,14 @@ export declare const screenWidth: number;
 export declare const paddingForScrollView = 15;
 export declare const paddingForScrollViewTwo = 5;
 export declare const paddingObj: PaddingOnThemeType;
+declare const _default: {
+    STATUSBAR_HEIGHT: number;
+    windowHeight: number;
+    windowWidth: number;
+    screenHeight: number;
+    screenWidth: number;
+    paddingForScrollView: number;
+    paddingForScrollViewTwo: number;
+    paddingObj: PaddingOnThemeType;
+};
+export default _default;

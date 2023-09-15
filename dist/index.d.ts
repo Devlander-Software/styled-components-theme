@@ -1635,6 +1635,18 @@ declare const defaultSVGProps: {
 
 declare function calculatePercentageByPartAndWhole(partial: number, whole: number): number;
 
+declare function dashToCamelCase(dashName: string): string;
+
+interface ErrorMessages {
+    [key: string]: any;
+    message?: string[];
+}
+declare const getErrorMessageByField: (fieldsToCheck: string | string[], errors: ErrorMessages) => string | undefined;
+
+declare const getErrorMessageFromErrorMessages: (field: any, errors: {
+    [key: string]: any;
+}) => string | null;
+
 declare function getFirstWordCapitalized(str: string): string;
 
 declare const STATUSBAR_HEIGHT: number;
@@ -1652,8 +1664,16 @@ declare function isValidHex(color: string): boolean;
 
 declare const getStyleForContainerProps: ({ maxWidth, maxHeight, height, theme, marginTop, width, backgroundColorFromTheme, marginBottom, minHeight, opacity, marginLeft, marginRight, paddingLeft, borderColorFromTheme, paddingRight, margin, borderWidth, flex, paddingTop, }: ContainerStyleInterfaceWithTheme) => string;
 
+declare function isJson(str: string): boolean;
+
+declare function removeKeysWithSubstrings(obj: {
+    [key: string]: any;
+}, substrings: string[]): {
+    [key: string]: any;
+};
+
 declare function sliceIntoChunks(arr: any[], chunkSize: number): any[];
 
 declare function videoTimeStampToSeconds(str: string): number;
 
-export { AlignItemsEnum, type BaseButtonPropsInterface, type BaseHeaderPropsInterface, type BaseImageBackgroundInterface, type BaseScrollViewInterface, type BaseThemeInterface, type BaseViewInterface, ButtonVariantEnum, type ColorsInterface, type ContainerStyleInterfaceWithTheme, type ContainerStyleProps, type CustomButtonTypes, type CustomStylePropsInterface, type CustomTextStylesFromTheme, type CustomViewStylePropsInterface, type DeviceOnTheme, type ElevationObjType, type FixedLengthArray, FontAwesomeIconNames, type FontConfigInterface, type FontConfigItemInterface, FontTypeEnum, type FontTypeWeight, FontWeightEnum, type FontsInterface, FormInputGroupDefaultProps, type FormInputGroupProps, type GetStyleForTouchableOpacityInterface, type GhostBaseButton, type GhostTextInterface, type IconNames, IoniconNames, JustifyContentEnum, type OnVisibilityChangeProps, type PaddingOnThemeType, STATUSBAR_HEIGHT, type SVGPropsInterface, SecureInputDefaultProps, type SecureInputProps, TextFontWeightTypes, TextFontWeightTypesEnum, type TextInterface, type TextStyleProps, type TextStylePropsWithTheme, type ThemeInterface, type TouchableOpacityStylePropsInterface, type TouchableOpacityStylePropsInterfaceWithTheme, type boxShadowFuncInterface, boxShadowOne, calculatePercentageByPartAndWhole, capFontSize, type capFontSizeInterface, defaultSVGProps, getFirstWordCapitalized, getLineHeight, getStyleForContainerProps, getStyleForGhostProps, getStyleForTextProps, getStyleForTouchableOpacityProps, handleColorFromTheme, type handleColorFromThemeInterface, handleFontFromTheme, handleFontSizeProps, type handleFontSizePropsInterface, handleSnackbarColor, type handleSnackbarColorInterface, handleUnitProps, type handleUnitPropsInterface, isValidHex, paddingForScrollView, paddingForScrollViewTwo, paddingObj, screenHeight, screenWidth, sliceIntoChunks, textDecorationLineTypes, textTransformTypes, videoTimeStampToSeconds, windowHeight, windowWidth };
+export { AlignItemsEnum, type BaseButtonPropsInterface, type BaseHeaderPropsInterface, type BaseImageBackgroundInterface, type BaseScrollViewInterface, type BaseThemeInterface, type BaseViewInterface, ButtonVariantEnum, type ColorsInterface, type ContainerStyleInterfaceWithTheme, type ContainerStyleProps, type CustomButtonTypes, type CustomStylePropsInterface, type CustomTextStylesFromTheme, type CustomViewStylePropsInterface, type DeviceOnTheme, type ElevationObjType, type ErrorMessages, type FixedLengthArray, FontAwesomeIconNames, type FontConfigInterface, type FontConfigItemInterface, FontTypeEnum, type FontTypeWeight, FontWeightEnum, type FontsInterface, FormInputGroupDefaultProps, type FormInputGroupProps, type GetStyleForTouchableOpacityInterface, type GhostBaseButton, type GhostTextInterface, type IconNames, IoniconNames, JustifyContentEnum, type OnVisibilityChangeProps, type PaddingOnThemeType, STATUSBAR_HEIGHT, type SVGPropsInterface, SecureInputDefaultProps, type SecureInputProps, TextFontWeightTypes, TextFontWeightTypesEnum, type TextInterface, type TextStyleProps, type TextStylePropsWithTheme, type ThemeInterface, type TouchableOpacityStylePropsInterface, type TouchableOpacityStylePropsInterfaceWithTheme, type boxShadowFuncInterface, boxShadowOne, calculatePercentageByPartAndWhole, capFontSize, type capFontSizeInterface, dashToCamelCase, defaultSVGProps, getErrorMessageByField, getErrorMessageFromErrorMessages, getFirstWordCapitalized, getLineHeight, getStyleForContainerProps, getStyleForGhostProps, getStyleForTextProps, getStyleForTouchableOpacityProps, handleColorFromTheme, type handleColorFromThemeInterface, handleFontFromTheme, handleFontSizeProps, type handleFontSizePropsInterface, handleSnackbarColor, type handleSnackbarColorInterface, handleUnitProps, type handleUnitPropsInterface, isJson, isValidHex, paddingForScrollView, paddingForScrollViewTwo, paddingObj, removeKeysWithSubstrings, screenHeight, screenWidth, sliceIntoChunks, textDecorationLineTypes, textTransformTypes, videoTimeStampToSeconds, windowHeight, windowWidth };

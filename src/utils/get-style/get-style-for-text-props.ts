@@ -61,3 +61,6 @@ export const getStyleForTextProps = (props: TextStylePropsWithTheme): string => 
 
 	return css
 }
+
+
+export default getStyleForTextProps

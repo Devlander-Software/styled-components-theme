@@ -11,3 +11,5 @@ export function videoTimeStampToSeconds(str: string): number {
     return s
   }
   
+
+export default videoTimeStampToSeconds;

@@ -26,3 +26,6 @@ export const handleFontFromTheme = (
     return theme.fonts.Font2.bold as string
   }
 }
+
+
+export default handleFontFromTheme

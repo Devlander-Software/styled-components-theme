@@ -2,12 +2,12 @@ import getErrorMessageFromErrorObject from './get-error-from-errors-object';
 import { isEmpty } from 'lodash';
 import getErrorMessageFromErrorMessages from './get-error-message-from-errors-messages';
 
-interface ErrorMessages {
+export interface ErrorMessages {
     [key: string]: any;
     message?: string[];
 }
 
-const getErrorMessageByField = (
+export const getErrorMessageByField = (
     fieldsToCheck: string | string[],
     errors: ErrorMessages
 ): string | undefined  => {

@@ -1,4 +1,4 @@
-export default function removeKeysWithSubstrings(obj: { [key: string]: any }, substrings: string[]): { [key: string]: any } {
+export function removeKeysWithSubstrings(obj: { [key: string]: any }, substrings: string[]): { [key: string]: any } {
     return Object.keys(obj)
       .filter(key => !substrings.some(substring => key.includes(substring)))
       .reduce((result: { [key: string]: any }, key) => {
@@ -6,3 +6,5 @@ export default function removeKeysWithSubstrings(obj: { [key: string]: any }, su
         return result;
       }, {});
   }
+
+  export default removeKeysWithSubstrings;

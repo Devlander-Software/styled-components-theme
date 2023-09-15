@@ -16,3 +16,6 @@ export const capFontSize: capFontSizeInterface = (
     return maxFontSize
   }
 }
+
+
+export default capFontSize

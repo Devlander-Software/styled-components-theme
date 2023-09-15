@@ -16,3 +16,15 @@ export const paddingObj: PaddingOnThemeType = {
   paddingForScrollView,
   paddingForScrollViewTwo,
 }
+
+
+export default {
+  STATUSBAR_HEIGHT,
+  windowHeight,
+  windowWidth,
+  screenHeight,
+  screenWidth,
+  paddingForScrollView,
+  paddingForScrollViewTwo,
+  paddingObj,
+}

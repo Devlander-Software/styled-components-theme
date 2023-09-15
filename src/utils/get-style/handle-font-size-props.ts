@@ -16,3 +16,5 @@ export const handleFontSizeProps: handleFontSizePropsInterface = (
 
   return `${adjustedFontSize}px`
 }
+
+export default handleFontSizeProps

@@ -1,6 +1,6 @@
 import { isEmpty } from "lodash";
 
-const getErrorMessageFromErrorMessages = (field: any, errors: {[key: string]: any}): string | null => {
+export const getErrorMessageFromErrorMessages = (field: any, errors: {[key: string]: any}): string | null => {
     if (!isEmpty(errors) && errors.hasOwnProperty('message')) {
       let {message} = errors;
       if (message && Array.isArray(message)) {

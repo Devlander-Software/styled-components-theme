@@ -17,3 +17,6 @@ export const getStyleForGhostProps = (
     : disabled
     ? theme.handleColorFromTheme('blackAlpha40', 0.5, theme)
     : theme.handleColorFromTheme(colorOne, 1, theme)
+
+
+export default getStyleForGhostProps
