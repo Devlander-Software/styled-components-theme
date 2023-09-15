@@ -84,12 +84,12 @@ const config = [
             {
                 file: packageJson.main,
                 format: 'cjs',
-                sourcemap: true
+                sourceMap: true
             },
             {
                 file: packageJson.module,
                 format: 'esm',
-                sourcemap: true
+                sourceMap: true
             },
        
             {
