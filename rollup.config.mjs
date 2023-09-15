@@ -98,6 +98,12 @@ const config = [
                 file: packageJson.browser,
                 format: 'umd',
                 name: packageJson.name,
+                globals: {
+                    lodash: 'lodash',
+                    'react-native': 'reactNative',
+                    'hex-to-rgba': 'hexToRgba',
+                    'react-native-responsive-fontsize': 'reactNativeResponsiveFontsize'
+                  }
             }
         ],
       
