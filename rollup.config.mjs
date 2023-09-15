@@ -3,7 +3,6 @@
 import commonjs from '@rollup/plugin-commonjs';
 import typescript from '@rollup/plugin-typescript';
 import dts from 'rollup-plugin-dts';
-import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import terser from '@rollup/plugin-terser';
 import packageJson from './package.json' assert { type: 'json' };
 import babelJson from './babel.config.json' assert { type: 'json' };
@@ -17,7 +16,20 @@ import auto from '@rollup/plugin-auto-install';
 import json from "@rollup/plugin-json";
 import styles from "rollup-plugin-styles";
 
+import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 
+function removeKeysWithSubstrings(obj, substrings) {
+    return Object.keys(obj)
+      .filter(key => !substrings.some(substring => key.includes(substring)))
+      .reduce((result, key) => {
+        result[key] = obj[key];
+        return result;
+      }, {});
+}
+
+
+
+const filteredPackage = removeKeysWithSubstrings(packageJson.dependencies, ['rollup', 'path', '@babel']);
 // eslint-disable-next-line no-undef
 const dev = process.env.NODE_ENV !== "production";
 const treeshake = {
@@ -66,7 +78,6 @@ const generalPlugins =   [
  
     generateGitVersion({ fileName: "gitVersion.json" }),
     swcPreserveDirectives(),
-    auto(),
     peerDepsExternal(),
 
 ]
@@ -107,11 +118,9 @@ const config = [
                   }
             }
         ],
+        external: Object.keys(filteredPackage),
       
-        external: [
-            ...Object.keys(packageJson.dependencies || {}),
-            ...Object.keys(packageJson.peerDependencies || {}),
-        ],
+        
     },
     {
         treeshake,
