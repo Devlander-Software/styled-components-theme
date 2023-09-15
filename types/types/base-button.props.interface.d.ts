@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import { ViewStyle } from "react-native";
 import { ColorsInterface } from './theme.types';
 import { CustomStylePropsInterface } from "./custom-style-props.interface";

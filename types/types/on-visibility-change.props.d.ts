@@ -1,3 +1,4 @@
+/// <reference types="react" />
 export interface OnVisibilityChangeProps {
     onVisibilityChange: (visible: boolean) => void;
     parentVisible?: boolean;
