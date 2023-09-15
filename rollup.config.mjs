@@ -73,6 +73,11 @@ const generalPlugins =   [
 
 const config = [
     {
+        plugins: [
+            ...generalPlugins,
+           
+           
+        ],
         treeshake,
         input: './src/index.ts',
         output: [
@@ -93,11 +98,7 @@ const config = [
                 name: packageJson.name,
             }
         ],
-        plugins: [
-            ...generalPlugins,
-           
-           
-        ],
+      
         external: [
             ...Object.keys(packageJson.dependencies || {}),
             ...Object.keys(packageJson.peerDependencies || {}),
