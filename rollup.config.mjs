@@ -85,23 +85,13 @@ const config = [
                 file: packageJson.main,
                 format: 'cjs',
                 sourcemap: true,
-                plugins: [
-                    typescript({
-                        sourceMap: true,
-                      
-                    }),
-                ]
+               
             },
             {
                 file: packageJson.module,
                 format: 'esm',
                 sourcemap: true,
-                plugins: [
-                    typescript({
-                        sourceMap: true,
-                      
-                    }),
-                ]
+               
             },
        
             {
