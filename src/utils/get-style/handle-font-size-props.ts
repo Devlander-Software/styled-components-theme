@@ -1,5 +1,6 @@
 
 import { RFValue } from 'react-native-responsive-fontsize'
+import Platform from 'react-native'
 
 export interface handleFontSizePropsInterface {
   (fontSize: string | number | undefined): string | number | undefined | any

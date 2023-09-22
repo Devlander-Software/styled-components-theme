@@ -109,7 +109,7 @@ const config = [
             {
                 file: packageJson.browser,
                 format: 'umd',
-                name: packageJson.name,
+                name: "sharedReactNativeTypes",
                 globals: {
                     lodash: 'lodash',
                     'react-native': 'reactNative',
