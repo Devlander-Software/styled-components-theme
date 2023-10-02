@@ -1,6 +1,6 @@
 {
   "name": "@devlander/shared-react-native-types",
-  "version": "1.0.86",
+  "version": "1.0.87",
   "description": "Shared npm modules between the design system, and expo app",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -64,7 +64,6 @@
     "@typescript-eslint/parser": "^6.4.1",
     "axios": "^1.5.0",
     "babel": "^6.23.0",
-    "babel-plugin-styled-components": "^2.1.4",
     "chromatic": "6.18.0",
     "eslint": "^8.47.0",
     "eslint-plugin-react": "^7.33.2",
