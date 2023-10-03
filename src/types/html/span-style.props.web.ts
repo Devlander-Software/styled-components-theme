@@ -1,11 +1,11 @@
-import { CustomTextStylesFromTheme } from "./custom-style-props.interface";
-import { FontTypeEnum } from "./font-type.enum"
-import { TextFontWeightTypesEnum } from "./font-weight.types"
-import { HtmlParagraphInterface } from "./paragraph.types.web";
-import { TextInterface, textDecorationLineTypes } from "./text.types"
-import { FontTypeWeight, ThemeInterface } from "./theme.types"
+import { CustomTextStylesFromTheme } from "../custom-style-props.interface";
+import { FontTypeEnum } from "../font-type.enum"
+import { TextFontWeightTypesEnum } from "../font-weight.types"
+import { HtmlSpanInterface } from "./span.types.web";
+import {  textDecorationLineTypes } from "../text.types"
+import { FontTypeWeight, ThemeInterface } from "../theme.types"
 
-export interface HtmlParagraphStyleProps extends   Partial<HtmlParagraphInterface>, CustomTextStylesFromTheme{
+export interface HtmlSpanStyleProps extends Partial<HtmlSpanInterface>, CustomTextStylesFromTheme{
     fontType?: FontTypeEnum;
     fontTypeWeight?: keyof FontTypeWeight;
     maxFontSizeMultiplier?: number;
@@ -39,6 +39,6 @@ export interface HtmlParagraphStyleProps extends   Partial<HtmlParagraphInterfac
    
 }
 
-export interface HtmlParagraphStylePropsWithTheme extends HtmlParagraphStyleProps {
+export interface HtmlSpanStylePropsWithTheme extends HtmlSpanStyleProps {
     theme: ThemeInterface;
 }

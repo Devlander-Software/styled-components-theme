@@ -1,8 +1,9 @@
-import { TextFontWeightTypesEnum } from "./font-weight.types";
-import { textDecorationLineTypes } from "./text.types";
-import { ThemeInterface } from "./theme.types";
+import { TextFontWeightTypesEnum } from "../font-weight.types";
+import { textDecorationLineTypes } from "../text.types";
+import { ThemeInterface } from "../theme.types";
 
-export interface HtmlParagraphInterface extends HTMLParagraphElement {
+
+export interface HtmlSpanInterface extends Partial<React.HTMLProps<HTMLSpanElement>> {
     fontSize?: number;
     color?: string;
     maxLineHeight?: number;
@@ -30,6 +31,6 @@ export interface HtmlParagraphInterface extends HTMLParagraphElement {
     textAlign?: "auto" | "left" | "right" | "center" | "justify";
     maxFontSize?: number;
     maxWidth?: number 
-   
+    children?: React.ReactNode 
     theme?: ThemeInterface;
   }

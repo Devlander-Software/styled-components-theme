@@ -1,5 +1,5 @@
-import { ThemeInterface, ColorsInterface } from "./theme.types"
-export interface HtmlButtonPropsInterface extends HTMLButtonElement {
+import { ThemeInterface, ColorsInterface } from "../theme.types";
+export interface HtmlButtonPropsInterface {
     paddingLeft?: number;
     paddingRight?: number;
     marginTop?: number;
@@ -19,9 +19,8 @@ export interface HtmlButtonPropsInterface extends HTMLButtonElement {
     padding?: number | string;
     borderBottomWidth?: number | string;
     paddingBottom?: number | string;
-    backgroundColorFromTheme?: keyof ColorsInterface
+    backgroundColorFromTheme?: keyof ColorsInterface;
 }
-
 export interface HtmlButtonPropsInterfaceWithTheme extends HtmlButtonPropsInterface {
     theme: ThemeInterface;
 }

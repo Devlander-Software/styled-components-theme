@@ -1,8 +1,8 @@
-import { BaseThemeInterface } from "./base-theme.interface";
-import { CustomViewStylePropsInterface } from "./custom-style-props.interface";
-import { ThemeInterface } from "./theme.types";
+import { BaseThemeInterface } from "../base-theme.interface";
+import { CustomViewStylePropsInterface } from "../custom-style-props.interface";
+import { ThemeInterface } from "../theme.types";
 
-export interface BaseDivInterface extends HTMLDivElement, BaseThemeInterface, CustomViewStylePropsInterface {
+export interface BaseDivInterface extends Partial<React.HTMLProps<HTMLDivElement>>, BaseThemeInterface, CustomViewStylePropsInterface {
     padding?: number | string;
     paddingTop?: number | string;
     width?: number | string;
