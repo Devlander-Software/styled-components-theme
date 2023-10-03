@@ -1581,6 +1581,30 @@ interface GhostBaseButton extends BaseButtonPropsInterface {
     backgroundColorFromTheme: keyof ColorsInterface;
 }
 
+interface BaseThemeInterface {
+    theme?: ThemeInterface;
+}
+
+interface BaseDivInterface extends HTMLDivElement, BaseThemeInterface, CustomViewStylePropsInterface {
+    padding?: number | string;
+    paddingTop?: number | string;
+    width?: number | string;
+    position?: "absolute" | "relative";
+    maxWidth?: number | string;
+    paddingLeft?: number | string;
+    marginBottom?: number | string;
+    opacity?: number | string;
+    paddingRight?: number;
+    maxHeight?: number | string;
+    marginLeft?: number | string;
+    marginRight?: number | string;
+    paddingBottom?: number | string;
+    height?: number | string;
+    borderWidth?: number | string;
+    borderColor?: string | string;
+    backgroundOpacity?: number;
+}
+
 interface BaseHeaderPropsInterface {
     backgroundColorFromTheme?: keyof ColorsInterface;
     subTitle?: string;
@@ -1607,10 +1631,6 @@ interface BaseImageBackgroundInterface {
     borderWidth?: string | number;
     maxHeight?: string | number;
     maxWidth?: string | number;
-    theme?: ThemeInterface;
-}
-
-interface BaseThemeInterface {
     theme?: ThemeInterface;
 }
 
@@ -1644,11 +1664,65 @@ declare enum ButtonVariantEnum {
     contained = "contained"
 }
 
+interface HtmlButtonPropsInterface extends HTMLButtonElement {
+    paddingLeft?: number;
+    paddingRight?: number;
+    marginTop?: number;
+    marginBottom?: number;
+    height?: number | string;
+    justifyContent?: "center" | "flex-start" | "flex-end";
+    alignItems?: "center" | "flex-start" | "flex-end";
+    borderRadius?: number;
+    flex?: number;
+    width?: number | string;
+    maxWidth?: number | string;
+    alignSelf?: "center" | "flex-start" | "flex-end";
+    flexShrink?: number;
+    marginLeft?: number | string;
+    marginRight?: number | string;
+    paddingTop?: number | string;
+    padding?: number | string;
+    borderBottomWidth?: number | string;
+    paddingBottom?: number | string;
+    backgroundColorFromTheme?: keyof ColorsInterface;
+}
+interface HtmlButtonPropsInterfaceWithTheme extends HtmlButtonPropsInterface {
+    theme: ThemeInterface;
+}
+
 type ArrayLengthMutationKeys = "splice" | "push" | "pop" | "shift" | "unshift" | number;
 type ArrayItems<T extends Array<any>> = T extends Array<infer TItems> ? TItems : never;
 type FixedLengthArray<T extends any[]> = Pick<T, Exclude<keyof T, ArrayLengthMutationKeys>> & {
     [Symbol.iterator]: () => IterableIterator<ArrayItems<T>>;
 };
+
+interface HtmlFormInputGroupProps extends HTMLInputElement {
+    opacity?: number;
+    dense?: boolean;
+    renderRight?: () => JSX.Element;
+    containerStyleProps?: ViewStyle;
+    containerStyleFromTheme?: ContainerStyleProps;
+    renderBottom?: () => JSX.Element | null;
+    dataDetectorTypes?: DataDetectorEnum;
+    textContentType?: TextContentTypeEnum;
+    keyboardType?: KeyBoardTypeEnum;
+    secureTextEntry?: boolean;
+    errorText?: string | null | boolean | undefined;
+    error?: boolean;
+    label?: string;
+    onChangeText: (text: string) => void;
+    underlineColor?: string;
+    editable?: boolean;
+    autoCapitalize?: AutoCapitalizeEnum | undefined;
+    backgroundColor?: string;
+    submitting?: boolean;
+    onSubmitEditing?: () => void;
+}
+interface HtmlSecureInputProps extends HtmlFormInputGroupProps {
+    secureTextOnIcon?: IconNames;
+    secureTextOffIcon?: IconNames;
+    securePressOnChange: () => void;
+}
 
 interface OnVisibilityChangeProps {
     onVisibilityChange: (visible: boolean) => void;
@@ -1658,6 +1732,73 @@ interface OnVisibilityChangeProps {
     isVisible: boolean;
     setIsVisible: (visible: boolean) => void;
     error?: boolean;
+}
+
+interface HtmlParagraphInterface extends HTMLParagraphElement {
+    fontSize?: number;
+    color?: string;
+    maxLineHeight?: number;
+    marginTop?: number;
+    boxShadowX?: number | string;
+    boxShadowY?: number | string;
+    boxShadowBlurRadius?: number | string;
+    paddingLeft?: number;
+    paddingRight?: number;
+    maxFontSizeMultiplier?: number;
+    marginBottom?: number;
+    marginLeft?: number;
+    marginRight?: number;
+    opacity?: number;
+    lineHeight?: number;
+    letterSpacing?: number;
+    flex?: number;
+    width?: number;
+    fontWeight?: TextFontWeightTypesEnum;
+    paddingTop?: number;
+    paddingBottom?: number;
+    textDecoration?: textDecorationLineTypes;
+    error?: boolean;
+    fontFamily?: string;
+    textAlign?: "auto" | "left" | "right" | "center" | "justify";
+    maxFontSize?: number;
+    maxWidth?: number;
+    theme?: ThemeInterface;
+}
+
+interface HtmlParagraphStyleProps extends Partial<HtmlParagraphInterface>, CustomTextStylesFromTheme {
+    fontType?: FontTypeEnum;
+    fontTypeWeight?: keyof FontTypeWeight;
+    maxFontSizeMultiplier?: number;
+    onDark?: boolean;
+    fontStyle?: "normal" | "italic";
+    numberOfLines?: number;
+    paddingLeft?: number;
+    highlight?: boolean;
+    paddingTop?: number;
+    marginTop?: number;
+    marginBottom?: number;
+    marginLeft?: number;
+    marginRight?: number;
+    width?: number;
+    lineHeight?: number;
+    fontSize?: number;
+    opacity?: number;
+    destructive?: boolean;
+    flex?: number;
+    shadowOpacity?: number;
+    shadowColor?: string;
+    shadowOffsetX?: number;
+    fontWeight?: TextFontWeightTypesEnum;
+    shadowOffsetY?: number;
+    shadowRadius?: number;
+    maxFontSize?: number;
+    paddingRight?: number;
+    textAlign?: "left" | "center" | "right";
+    textTransform?: "uppercase" | "lowercase" | "capitalize" | "none" | undefined;
+    textDecorationLine?: textDecorationLineTypes;
+}
+interface HtmlParagraphStylePropsWithTheme extends HtmlParagraphStyleProps {
+    theme: ThemeInterface;
 }
 
 interface SVGPropsInterface {
@@ -1715,4 +1856,4 @@ declare function sliceIntoChunks(arr: any[], chunkSize: number): any[];
 
 declare function videoTimeStampToSeconds(str: string): number;
 
-export { AlignItemsEnum, AutoCapitalizeEnum, AutoCompleteTypeEnum, type BaseButtonPropsInterface, type BaseHeaderPropsInterface, type BaseImageBackgroundInterface, type BaseScrollViewInterface, type BaseThemeInterface, type BaseViewInterface, ButtonVariantEnum, type ColorsInterface, type ContainerStyleInterfaceWithTheme, type ContainerStyleProps, type CustomButtonTypes, type CustomStylePropsInterface, type CustomTextStylesFromTheme, type CustomViewStylePropsInterface, DataDetectorEnum, type DeviceOnTheme, type ElevationObjType, type ErrorMessages, type FixedLengthArray, FontAwesomeIconNames, type FontConfigInterface, type FontConfigItemInterface, FontTypeEnum, type FontTypeWeight, FontWeightEnum, type FontsInterface, FormInputGroupDefaultProps, type FormInputGroupProps, type GetStyleForTouchableOpacityInterface, type GhostBaseButton, type GhostTextInterface, type IconNames, IoniconNames, JustifyContentEnum, KeyBoardTypeEnum, type OnVisibilityChangeProps, type PaddingOnThemeType, STATUSBAR_HEIGHT, type SVGPropsInterface, SecureInputDefaultProps, type SecureInputProps, TextContentTypeEnum, TextFontWeightTypes, TextFontWeightTypesEnum, type TextInterface, type TextStyleProps, type TextStylePropsWithTheme, type ThemeInterface, type TouchableOpacityStylePropsInterface, type TouchableOpacityStylePropsInterfaceWithTheme, type boxShadowFuncInterface, boxShadowOne, calculatePercentageByPartAndWhole, capFontSize, type capFontSizeInterface, dashToCamelCase, defaultSVGProps, getErrorMessageByField, getErrorMessageFromErrorMessages, getFirstWordCapitalized, getLineHeight, getStyleForContainerProps, getStyleForGhostProps, getStyleForTextProps, getStyleForTouchableOpacityProps, handleColorFromTheme, type handleColorFromThemeInterface, handleFontFromTheme, handleFontSizeProps, type handleFontSizePropsInterface, handleSnackbarColor, type handleSnackbarColorInterface, handleUnitProps, type handleUnitPropsInterface, isJson, isValidHex, paddingForScrollView, paddingForScrollViewTwo, paddingObj, removeKeysWithSubstrings, screenHeight, screenWidth, sliceIntoChunks, textDecorationLineTypes, textTransformTypes, videoTimeStampToSeconds, windowHeight, windowWidth };
+export { AlignItemsEnum, AutoCapitalizeEnum, AutoCompleteTypeEnum, type BaseButtonPropsInterface, type BaseDivInterface, type BaseHeaderPropsInterface, type BaseImageBackgroundInterface, type BaseScrollViewInterface, type BaseThemeInterface, type BaseViewInterface, ButtonVariantEnum, type ColorsInterface, type ContainerStyleInterfaceWithTheme, type ContainerStyleProps, type CustomButtonTypes, type CustomStylePropsInterface, type CustomTextStylesFromTheme, type CustomViewStylePropsInterface, DataDetectorEnum, type DeviceOnTheme, type ElevationObjType, type ErrorMessages, type FixedLengthArray, FontAwesomeIconNames, type FontConfigInterface, type FontConfigItemInterface, FontTypeEnum, type FontTypeWeight, FontWeightEnum, type FontsInterface, FormInputGroupDefaultProps, type FormInputGroupProps, type GetStyleForTouchableOpacityInterface, type GhostBaseButton, type GhostTextInterface, type HtmlButtonPropsInterface, type HtmlButtonPropsInterfaceWithTheme, type HtmlFormInputGroupProps, type HtmlParagraphInterface, type HtmlParagraphStyleProps, type HtmlParagraphStylePropsWithTheme, type HtmlSecureInputProps, type IconNames, IoniconNames, JustifyContentEnum, KeyBoardTypeEnum, type OnVisibilityChangeProps, type PaddingOnThemeType, STATUSBAR_HEIGHT, type SVGPropsInterface, SecureInputDefaultProps, type SecureInputProps, TextContentTypeEnum, TextFontWeightTypes, TextFontWeightTypesEnum, type TextInterface, type TextStyleProps, type TextStylePropsWithTheme, type ThemeInterface, type TouchableOpacityStylePropsInterface, type TouchableOpacityStylePropsInterfaceWithTheme, type boxShadowFuncInterface, boxShadowOne, calculatePercentageByPartAndWhole, capFontSize, type capFontSizeInterface, dashToCamelCase, defaultSVGProps, getErrorMessageByField, getErrorMessageFromErrorMessages, getFirstWordCapitalized, getLineHeight, getStyleForContainerProps, getStyleForGhostProps, getStyleForTextProps, getStyleForTouchableOpacityProps, handleColorFromTheme, type handleColorFromThemeInterface, handleFontFromTheme, handleFontSizeProps, type handleFontSizePropsInterface, handleSnackbarColor, type handleSnackbarColorInterface, handleUnitProps, type handleUnitPropsInterface, isJson, isValidHex, paddingForScrollView, paddingForScrollViewTwo, paddingObj, removeKeysWithSubstrings, screenHeight, screenWidth, sliceIntoChunks, textDecorationLineTypes, textTransformTypes, videoTimeStampToSeconds, windowHeight, windowWidth };

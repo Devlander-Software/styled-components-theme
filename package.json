@@ -1,12 +1,13 @@
 {
   "name": "@devlander/shared-react-native-types",
-  "version": "1.0.87",
+  "version": "1.0.93",
   "description": "Shared npm modules between the design system, and expo app",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "files": [
     "dist"
   ],
+  "packageManager": "yarn@3.6.3",
   "browser": "dist/umd/index.js",
   "types": "dist/index.d.ts",
   "type": "commonjs",
@@ -23,7 +24,7 @@
   },
   "scripts": {
     "build:index": "node ./scripts/import-files-to-index.js",
-    "patch": "yarn version  --new-version patch",
+    "patch": "",
     "lint": "eslint .",
     "build:esm": "tsc",
     "build": "yarn run build:index && yarn build:esm && yarn build:cjs",
@@ -41,7 +42,7 @@
     "@babel/preset-env": "^7.22.15",
     "@babel/preset-typescript": "^7.22.15",
     "@babel/runtime": "^7.22.15",
-    "@expo/vector-icons": "13.0.0",
+    "@expo/vector-icons": "^13.0.0",
     "@faker-js/faker": "^8.0.2",
     "@jwplayer/jwplayer-react": "^1.1.3",
     "@rollup/plugin-alias": "^5.0.0",
@@ -114,7 +115,6 @@
   "resolutions": {
     "react-refresh": "~0.14.0"
   },
-  "private": false,
   "author": "devlander-software",
   "license": "ISC",
   "devDependencies": {

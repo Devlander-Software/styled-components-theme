@@ -1,8 +1,8 @@
-import { TextProps } from "react-native";
 import { ThemeInterface, FontTypeWeight, ColorsInterface } from "./theme.types";
 import { FontTypeEnum } from "./font-type.enum";
 import { CustomTextStylesFromTheme } from './custom-style-props.interface';
 import { TextFontWeightTypesEnum } from "./font-weight.types";
+import { TextProps } from "react-native";
 export declare enum textTransformTypes {
     none = "none",
     uppercase = "uppercase",

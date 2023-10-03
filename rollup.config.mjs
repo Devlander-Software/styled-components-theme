@@ -64,7 +64,7 @@ const generalPlugins =   [
     ...stylingPlugins,
  
    
-    babel(babelJson),
+    babel({...babelJson}),
     terser({
         ecma: 2020,
         mangle: { toplevel: true },

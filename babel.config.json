@@ -4,7 +4,8 @@
         "@babel/preset-env",
         {
           "modules": false,
-          "loose": false
+          "loose": false,
+          "useBuiltIns": true
         }
       ],      "@babel/plugin-transform-runtime",
       "@babel/preset-typescript",
@@ -14,12 +15,7 @@
     "babelHelpers": "runtime",
 
     "plugins": [
-      [
-        "@babel/plugin-transform-runtime",
-        {
-          "regenerator": true
-        }
-      ],
+     
       [
         "@babel/plugin-proposal-decorators",
         {
@@ -47,22 +43,10 @@
       [
         "@babel/plugin-transform-object-rest-spread",
         {
-          "loose": true,
-          "useBuiltIns": true
-        }
-      ],
-      [
-        "@babel/plugin-transform-react-jsx",
-        {
-          "runtime": "automatic"
-        }
-      ],
-      [
-        "babel-plugin-styled-components",
-        {
-          "displayName": true,
-          "fileName": true
+          "loose": true
         }
       ]
+  
+     
     ]
   }

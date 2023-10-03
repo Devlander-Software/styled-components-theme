@@ -1,8 +1,8 @@
-import { TextProps } from "react-native"
 import { ThemeInterface, FontTypeWeight, ColorsInterface } from "./theme.types"
 import { FontTypeEnum } from "./font-type.enum"
 import { CustomTextStylesFromTheme } from './custom-style-props.interface'
 import { TextFontWeightTypesEnum } from "./font-weight.types"
+import { TextProps } from "react-native";
 
 export enum textTransformTypes {
   none = "none",
@@ -20,6 +20,8 @@ export enum textDecorationLineTypes {
   lineThrough = "line-through",
   underlineLineThrough = "underline line-through",
 }
+
+
 export interface TextInterface extends TextProps, CustomTextStylesFromTheme {
   fontSize?: number;
   color?: string;
