@@ -1,6 +1,6 @@
 {
   "name": "@devlander/shared-react-native-types",
-  "version": "1.0.111",
+  "version": "1.0.114",
   "description": "Shared npm modules between the design system, and expo app",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -30,7 +30,8 @@
     "build:esm": "tsc",
     "build": "yarn run build:index && yarn build:esm && yarn build:cjs",
     "build:cjs": "yarn run increment-version && rollup -c && yarn run push-main",
-    "push-main": "git add -A  && git push origin main"
+    "timeout": "delay 5",
+    "push-main": "git add -A && yarn run timeout && git commit -m 'updated build' && yarn run timeout  && git push origin main"
   },
   "dependencies": {
     "@babel/core": "^7.22.17",
@@ -122,6 +123,7 @@
   "license": "ISC",
   "devDependencies": {
     "@babel/plugin-proposal-private-methods": "^7.18.6",
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "delay-cli": "2.0.0"
   }
 }
