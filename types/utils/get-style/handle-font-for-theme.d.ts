@@ -1,3 +1,6 @@
 import { FontTypeWeight, ThemeInterface } from '../../types/theme.types';
-export declare const handleFontFromTheme: (fontType: keyof ThemeInterface['fonts'], fontTypeWeight: keyof FontTypeWeight | undefined, theme: ThemeInterface) => string;
+export interface HandleFontFromThemeParameters {
+    (fontType: keyof ThemeInterface['fonts'], fontTypeWeight: keyof FontTypeWeight, theme: ThemeInterface): string;
+}
+export declare const handleFontFromTheme: HandleFontFromThemeParameters;
 export default handleFontFromTheme;

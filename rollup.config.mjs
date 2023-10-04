@@ -39,12 +39,12 @@ const treeshake = {
 };
 const nodePlugins = [
     nodeResolve({
-        extensions: [".ts", ".d.ts"],
+        extensions: [".ts", ".d.ts", ".tsx", ".js", ".jsx", ".json"],
     }),
     json(),
     commonjs({
         ignoreTryCatch: false,
-        include: 'node_modules/**'
+        include: ['node_modules/**', './src/declarations/styled.d.ts']
     }),
     typescript({
         tsconfig: './tsconfig.json',
@@ -124,6 +124,8 @@ const config = [
     },
     {
         treeshake,
+        include: ['src/**/*'],
+        exclude: ["**/*.d.ts"],
 
         input: 'dist/esm/types/index.d.ts',
         output: [{ file: 'dist/index.d.ts', format: 'esm' }],

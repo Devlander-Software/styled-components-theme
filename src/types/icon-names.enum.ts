@@ -1,5 +1,6 @@
-import MaterialIcons from '@expo/vector-icons/MaterialIcons';
-import Ionicons from '@expo/vector-icons/Ionicons';
+import {MaterialIcons, Ionicons, FontAwesome, FontAwesome5} from '@expo/vector-icons';
+
+
 
 export enum IoniconNames {
 
@@ -227,5 +228,10 @@ export enum FontAwesomeIconNames  {
 
 }
 
-export type IconNames = FontAwesomeIconNames | IoniconNames |typeof  MaterialIcons['name'] | typeof  Ionicons['name'] 
 
+
+export type IconNames = 
+  | typeof MaterialIcons['name']
+  | typeof Ionicons['name']
+  | typeof FontAwesome5['name']
+  | typeof FontAwesome['name'];

@@ -2,7 +2,7 @@
 import { TextFontWeightTypesEnum } from "../font-weight.types";
 import { textDecorationLineTypes } from "../text.types";
 import { ThemeInterface } from "../theme.types";
-export interface HtmlSpanInterface {
+export interface HtmlSpanInterface extends Partial<React.HTMLProps<HTMLSpanElement>> {
     fontSize?: number;
     color?: string;
     maxLineHeight?: number;

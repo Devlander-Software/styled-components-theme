@@ -1,9 +1,14 @@
 import { FontTypeEnum } from "../../types/font-type.enum"
+import { HtmlParagraphStylePropsWithTheme } from "../../types/html/paragraph-style.props.web";
 import { TextStylePropsWithTheme } from "../../types/text-style.props"
 import { capFontSize } from './cap-font-size';
+import { Platform } from "react-native";
+export interface GetStyleForTextPropsParameters {
+	(props: TextStylePropsWithTheme | HtmlParagraphStylePropsWithTheme): string
+}
 
 
-export const getStyleForTextProps = (props: TextStylePropsWithTheme): string => {
+export const getStyleForTextProps: GetStyleForTextPropsParameters = (props: TextStylePropsWithTheme | HtmlParagraphStylePropsWithTheme): string => {
 	const { theme, fontSize,maxFontSize, textColorFromTheme, fontType, fontTypeWeight, fontWeight, ...restProps } = props
 
 	const handleUnitProps = theme?.handleUnitProps ?? null
@@ -28,11 +33,18 @@ export const getStyleForTextProps = (props: TextStylePropsWithTheme): string => 
 		return theme.colors.blackAlpha100
 	}
 
+	const cssPropertiesForNative = [
+		fontSize &&  typeof maxFontSize === undefined ? `font-size: ${handleFontSizeProps(fontSize)};` : fontSize && maxFontSize? `font-size: ${handleFontSizeProps(capFontSizeFunc(fontSize, maxFontSize))};`: null,
+	]
+
+	const cssPropertiesForWeb = [
+		fontSize &&  typeof maxFontSize === undefined ? `font-size: ${handleFontSizeProps(fontSize)};` : fontSize && maxFontSize? `font-size: ${handleFontSizeProps(capFontSizeFunc(fontSize, maxFontSize))};`: null,
+	]
+
 	const cssProperties = [
 
 		fontType && fontTypeWeight && handleFontFromTheme ? `font-family: ${handleFontFromTheme(fontType, fontTypeWeight, theme)};` : `font-family: ${handleFontFromTheme(FontTypeEnum.Font1, "bold", theme)};`,
 		restProps.textDecorationLine && restProps.textDecorationLine !== "none" ? `text-decoration-line: ${restProps.textDecorationLine};` : null,
-		fontSize &&  typeof maxFontSize === undefined ? `font-size: ${handleFontSizeProps(fontSize)};` : fontSize && maxFontSize? `font-size: ${handleFontSizeProps(capFontSizeFunc(fontSize, maxFontSize))};`: null,
 		textColorFromTheme && handleColorFromTheme ? `color: ${handleColorFromTheme(textColorFromTheme, 1, theme)};` : `color: ${getColor()};`,
 		restProps.flex ? `flex: ${restProps.flex};` : null,
 		fontWeight ? `font-weight: ${fontWeight};` : null,
@@ -55,6 +67,13 @@ export const getStyleForTextProps = (props: TextStylePropsWithTheme): string => 
 		restProps.textTransform ? `text-transform: ${restProps.textTransform};` : null,
 	]
 
+	if(Platform.OS === "web"){
+		cssProperties.push(...cssPropertiesForWeb)
+	}
+	else{
+		cssProperties.push(...cssPropertiesForNative)
+	}
+
 	const css = cssProperties.filter(Boolean).join("\n")
 	// console.log("css", css)
 
@@ -64,3 +83,4 @@ export const getStyleForTextProps = (props: TextStylePropsWithTheme): string => 
 
 
 export default getStyleForTextProps
+

@@ -1,15 +1,37 @@
 
+export enum UnitOfMeasurementNative {
+  PX = "px",
+}
+
+export enum UnitOfMeasurementWeb {
+  PX = "px",
+  EM = "em",
+  REM = "rem",
+  VH = "vh",
+  VW = "vw",
+  VMIN = "vmin",
+  VMAX = "vmax",
+  PERCENT = "%",
+}
+
+
+type UnitOfMeasurement = UnitOfMeasurementNative | UnitOfMeasurementWeb
+
 export interface handleUnitPropsInterface {
-  (units: any): any
+  (units?: any, unitOfMeasurement?: UnitOfMeasurement): any
 }
 export const handleUnitProps: handleUnitPropsInterface = (
-  units: any,
+  units?: any,
+  unitOfMeasurement? : UnitOfMeasurementNative | UnitOfMeasurementWeb
 ): any => {
+  if(!unitOfMeasurement){
+    unitOfMeasurement = UnitOfMeasurementWeb.PX
+  }
   if (units && units === 'auto') {
     return units
   }
 
-  if (!units || units === undefined || units === 0) {
+  if (!units || units === undefined || units === 0 || typeof units === 'undefined') {
     units = '0px'
   }
 
@@ -22,7 +44,7 @@ export const handleUnitProps: handleUnitPropsInterface = (
     if (hasPercentage) {
       units = units.toString()
     } else {
-      units = `${units}px`
+      units = `${units}${unitOfMeasurement}`
     }
   }
 

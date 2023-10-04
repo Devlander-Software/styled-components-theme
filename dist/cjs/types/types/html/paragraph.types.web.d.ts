@@ -1,7 +1,8 @@
+/// <reference types="react" />
 import { TextFontWeightTypesEnum } from "../font-weight.types";
 import { textDecorationLineTypes } from "../text.types";
 import { ThemeInterface } from "../theme.types";
-export interface HtmlParagraphInterface {
+export interface HtmlParagraphInterface extends Partial<React.HTMLProps<HTMLParagraphElement>> {
     fontSize?: number;
     color?: string;
     maxLineHeight?: number;

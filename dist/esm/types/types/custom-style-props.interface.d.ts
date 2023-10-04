@@ -1,5 +1,5 @@
 import { FontTypeEnum } from './font-type.enum';
-import { ColorsInterface, FontTypeWeight } from './theme.types';
+import { ColorsInterface, FontTypeWeight, ThemeInterface } from './theme.types';
 export interface CustomTextStylesFromTheme {
     textDecorationColorFromTheme?: keyof ColorsInterface;
     colorFromTheme?: keyof ColorsInterface;
@@ -26,4 +26,27 @@ export interface CustomButtonTypes {
     backgroundColorFromTheme?: keyof ColorsInterface;
 }
 export interface CustomStylePropsInterface extends CustomTextStylesFromTheme, CustomViewStylePropsInterface, CustomButtonTypes {
+}
+export interface StylePropsInterface extends CustomTextStylesFromTheme, CustomViewStylePropsInterface, CustomButtonTypes {
+}
+export interface StylePropsInterfaceWithTheme extends StylePropsInterface {
+    theme: ThemeInterface;
+    maxWidth?: number | string;
+    maxHeight?: number | string;
+    height?: number | string;
+    marginTop?: number | string;
+    width?: number | string;
+    flex?: number;
+    marginBottom?: number | string;
+    marginLeft?: number | string;
+    marginRight?: number | string;
+    paddingTop?: number | string;
+    paddingBottom?: number | string;
+    margin?: number | string;
+    borderWidth?: number | string;
+    minHeight?: number | string;
+    paddingLeft?: number | string;
+    paddingRight?: number | string;
+    opacity?: number;
+    backgroundColorFromTheme?: keyof ColorsInterface;
 }

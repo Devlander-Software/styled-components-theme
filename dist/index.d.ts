@@ -1,7 +1,6 @@
 /// <reference types="react" />
 import { TextProps, PlatformOSType, ViewStyle, TextInputProps, TextStyle, ViewProps } from 'react-native';
-import MaterialIcons from '@expo/vector-icons/MaterialIcons';
-import Ionicons from '@expo/vector-icons/Ionicons';
+import { MaterialIcons, Ionicons, FontAwesome5, FontAwesome } from '@expo/vector-icons';
 
 declare enum AutoCapitalizeEnum {
     none = "none",
@@ -133,22 +132,6 @@ declare enum FontTypeEnum {
     CondensedFont = "CondensedFont"
 }
 
-declare enum TextFontWeightTypesEnum {
-    normal = "normal",
-    bold = "bold",
-    oneHundred = "100",
-    twoHundred = "200",
-    threeHundred = "300",
-    fourHundred = "400",
-    fiveHundred = "500",
-    sixHundred = "600",
-    sevenHundred = "700",
-    eightHundred = "800",
-    nineHundred = "900",
-    light = "light"
-}
-declare const TextFontWeightTypes: (TextFontWeightTypesEnum | undefined)[];
-
 interface CustomTextStylesFromTheme {
     textDecorationColorFromTheme?: keyof ColorsInterface;
     colorFromTheme?: keyof ColorsInterface;
@@ -176,6 +159,45 @@ interface CustomButtonTypes {
 }
 interface CustomStylePropsInterface extends CustomTextStylesFromTheme, CustomViewStylePropsInterface, CustomButtonTypes {
 }
+interface StylePropsInterface extends CustomTextStylesFromTheme, CustomViewStylePropsInterface, CustomButtonTypes {
+}
+interface StylePropsInterfaceWithTheme extends StylePropsInterface {
+    theme: ThemeInterface;
+    maxWidth?: number | string;
+    maxHeight?: number | string;
+    height?: number | string;
+    marginTop?: number | string;
+    width?: number | string;
+    flex?: number;
+    marginBottom?: number | string;
+    marginLeft?: number | string;
+    marginRight?: number | string;
+    paddingTop?: number | string;
+    paddingBottom?: number | string;
+    margin?: number | string;
+    borderWidth?: number | string;
+    minHeight?: number | string;
+    paddingLeft?: number | string;
+    paddingRight?: number | string;
+    opacity?: number;
+    backgroundColorFromTheme?: keyof ColorsInterface;
+}
+
+declare enum TextFontWeightTypesEnum {
+    normal = "normal",
+    bold = "bold",
+    oneHundred = "100",
+    twoHundred = "200",
+    threeHundred = "300",
+    fourHundred = "400",
+    fiveHundred = "500",
+    sixHundred = "600",
+    sevenHundred = "700",
+    eightHundred = "800",
+    nineHundred = "900",
+    light = "light"
+}
+declare const TextFontWeightTypes: (TextFontWeightTypesEnum | undefined)[];
 
 declare enum textTransformTypes {
     none = "none",
@@ -228,6 +250,73 @@ interface GhostTextInterface extends Partial<TextInterface> {
     theme: ThemeInterface;
 }
 
+interface HtmlParagraphInterface extends Partial<React.HTMLProps<HTMLParagraphElement>> {
+    fontSize?: number;
+    color?: string;
+    maxLineHeight?: number;
+    marginTop?: number;
+    boxShadowX?: number | string;
+    boxShadowY?: number | string;
+    boxShadowBlurRadius?: number | string;
+    paddingLeft?: number;
+    paddingRight?: number;
+    maxFontSizeMultiplier?: number;
+    marginBottom?: number;
+    marginLeft?: number;
+    marginRight?: number;
+    opacity?: number;
+    lineHeight?: number;
+    letterSpacing?: number;
+    flex?: number;
+    width?: number;
+    fontWeight?: TextFontWeightTypesEnum;
+    paddingTop?: number;
+    paddingBottom?: number;
+    textDecoration?: textDecorationLineTypes;
+    error?: boolean;
+    fontFamily?: string;
+    textAlign?: "auto" | "left" | "right" | "center" | "justify";
+    maxFontSize?: number;
+    maxWidth?: number;
+    theme?: ThemeInterface;
+}
+
+interface HtmlParagraphStyleProps extends Partial<HtmlParagraphInterface>, CustomTextStylesFromTheme {
+    fontType?: FontTypeEnum;
+    fontTypeWeight?: keyof FontTypeWeight;
+    maxFontSizeMultiplier?: number;
+    onDark?: boolean;
+    fontStyle?: "normal" | "italic";
+    numberOfLines?: number;
+    paddingLeft?: number;
+    highlight?: boolean;
+    paddingTop?: number;
+    marginTop?: number;
+    marginBottom?: number;
+    marginLeft?: number;
+    marginRight?: number;
+    width?: number;
+    lineHeight?: number;
+    fontSize?: number;
+    opacity?: number;
+    destructive?: boolean;
+    flex?: number;
+    shadowOpacity?: number;
+    shadowColor?: string;
+    shadowOffsetX?: number;
+    fontWeight?: TextFontWeightTypesEnum;
+    shadowOffsetY?: number;
+    shadowRadius?: number;
+    maxFontSize?: number;
+    paddingRight?: number;
+    textAlign?: "left" | "center" | "right";
+    textTransform?: "uppercase" | "lowercase" | "capitalize" | "none" | undefined;
+    textDecorationLine?: textDecorationLineTypes;
+}
+interface HtmlParagraphStylePropsWithTheme extends HtmlParagraphStyleProps {
+    theme: ThemeInterface;
+}
+
 interface TextStyleProps extends Partial<TextInterface> {
     fontType?: FontTypeEnum;
     fontTypeWeight?: keyof FontTypeWeight;
@@ -264,14 +353,20 @@ interface TextStylePropsWithTheme extends TextStyleProps {
     theme: ThemeInterface;
 }
 
-declare const getStyleForTextProps: (props: TextStylePropsWithTheme) => string;
+interface GetStyleForTextPropsParameters {
+    (props: TextStylePropsWithTheme | HtmlParagraphStylePropsWithTheme): string;
+}
+declare const getStyleForTextProps: GetStyleForTextPropsParameters;
 
 interface handleColorFromThemeInterface {
     (color: keyof ColorsInterface, opacity: number, theme: ThemeInterface): string | ElevationObjType | any;
 }
-declare const handleColorFromTheme: (color: keyof ColorsInterface, opacity: number | undefined, theme: ThemeInterface) => string | ElevationObjType | any;
+declare const handleColorFromTheme: handleColorFromThemeInterface;
 
-declare const handleFontFromTheme: (fontType: keyof ThemeInterface['fonts'], fontTypeWeight: keyof FontTypeWeight | undefined, theme: ThemeInterface) => string;
+interface HandleFontFromThemeParameters {
+    (fontType: keyof ThemeInterface['fonts'], fontTypeWeight: keyof FontTypeWeight, theme: ThemeInterface): string;
+}
+declare const handleFontFromTheme: HandleFontFromThemeParameters;
 
 interface handleSnackbarColorInterface {
     (colorType?: undefined | 'none' | 'success' | 'error', theme?: ThemeInterface): string;
@@ -283,20 +378,44 @@ interface capFontSizeInterface {
 }
 declare const capFontSize: capFontSizeInterface;
 
+declare enum UnitOfMeasurementNative {
+    PX = "px"
+}
+declare enum UnitOfMeasurementWeb {
+    PX = "px",
+    EM = "em",
+    REM = "rem",
+    VH = "vh",
+    VW = "vw",
+    VMIN = "vmin",
+    VMAX = "vmax",
+    PERCENT = "%"
+}
+type UnitOfMeasurement = UnitOfMeasurementNative | UnitOfMeasurementWeb;
 interface handleUnitPropsInterface {
-    (units: any): any;
+    (units?: any, unitOfMeasurement?: UnitOfMeasurement): any;
 }
 declare const handleUnitProps: handleUnitPropsInterface;
 
-interface handleFontSizePropsInterface {
-    (fontSize: string | number | undefined): string | number | undefined | any;
+declare enum ResponsiveByPercentOrValue {
+    Percent = "percent",
+    Value = "value"
 }
-declare const handleFontSizeProps: handleFontSizePropsInterface;
+interface HandleFontSizePropsInterface {
+    (fontSize?: string | number, maxFontSize?: string | number, standardScreenHeight?: string | number, responsiveBy?: ResponsiveByPercentOrValue): string;
+}
+declare const getResponsiveFontSize: (fontSize: number, maxFontSize: number, screenHeight: number | undefined, responsiveBy: ResponsiveByPercentOrValue) => number;
+declare const handleFontSizeProps: HandleFontSizePropsInterface;
 
 interface boxShadowFuncInterface {
     (fontSize: string): any;
 }
 declare const boxShadowOne: boxShadowFuncInterface;
+
+interface GetStyleForContainerPropsParameters {
+    (props: ContainerStyleInterfaceWithTheme | HtmlParagraphStylePropsWithTheme): string;
+}
+declare const getStyleForContainerProps: GetStyleForContainerPropsParameters;
 
 type ElevationObjType = {
     level1: string;
@@ -472,7 +591,7 @@ type DeviceOnTheme = {
 interface ThemeInterface {
     padding: PaddingOnThemeType;
     handleSnackbarColor: handleSnackbarColorInterface;
-    handleFontSizeProps: handleFontSizePropsInterface;
+    handleFontSizeProps: HandleFontSizePropsInterface;
     handleUnitProps: handleUnitPropsInterface;
     getStyleForTouchableOpacityProps: GetStyleForTouchableOpacityInterface;
     getStyleForContainerProps: (props: ContainerStyleInterfaceWithTheme) => string;
@@ -484,6 +603,27 @@ interface ThemeInterface {
     boxShadowThree?: boxShadowFuncInterface;
     handleColorFromTheme: handleColorFromThemeInterface;
     handleFontFromTheme: typeof handleFontFromTheme;
+    colors: ColorsInterface;
+    fonts: FontsInterface;
+    darkThemeEnabled?: boolean;
+    deviceOnTheme: DeviceOnTheme;
+    capFontSize: capFontSizeInterface;
+}
+interface ThemeInterfaceForHTML {
+    padding: PaddingOnThemeType;
+    handleSnackbarColor: handleSnackbarColorInterface;
+    handleFontSizeProps: HandleFontSizePropsInterface;
+    handleUnitProps: handleUnitPropsInterface;
+    getStyleForTouchableOpacityProps: GetStyleForTouchableOpacityInterface;
+    getStyleForContainerProps: GetStyleForContainerPropsParameters;
+    handleGhost: typeof getStyleForGhostProps;
+    getStyleForTextProps: GetStyleForTextPropsParameters;
+    boxShadowOne: boxShadowFuncInterface;
+    boxShadowTwo?: boxShadowFuncInterface;
+    elevation?: ElevationObjType;
+    boxShadowThree?: boxShadowFuncInterface;
+    handleColorFromTheme: handleColorFromThemeInterface;
+    handleFontFromTheme: HandleFontFromThemeParameters;
     colors: ColorsInterface;
     fonts: FontsInterface;
     darkThemeEnabled?: boolean;
@@ -1532,7 +1672,7 @@ declare enum FontAwesomeIconNames {
     "wpexplorer" = 784,
     "meetup" = 785
 }
-type IconNames = FontAwesomeIconNames | IoniconNames | typeof MaterialIcons['name'] | typeof Ionicons['name'];
+type IconNames = typeof MaterialIcons['name'] | typeof Ionicons['name'] | typeof FontAwesome5['name'] | typeof FontAwesome['name'];
 
 interface FormInputGroupProps extends TextInputProps {
     opacity?: number;
@@ -1650,7 +1790,7 @@ type FixedLengthArray<T extends any[]> = Pick<T, Exclude<keyof T, ArrayLengthMut
     [Symbol.iterator]: () => IterableIterator<ArrayItems<T>>;
 };
 
-interface BaseDivInterface extends BaseThemeInterface, CustomViewStylePropsInterface {
+interface BaseDivInterface extends Partial<React.HTMLProps<HTMLDivElement>>, BaseThemeInterface, CustomViewStylePropsInterface {
     padding?: number | string;
     paddingTop?: number | string;
     width?: number | string;
@@ -1696,7 +1836,7 @@ interface HtmlButtonPropsInterfaceWithTheme extends HtmlButtonPropsInterface {
     theme: ThemeInterface;
 }
 
-interface HtmlFormInputGroupProps {
+interface HtmlFormInputGroupProps extends Partial<HTMLInputElement> {
     opacity?: number;
     dense?: boolean;
     renderRight?: () => JSX.Element;
@@ -1724,74 +1864,29 @@ interface HtmlSecureInputProps extends HtmlFormInputGroupProps {
     securePressOnChange: () => void;
 }
 
-interface HtmlParagraphInterface {
-    fontSize?: number;
-    color?: string;
-    maxLineHeight?: number;
-    marginTop?: number;
-    boxShadowX?: number | string;
-    boxShadowY?: number | string;
-    boxShadowBlurRadius?: number | string;
-    paddingLeft?: number;
-    paddingRight?: number;
-    maxFontSizeMultiplier?: number;
-    marginBottom?: number;
-    marginLeft?: number;
-    marginRight?: number;
-    opacity?: number;
-    lineHeight?: number;
-    letterSpacing?: number;
-    flex?: number;
-    width?: number;
-    fontWeight?: TextFontWeightTypesEnum;
-    paddingTop?: number;
-    paddingBottom?: number;
-    textDecoration?: textDecorationLineTypes;
-    error?: boolean;
-    fontFamily?: string;
-    textAlign?: "auto" | "left" | "right" | "center" | "justify";
-    maxFontSize?: number;
-    maxWidth?: number;
+interface HtmlImageInterface extends Partial<React.HTMLProps<HTMLImageElement>> {
     theme?: ThemeInterface;
 }
 
-interface HtmlParagraphStyleProps extends Partial<HtmlParagraphInterface>, CustomTextStylesFromTheme {
-    fontType?: FontTypeEnum;
-    fontTypeWeight?: keyof FontTypeWeight;
-    maxFontSizeMultiplier?: number;
-    onDark?: boolean;
-    fontStyle?: "normal" | "italic";
-    numberOfLines?: number;
-    paddingLeft?: number;
-    highlight?: boolean;
-    paddingTop?: number;
-    marginTop?: number;
-    marginBottom?: number;
-    marginLeft?: number;
-    marginRight?: number;
-    width?: number;
-    lineHeight?: number;
-    fontSize?: number;
-    opacity?: number;
-    destructive?: boolean;
-    flex?: number;
-    shadowOpacity?: number;
-    shadowColor?: string;
-    shadowOffsetX?: number;
-    fontWeight?: TextFontWeightTypesEnum;
-    shadowOffsetY?: number;
-    shadowRadius?: number;
-    maxFontSize?: number;
-    paddingRight?: number;
-    textAlign?: "left" | "center" | "right";
-    textTransform?: "uppercase" | "lowercase" | "capitalize" | "none" | undefined;
-    textDecorationLine?: textDecorationLineTypes;
+interface HtmlImgStyleProps extends Partial<HtmlImageInterface> {
+    width?: string | number;
+    borderColorFromTheme?: keyof ThemeInterface['colors'];
+    backgroundColorFromTheme?: keyof ThemeInterface['colors'];
+    height?: string | number;
+    borderRadius?: string | number;
+    borderWidth?: string | number;
+    maxHeight?: string | number;
+    borderTopLeftRadius?: number | string;
+    borderTopRightRadius?: number | string;
+    borderBottomLeftRadius?: number | string;
+    borderBottomRightRadius?: number | string;
+    maxWidth?: string | number;
 }
-interface HtmlParagraphStylePropsWithTheme extends HtmlParagraphStyleProps {
+interface HtmlImgStylePropsWithTheme extends HtmlImgStyleProps {
     theme: ThemeInterface;
 }
 
-interface HtmlSpanInterface {
+interface HtmlSpanInterface extends Partial<React.HTMLProps<HTMLSpanElement>> {
     fontSize?: number;
     color?: string;
     maxLineHeight?: number;
@@ -1908,9 +2003,13 @@ declare const paddingObj: PaddingOnThemeType;
 
 declare const getLineHeight: (fontSize?: number, amountToIncrease?: number) => number;
 
-declare const getStyleForContainerProps: ({ maxWidth, maxHeight, height, theme, marginTop, width, backgroundColorFromTheme, marginBottom, minHeight, opacity, marginLeft, marginRight, paddingLeft, borderColorFromTheme, paddingRight, margin, borderWidth, flex, paddingTop, }: ContainerStyleInterfaceWithTheme) => string;
-
 declare function isValidHex(color: string): boolean;
+
+declare function RGBAToHexA(rgba: string, forceRemoveAlpha?: boolean): string;
+
+declare const getStyleForImgPropsForWeb: ({ backgroundColorFromTheme, maxWidth, borderBottomRightRadius, borderColorFromTheme, borderTopRightRadius, maxHeight, height, theme, width, borderRadius, borderWidth, borderBottomLeftRadius, borderTopLeftRadius, }: HtmlImgStylePropsWithTheme) => string;
+
+declare const getStyleFromProps: (props: StylePropsInterfaceWithTheme) => string;
 
 declare function isJson(str: string): boolean;
 
@@ -1924,4 +2023,4 @@ declare function sliceIntoChunks(arr: any[], chunkSize: number): any[];
 
 declare function videoTimeStampToSeconds(str: string): number;
 
-export { AlignItemsEnum, AutoCapitalizeEnum, AutoCompleteTypeEnum, type BaseButtonPropsInterface, type BaseDivInterface, type BaseHeaderPropsInterface, type BaseImageBackgroundInterface, type BaseScrollViewInterface, type BaseThemeInterface, type BaseViewInterface, ButtonVariantEnum, type ColorsInterface, type ContainerStyleInterfaceWithTheme, type ContainerStyleProps, type CustomButtonTypes, type CustomStylePropsInterface, type CustomTextStylesFromTheme, type CustomViewStylePropsInterface, DataDetectorEnum, type DeviceOnTheme, type ElevationObjType, type ErrorMessages, type FixedLengthArray, FontAwesomeIconNames, type FontConfigInterface, type FontConfigItemInterface, FontTypeEnum, type FontTypeWeight, FontWeightEnum, type FontsInterface, FormInputGroupDefaultProps, type FormInputGroupProps, type GetStyleForTouchableOpacityInterface, type GhostBaseButton, type GhostTextInterface, type HtmlButtonPropsInterface, type HtmlButtonPropsInterfaceWithTheme, type HtmlFormInputGroupProps, type HtmlParagraphInterface, type HtmlParagraphStyleProps, type HtmlParagraphStylePropsWithTheme, type HtmlSecureInputProps, type HtmlSpanInterface, type HtmlSpanStyleProps, type HtmlSpanStylePropsWithTheme, type IconNames, IoniconNames, JustifyContentEnum, KeyBoardTypeEnum, type OnVisibilityChangeProps, type PaddingOnThemeType, STATUSBAR_HEIGHT, type SVGPropsInterface, SecureInputDefaultProps, type SecureInputProps, TextContentTypeEnum, TextFontWeightTypes, TextFontWeightTypesEnum, type TextInterface, type TextStyleProps, type TextStylePropsWithTheme, type ThemeInterface, type TouchableOpacityStylePropsInterface, type TouchableOpacityStylePropsInterfaceWithTheme, type boxShadowFuncInterface, boxShadowOne, calculatePercentageByPartAndWhole, capFontSize, type capFontSizeInterface, dashToCamelCase, defaultSVGProps, getErrorMessageByField, getErrorMessageFromErrorMessages, getFirstWordCapitalized, getLineHeight, getStyleForContainerProps, getStyleForGhostProps, getStyleForTextProps, getStyleForTouchableOpacityProps, handleColorFromTheme, type handleColorFromThemeInterface, handleFontFromTheme, handleFontSizeProps, type handleFontSizePropsInterface, handleSnackbarColor, type handleSnackbarColorInterface, handleUnitProps, type handleUnitPropsInterface, isJson, isValidHex, paddingForScrollView, paddingForScrollViewTwo, paddingObj, removeKeysWithSubstrings, screenHeight, screenWidth, sliceIntoChunks, textDecorationLineTypes, textTransformTypes, videoTimeStampToSeconds, windowHeight, windowWidth };
+export { AlignItemsEnum, AutoCapitalizeEnum, AutoCompleteTypeEnum, type BaseButtonPropsInterface, type BaseDivInterface, type BaseHeaderPropsInterface, type BaseImageBackgroundInterface, type BaseScrollViewInterface, type BaseThemeInterface, type BaseViewInterface, ButtonVariantEnum, type ColorsInterface, type ContainerStyleInterfaceWithTheme, type ContainerStyleProps, type CustomButtonTypes, type CustomStylePropsInterface, type CustomTextStylesFromTheme, type CustomViewStylePropsInterface, DataDetectorEnum, type DeviceOnTheme, type ElevationObjType, type ErrorMessages, type FixedLengthArray, FontAwesomeIconNames, type FontConfigInterface, type FontConfigItemInterface, FontTypeEnum, type FontTypeWeight, FontWeightEnum, type FontsInterface, FormInputGroupDefaultProps, type FormInputGroupProps, type GetStyleForContainerPropsParameters, type GetStyleForTextPropsParameters, type GetStyleForTouchableOpacityInterface, type GhostBaseButton, type GhostTextInterface, type HandleFontFromThemeParameters, type HandleFontSizePropsInterface, type HtmlButtonPropsInterface, type HtmlButtonPropsInterfaceWithTheme, type HtmlFormInputGroupProps, type HtmlImageInterface, type HtmlImgStyleProps, type HtmlImgStylePropsWithTheme, type HtmlParagraphInterface, type HtmlParagraphStyleProps, type HtmlParagraphStylePropsWithTheme, type HtmlSecureInputProps, type HtmlSpanInterface, type HtmlSpanStyleProps, type HtmlSpanStylePropsWithTheme, type IconNames, IoniconNames, JustifyContentEnum, KeyBoardTypeEnum, type OnVisibilityChangeProps, type PaddingOnThemeType, RGBAToHexA, ResponsiveByPercentOrValue, STATUSBAR_HEIGHT, type SVGPropsInterface, SecureInputDefaultProps, type SecureInputProps, type StylePropsInterface, type StylePropsInterfaceWithTheme, TextContentTypeEnum, TextFontWeightTypes, TextFontWeightTypesEnum, type TextInterface, type TextStyleProps, type TextStylePropsWithTheme, type ThemeInterface, type ThemeInterfaceForHTML, type TouchableOpacityStylePropsInterface, type TouchableOpacityStylePropsInterfaceWithTheme, UnitOfMeasurementNative, UnitOfMeasurementWeb, type boxShadowFuncInterface, boxShadowOne, calculatePercentageByPartAndWhole, capFontSize, type capFontSizeInterface, dashToCamelCase, defaultSVGProps, getErrorMessageByField, getErrorMessageFromErrorMessages, getFirstWordCapitalized, getLineHeight, getResponsiveFontSize, getStyleForContainerProps, getStyleForGhostProps, getStyleForImgPropsForWeb, getStyleForTextProps, getStyleForTouchableOpacityProps, getStyleFromProps, handleColorFromTheme, type handleColorFromThemeInterface, handleFontFromTheme, handleFontSizeProps, handleSnackbarColor, type handleSnackbarColorInterface, handleUnitProps, type handleUnitPropsInterface, isJson, isValidHex, paddingForScrollView, paddingForScrollViewTwo, paddingObj, removeKeysWithSubstrings, screenHeight, screenWidth, sliceIntoChunks, textDecorationLineTypes, textTransformTypes, videoTimeStampToSeconds, windowHeight, windowWidth };

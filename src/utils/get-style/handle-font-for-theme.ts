@@ -3,7 +3,15 @@ import { FontTypeEnum } from '../../types/font-type.enum'
 import { FontTypeWeight, ThemeInterface }from '../../types/theme.types'
 
 
-export const handleFontFromTheme = (
+export interface HandleFontFromThemeParameters {
+  (fontType: keyof ThemeInterface['fonts'],
+  fontTypeWeight: keyof FontTypeWeight,
+  theme: ThemeInterface): string
+}
+  
+
+
+export const handleFontFromTheme: HandleFontFromThemeParameters = (
   fontType: keyof ThemeInterface['fonts'],
   fontTypeWeight: keyof FontTypeWeight = 'bold',
   theme: ThemeInterface

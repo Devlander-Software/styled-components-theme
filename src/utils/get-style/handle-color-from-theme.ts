@@ -11,7 +11,7 @@ export interface handleColorFromThemeInterface {
   ): string | ElevationObjType | any
 }
 
-export const handleColorFromTheme = (
+export const handleColorFromTheme: handleColorFromThemeInterface = (
   color: keyof ColorsInterface,
   opacity: number = 1,
   theme: ThemeInterface,

@@ -1,6 +1,7 @@
+/// <reference types="react" />
 import { BaseThemeInterface } from "../base-theme.interface";
 import { CustomViewStylePropsInterface } from "../custom-style-props.interface";
-export interface BaseDivInterface extends BaseThemeInterface, CustomViewStylePropsInterface {
+export interface BaseDivInterface extends Partial<React.HTMLProps<HTMLDivElement>>, BaseThemeInterface, CustomViewStylePropsInterface {
     padding?: number | string;
     paddingTop?: number | string;
     width?: number | string;
