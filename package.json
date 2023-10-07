@@ -1,6 +1,6 @@
 {
   "name": "@devlander/shared-react-native-types",
-  "version": "1.0.114",
+  "version": "1.0.115",
   "description": "Shared npm modules between the design system, and expo app",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -33,7 +33,6 @@
     "timeout": "delay 5",
     "push-main": "git add -A && yarn run timeout && git commit -m 'updated build' && yarn run timeout  && git push origin main"
   },
-
   "dependencies": {
     "@babel/core": "^7.22.17",
     "@babel/plugin-proposal-class-properties": "^7.18.6",
