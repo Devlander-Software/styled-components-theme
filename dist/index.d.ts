@@ -1845,6 +1845,10 @@ interface BaseDivInterface extends Partial<React.HTMLProps<HTMLDivElement>>, Bas
     borderWidth?: number | string;
     borderColor?: string | string;
     backgroundOpacity?: number;
+    borderBottomLeftRadius?: string | number;
+    borderBottomRightRadius?: string | number;
+    borderTopLeftRadius?: string | number;
+    borderTopRightRadius?: string | number;
 }
 
 interface HtmlButtonPropsInterface {

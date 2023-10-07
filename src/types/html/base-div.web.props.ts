@@ -1,6 +1,5 @@
 import { BaseThemeInterface } from "../base-theme.interface";
 import { CustomViewStylePropsInterface } from "../custom-style-props.interface";
-import { ThemeInterface } from "../theme.types";
 
 export interface BaseDivInterface extends Partial<React.HTMLProps<HTMLDivElement>>, BaseThemeInterface, CustomViewStylePropsInterface {
     padding?: number | string;
@@ -20,4 +19,8 @@ export interface BaseDivInterface extends Partial<React.HTMLProps<HTMLDivElement
     borderWidth?: number | string; 
     borderColor?: string | string;
     backgroundOpacity?: number;
+    borderBottomLeftRadius?: string | number;
+    borderBottomRightRadius?: string | number;
+    borderTopLeftRadius?: string | number;
+    borderTopRightRadius?: string | number;
 }

@@ -19,4 +19,8 @@ export interface BaseDivInterface extends Partial<React.HTMLProps<HTMLDivElement
     borderWidth?: number | string;
     borderColor?: string | string;
     backgroundOpacity?: number;
+    borderBottomLeftRadius?: string | number;
+    borderBottomRightRadius?: string | number;
+    borderTopLeftRadius?: string | number;
+    borderTopRightRadius?: string | number;
 }

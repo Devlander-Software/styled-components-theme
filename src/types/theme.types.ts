@@ -212,6 +212,7 @@ export interface ThemeInterface {
   getStyleForTextProps: typeof getStyleForTextProps
   boxShadowOne: boxShadowFuncInterface
   boxShadowTwo?: boxShadowFuncInterface
+
   elevation?: ElevationObjType
   boxShadowThree?: boxShadowFuncInterface
   handleColorFromTheme: handleColorFromThemeInterface
@@ -235,6 +236,7 @@ export interface ThemeInterfaceForHTML {
   getStyleForTextProps: GetStyleForParagraphProps
   boxShadowOne: boxShadowFuncInterface
   boxShadowTwo?: boxShadowFuncInterface
+  
   elevation?: ElevationObjType
   boxShadowThree?: boxShadowFuncInterface
   handleColorFromTheme: handleColorFromThemeInterface
