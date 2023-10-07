@@ -1,6 +1,12 @@
-import { HtmlImgStyleProps, HtmlImgStylePropsWithTheme } from "../../../types/html/img.web.props";
+import { HtmlImgStylePropsWithTheme } from "../../../types/html/img.web.props";
 
-export const getStyleForImgPropsForWeb = ({
+export interface GetStyleForImgPropsInterface {
+  (props: HtmlImgStylePropsWithTheme): string
+}
+
+
+
+export const getStyleForImgPropsForWeb: GetStyleForImgPropsInterface = ({
   backgroundColorFromTheme,
   maxWidth,
   borderBottomRightRadius,

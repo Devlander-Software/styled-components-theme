@@ -1,17 +1,18 @@
 
 import { PlatformOSType } from "react-native"
-import { ContainerStyleInterfaceWithTheme } from "./container-style.props.interface"
-import { GetStyleForTouchableOpacityInterface } from "../utils/get-style/get-style-for-touchable-opacity-props"
+import { capFontSizeInterface } from "../utils/get-style/cap-font-size"
+import { GetStyleForContainerPropsParameters } from "../utils/get-style/get-style-for-container-props"
 import { getStyleForGhostProps } from "../utils/get-style/get-style-for-ghost-props"
 import { GetStyleForTextPropsParameters, getStyleForTextProps } from "../utils/get-style/get-style-for-text-props"
+import { GetStyleForTouchableOpacityInterface } from "../utils/get-style/get-style-for-touchable-opacity-props"
+import { boxShadowFuncInterface } from "../utils/get-style/handle-box-shadows"
 import { handleColorFromThemeInterface } from "../utils/get-style/handle-color-from-theme"
 import { HandleFontFromThemeParameters, handleFontFromTheme } from "../utils/get-style/handle-font-for-theme"
-import { handleSnackbarColorInterface } from "../utils/get-style/handle-snackbar-color"
-import { capFontSizeInterface } from "../utils/get-style/cap-font-size"
-import { handleUnitPropsInterface } from "../utils/get-style/handle-unit-props"
 import { HandleFontSizePropsInterface } from "../utils/get-style/handle-font-size-props"
-import { boxShadowFuncInterface } from "../utils/get-style/handle-box-shadows"
-import { GetStyleForContainerPropsParameters } from "../utils/get-style/get-style-for-container-props"
+import { handleSnackbarColorInterface } from "../utils/get-style/handle-snackbar-color"
+import { handleUnitPropsInterface } from "../utils/get-style/handle-unit-props"
+import { GetStyleForImgPropsInterface } from '../utils/get-style/web/get-style-for-img-props'
+import { ContainerStyleInterfaceWithTheme } from "./container-style.props.interface"
 
 
 
@@ -225,8 +226,9 @@ export interface ThemeInterfaceForHTML {
   handleSnackbarColor: handleSnackbarColorInterface
   handleFontSizeProps: HandleFontSizePropsInterface
   handleUnitProps: handleUnitPropsInterface
-  getStyleForTouchableOpacityProps: GetStyleForTouchableOpacityInterface
   getStyleForContainerProps: GetStyleForContainerPropsParameters
+  getStyleForImageProps: GetStyleForImgPropsInterface,
+
   handleGhost: typeof getStyleForGhostProps
   getStyleForTextProps: GetStyleForTextPropsParameters
   boxShadowOne: boxShadowFuncInterface

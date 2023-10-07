@@ -7,6 +7,7 @@ export interface HtmlImgStyleProps extends Partial<HtmlImageInterface> {
   backgroundColorFromTheme?: keyof ThemeInterface['colors']
   height?: string | number
   borderRadius?: string | number
+  
   borderWidth?: string | number
   maxHeight?: string | number
   borderTopLeftRadius?: number | string
