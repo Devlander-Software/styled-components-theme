@@ -1,6 +1,6 @@
 import { TextFontWeightTypesEnum } from "../font-weight.types";
 import { textDecorationLineTypes } from "../text.types";
-import { ThemeInterface } from "../theme.types";
+import { ThemeInterfaceForHTML } from "../theme.types";
 
 
 export interface HtmlSpanInterface extends Partial<React.HTMLProps<HTMLSpanElement>> {
@@ -32,5 +32,5 @@ export interface HtmlSpanInterface extends Partial<React.HTMLProps<HTMLSpanEleme
     maxFontSize?: number;
     maxWidth?: number 
     children?: React.ReactNode 
-    theme?: ThemeInterface;
+    theme?: ThemeInterfaceForHTML;
   }

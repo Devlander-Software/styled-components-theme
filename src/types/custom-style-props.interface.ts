@@ -1,5 +1,5 @@
 import { FontTypeEnum } from './font-type.enum';
-import { ColorsInterface, FontTypeWeight, ThemeInterface } from './theme.types';
+import { ColorsInterface, FontTypeWeight, ThemeInterfaceForHTML } from './theme.types';
 
 export interface CustomTextStylesFromTheme {
   textDecorationColorFromTheme?: keyof ColorsInterface;
@@ -43,11 +43,11 @@ export interface CustomStylePropsInterface extends CustomTextStylesFromTheme, Cu
 
 
 export interface StylePropsInterface extends CustomTextStylesFromTheme, CustomViewStylePropsInterface, CustomButtonTypes {
-  
+
 }
 
 export interface StylePropsInterfaceWithTheme extends StylePropsInterface {
-  theme: ThemeInterface;
+  theme: ThemeInterfaceForHTML;
   maxWidth?: number | string;
   maxHeight?: number | string;
   height?: number | string;

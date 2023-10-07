@@ -1,9 +1,9 @@
 import { CustomTextStylesFromTheme } from "../custom-style-props.interface";
 import { FontTypeEnum } from "../font-type.enum";
 import { TextFontWeightTypesEnum } from "../font-weight.types";
-import { HtmlParagraphInterface } from "./paragraph.types.web";
 import { textDecorationLineTypes } from "../text.types";
-import { FontTypeWeight, ThemeInterface } from "../theme.types";
+import { FontTypeWeight, ThemeInterfaceForHTML } from "../theme.types";
+import { HtmlParagraphInterface } from "./paragraph.types.web";
 export interface HtmlParagraphStyleProps extends Partial<HtmlParagraphInterface>, CustomTextStylesFromTheme {
     fontType?: FontTypeEnum;
     fontTypeWeight?: keyof FontTypeWeight;
@@ -37,5 +37,5 @@ export interface HtmlParagraphStyleProps extends Partial<HtmlParagraphInterface>
     textDecorationLine?: textDecorationLineTypes;
 }
 export interface HtmlParagraphStylePropsWithTheme extends HtmlParagraphStyleProps {
-    theme: ThemeInterface;
+    theme: ThemeInterfaceForHTML;
 }

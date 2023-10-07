@@ -1,4 +1,4 @@
-import { ThemeInterface } from '../theme.types';
+import { ThemeInterface, ThemeInterfaceForHTML } from '../theme.types';
 import { HtmlImageInterface } from './img.type.web';
 export interface HtmlImgStyleProps extends Partial<HtmlImageInterface> {
     width?: string | number;
@@ -15,5 +15,5 @@ export interface HtmlImgStyleProps extends Partial<HtmlImageInterface> {
     maxWidth?: string | number;
 }
 export interface HtmlImgStylePropsWithTheme extends HtmlImgStyleProps {
-    theme: ThemeInterface;
+    theme: ThemeInterfaceForHTML;
 }

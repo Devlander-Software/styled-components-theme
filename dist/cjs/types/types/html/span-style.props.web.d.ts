@@ -1,9 +1,9 @@
 import { CustomTextStylesFromTheme } from "../custom-style-props.interface";
 import { FontTypeEnum } from "../font-type.enum";
 import { TextFontWeightTypesEnum } from "../font-weight.types";
-import { HtmlSpanInterface } from "./span.types.web";
 import { textDecorationLineTypes } from "../text.types";
-import { FontTypeWeight, ThemeInterface } from "../theme.types";
+import { FontTypeWeight, ThemeInterfaceForHTML } from "../theme.types";
+import { HtmlSpanInterface } from "./span.types.web";
 export interface HtmlSpanStyleProps extends Partial<HtmlSpanInterface>, CustomTextStylesFromTheme {
     fontType?: FontTypeEnum;
     fontTypeWeight?: keyof FontTypeWeight;
@@ -37,5 +37,5 @@ export interface HtmlSpanStyleProps extends Partial<HtmlSpanInterface>, CustomTe
     textDecorationLine?: textDecorationLineTypes;
 }
 export interface HtmlSpanStylePropsWithTheme extends HtmlSpanStyleProps {
-    theme: ThemeInterface;
+    theme: ThemeInterfaceForHTML;
 }

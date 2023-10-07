@@ -1,4 +1,4 @@
-import { ThemeInterface, ColorsInterface } from "../theme.types"
+import { ColorsInterface, ThemeInterfaceForHTML } from "../theme.types";
 export interface HtmlButtonPropsInterface{
     paddingLeft?: number;
     paddingRight?: number;
@@ -23,5 +23,5 @@ export interface HtmlButtonPropsInterface{
 }
 
 export interface HtmlButtonPropsInterfaceWithTheme extends HtmlButtonPropsInterface {
-    theme: ThemeInterface;
+    theme: ThemeInterfaceForHTML;
 }

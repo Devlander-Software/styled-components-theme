@@ -1,20 +1,20 @@
 import hexToRgba from 'hex-to-rgba'
 
+import { ColorsInterface, ElevationObjType, ThemeInterface, ThemeInterfaceForHTML } from '../../types/theme.types'
 import { isValidHex } from './is-valid-hex'
-import { ThemeInterface, ColorsInterface, ElevationObjType }from '../../types/theme.types'
 
 export interface handleColorFromThemeInterface {
   (
     color: keyof ColorsInterface,
     opacity: number,
-    theme: ThemeInterface,
+    theme: ThemeInterface | ThemeInterfaceForHTML,
   ): string | ElevationObjType | any
 }
 
 export const handleColorFromTheme: handleColorFromThemeInterface = (
   color: keyof ColorsInterface,
   opacity: number = 1,
-  theme: ThemeInterface,
+  theme: ThemeInterface | ThemeInterfaceForHTML,
 ): string | ElevationObjType | any => {
   if (
     color &&

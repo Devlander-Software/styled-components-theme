@@ -3,15 +3,17 @@ import { PlatformOSType } from "react-native"
 import { capFontSizeInterface } from "../utils/get-style/cap-font-size"
 import { GetStyleForContainerPropsParameters } from "../utils/get-style/get-style-for-container-props"
 import { getStyleForGhostProps } from "../utils/get-style/get-style-for-ghost-props"
-import { GetStyleForTextPropsParameters, getStyleForTextProps } from "../utils/get-style/get-style-for-text-props"
+import { getStyleForTextProps } from "../utils/get-style/get-style-for-text-props"
 import { GetStyleForTouchableOpacityInterface } from "../utils/get-style/get-style-for-touchable-opacity-props"
 import { boxShadowFuncInterface } from "../utils/get-style/handle-box-shadows"
 import { handleColorFromThemeInterface } from "../utils/get-style/handle-color-from-theme"
-import { HandleFontFromThemeParameters, handleFontFromTheme } from "../utils/get-style/handle-font-for-theme"
+import { handleFontFromTheme } from "../utils/get-style/handle-font-for-theme"
 import { HandleFontSizePropsInterface } from "../utils/get-style/handle-font-size-props"
 import { handleSnackbarColorInterface } from "../utils/get-style/handle-snackbar-color"
 import { handleUnitPropsInterface } from "../utils/get-style/handle-unit-props"
 import { GetStyleForImgPropsInterface } from '../utils/get-style/web/get-style-for-img-props'
+import { GetStyleForParagraphProps } from "../utils/get-style/web/get-style-for-paragraph-props"
+import { HandleFontFromThemeParametersForWeb } from '../utils/get-style/web/handle-font-for-theme-web'
 import { ContainerStyleInterfaceWithTheme } from "./container-style.props.interface"
 
 
@@ -230,13 +232,13 @@ export interface ThemeInterfaceForHTML {
   getStyleForImageProps: GetStyleForImgPropsInterface,
 
   handleGhost: typeof getStyleForGhostProps
-  getStyleForTextProps: GetStyleForTextPropsParameters
+  getStyleForTextProps: GetStyleForParagraphProps
   boxShadowOne: boxShadowFuncInterface
   boxShadowTwo?: boxShadowFuncInterface
   elevation?: ElevationObjType
   boxShadowThree?: boxShadowFuncInterface
   handleColorFromTheme: handleColorFromThemeInterface
-  handleFontFromTheme: HandleFontFromThemeParameters
+  handleFontFromTheme: HandleFontFromThemeParametersForWeb
   colors: ColorsInterface
   fonts: FontsInterface
   darkThemeEnabled?: boolean
