@@ -1,4 +1,5 @@
-import { ColorsInterface, GetStyleForGhostPropsParameters, ThemeInterface } from '../../types/theme.types';
+import { ColorFromTheme } from '../../types/color.types';
+import { GetStyleForGhostPropsParameters, ThemeInterface } from '../../types/theme.types';
 
 export type GetStyleForGhostPropsParametersNative =  GetStyleForGhostPropsParameters<ThemeInterface>
 
@@ -6,8 +7,8 @@ export const getStyleForGhostProps: GetStyleForGhostPropsParametersNative = (
   ghost: boolean,
   disabled: boolean,
   theme: ThemeInterface,
-  colorOne: keyof ColorsInterface,
-  colorTwo: keyof ColorsInterface,
+  colorOne: ColorFromTheme = 'primaryTextColor',
+  colorTwo: ColorFromTheme = 'whiteAlpha100'
 ) =>
   disabled === true && ghost === true
     ? theme.handleColorFromTheme('blackAlpha40', 0.5, theme)

@@ -1,10 +1,8 @@
 import { ContainerStyleInterfaceWithTheme } from "../../types/container-style.props.interface"
-import { StylePropsInterfaceWithTheme } from "../../types/custom-style-props.interface"
-import { HtmlParagraphStylePropsWithTheme } from "../../types/html/paragraph-style.props.web"
 
 
 export interface GetStyleForContainerPropsParameters {
-	(props: ContainerStyleInterfaceWithTheme | HtmlParagraphStylePropsWithTheme): string
+	(props: ContainerStyleInterfaceWithTheme): string
 }
 
 
@@ -28,7 +26,7 @@ export const getStyleForContainerProps: GetStyleForContainerPropsParameters = ({
   borderWidth,
   flex,
   paddingTop,
-}: ContainerStyleInterfaceWithTheme | StylePropsInterfaceWithTheme): string => {
+}: ContainerStyleInterfaceWithTheme): string => {
   const handleUnitProps = theme.handleUnitProps
   const handleColorFromTheme = theme.handleColorFromTheme
 

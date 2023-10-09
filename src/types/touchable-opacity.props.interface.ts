@@ -1,4 +1,5 @@
-import { ThemeInterface, ColorsInterface } from "./theme.types"
+import { ColorFromTheme } from "./color.types";
+import { ThemeInterface } from "./theme.types";
 export interface TouchableOpacityStylePropsInterface {
     paddingLeft?: number;
     paddingRight?: number;
@@ -19,7 +20,7 @@ export interface TouchableOpacityStylePropsInterface {
     padding?: number | string;
     borderBottomWidth?: number | string;
     paddingBottom?: number | string;
-    backgroundColorFromTheme?: keyof ColorsInterface
+    backgroundColorFromTheme?: ColorFromTheme;
 }
 
 export interface TouchableOpacityStylePropsInterfaceWithTheme extends TouchableOpacityStylePropsInterface {

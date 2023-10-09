@@ -1,12 +1,13 @@
 import { CustomTextStylesFromTheme } from "../custom-style-props.interface";
 import { FontTypeEnum } from "../font-type.enum";
+import { FontWeightType } from "../font-weight.enum";
 import { TextFontWeightTypesEnum } from "../font-weight.types";
 import { textDecorationLineTypes } from "../text.types";
-import { FontTypeWeight, ThemeInterfaceForHTML } from "../theme.types";
+import { ThemeInterfaceForHTML } from "../theme.types";
 import { HtmlSpanInterface } from "./span.types.web";
 export interface HtmlSpanStyleProps extends Partial<HtmlSpanInterface>, CustomTextStylesFromTheme {
     fontType?: FontTypeEnum;
-    fontTypeWeight?: keyof FontTypeWeight;
+    fontTypeWeight?: FontWeightType;
     maxFontSizeMultiplier?: number;
     onDark?: boolean;
     fontStyle?: "normal" | "italic";

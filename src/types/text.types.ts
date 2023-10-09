@@ -1,10 +1,12 @@
-import { ThemeInterface, FontTypeWeight, ColorsInterface } from "./theme.types"
-import { FontTypeEnum } from "./font-type.enum"
-import { CustomTextStylesFromTheme } from './custom-style-props.interface'
-import { TextFontWeightTypesEnum } from "./font-weight.types"
 import { TextProps } from "react-native";
+import { ColorsInterface } from "./color.types";
+import { CustomTextStylesFromTheme } from './custom-style-props.interface';
+import { FontTypeEnum } from "./font-type.enum";
+import { FontTypeWeightEnum } from "./font-weight.enum";
+import { TextFontWeightTypesEnum } from "./font-weight.types";
+import { ThemeInterface } from "./theme.types";
 
-export enum textTransformTypes {
+export enum TextTransformTypes {
   none = "none",
   uppercase = "uppercase",
   lowercase = "lowercase",
@@ -58,7 +60,7 @@ export interface TextInterface extends TextProps, CustomTextStylesFromTheme {
 export interface GhostTextInterface extends Partial<TextInterface> {
 
   fontType: FontTypeEnum;
-  fontTypeWeight: keyof FontTypeWeight;
+  fontTypeWeight: FontTypeWeightEnum;
   ghost: boolean;
   disabled: boolean;
   textColorFromTheme: keyof ColorsInterface

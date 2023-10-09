@@ -4,3 +4,5 @@ export enum FontTypeEnum {
     Font3 = "Font3",
     CondensedFont = "CondensedFont"
 }
+
+

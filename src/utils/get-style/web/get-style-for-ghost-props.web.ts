@@ -1,4 +1,5 @@
-import { ColorsInterface, GetStyleForGhostPropsParameters, ThemeInterfaceForHTML } from '../../../types/theme.types';
+import { ColorsInterface } from '../../../types/color.types';
+import { GetStyleForGhostPropsParameters, ThemeInterfaceForHTML } from '../../../types/theme.types';
 
 export type GetStyleForGhostPropsParametersWeb =  GetStyleForGhostPropsParameters<ThemeInterfaceForHTML>
 

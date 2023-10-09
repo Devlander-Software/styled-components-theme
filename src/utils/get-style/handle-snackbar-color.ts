@@ -15,7 +15,7 @@ export const handleSnackbarColor: handleSnackbarColorInterface = (
       case 'success':
         return theme.colors.successColor
       case 'error':
-        return theme.colors.errorColor
+        return theme.colors.error
       case 'none':
         return theme.colors.primaryTextColor
       default:

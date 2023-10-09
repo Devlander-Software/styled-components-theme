@@ -28,7 +28,7 @@ export const getStyleForParagraphProps: GetStyleForParagraphPropsWeb = (props: H
 			return theme.colors[textColorFromTheme]
 		}
 		if (restProps.destructive) {
-			return theme.colors.errorColor
+			return theme.colors.error
 		}
 		return theme.colors.blackAlpha100
 	}
