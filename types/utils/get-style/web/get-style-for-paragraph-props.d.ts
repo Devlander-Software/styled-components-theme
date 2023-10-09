@@ -1,6 +1,5 @@
 import { HtmlParagraphStylePropsWithTheme } from "../../../types/html/paragraph-style.props.web";
-export interface GetStyleForParagraphProps {
-    (props: HtmlParagraphStylePropsWithTheme): string;
-}
-export declare const getStyleForParagraphProps: GetStyleForParagraphProps;
+import { GetStyleForTextPropsParameters } from "../../../types/theme.types";
+export type GetStyleForParagraphPropsWeb = GetStyleForTextPropsParameters<HtmlParagraphStylePropsWithTheme>;
+export declare const getStyleForParagraphProps: GetStyleForParagraphPropsWeb;
 export default getStyleForParagraphProps;

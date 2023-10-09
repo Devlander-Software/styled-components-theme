@@ -1,6 +1,5 @@
 import { TextStylePropsWithTheme } from "../../types/text-style.props";
-export interface GetStyleForTextPropsParameters {
-    (props: TextStylePropsWithTheme): string;
-}
-export declare const getStyleForTextProps: GetStyleForTextPropsParameters;
+import { GetStyleForTextPropsParameters } from "../../types/theme.types";
+export type GetStyleForTextPropsParametersNative = GetStyleForTextPropsParameters<TextStylePropsWithTheme>;
+export declare const getStyleForTextProps: GetStyleForTextPropsParametersNative;
 export default getStyleForTextProps;

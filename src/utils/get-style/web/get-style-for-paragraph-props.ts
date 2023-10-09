@@ -1,13 +1,14 @@
 import { Platform } from "react-native";
 import { FontTypeEnum } from "../../../types/font-type.enum";
 import { HtmlParagraphStylePropsWithTheme } from "../../../types/html/paragraph-style.props.web";
+import { GetStyleForTextPropsParameters } from "../../../types/theme.types";
 import capFontSize from "../cap-font-size";
-export interface GetStyleForParagraphProps {
-	(props:  HtmlParagraphStylePropsWithTheme): string
-}
+
+export type GetStyleForParagraphPropsWeb = GetStyleForTextPropsParameters<HtmlParagraphStylePropsWithTheme>
 
 
-export const getStyleForParagraphProps: GetStyleForParagraphProps = (props: HtmlParagraphStylePropsWithTheme): string => {
+
+export const getStyleForParagraphProps: GetStyleForParagraphPropsWeb = (props: HtmlParagraphStylePropsWithTheme): string => {
 	const { theme, fontSize,maxFontSize, textColorFromTheme, fontType, fontTypeWeight, fontWeight, ...restProps } = props
 
 	const handleUnitProps = theme?.handleUnitProps ?? null

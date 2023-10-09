@@ -1,8 +1,8 @@
 import { PlatformOSType } from "react-native";
 import { capFontSizeInterface } from "../utils/get-style/cap-font-size";
 import { GetStyleForContainerPropsParameters } from "../utils/get-style/get-style-for-container-props";
-import { getStyleForGhostProps } from "../utils/get-style/get-style-for-ghost-props";
-import { getStyleForTextProps } from "../utils/get-style/get-style-for-text-props";
+import { GetStyleForGhostPropsParametersNative } from "../utils/get-style/get-style-for-ghost-props";
+import { GetStyleForTextPropsParametersNative } from "../utils/get-style/get-style-for-text-props";
 import { GetStyleForTouchableOpacityInterface } from "../utils/get-style/get-style-for-touchable-opacity-props";
 import { boxShadowFuncInterface } from "../utils/get-style/handle-box-shadows";
 import { handleColorFromThemeInterface } from "../utils/get-style/handle-color-from-theme";
@@ -10,12 +10,19 @@ import { HandleFontFromThemeParametersForNative } from "../utils/get-style/handl
 import { HandleFontSizePropsInterface } from "../utils/get-style/handle-font-size-props";
 import { handleSnackbarColorInterface } from "../utils/get-style/handle-snackbar-color";
 import { handleUnitPropsInterface } from "../utils/get-style/handle-unit-props";
+import { GetStyleForGhostPropsParametersWeb } from "../utils/get-style/web/get-style-for-ghost-props.web";
 import { GetStyleForImgPropsInterface } from '../utils/get-style/web/get-style-for-img-props';
-import { GetStyleForParagraphProps } from "../utils/get-style/web/get-style-for-paragraph-props";
-import { HandleFontFromThemeParametersForWeb } from "../utils/get-style/web/handle-font-for-theme-web";
+import { GetStyleForParagraphPropsWeb } from "../utils/get-style/web/get-style-for-paragraph-props";
+import { HandleFontFromThemeParametersForWeb } from "../utils/get-style/web/handle-font-for-theme.web";
 import { ContainerStyleInterfaceWithTheme } from "./container-style.props.interface";
+export interface GetStyleForTextPropsParameters<Props> {
+    (props: Props): string;
+}
 export interface HandleFontFromThemeParameters<T> {
     (fontType: keyof ThemeInterface['fonts'], fontTypeWeight: keyof FontTypeWeight, theme: T): string;
+}
+export interface GetStyleForGhostPropsParameters<T> {
+    (ghost: boolean, disabled: boolean, theme: T, colorOne: keyof ColorsInterface, colorTwo: keyof ColorsInterface): string;
 }
 export type ElevationObjType = {
     level1: string;
@@ -195,8 +202,8 @@ export interface ThemeInterface {
     handleUnitProps: handleUnitPropsInterface;
     getStyleForTouchableOpacityProps: GetStyleForTouchableOpacityInterface;
     getStyleForContainerProps: (props: ContainerStyleInterfaceWithTheme) => string;
-    handleGhost: typeof getStyleForGhostProps;
-    getStyleForTextProps: typeof getStyleForTextProps;
+    handleGhost: GetStyleForGhostPropsParametersNative;
+    getStyleForTextProps: GetStyleForTextPropsParametersNative;
     boxShadowOne: boxShadowFuncInterface;
     boxShadowTwo?: boxShadowFuncInterface;
     elevation?: ElevationObjType;
@@ -216,8 +223,8 @@ export interface ThemeInterfaceForHTML {
     handleUnitProps: handleUnitPropsInterface;
     getStyleForContainerProps: GetStyleForContainerPropsParameters;
     getStyleForImageProps: GetStyleForImgPropsInterface;
-    handleGhost: typeof getStyleForGhostProps;
-    getStyleForTextProps: GetStyleForParagraphProps;
+    handleGhost: GetStyleForGhostPropsParametersWeb;
+    getStyleForTextProps: GetStyleForParagraphPropsWeb;
     boxShadowOne: boxShadowFuncInterface;
     boxShadowTwo?: boxShadowFuncInterface;
     boxShadowThree?: boxShadowFuncInterface;

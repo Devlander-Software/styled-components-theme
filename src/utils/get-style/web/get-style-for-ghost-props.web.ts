@@ -1,11 +1,11 @@
-import { ColorsInterface, GetStyleForGhostPropsParameters, ThemeInterface } from '../../types/theme.types';
+import { ColorsInterface, GetStyleForGhostPropsParameters, ThemeInterfaceForHTML } from '../../../types/theme.types';
 
-export type GetStyleForGhostPropsParametersNative =  GetStyleForGhostPropsParameters<ThemeInterface>
+export type GetStyleForGhostPropsParametersWeb =  GetStyleForGhostPropsParameters<ThemeInterfaceForHTML>
 
-export const getStyleForGhostProps: GetStyleForGhostPropsParametersNative = (
+export const getStyleForGhostPropsForWeb: GetStyleForGhostPropsParametersWeb = (
   ghost: boolean,
   disabled: boolean,
-  theme: ThemeInterface,
+  theme: ThemeInterfaceForHTML,
   colorOne: keyof ColorsInterface,
   colorTwo: keyof ColorsInterface,
 ) =>
@@ -20,4 +20,4 @@ export const getStyleForGhostProps: GetStyleForGhostPropsParametersNative = (
     : theme.handleColorFromTheme(colorOne, 1, theme)
 
 
-export default getStyleForGhostProps
+export default getStyleForGhostPropsForWeb

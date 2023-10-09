@@ -1,3 +1,4 @@
-import { ThemeInterface, ColorsInterface } from '../../types/theme.types';
-export declare const getStyleForGhostProps: (ghost: boolean, disabled: boolean, theme: ThemeInterface, colorOne: keyof ColorsInterface, colorTwo: keyof ColorsInterface) => any;
+import { GetStyleForGhostPropsParameters, ThemeInterface } from '../../types/theme.types';
+export type GetStyleForGhostPropsParametersNative = GetStyleForGhostPropsParameters<ThemeInterface>;
+export declare const getStyleForGhostProps: GetStyleForGhostPropsParametersNative;
 export default getStyleForGhostProps;

@@ -1,13 +1,12 @@
 import { Platform } from "react-native";
 import { FontTypeEnum } from "../../types/font-type.enum";
 import { TextStylePropsWithTheme } from "../../types/text-style.props";
+import { GetStyleForTextPropsParameters } from "../../types/theme.types";
 import { capFontSize } from './cap-font-size';
-export interface GetStyleForTextPropsParameters {
-	(props: TextStylePropsWithTheme): string
-}
 
+export type GetStyleForTextPropsParametersNative = GetStyleForTextPropsParameters<TextStylePropsWithTheme>
 
-export const getStyleForTextProps: GetStyleForTextPropsParameters = (props: TextStylePropsWithTheme): string => {
+export const getStyleForTextProps: GetStyleForTextPropsParametersNative = (props: TextStylePropsWithTheme): string => {
 	const { theme, fontSize,maxFontSize, textColorFromTheme, fontType, fontTypeWeight, fontWeight, ...restProps } = props
 
 	const handleUnitProps = theme?.handleUnitProps ?? null
