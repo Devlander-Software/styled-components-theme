@@ -1,17 +1,15 @@
 import { Platform } from 'react-native'
 import { FontTypeEnum } from '../../types/font-type.enum'
-import { FontTypeWeight, ThemeInterface, ThemeInterfaceForHTML } from '../../types/theme.types'
+import { FontTypeWeight, HandleFontFromThemeParameters, ThemeInterface, ThemeInterfaceForHTML } from '../../types/theme.types'
 
 
-export interface HandleFontFromThemeParameters {
-  (fontType: keyof ThemeInterface['fonts'],
-  fontTypeWeight: keyof FontTypeWeight,
-  theme: ThemeInterface): string
-}
+
+export type HandleFontFromThemeParametersForNative = HandleFontFromThemeParameters<ThemeInterface>
+
   
 
 
-export const handleFontFromTheme: HandleFontFromThemeParameters = (
+export const handleFontFromTheme: HandleFontFromThemeParametersForNative = (
   fontType: keyof ThemeInterface['fonts'],
   fontTypeWeight: keyof FontTypeWeight = 'bold',
   theme: ThemeInterface | ThemeInterfaceForHTML

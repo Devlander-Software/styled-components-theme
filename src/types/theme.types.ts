@@ -7,18 +7,24 @@ import { getStyleForTextProps } from "../utils/get-style/get-style-for-text-prop
 import { GetStyleForTouchableOpacityInterface } from "../utils/get-style/get-style-for-touchable-opacity-props"
 import { boxShadowFuncInterface } from "../utils/get-style/handle-box-shadows"
 import { handleColorFromThemeInterface } from "../utils/get-style/handle-color-from-theme"
-import { handleFontFromTheme } from "../utils/get-style/handle-font-for-theme"
+import { HandleFontFromThemeParametersForNative } from "../utils/get-style/handle-font-for-theme"
 import { HandleFontSizePropsInterface } from "../utils/get-style/handle-font-size-props"
 import { handleSnackbarColorInterface } from "../utils/get-style/handle-snackbar-color"
 import { handleUnitPropsInterface } from "../utils/get-style/handle-unit-props"
 import { GetStyleForImgPropsInterface } from '../utils/get-style/web/get-style-for-img-props'
 import { GetStyleForParagraphProps } from "../utils/get-style/web/get-style-for-paragraph-props"
-import { HandleFontFromThemeParametersForWeb } from '../utils/get-style/web/handle-font-for-theme-web'
+import { HandleFontFromThemeParametersForWeb } from "../utils/get-style/web/handle-font-for-theme-web"
 import { ContainerStyleInterfaceWithTheme } from "./container-style.props.interface"
 
 
 
 
+export interface HandleFontFromThemeParameters <T>  {
+  (fontType: keyof ThemeInterface['fonts'],
+  fontTypeWeight: keyof FontTypeWeight,
+  theme: T): string
+}
+  
 
 
 
@@ -216,7 +222,7 @@ export interface ThemeInterface {
   elevation?: ElevationObjType
   boxShadowThree?: boxShadowFuncInterface
   handleColorFromTheme: handleColorFromThemeInterface
-  handleFontFromTheme: typeof handleFontFromTheme
+  handleFontFromTheme: HandleFontFromThemeParametersForNative
   colors: ColorsInterface
   fonts: FontsInterface
   darkThemeEnabled?: boolean
@@ -236,9 +242,9 @@ export interface ThemeInterfaceForHTML {
   getStyleForTextProps: GetStyleForParagraphProps
   boxShadowOne: boxShadowFuncInterface
   boxShadowTwo?: boxShadowFuncInterface
-  
-  elevation?: ElevationObjType
   boxShadowThree?: boxShadowFuncInterface
+
+  elevation?: ElevationObjType
   handleColorFromTheme: handleColorFromThemeInterface
   handleFontFromTheme: HandleFontFromThemeParametersForWeb
   colors: ColorsInterface
