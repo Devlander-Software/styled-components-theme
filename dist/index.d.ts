@@ -1772,6 +1772,7 @@ declare const SecureInputDefaultProps: SecureInputProps;
 interface ThemeConfig {
     colorPreferences?: Partial<ColorsInterface>;
     fontPreferences?: Partial<FontsInterface>;
+    deviceOnTheme?: Partial<DeviceOnTheme>;
 }
 declare const createThemeForNative: (config: ThemeConfig) => ThemeInterface;
 declare const createThemeForWeb: (config: ThemeConfig) => ThemeInterfaceForHTML;

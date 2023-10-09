@@ -1,6 +1,7 @@
 import { defaultFonts } from '../defaults/fonts.defaults';
 import { lightColors } from '../defaults/light-colors.defaults';
 import { ColorsInterface } from "../types/color.types";
+import { DeviceOnTheme } from '../types/device-on-theme.type';
 import { FontsInterface } from '../types/fonts.interface';
 import { ThemeInterface, ThemeInterfaceForHTML } from '../types/theme.types';
 import capFontSize from '../utils/get-style/cap-font-size';
@@ -25,10 +26,11 @@ import handleFontFromThemeWeb from '../utils/get-style/web/handle-font-for-theme
 export interface ThemeConfig {
     colorPreferences?: Partial<ColorsInterface>
     fontPreferences?: Partial<FontsInterface>
+    deviceOnTheme?: Partial<DeviceOnTheme>,
 }
 
 export const createThemeForNative = (config: ThemeConfig): ThemeInterface => {
-    const { colorPreferences, fontPreferences } = config
+    const { colorPreferences, fontPreferences, deviceOnTheme } = config
     const theme: ThemeInterface = {
         colors: {
             ...lightColors,
@@ -62,13 +64,15 @@ export const createThemeForNative = (config: ThemeConfig): ThemeInterface => {
             paddingForScrollViewTwo: 0
         },
         deviceOnTheme: {
+            
             screenWidth: 0,
             statusBarHeight: 0,
             screenHeight: 0,
             isTablet: false,
             hasNotch: false,
             hasDynamicIsland: false,
-            platform: 'ios'
+            platform: 'ios',
+            ...deviceOnTheme,
         },
         capFontSize: capFontSize
     }
@@ -79,7 +83,7 @@ export const createThemeForNative = (config: ThemeConfig): ThemeInterface => {
 
 
 export const createThemeForWeb = (config: ThemeConfig): ThemeInterfaceForHTML => {
-    const { colorPreferences, fontPreferences } = config
+    const { colorPreferences, fontPreferences, deviceOnTheme } = config
     const theme: ThemeInterfaceForHTML = {
         colors: {
             ...lightColors,
@@ -119,7 +123,9 @@ export const createThemeForWeb = (config: ThemeConfig): ThemeInterfaceForHTML =>
             isTablet: false,
             hasNotch: false,
             hasDynamicIsland: false,
-            platform: 'ios'
+            platform: 'ios',
+            ...deviceOnTheme,
+          
         },
         capFontSize: capFontSize
     }
