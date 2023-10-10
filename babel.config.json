@@ -12,7 +12,6 @@
       "module:metro-react-native-babel-preset",
       "@babel/preset-react"
     ],
-    "babelHelpers": "runtime",
 
     "plugins": [
      
