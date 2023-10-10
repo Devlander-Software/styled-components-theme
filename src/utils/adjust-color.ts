@@ -5,9 +5,15 @@ import Color from 'color';
  * @param colorValue - A string representing a color (e.g. hex, rgb, rgba).
  * @param alphaValue - A number between 0 to 100 representing the alpha value.
  * @param mode - A string, either 'light' or 'dark', to adjust the brightness.
- * @returns The adjusted color as an rgba string.
+ * @param isSolid - A boolean value. If true, returns the solid version of the color with no transparency.
+ * @returns The adjusted color as a string.
  */
-function adjustColor(colorValue: string, alphaValue: number, mode: 'light' | 'dark'): string {
+
+export interface AdjustColorParams {
+    (colorValue: string, alphaValue: number, mode: 'light' | 'dark', isSolid?: boolean): string
+}
+
+const adjustColor: AdjustColorParams = (colorValue: string, alphaValue: number, mode: 'light' | 'dark', isSolid = false): string => {
     // Validate the alpha value
     if (alphaValue < 0 || alphaValue > 100) {
         throw new Error('Alpha value should be between 0 and 100');
@@ -25,11 +31,14 @@ function adjustColor(colorValue: string, alphaValue: number, mode: 'light' | 'da
     // Convert alpha from 0-100 scale to 0-1 scale
     const alphaScale = alphaValue / 100;
 
-    // Set the alpha value
-    adjustedColor = adjustedColor.alpha(alphaScale);
-
-    return adjustedColor.toString();
+    if (isSolid) {
+        const solidColor = adjustedColor.alpha(alphaScale).mix(Color('white'), 1 - alphaScale);
+        return solidColor.hex();
+    } else {
+        // Set the alpha value
+        adjustedColor = adjustedColor.alpha(alphaScale);
+        return adjustedColor.toString();
+    }
 }
-
 
 export default adjustColor;

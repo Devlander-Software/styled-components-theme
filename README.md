@@ -135,10 +135,9 @@ declare module "styled-components/native" {
 
 ## Create your Theme Provider using styled components
 
-The reason we have to define the theme provider outside of this package, 
-is there was no good way to swap between styled-components web theme provider, 
-and the native one. 
-
+The reason we have to define the theme provider outside of this package,
+is there was no good way to swap between styled-components web theme provider,
+and the native one.
 
 ```typescript
 

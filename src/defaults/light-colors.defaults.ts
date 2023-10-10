@@ -1,4 +1,5 @@
 import { BackgroundColors, BrandColors, ColorsInterface, ElementColors, FeedbackColors, GrayScaleColors, InteractionColors } from "../types/color.types";
+import adjustColor from "../utils/adjust-color";
 
 
 
@@ -45,8 +46,33 @@ export const defaultLightGrayScaleColors: GrayScaleColors = {
   inverseOnSurface: "#FFFFFF", // Text color for on top of dark surfaces in light theme
   inverseSurface: "#212121", // Surface color when you need the inverse in light theme
   inversePrimary: "#007BFF", // Inverted primary color, could be a blue-ish tone
+  black80: "#262626",
+  white80: "#D9D9D9",
+
+  white: adjustColor("#FFFFFF", 100, "light"),
+  white10: adjustColor("#FFFFFF", 10, "light", true),
+  white20: adjustColor("#FFFFFF", 20, "light", true),
+  white30: adjustColor("#FFFFFF", 30, "light", true),
+  white40: adjustColor("#FFFFFF", 40, "light", true),
+  white50: adjustColor("#FFFFFF", 50, "light", true),
+  white60: adjustColor("#FFFFFF", 60, "light", true),
+  white70: adjustColor("#FFFFFF", 70, "light", true),
+  white90: adjustColor("#FFFFFF", 90, "light", true),
+  white100: adjustColor("#FFFFFF", 100, "light", true),
+  black: adjustColor("#000000", 100, "dark"),
+  black10: adjustColor("#000000", 10, "dark", true),
+  black20: adjustColor("#000000", 20, "dark", true),
+  black30: adjustColor("#000000", 30, "dark", true),
+  black40: adjustColor("#000000", 40, "dark", true),
+  black50: adjustColor("#000000", 50, "dark", true),
+  black60: adjustColor("#000000", 60, "dark", true),
+  black70: adjustColor("#000000", 70, "dark", true),
+  black90: adjustColor("#000000", 90, "dark", true),
+  black100: adjustColor("#000000", 100, "dark", true),
 
 }
+
+
 
 
 export const defaultLightBrandColors: BrandColors = {

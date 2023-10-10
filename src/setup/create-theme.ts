@@ -4,6 +4,7 @@ import { ColorsInterface } from "../types/color.types";
 import { DeviceOnTheme } from '../types/device-on-theme.type';
 import { FontsInterface } from '../types/fonts.interface';
 import { ThemeInterface, ThemeInterfaceForHTML } from '../types/theme.types';
+import adjustColor from '../utils/adjust-color';
 import capFontSize from '../utils/get-style/cap-font-size';
 import getStyleForContainerProps from '../utils/get-style/get-style-for-container-props';
 import getStyleForGhostProps from '../utils/get-style/get-style-for-ghost-props';
@@ -74,7 +75,8 @@ export const createThemeForNative = (config: ThemeConfig): ThemeInterface => {
             platform: 'ios',
             ...deviceOnTheme,
         },
-        capFontSize: capFontSize
+        capFontSize: capFontSize,
+        adjustColor: adjustColor,
     }
 
     return theme
@@ -127,7 +129,9 @@ export const createThemeForWeb = (config: ThemeConfig): ThemeInterfaceForHTML =>
             ...deviceOnTheme,
           
         },
-        capFontSize: capFontSize
+        capFontSize: capFontSize,
+        adjustColor: adjustColor,
+
     }
 
     return theme

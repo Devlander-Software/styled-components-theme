@@ -35,6 +35,28 @@ interface GrayScaleColors {
     blackAlpha95: string;
     blackAlpha97: string;
     blackAlpha100: string;
+    white: string;
+    white10: string;
+    white20: string;
+    white30: string;
+    white40: string;
+    white50: string;
+    white60: string;
+    white70: string;
+    white80: string;
+    white90: string;
+    white100: string;
+    black: string;
+    black10: string;
+    black20: string;
+    black30: string;
+    black40: string;
+    black50: string;
+    black60: string;
+    black70: string;
+    black80: string;
+    black90: string;
+    black100: string;
     transparent: string;
     primaryTextColor: string;
     text: string;
@@ -255,6 +277,18 @@ declare enum FontTypeEnum {
     Font2 = "Font2",
     Font3 = "Font3",
     CondensedFont = "CondensedFont"
+}
+
+/**
+ * Adjusts a color's alpha and brightness.
+ * @param colorValue - A string representing a color (e.g. hex, rgb, rgba).
+ * @param alphaValue - A number between 0 to 100 representing the alpha value.
+ * @param mode - A string, either 'light' or 'dark', to adjust the brightness.
+ * @param isSolid - A boolean value. If true, returns the solid version of the color with no transparency.
+ * @returns The adjusted color as a string.
+ */
+interface AdjustColorParams {
+    (colorValue: string, alphaValue: number, mode: 'light' | 'dark', isSolid?: boolean): string;
 }
 
 interface capFontSizeInterface {
@@ -612,6 +646,7 @@ interface ThemeInterface {
     darkThemeEnabled?: boolean;
     deviceOnTheme: DeviceOnTheme;
     capFontSize: capFontSizeInterface;
+    adjustColor: AdjustColorParams;
 }
 interface ThemeInterfaceForHTML {
     padding: PaddingOnThemeType;
@@ -633,6 +668,7 @@ interface ThemeInterfaceForHTML {
     darkThemeEnabled?: boolean;
     deviceOnTheme: DeviceOnTheme;
     capFontSize: capFontSizeInterface;
+    adjustColor: AdjustColorParams;
 }
 
 interface CustomTextStylesFromTheme {
@@ -2066,4 +2102,4 @@ declare function sliceIntoChunks(arr: any[], chunkSize: number): any[];
 
 declare function videoTimeStampToSeconds(str: string): number;
 
-export { AlignItemsEnum, AutoCapitalizeEnum, AutoCompleteTypeEnum, type BackgroundColors, type BaseButtonPropsInterface, type BaseDivInterface, type BaseHeaderPropsInterface, type BaseImageBackgroundInterface, type BaseScrollViewInterface, type BaseThemeInterface, type BaseViewInterface, type BrandColors, ButtonVariantEnum, type ColorFromTheme, type ColorsInterface, type ContainerStyleInterfaceWithTheme, type ContainerStyleProps, type CustomButtonTypes, type CustomStylePropsInterface, type CustomTextStylesFromTheme, type CustomViewStylePropsInterface, DataDetectorEnum, type DeviceOnTheme, type ElementColors, type ElevationObjType, type ErrorMessages, type FeedbackColors, type FixedLengthArray, FontAwesomeIconNames, type FontType, FontTypeEnum, type FontTypeWeight, FontTypeWeightEnum, type FontWeightType, type FontsInterface, FormInputGroupDefaultProps, type FormInputGroupProps, type GetStyleForContainerPropsParameters, type GetStyleForGhostPropsParameters, type GetStyleForGhostPropsParametersNative, type GetStyleForGhostPropsParametersWeb, type GetStyleForImgPropsInterface, type GetStyleForParagraphPropsWeb, type GetStyleForTextPropsParameters, type GetStyleForTextPropsParametersNative, type GetStyleForTouchableOpacityInterface, type GhostBaseButton, type GhostTextInterface, type GrayScaleColors, type HandleColorFromThemeInterfaceNative, type HandleColorFromThemeInterfaceWeb, type HandleColorFromThemeParameters, type HandleFontFromThemeParameters, type HandleFontFromThemeParametersForNative, type HandleFontFromThemeParametersForWeb, type HandleFontSizePropsInterface, type HtmlButtonPropsInterface, type HtmlButtonPropsInterfaceWithTheme, type HtmlFormInputGroupProps, type HtmlImageInterface, type HtmlImgStyleProps, type HtmlImgStylePropsWithTheme, type HtmlParagraphInterface, type HtmlParagraphStyleProps, type HtmlParagraphStylePropsWithTheme, type HtmlSecureInputProps, type HtmlSpanInterface, type HtmlSpanStyleProps, type HtmlSpanStylePropsWithTheme, type IconNames, type InteractionColors, IoniconNames, JustifyContentEnum, KeyBoardTypeEnum, type OnVisibilityChangeProps, type PaddingOnThemeType, RGBAToHexA, ResponsiveByPercentOrValue, STATUSBAR_HEIGHT, type SVGPropsInterface, SecureInputDefaultProps, type SecureInputProps, type StylePropsInterface, type StylePropsInterfaceWithTheme, TextContentTypeEnum, TextFontWeightTypes, TextFontWeightTypesEnum, type TextInterface, type TextStyleProps, type TextStylePropsWithTheme, TextTransformTypes, type ThemeConfig, type ThemeInterface, type ThemeInterfaceForHTML, type TouchableOpacityStylePropsInterface, type TouchableOpacityStylePropsInterfaceWithTheme, UnitOfMeasurementNative, UnitOfMeasurementWeb, type boxShadowFuncInterface, boxShadowOne, calculatePercentageByPartAndWhole, capFontSize, type capFontSizeInterface, createThemeForNative, createThemeForWeb, darkColors, dashToCamelCase, defaultDarkBackgroundColors, defaultDarkBrandColors, defaultDarkElementColors, defaultDarkFeedbackColors, defaultDarkGrayScaleColors, defaultDarkInteractionColors, defaultFonts, defaultLightBackgroundColors, defaultLightBrandColors, defaultLightElementColors, defaultLightFeedbackColors, defaultLightGrayScaleColors, defaultLightInteractionColors, defaultSVGProps, getErrorMessageByField, getErrorMessageFromErrorMessages, getFirstWordCapitalized, getLineHeight, getResponsiveFontSize, getStyleForContainerProps, getStyleForGhostProps, getStyleForGhostPropsForWeb, getStyleForImgPropsForWeb, getStyleForParagraphProps, getStyleForTextProps, getStyleForTouchableOpacityProps, getStyleFromProps, handleColorFromTheme, handleColorFromThemeWeb, handleFontFromTheme, handleFontFromThemeWeb, handleFontSizeProps, handleSnackbarColor, type handleSnackbarColorInterface, handleUnitProps, type handleUnitPropsInterface, isJson, isValidHex, lightColors, paddingForScrollView, paddingForScrollViewTwo, paddingObj, removeKeysWithSubstrings, screenHeight, screenWidth, sliceIntoChunks, textDecorationLineTypes, videoTimeStampToSeconds, windowHeight, windowWidth };
+export { type AdjustColorParams, AlignItemsEnum, AutoCapitalizeEnum, AutoCompleteTypeEnum, type BackgroundColors, type BaseButtonPropsInterface, type BaseDivInterface, type BaseHeaderPropsInterface, type BaseImageBackgroundInterface, type BaseScrollViewInterface, type BaseThemeInterface, type BaseViewInterface, type BrandColors, ButtonVariantEnum, type ColorFromTheme, type ColorsInterface, type ContainerStyleInterfaceWithTheme, type ContainerStyleProps, type CustomButtonTypes, type CustomStylePropsInterface, type CustomTextStylesFromTheme, type CustomViewStylePropsInterface, DataDetectorEnum, type DeviceOnTheme, type ElementColors, type ElevationObjType, type ErrorMessages, type FeedbackColors, type FixedLengthArray, FontAwesomeIconNames, type FontType, FontTypeEnum, type FontTypeWeight, FontTypeWeightEnum, type FontWeightType, type FontsInterface, FormInputGroupDefaultProps, type FormInputGroupProps, type GetStyleForContainerPropsParameters, type GetStyleForGhostPropsParameters, type GetStyleForGhostPropsParametersNative, type GetStyleForGhostPropsParametersWeb, type GetStyleForImgPropsInterface, type GetStyleForParagraphPropsWeb, type GetStyleForTextPropsParameters, type GetStyleForTextPropsParametersNative, type GetStyleForTouchableOpacityInterface, type GhostBaseButton, type GhostTextInterface, type GrayScaleColors, type HandleColorFromThemeInterfaceNative, type HandleColorFromThemeInterfaceWeb, type HandleColorFromThemeParameters, type HandleFontFromThemeParameters, type HandleFontFromThemeParametersForNative, type HandleFontFromThemeParametersForWeb, type HandleFontSizePropsInterface, type HtmlButtonPropsInterface, type HtmlButtonPropsInterfaceWithTheme, type HtmlFormInputGroupProps, type HtmlImageInterface, type HtmlImgStyleProps, type HtmlImgStylePropsWithTheme, type HtmlParagraphInterface, type HtmlParagraphStyleProps, type HtmlParagraphStylePropsWithTheme, type HtmlSecureInputProps, type HtmlSpanInterface, type HtmlSpanStyleProps, type HtmlSpanStylePropsWithTheme, type IconNames, type InteractionColors, IoniconNames, JustifyContentEnum, KeyBoardTypeEnum, type OnVisibilityChangeProps, type PaddingOnThemeType, RGBAToHexA, ResponsiveByPercentOrValue, STATUSBAR_HEIGHT, type SVGPropsInterface, SecureInputDefaultProps, type SecureInputProps, type StylePropsInterface, type StylePropsInterfaceWithTheme, TextContentTypeEnum, TextFontWeightTypes, TextFontWeightTypesEnum, type TextInterface, type TextStyleProps, type TextStylePropsWithTheme, TextTransformTypes, type ThemeConfig, type ThemeInterface, type ThemeInterfaceForHTML, type TouchableOpacityStylePropsInterface, type TouchableOpacityStylePropsInterfaceWithTheme, UnitOfMeasurementNative, UnitOfMeasurementWeb, type boxShadowFuncInterface, boxShadowOne, calculatePercentageByPartAndWhole, capFontSize, type capFontSizeInterface, createThemeForNative, createThemeForWeb, darkColors, dashToCamelCase, defaultDarkBackgroundColors, defaultDarkBrandColors, defaultDarkElementColors, defaultDarkFeedbackColors, defaultDarkGrayScaleColors, defaultDarkInteractionColors, defaultFonts, defaultLightBackgroundColors, defaultLightBrandColors, defaultLightElementColors, defaultLightFeedbackColors, defaultLightGrayScaleColors, defaultLightInteractionColors, defaultSVGProps, getErrorMessageByField, getErrorMessageFromErrorMessages, getFirstWordCapitalized, getLineHeight, getResponsiveFontSize, getStyleForContainerProps, getStyleForGhostProps, getStyleForGhostPropsForWeb, getStyleForImgPropsForWeb, getStyleForParagraphProps, getStyleForTextProps, getStyleForTouchableOpacityProps, getStyleFromProps, handleColorFromTheme, handleColorFromThemeWeb, handleFontFromTheme, handleFontFromThemeWeb, handleFontSizeProps, handleSnackbarColor, type handleSnackbarColorInterface, handleUnitProps, type handleUnitPropsInterface, isJson, isValidHex, lightColors, paddingForScrollView, paddingForScrollViewTwo, paddingObj, removeKeysWithSubstrings, screenHeight, screenWidth, sliceIntoChunks, textDecorationLineTypes, videoTimeStampToSeconds, windowHeight, windowWidth };

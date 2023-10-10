@@ -1,6 +1,6 @@
 {
   "name": "@devlander/shared-react-native-types",
-  "version": "1.0.125",
+  "version": "1.0.126",
   "description": "Shared npm modules between the design system, and expo app",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -126,6 +126,7 @@
   "devDependencies": {
     "@babel/plugin-proposal-private-methods": "^7.18.6",
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "delay-cli": "2.0.0"
+    "delay-cli": "2.0.0",
+    "typedoc": "^0.25.2"
   }
 }

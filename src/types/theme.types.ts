@@ -1,4 +1,5 @@
 
+import { AdjustColorParams } from "../utils/adjust-color"
 import { capFontSizeInterface } from "../utils/get-style/cap-font-size"
 import { GetStyleForContainerPropsParameters } from "../utils/get-style/get-style-for-container-props"
 import { GetStyleForGhostPropsParametersNative } from "../utils/get-style/get-style-for-ghost-props"
@@ -92,7 +93,9 @@ export interface ThemeInterface {
   fonts: FontsInterface
   darkThemeEnabled?: boolean
   deviceOnTheme: DeviceOnTheme
-  capFontSize: capFontSizeInterface
+  capFontSize: capFontSizeInterface,
+  adjustColor: AdjustColorParams,
+
 }
 
 export interface ThemeInterfaceForHTML {
@@ -117,5 +120,7 @@ export interface ThemeInterfaceForHTML {
   darkThemeEnabled?: boolean
   deviceOnTheme: DeviceOnTheme
   capFontSize: capFontSizeInterface
+  adjustColor: AdjustColorParams
+
 }
 

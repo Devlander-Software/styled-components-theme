@@ -3,6 +3,7 @@ export * from "./defaults/fonts.defaults";
 export * from "./defaults/light-colors.defaults";
 export * from "./defaults/text-inputs.defaults";
 export * from "./setup/create-theme";
+export * from "./setup/generate-colors-from";
 export * from "./types/base-button.props.interface";
 export * from "./types/base-header.props";
 export * from "./types/base-image.interface";
