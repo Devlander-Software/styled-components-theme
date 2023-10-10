@@ -291,3 +291,14 @@ export default ColorThemeProvider;
     }
 
 ```
+
+
+## Creating the dark colors palette Dynamically 
+```typescript
+import { generateColorsFrom } from "@devlander/shared-react-native-types";
+import type {ColorsInterface} from "@devlander/shared-react-native-types"
+// This is what you would use
+const darkColors: ColorsInterface = generateColorsFrom(lightColors, 'dark');
+
+
+```
