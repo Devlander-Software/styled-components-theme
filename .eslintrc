@@ -2,6 +2,8 @@
   "parser": "@typescript-eslint/parser",
   "parserOptions": {},
   "extends": [
+    "@devlander/eslint-prettier",
+
       "eslint:recommended",
       "react-native",
       "react-native/jest",
