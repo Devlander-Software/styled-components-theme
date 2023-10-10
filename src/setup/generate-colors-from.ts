@@ -7,7 +7,7 @@ import adjustColor from "../utils/adjust-color";
  * @param to - A string, either 'light' or 'dark', to determine the direction to adjust the colors.
  * @returns The adjusted color palette.
  */
-const generateColorsFrom = (colors: ColorsInterface, to: 'light' | 'dark'): ColorsInterface => {
+export const generateColorsFrom = (colors: ColorsInterface, to: 'light' | 'dark'): ColorsInterface => {
     const adjustedColors: Partial<ColorsInterface> = {};
 
     // Loop through each property in the provided colors object
