@@ -47,12 +47,6 @@ export interface ElementColors {
     tertiary: string;
     tertiaryContainer: string;
 }
-export interface FeedbackColors {
-    error: string;
-    successColor: string;
-    warningAlpha22: string;
-    warningAlpha62: string;
-}
 export interface BrandColors {
     colorOne: string;
     colorTwo: string;
@@ -111,6 +105,7 @@ export interface InteractionColors {
     onPrimary: string;
     onPrimaryContainer: string;
     onSecondary: string;
+    hyperLinkColor: string;
     onSecondaryContainer: string;
     onSurface: string;
     onSurfaceVariant: string;

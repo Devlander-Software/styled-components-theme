@@ -95,12 +95,6 @@ interface FeedbackColors {
     successColor: string;
     warningAlpha22: string;
     warningAlpha62: string;
-}
-interface FeedbackColors {
-    error: string;
-    successColor: string;
-    warningAlpha22: string;
-    warningAlpha62: string;
     errorContainer: string;
     onError: string;
     onErrorContainer: string;
@@ -115,6 +109,7 @@ interface InteractionColors {
     onPrimary: string;
     onPrimaryContainer: string;
     onSecondary: string;
+    hyperLinkColor: string;
     onSecondaryContainer: string;
     onSurface: string;
     onSurfaceVariant: string;

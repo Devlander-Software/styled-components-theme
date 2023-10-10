@@ -128,6 +128,7 @@ export const defaultDarkInteractionColors: InteractionColors = {
   onSurfaceVariant: '#BDBDBD',
   onSurfaceDisabled: '#8D8D8D',
   onBackground: '#E0E0E0',
+  hyperLinkColor: "#1b88bf"
 };
 
 export const darkColors: ColorsInterface = {

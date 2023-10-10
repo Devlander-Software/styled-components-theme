@@ -57,14 +57,7 @@ export interface GrayScaleColors {
   
   
 
-  export interface FeedbackColors {
-    error: string
-    successColor: string
-    warningAlpha22: string // Keeping the alpha value the same, but darkening the color
-    warningAlpha62: string // Keeping the alpha value the same, but darkening the color
-    
-  }
-  
+
 
 
 export interface BrandColors {
@@ -129,6 +122,7 @@ export interface InteractionColors {
     onPrimary: string;
     onPrimaryContainer: string;
     onSecondary: string;
+    hyperLinkColor: string;
     onSecondaryContainer: string;
     onSurface: string;
     onSurfaceVariant: string;

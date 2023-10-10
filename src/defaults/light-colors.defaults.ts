@@ -116,6 +116,8 @@ export const defaultLightInteractionColors: InteractionColors = {
   onSurfaceVariant: '#757575',
   onSurfaceDisabled: '#BDBDBD',
   onBackground: '#333333',
+  hyperLinkColor: "#1b88bf"
+
 };
 
 export const lightColors: ColorsInterface = {
