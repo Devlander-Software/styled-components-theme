@@ -1,7 +1,7 @@
-import { ColorsInterface } from './color.types';
-import { FontTypeEnum } from './font-type.enum';
-import { FontWeightType } from './font-weight.enum';
-import { ThemeInterfaceForHTML } from './theme.types';
+import { ColorsInterface } from "./color.types";
+import { FontTypeEnum } from "./font-type.enum";
+import { FontWeightType } from "./font-weight.enum";
+import { ThemeInterfaceForHTML } from "./theme.types";
 export interface CustomTextStylesFromTheme {
     textDecorationColorFromTheme?: keyof ColorsInterface;
     colorFromTheme?: keyof ColorsInterface;

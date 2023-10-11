@@ -1,9 +1,9 @@
-import { ThemeInterface, ThemeInterfaceForHTML } from '../theme.types';
-import { HtmlImageInterface } from './img.type.web';
+import { ThemeInterface, ThemeInterfaceForHTML } from "../theme.types";
+import { HtmlImageInterface } from "./img.type.web";
 export interface HtmlImgStyleProps extends Partial<HtmlImageInterface> {
     width?: string | number;
-    borderColorFromTheme?: keyof ThemeInterface['colors'];
-    backgroundColorFromTheme?: keyof ThemeInterface['colors'];
+    borderColorFromTheme?: keyof ThemeInterface["colors"];
+    backgroundColorFromTheme?: keyof ThemeInterface["colors"];
     height?: string | number;
     borderRadius?: string | number;
     borderWidth?: string | number;

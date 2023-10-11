@@ -189,96 +189,6 @@ declare const defaultLightFeedbackColors: FeedbackColors;
 declare const defaultLightInteractionColors: InteractionColors;
 declare const lightColors: ColorsInterface;
 
-declare enum AutoCapitalizeEnum {
-    none = "none",
-    words = "words",
-    sentences = "sentences",
-    characters = "characters"
-}
-declare enum KeyBoardTypeEnum {
-    default = "default",
-    numberPad = "number-pad",
-    decimalPad = "decimal-pad",
-    numeric = "numeric",
-    emailAddress = "email-address",
-    phonePad = "phone-pad"
-}
-declare enum DataDetectorEnum {
-    none = "none",
-    all = "all",
-    phoneNumber = "phoneNumber",
-    link = "link",
-    calendarEvent = "calendarEvent"
-}
-declare enum TextContentTypeEnum {
-    none = "none",
-    URL = "URL",
-    addressCity = "addressCity",
-    addressCityAndState = "addressCityAndState",
-    addressState = "addressState",
-    countryName = "countryName",
-    creditCardNumber = "creditCardNumber",
-    emailAddress = "emailAddress",
-    familyName = "familyName",
-    fullStreetAddress = "fullStreetAddress",
-    givenName = "givenName",
-    jobTitle = "jobTitle",
-    location = "location",
-    middleName = "middleName",
-    name = "name",
-    namePrefix = "namePrefix",
-    nameSuffix = "nameSuffix",
-    nickname = "nickname",
-    organizationName = "organizationName",
-    postalCode = "postalCode",
-    streetAddressLine1 = "streetAddressLine1",
-    streetAddressLine2 = "streetAddressLine2",
-    sublocality = "sublocality",
-    telephoneNumber = "telephoneNumber",
-    username = "username",
-    newPassword = "newPassword",
-    oneTimeCode = "oneTimeCode"
-}
-declare enum AutoCompleteTypeEnum {
-    "birthdate-day" = 0,
-    "birthdate-full" = 1,
-    "birthdate-month" = 2,
-    "birthdate-year" = 3,
-    "cc-csc" = 4,
-    "cc-exp" = 5,
-    "cc-exp-day" = 6,
-    "cc-exp-month" = 7,
-    "cc-exp-year" = 8,
-    "cc-number" = 9,
-    "email" = 10,
-    "gender" = 11,
-    "name" = 12,
-    "name-family" = 13,
-    "name-given" = 14,
-    "name-middle" = 15,
-    "name-middle-initial" = 16,
-    "name-prefix" = 17,
-    "name-suffix" = 18,
-    "password" = 19,
-    "password-new" = 20,
-    "postal-address" = 21,
-    "postal-address-country" = 22,
-    "postal-address-extended" = 23,
-    "postal-address-extended-postal-code" = 24,
-    "postal-address-locality" = 25,
-    "postal-address-region" = 26,
-    "postal-code" = 27,
-    "street-address" = 28,
-    "sms-otp" = 29,
-    "tel" = 30,
-    "tel-country-code" = 31,
-    "tel-national" = 32,
-    "tel-device" = 33,
-    "username" = 34,
-    "username-new" = 35,
-    "off" = 36
-}
-
 declare enum FontTypeEnum {
     Font1 = "Font1",
     Font2 = "Font2",
@@ -295,7 +205,7 @@ declare enum FontTypeEnum {
  * @returns The adjusted color as a string.
  */
 interface AdjustColorParams {
-    (colorValue: string, alphaValue: number, mode: 'light' | 'dark', isSolid?: boolean): string;
+    (colorValue: string, alphaValue: number, mode: "light" | "dark", isSolid?: boolean): string;
 }
 
 interface capFontSizeInterface {
@@ -448,10 +358,10 @@ interface GetStyleForTouchableOpacityInterface {
 }
 declare const getStyleForTouchableOpacityProps: GetStyleForTouchableOpacityInterface;
 
-interface boxShadowFuncInterface {
-    (fontSize: string): any;
+interface BoxShadowFuncInterface {
+    (fontSize: string): string;
 }
-declare const boxShadowOne: boxShadowFuncInterface;
+declare const boxShadowOne: BoxShadowFuncInterface;
 
 /**
  * Type definition for handling color from theme.
@@ -481,10 +391,10 @@ interface HandleFontSizePropsInterface {
 declare const getResponsiveFontSize: (fontSize: number, maxFontSize: number, screenHeight: number | undefined, responsiveBy: ResponsiveByPercentOrValue) => number;
 declare const handleFontSizeProps: HandleFontSizePropsInterface;
 
-interface handleSnackbarColorInterface {
-    (colorType?: undefined | 'none' | 'success' | 'error', theme?: ThemeInterface): string;
+interface HandleSnackbarColorInterface {
+    (colorType?: undefined | "none" | "success" | "error", theme?: ThemeInterface): string;
 }
-declare const handleSnackbarColor: handleSnackbarColorInterface;
+declare const handleSnackbarColor: HandleSnackbarColorInterface;
 
 declare enum UnitOfMeasurementNative {
     PX = "px"
@@ -500,10 +410,10 @@ declare enum UnitOfMeasurementWeb {
     PERCENT = "%"
 }
 type UnitOfMeasurement = UnitOfMeasurementNative | UnitOfMeasurementWeb;
-interface handleUnitPropsInterface {
+interface HandleUnitPropsInterface {
     (units?: any, unitOfMeasurement?: UnitOfMeasurement): any;
 }
-declare const handleUnitProps: handleUnitPropsInterface;
+declare const handleUnitProps: HandleUnitPropsInterface;
 
 type GetStyleForGhostPropsParametersWeb = GetStyleForGhostPropsParameters<ThemeInterfaceForHTML>;
 declare const getStyleForGhostPropsForWeb: GetStyleForGhostPropsParametersWeb;
@@ -514,8 +424,8 @@ interface HtmlImageInterface extends Partial<React.HTMLProps<HTMLImageElement>> 
 
 interface HtmlImgStyleProps extends Partial<HtmlImageInterface> {
     width?: string | number;
-    borderColorFromTheme?: keyof ThemeInterface['colors'];
-    backgroundColorFromTheme?: keyof ThemeInterface['colors'];
+    borderColorFromTheme?: keyof ThemeInterface["colors"];
+    backgroundColorFromTheme?: keyof ThemeInterface["colors"];
     height?: string | number;
     borderRadius?: string | number;
     borderWidth?: string | number;
@@ -647,17 +557,17 @@ type PaddingOnThemeType = {
 };
 interface ThemeInterface {
     padding: PaddingOnThemeType;
-    handleSnackbarColor: handleSnackbarColorInterface;
+    handleSnackbarColor: HandleSnackbarColorInterface;
     handleFontSizeProps: HandleFontSizePropsInterface;
-    handleUnitProps: handleUnitPropsInterface;
+    handleUnitProps: HandleUnitPropsInterface;
     getStyleForTouchableOpacityProps: GetStyleForTouchableOpacityInterface;
     getStyleForContainerProps: (props: ContainerStyleInterfaceWithTheme) => string;
     handleGhost: GetStyleForGhostPropsParametersNative;
     getStyleForTextProps: GetStyleForTextPropsParametersNative;
-    boxShadowOne: boxShadowFuncInterface;
-    boxShadowTwo?: boxShadowFuncInterface;
+    boxShadowOne: BoxShadowFuncInterface;
+    boxShadowTwo?: BoxShadowFuncInterface;
     elevation?: ElevationObjType;
-    boxShadowThree?: boxShadowFuncInterface;
+    boxShadowThree?: BoxShadowFuncInterface;
     handleColorFromTheme: HandleColorFromThemeInterfaceNative;
     handleFontFromTheme: HandleFontFromThemeParametersForNative;
     colors: ColorsInterface;
@@ -669,16 +579,16 @@ interface ThemeInterface {
 }
 interface ThemeInterfaceForHTML {
     padding: PaddingOnThemeType;
-    handleSnackbarColor: handleSnackbarColorInterface;
+    handleSnackbarColor: HandleSnackbarColorInterface;
     handleFontSizeProps: HandleFontSizePropsInterface;
-    handleUnitProps: handleUnitPropsInterface;
+    handleUnitProps: HandleUnitPropsInterface;
     getStyleForContainerProps: GetStyleForContainerPropsParameters;
     getStyleForImageProps: GetStyleForImgPropsInterface;
     handleGhost: GetStyleForGhostPropsParametersWeb;
     getStyleForTextProps: GetStyleForParagraphPropsWeb;
-    boxShadowOne: boxShadowFuncInterface;
-    boxShadowTwo?: boxShadowFuncInterface;
-    boxShadowThree?: boxShadowFuncInterface;
+    boxShadowOne: BoxShadowFuncInterface;
+    boxShadowTwo?: BoxShadowFuncInterface;
+    boxShadowThree?: BoxShadowFuncInterface;
     elevation?: ElevationObjType;
     handleColorFromTheme: HandleColorFromThemeInterfaceWeb;
     handleFontFromTheme: HandleFontFromThemeParametersForWeb;
@@ -1782,7 +1692,97 @@ declare enum FontAwesomeIconNames {
     "wpexplorer" = 784,
     "meetup" = 785
 }
-type IconNames = typeof MaterialIcons['name'] | typeof Ionicons['name'] | typeof FontAwesome5['name'] | typeof FontAwesome['name'];
+type IconNames = (typeof MaterialIcons)["name"] | (typeof Ionicons)["name"] | (typeof FontAwesome5)["name"] | (typeof FontAwesome)["name"];
+
+declare enum AutoCapitalizeEnum {
+    none = "none",
+    words = "words",
+    sentences = "sentences",
+    characters = "characters"
+}
+declare enum KeyBoardTypeEnum {
+    default = "default",
+    numberPad = "number-pad",
+    decimalPad = "decimal-pad",
+    numeric = "numeric",
+    emailAddress = "email-address",
+    phonePad = "phone-pad"
+}
+declare enum DataDetectorEnum {
+    none = "none",
+    all = "all",
+    phoneNumber = "phoneNumber",
+    link = "link",
+    calendarEvent = "calendarEvent"
+}
+declare enum TextContentTypeEnum {
+    none = "none",
+    URL = "URL",
+    addressCity = "addressCity",
+    addressCityAndState = "addressCityAndState",
+    addressState = "addressState",
+    countryName = "countryName",
+    creditCardNumber = "creditCardNumber",
+    emailAddress = "emailAddress",
+    familyName = "familyName",
+    fullStreetAddress = "fullStreetAddress",
+    givenName = "givenName",
+    jobTitle = "jobTitle",
+    location = "location",
+    middleName = "middleName",
+    name = "name",
+    namePrefix = "namePrefix",
+    nameSuffix = "nameSuffix",
+    nickname = "nickname",
+    organizationName = "organizationName",
+    postalCode = "postalCode",
+    streetAddressLine1 = "streetAddressLine1",
+    streetAddressLine2 = "streetAddressLine2",
+    sublocality = "sublocality",
+    telephoneNumber = "telephoneNumber",
+    username = "username",
+    newPassword = "newPassword",
+    oneTimeCode = "oneTimeCode"
+}
+declare enum AutoCompleteTypeEnum {
+    "birthdate-day" = 0,
+    "birthdate-full" = 1,
+    "birthdate-month" = 2,
+    "birthdate-year" = 3,
+    "cc-csc" = 4,
+    "cc-exp" = 5,
+    "cc-exp-day" = 6,
+    "cc-exp-month" = 7,
+    "cc-exp-year" = 8,
+    "cc-number" = 9,
+    "email" = 10,
+    "gender" = 11,
+    "name" = 12,
+    "name-family" = 13,
+    "name-given" = 14,
+    "name-middle" = 15,
+    "name-middle-initial" = 16,
+    "name-prefix" = 17,
+    "name-suffix" = 18,
+    "password" = 19,
+    "password-new" = 20,
+    "postal-address" = 21,
+    "postal-address-country" = 22,
+    "postal-address-extended" = 23,
+    "postal-address-extended-postal-code" = 24,
+    "postal-address-locality" = 25,
+    "postal-address-region" = 26,
+    "postal-code" = 27,
+    "street-address" = 28,
+    "sms-otp" = 29,
+    "tel" = 30,
+    "tel-country-code" = 31,
+    "tel-national" = 32,
+    "tel-device" = 33,
+    "username" = 34,
+    "username-new" = 35,
+    "off" = 36
+}
 
 interface FormInputGroupProps extends TextInputProps {
     opacity?: number;
@@ -1833,7 +1833,7 @@ declare const createThemeForWeb: (config: ThemeConfig) => ThemeInterfaceForHTML;
  * @param to - A string, either 'light' or 'dark', to determine the direction to adjust the colors.
  * @returns The adjusted color palette.
  */
-declare const generateColorsFrom: (colors: ColorsInterface, to: 'light' | 'dark') => ColorsInterface;
+declare const generateColorsFrom: (colors: ColorsInterface, to: "light" | "dark") => ColorsInterface;
 
 interface BaseButtonPropsInterface extends ViewStyle, CustomStylePropsInterface {
     onPress?: () => void;
@@ -2137,4 +2137,4 @@ declare function sliceIntoChunks(arr: any[], chunkSize: number): any[];
 
 declare function videoTimeStampToSeconds(str: string): number;
 
-export { type AdjustColorParams, AlignItemsEnum, AutoCapitalizeEnum, AutoCompleteTypeEnum, type BackgroundColors, type BaseButtonPropsInterface, type BaseDivInterface, type BaseHeaderPropsInterface, type BaseImageBackgroundInterface, type BaseScrollViewInterface, type BaseThemeInterface, type BaseViewInterface, type BrandColors, ButtonVariantEnum, type ColorFromTheme, type ColorInfoItem, type ColorNameOrValueFromTheme, type ColorsInterface, type ContainerStyleInterfaceWithTheme, type ContainerStyleProps, type CustomButtonTypes, type CustomStylePropsInterface, type CustomTextStylesFromTheme, type CustomViewStylePropsInterface, DataDetectorEnum, type DeviceOnTheme, type ElementColors, type ElevationObjType, type ErrorMessages, type FeedbackColors, type FixedLengthArray, FontAwesomeIconNames, type FontType, FontTypeEnum, type FontTypeWeight, FontTypeWeightEnum, type FontWeightType, type FontsInterface, FormInputGroupDefaultProps, type FormInputGroupProps, type GetStyleForContainerPropsParameters, type GetStyleForGhostPropsParameters, type GetStyleForGhostPropsParametersNative, type GetStyleForGhostPropsParametersWeb, type GetStyleForImgPropsInterface, type GetStyleForParagraphPropsWeb, type GetStyleForTextPropsParameters, type GetStyleForTextPropsParametersNative, type GetStyleForTouchableOpacityInterface, type GhostBaseButton, type GhostTextInterface, type GrayScaleColors, type HandleColorFromThemeInterfaceNative, type HandleColorFromThemeInterfaceWeb, type HandleColorFromThemeParameters, type HandleFontFromThemeParameters, type HandleFontFromThemeParametersForNative, type HandleFontFromThemeParametersForWeb, type HandleFontSizePropsInterface, type HtmlButtonPropsInterface, type HtmlButtonPropsInterfaceWithTheme, type HtmlFormInputGroupProps, type HtmlImageInterface, type HtmlImgStyleProps, type HtmlImgStylePropsWithTheme, type HtmlParagraphInterface, type HtmlParagraphStyleProps, type HtmlParagraphStylePropsWithTheme, type HtmlSecureInputProps, type HtmlSpanInterface, type HtmlSpanStyleProps, type HtmlSpanStylePropsWithTheme, type IconNames, type InteractionColors, IoniconNames, JustifyContentEnum, KeyBoardTypeEnum, NameOrValue, type OnVisibilityChangeProps, type PaddingOnThemeType, RGBAToHexA, ResponsiveByPercentOrValue, STATUSBAR_HEIGHT, type SVGPropsInterface, SecureInputDefaultProps, type SecureInputProps, type StylePropsInterface, type StylePropsInterfaceWithTheme, TextContentTypeEnum, TextFontWeightTypes, TextFontWeightTypesEnum, type TextInterface, type TextStyleProps, type TextStylePropsWithTheme, TextTransformTypes, type ThemeConfig, type ThemeInterface, type ThemeInterfaceForHTML, type TouchableOpacityStylePropsInterface, type TouchableOpacityStylePropsInterfaceWithTheme, UnitOfMeasurementNative, UnitOfMeasurementWeb, type ValueOfColor, type boxShadowFuncInterface, boxShadowOne, calculatePercentageByPartAndWhole, capFontSize, type capFontSizeInterface, createThemeForNative, createThemeForWeb, darkColors, dashToCamelCase, defaultDarkBackgroundColors, defaultDarkBrandColors, defaultDarkElementColors, defaultDarkFeedbackColors, defaultDarkGrayScaleColors, defaultDarkInteractionColors, defaultFonts, defaultLightBackgroundColors, defaultLightBrandColors, defaultLightElementColors, defaultLightFeedbackColors, defaultLightGrayScaleColors, defaultLightInteractionColors, defaultSVGProps, extractKeysAndValuesFromColorsInterface, generateColorsFrom, getErrorMessageByField, getErrorMessageFromErrorMessages, getFirstWordCapitalized, getLineHeight, getResponsiveFontSize, getStyleForContainerProps, getStyleForGhostProps, getStyleForGhostPropsForWeb, getStyleForImgPropsForWeb, getStyleForParagraphProps, getStyleForTextProps, getStyleForTouchableOpacityProps, getStyleFromProps, handleColorFromTheme, handleColorFromThemeWeb, handleFontFromTheme, handleFontFromThemeWeb, handleFontSizeProps, handleSnackbarColor, type handleSnackbarColorInterface, handleUnitProps, type handleUnitPropsInterface, isColorNameOrValue, isJson, isValidHex, lightColors, paddingForScrollView, paddingForScrollViewTwo, paddingObj, removeKeysWithSubstrings, screenHeight, screenWidth, sliceIntoChunks, textDecorationLineTypes, videoTimeStampToSeconds, windowHeight, windowWidth };
+export { type AdjustColorParams, AlignItemsEnum, AutoCapitalizeEnum, AutoCompleteTypeEnum, type BackgroundColors, type BaseButtonPropsInterface, type BaseDivInterface, type BaseHeaderPropsInterface, type BaseImageBackgroundInterface, type BaseScrollViewInterface, type BaseThemeInterface, type BaseViewInterface, type BoxShadowFuncInterface, type BrandColors, ButtonVariantEnum, type ColorFromTheme, type ColorInfoItem, type ColorNameOrValueFromTheme, type ColorsInterface, type ContainerStyleInterfaceWithTheme, type ContainerStyleProps, type CustomButtonTypes, type CustomStylePropsInterface, type CustomTextStylesFromTheme, type CustomViewStylePropsInterface, DataDetectorEnum, type DeviceOnTheme, type ElementColors, type ElevationObjType, type ErrorMessages, type FeedbackColors, type FixedLengthArray, FontAwesomeIconNames, type FontType, FontTypeEnum, type FontTypeWeight, FontTypeWeightEnum, type FontWeightType, type FontsInterface, FormInputGroupDefaultProps, type FormInputGroupProps, type GetStyleForContainerPropsParameters, type GetStyleForGhostPropsParameters, type GetStyleForGhostPropsParametersNative, type GetStyleForGhostPropsParametersWeb, type GetStyleForImgPropsInterface, type GetStyleForParagraphPropsWeb, type GetStyleForTextPropsParameters, type GetStyleForTextPropsParametersNative, type GetStyleForTouchableOpacityInterface, type GhostBaseButton, type GhostTextInterface, type GrayScaleColors, type HandleColorFromThemeInterfaceNative, type HandleColorFromThemeInterfaceWeb, type HandleColorFromThemeParameters, type HandleFontFromThemeParameters, type HandleFontFromThemeParametersForNative, type HandleFontFromThemeParametersForWeb, type HandleFontSizePropsInterface, type HandleSnackbarColorInterface, type HandleUnitPropsInterface, type HtmlButtonPropsInterface, type HtmlButtonPropsInterfaceWithTheme, type HtmlFormInputGroupProps, type HtmlImageInterface, type HtmlImgStyleProps, type HtmlImgStylePropsWithTheme, type HtmlParagraphInterface, type HtmlParagraphStyleProps, type HtmlParagraphStylePropsWithTheme, type HtmlSecureInputProps, type HtmlSpanInterface, type HtmlSpanStyleProps, type HtmlSpanStylePropsWithTheme, type IconNames, type InteractionColors, IoniconNames, JustifyContentEnum, KeyBoardTypeEnum, NameOrValue, type OnVisibilityChangeProps, type PaddingOnThemeType, RGBAToHexA, ResponsiveByPercentOrValue, STATUSBAR_HEIGHT, type SVGPropsInterface, SecureInputDefaultProps, type SecureInputProps, type StylePropsInterface, type StylePropsInterfaceWithTheme, TextContentTypeEnum, TextFontWeightTypes, TextFontWeightTypesEnum, type TextInterface, type TextStyleProps, type TextStylePropsWithTheme, TextTransformTypes, type ThemeConfig, type ThemeInterface, type ThemeInterfaceForHTML, type TouchableOpacityStylePropsInterface, type TouchableOpacityStylePropsInterfaceWithTheme, UnitOfMeasurementNative, UnitOfMeasurementWeb, type ValueOfColor, boxShadowOne, calculatePercentageByPartAndWhole, capFontSize, type capFontSizeInterface, createThemeForNative, createThemeForWeb, darkColors, dashToCamelCase, defaultDarkBackgroundColors, defaultDarkBrandColors, defaultDarkElementColors, defaultDarkFeedbackColors, defaultDarkGrayScaleColors, defaultDarkInteractionColors, defaultFonts, defaultLightBackgroundColors, defaultLightBrandColors, defaultLightElementColors, defaultLightFeedbackColors, defaultLightGrayScaleColors, defaultLightInteractionColors, defaultSVGProps, extractKeysAndValuesFromColorsInterface, generateColorsFrom, getErrorMessageByField, getErrorMessageFromErrorMessages, getFirstWordCapitalized, getLineHeight, getResponsiveFontSize, getStyleForContainerProps, getStyleForGhostProps, getStyleForGhostPropsForWeb, getStyleForImgPropsForWeb, getStyleForParagraphProps, getStyleForTextProps, getStyleForTouchableOpacityProps, getStyleFromProps, handleColorFromTheme, handleColorFromThemeWeb, handleFontFromTheme, handleFontFromThemeWeb, handleFontSizeProps, handleSnackbarColor, handleUnitProps, isColorNameOrValue, isJson, isValidHex, lightColors, paddingForScrollView, paddingForScrollViewTwo, paddingObj, removeKeysWithSubstrings, screenHeight, screenWidth, sliceIntoChunks, textDecorationLineTypes, videoTimeStampToSeconds, windowHeight, windowWidth };

@@ -7,7 +7,7 @@
  * @returns The adjusted color as a string.
  */
 export interface AdjustColorParams {
-    (colorValue: string, alphaValue: number, mode: 'light' | 'dark', isSolid?: boolean): string;
+    (colorValue: string, alphaValue: number, mode: "light" | "dark", isSolid?: boolean): string;
 }
 declare const adjustColor: AdjustColorParams;
 export default adjustColor;

@@ -1,7 +1,7 @@
-import { ViewStyle } from 'react-native';
-import { AutoCapitalizeEnum, DataDetectorEnum, KeyBoardTypeEnum, TextContentTypeEnum } from '../text-field.types';
-import { ContainerStyleProps } from '../container-style.props.interface';
-import { IconNames } from '../icon-names.enum';
+import { ViewStyle } from "react-native";
+import { ContainerStyleProps } from "../container-style.props.interface";
+import { IconNames } from "../icon-names.enum";
+import { AutoCapitalizeEnum, DataDetectorEnum, KeyBoardTypeEnum, TextContentTypeEnum } from "../text-field.types";
 export interface HtmlFormInputGroupProps extends Partial<HTMLInputElement> {
     opacity?: number;
     dense?: boolean;

@@ -1,18 +1,19 @@
 export enum TextFontWeightTypesEnum {
-    normal = "normal",
-    bold = "bold",
-    oneHundred = "100",
-    twoHundred = "200",
-    threeHundred = "300",
-    fourHundred = "400",
-    fiveHundred = "500",
-    sixHundred = "600",
-    sevenHundred = "700",
-    eightHundred = "800",
-    nineHundred = "900",
-    light = "light",
-    
-  }
+  normal = "normal",
+  bold = "bold",
+  oneHundred = "100",
+  twoHundred = "200",
+  threeHundred = "300",
+  fourHundred = "400",
+  fiveHundred = "500",
+  sixHundred = "600",
+  sevenHundred = "700",
+  eightHundred = "800",
+  nineHundred = "900",
+  light = "light",
+}
 
-  export const TextFontWeightTypes = [...Object.values(TextFontWeightTypesEnum), undefined]
-  
+export const TextFontWeightTypes = [
+  ...Object.values(TextFontWeightTypesEnum),
+  undefined,
+];

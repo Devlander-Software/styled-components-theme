@@ -1,7 +1,7 @@
-import { TextInputProps, ViewStyle } from 'react-native';
-import { AutoCapitalizeEnum, DataDetectorEnum, KeyBoardTypeEnum, TextContentTypeEnum } from './text-field.types';
-import { ContainerStyleProps } from './container-style.props.interface';
-import { IconNames } from './icon-names.enum';
+import { TextInputProps, ViewStyle } from "react-native";
+import { ContainerStyleProps } from "./container-style.props.interface";
+import { IconNames } from "./icon-names.enum";
+import { AutoCapitalizeEnum, DataDetectorEnum, KeyBoardTypeEnum, TextContentTypeEnum } from "./text-field.types";
 export interface FormInputGroupProps extends TextInputProps {
     opacity?: number;
     dense?: boolean;

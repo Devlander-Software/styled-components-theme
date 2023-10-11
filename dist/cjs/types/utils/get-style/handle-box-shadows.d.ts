@@ -1,5 +1,5 @@
-export interface boxShadowFuncInterface {
-    (fontSize: string): any;
+export interface BoxShadowFuncInterface {
+    (fontSize: string): string;
 }
-export declare const boxShadowOne: boxShadowFuncInterface;
+export declare const boxShadowOne: BoxShadowFuncInterface;
 export default boxShadowOne;

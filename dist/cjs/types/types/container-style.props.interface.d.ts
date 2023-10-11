@@ -1,5 +1,5 @@
 import { ViewStyle } from "react-native";
-import { CustomStylePropsInterface, CustomViewStylePropsInterface } from './custom-style-props.interface';
+import { CustomStylePropsInterface, CustomViewStylePropsInterface } from "./custom-style-props.interface";
 import { ThemeInterface } from "./theme.types";
 export interface ContainerStyleProps extends ViewStyle, CustomViewStylePropsInterface {
     paddingLeft?: number;

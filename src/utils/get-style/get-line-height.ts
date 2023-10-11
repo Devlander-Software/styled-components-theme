@@ -1,5 +1,5 @@
 export const getLineHeight = (fontSize = 13, amountToIncrease = 8): number => {
-    return fontSize + amountToIncrease;
-}
+  return fontSize + amountToIncrease;
+};
 
-export default getLineHeight
+export default getLineHeight;

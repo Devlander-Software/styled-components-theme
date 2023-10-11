@@ -1,6 +1,6 @@
 import { TextProps } from "react-native";
 import { ColorsInterface } from "./color.types";
-import { CustomTextStylesFromTheme } from './custom-style-props.interface';
+import { CustomTextStylesFromTheme } from "./custom-style-props.interface";
 import { FontTypeEnum } from "./font-type.enum";
 import { FontTypeWeightEnum } from "./font-weight.enum";
 import { TextFontWeightTypesEnum } from "./font-weight.types";

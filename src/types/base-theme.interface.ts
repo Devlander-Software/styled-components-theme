@@ -1,5 +1,5 @@
-import { ThemeInterface } from "./theme.types"
+import { ThemeInterface } from "./theme.types";
 
 export interface BaseThemeInterface {
-    theme?: ThemeInterface
+  theme?: ThemeInterface;
 }

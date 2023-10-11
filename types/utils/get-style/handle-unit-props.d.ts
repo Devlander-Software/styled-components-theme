@@ -12,8 +12,8 @@ export declare enum UnitOfMeasurementWeb {
     PERCENT = "%"
 }
 type UnitOfMeasurement = UnitOfMeasurementNative | UnitOfMeasurementWeb;
-export interface handleUnitPropsInterface {
+export interface HandleUnitPropsInterface {
     (units?: any, unitOfMeasurement?: UnitOfMeasurement): any;
 }
-export declare const handleUnitProps: handleUnitPropsInterface;
+export declare const handleUnitProps: HandleUnitPropsInterface;
 export default handleUnitProps;

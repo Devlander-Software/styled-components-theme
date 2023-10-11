@@ -8,7 +8,8 @@ import {
   HandleColorFromThemeParameters,
   ThemeInterface,
 } from "../../types/theme.types";
-import { NameOrValue, isColorNameOrValue } from "./is-color-name-or-value";
+
+import { isColorNameOrValue, NameOrValue } from "./is-color-name-or-value";
 import { isValidHex } from "./is-valid-hex";
 
 /**
@@ -29,7 +30,7 @@ export type HandleColorFromThemeInterfaceNative =
 export const handleColorFromTheme: HandleColorFromThemeInterfaceNative = (
   color: ColorNameOrValueFromTheme,
   opacity: number = 1,
-  theme: ThemeInterface
+  theme: ThemeInterface,
 ): string => {
   const valueOrName: NameOrValue | boolean = isColorNameOrValue(color, theme);
   if (valueOrName) {
@@ -37,7 +38,7 @@ export const handleColorFromTheme: HandleColorFromThemeInterfaceNative = (
       if (isValidHex(theme.colors[color as ColorFromTheme] as any)) {
         return hexToRgba(
           theme.colors[color as ColorFromTheme] as string,
-          opacity
+          opacity,
         );
       } else {
         return theme.colors[color as ColorFromTheme];

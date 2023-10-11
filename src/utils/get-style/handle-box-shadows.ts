@@ -1,9 +1,8 @@
-export interface boxShadowFuncInterface {
-  (fontSize: string): any
+export interface BoxShadowFuncInterface {
+  (fontSize: string): string;
 }
-export const boxShadowOne: boxShadowFuncInterface = (color) => {
-  return `0px -1px 10px ${color}`
-}
+export const boxShadowOne: BoxShadowFuncInterface = (color: string) => {
+  return `0px -1px 10px ${color}`;
+};
 
-
-export default boxShadowOne
+export default boxShadowOne;

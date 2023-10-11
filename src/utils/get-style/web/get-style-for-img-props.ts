@@ -1,10 +1,8 @@
 import { HtmlImgStylePropsWithTheme } from "../../../types/html/img.web.props";
 
 export interface GetStyleForImgPropsInterface {
-  (props: HtmlImgStylePropsWithTheme): string
+  (props: HtmlImgStylePropsWithTheme): string;
 }
-
-
 
 export const getStyleForImgPropsForWeb: GetStyleForImgPropsInterface = ({
   backgroundColorFromTheme,
@@ -27,9 +25,9 @@ export const getStyleForImgPropsForWeb: GetStyleForImgPropsInterface = ({
             ? `background-color: ${theme.handleColorFromTheme(
                 backgroundColorFromTheme,
                 1,
-                theme
+                theme,
               )};`
-            : ''
+            : ""
         }
 
         ${
@@ -37,41 +35,41 @@ export const getStyleForImgPropsForWeb: GetStyleForImgPropsInterface = ({
             ? `border-color: ${theme.handleColorFromTheme(
                 borderColorFromTheme,
                 1,
-                theme
+                theme,
               )};`
-            : ''
+            : ""
         }
         ${
           borderWidth
             ? `border-width: ${theme.handleUnitProps(borderWidth)};`
-            : ''
+            : ""
         }
        
-        ${width ? `width: ${theme.handleUnitProps(width)};` : ''}
+        ${width ? `width: ${theme.handleUnitProps(width)};` : ""}
 
-        ${height ? `height: ${theme.handleUnitProps(height)};` : ''}
-        ${width ? `width: ${theme.handleUnitProps(width)};` : ''}
-        ${maxWidth ? `max-width: ${theme.handleUnitProps(maxWidth)};` : ''}
-        ${maxHeight ? `max-height: ${theme.handleUnitProps(maxHeight)};` : ''}
+        ${height ? `height: ${theme.handleUnitProps(height)};` : ""}
+        ${width ? `width: ${theme.handleUnitProps(width)};` : ""}
+        ${maxWidth ? `max-width: ${theme.handleUnitProps(maxWidth)};` : ""}
+        ${maxHeight ? `max-height: ${theme.handleUnitProps(maxHeight)};` : ""}
 
  border-radius: ${
    borderTopLeftRadius
      ? theme.handleUnitProps(borderTopLeftRadius)
      : theme.handleUnitProps(borderRadius)
  } ${
-    borderTopRightRadius
-      ? theme.handleUnitProps(borderTopRightRadius)
-      : theme.handleUnitProps(borderRadius)
-  } ${
-    borderBottomRightRadius
-      ? theme.handleUnitProps(borderBottomRightRadius)
-      : theme.handleUnitProps(borderRadius)
-  } ${
-    borderBottomLeftRadius
-      ? theme.handleUnitProps(borderBottomLeftRadius)
-      : theme.handleUnitProps(borderRadius)
-  }};
+   borderTopRightRadius
+     ? theme.handleUnitProps(borderTopRightRadius)
+     : theme.handleUnitProps(borderRadius)
+ } ${
+   borderBottomRightRadius
+     ? theme.handleUnitProps(borderBottomRightRadius)
+     : theme.handleUnitProps(borderRadius)
+ } ${
+   borderBottomLeftRadius
+     ? theme.handleUnitProps(borderBottomLeftRadius)
+     : theme.handleUnitProps(borderRadius)
+ }};
 
 
 
-    `
+    `;

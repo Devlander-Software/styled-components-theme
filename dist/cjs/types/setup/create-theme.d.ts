@@ -1,7 +1,7 @@
 import { ColorsInterface } from "../types/color.types";
-import { DeviceOnTheme } from '../types/device-on-theme.type';
-import { FontsInterface } from '../types/fonts.interface';
-import { ThemeInterface, ThemeInterfaceForHTML } from '../types/theme.types';
+import { DeviceOnTheme } from "../types/device-on-theme.type";
+import { FontsInterface } from "../types/fonts.interface";
+import { ThemeInterface, ThemeInterfaceForHTML } from "../types/theme.types";
 export interface ThemeConfig {
     colorPreferences?: Partial<ColorsInterface>;
     fontPreferences?: Partial<FontsInterface>;

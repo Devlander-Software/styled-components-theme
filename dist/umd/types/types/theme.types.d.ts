@@ -4,14 +4,14 @@ import { GetStyleForContainerPropsParameters } from "../utils/get-style/get-styl
 import { GetStyleForGhostPropsParametersNative } from "../utils/get-style/get-style-for-ghost-props";
 import { GetStyleForTextPropsParametersNative } from "../utils/get-style/get-style-for-text-props";
 import { GetStyleForTouchableOpacityInterface } from "../utils/get-style/get-style-for-touchable-opacity-props";
-import { boxShadowFuncInterface } from "../utils/get-style/handle-box-shadows";
-import { HandleColorFromThemeInterfaceNative } from '../utils/get-style/handle-color-from-theme';
+import { BoxShadowFuncInterface } from "../utils/get-style/handle-box-shadows";
+import { HandleColorFromThemeInterfaceNative } from "../utils/get-style/handle-color-from-theme";
 import { HandleFontFromThemeParametersForNative } from "../utils/get-style/handle-font-for-theme";
 import { HandleFontSizePropsInterface } from "../utils/get-style/handle-font-size-props";
-import { handleSnackbarColorInterface } from "../utils/get-style/handle-snackbar-color";
-import { handleUnitPropsInterface } from "../utils/get-style/handle-unit-props";
+import { HandleSnackbarColorInterface } from "../utils/get-style/handle-snackbar-color";
+import { HandleUnitPropsInterface } from "../utils/get-style/handle-unit-props";
 import { GetStyleForGhostPropsParametersWeb } from "../utils/get-style/web/get-style-for-ghost-props.web";
-import { GetStyleForImgPropsInterface } from '../utils/get-style/web/get-style-for-img-props';
+import { GetStyleForImgPropsInterface } from "../utils/get-style/web/get-style-for-img-props";
 import { GetStyleForParagraphPropsWeb } from "../utils/get-style/web/get-style-for-paragraph-props";
 import { HandleColorFromThemeInterfaceWeb } from "../utils/get-style/web/handle-color-for-theme.web";
 import { HandleFontFromThemeParametersForWeb } from "../utils/get-style/web/handle-font-for-theme.web";
@@ -39,17 +39,17 @@ export type PaddingOnThemeType = {
 };
 export interface ThemeInterface {
     padding: PaddingOnThemeType;
-    handleSnackbarColor: handleSnackbarColorInterface;
+    handleSnackbarColor: HandleSnackbarColorInterface;
     handleFontSizeProps: HandleFontSizePropsInterface;
-    handleUnitProps: handleUnitPropsInterface;
+    handleUnitProps: HandleUnitPropsInterface;
     getStyleForTouchableOpacityProps: GetStyleForTouchableOpacityInterface;
     getStyleForContainerProps: (props: ContainerStyleInterfaceWithTheme) => string;
     handleGhost: GetStyleForGhostPropsParametersNative;
     getStyleForTextProps: GetStyleForTextPropsParametersNative;
-    boxShadowOne: boxShadowFuncInterface;
-    boxShadowTwo?: boxShadowFuncInterface;
+    boxShadowOne: BoxShadowFuncInterface;
+    boxShadowTwo?: BoxShadowFuncInterface;
     elevation?: ElevationObjType;
-    boxShadowThree?: boxShadowFuncInterface;
+    boxShadowThree?: BoxShadowFuncInterface;
     handleColorFromTheme: HandleColorFromThemeInterfaceNative;
     handleFontFromTheme: HandleFontFromThemeParametersForNative;
     colors: ColorsInterface;
@@ -61,16 +61,16 @@ export interface ThemeInterface {
 }
 export interface ThemeInterfaceForHTML {
     padding: PaddingOnThemeType;
-    handleSnackbarColor: handleSnackbarColorInterface;
+    handleSnackbarColor: HandleSnackbarColorInterface;
     handleFontSizeProps: HandleFontSizePropsInterface;
-    handleUnitProps: handleUnitPropsInterface;
+    handleUnitProps: HandleUnitPropsInterface;
     getStyleForContainerProps: GetStyleForContainerPropsParameters;
     getStyleForImageProps: GetStyleForImgPropsInterface;
     handleGhost: GetStyleForGhostPropsParametersWeb;
     getStyleForTextProps: GetStyleForParagraphPropsWeb;
-    boxShadowOne: boxShadowFuncInterface;
-    boxShadowTwo?: boxShadowFuncInterface;
-    boxShadowThree?: boxShadowFuncInterface;
+    boxShadowOne: BoxShadowFuncInterface;
+    boxShadowTwo?: BoxShadowFuncInterface;
+    boxShadowThree?: BoxShadowFuncInterface;
     elevation?: ElevationObjType;
     handleColorFromTheme: HandleColorFromThemeInterfaceWeb;
     handleFontFromTheme: HandleFontFromThemeParametersForWeb;

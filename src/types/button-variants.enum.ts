@@ -1,5 +1,5 @@
 export enum ButtonVariantEnum {
-    text = "text",
-    outlined = "outlined",
-    contained = "contained",
+  text = "text",
+  outlined = "outlined",
+  contained = "contained",
 }

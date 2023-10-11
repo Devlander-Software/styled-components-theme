@@ -1,4 +1,4 @@
-import { PaddingOnThemeType } from '../../types/theme.types';
+import { PaddingOnThemeType } from "../../types/theme.types";
 export declare const STATUSBAR_HEIGHT: number;
 export declare const windowHeight: number;
 export declare const windowWidth: number;

@@ -1,7 +1,7 @@
-import { ColorsInterface } from './color.types';
-import { FontTypeEnum } from './font-type.enum';
-import { FontWeightType } from './font-weight.enum';
-import { ThemeInterfaceForHTML } from './theme.types';
+import { ColorsInterface } from "./color.types";
+import { FontTypeEnum } from "./font-type.enum";
+import { FontWeightType } from "./font-weight.enum";
+import { ThemeInterfaceForHTML } from "./theme.types";
 
 export interface CustomTextStylesFromTheme {
   textDecorationColorFromTheme?: keyof ColorsInterface;
@@ -16,11 +16,7 @@ export interface CustomTextStylesFromTheme {
   ghost?: boolean;
   destructive?: boolean;
   boxShadowColorFromTheme?: keyof ColorsInterface;
-
-
-
 }
-
 
 export interface CustomViewStylePropsInterface {
   borderColorFromTheme?: keyof ColorsInterface;
@@ -33,20 +29,17 @@ export interface CustomViewStylePropsInterface {
 export interface CustomButtonTypes {
   submitting?: boolean;
   backgroundColorFromTheme?: keyof ColorsInterface;
- 
-
 }
 
+export interface CustomStylePropsInterface
+  extends CustomTextStylesFromTheme,
+    CustomViewStylePropsInterface,
+    CustomButtonTypes {}
 
-export interface CustomStylePropsInterface extends CustomTextStylesFromTheme, CustomViewStylePropsInterface, CustomButtonTypes {
- 
-
-}
-
-
-export interface StylePropsInterface extends CustomTextStylesFromTheme, CustomViewStylePropsInterface, CustomButtonTypes {
-
-}
+export interface StylePropsInterface
+  extends CustomTextStylesFromTheme,
+    CustomViewStylePropsInterface,
+    CustomButtonTypes {}
 
 export interface StylePropsInterfaceWithTheme extends StylePropsInterface {
   theme: ThemeInterfaceForHTML;
@@ -68,6 +61,4 @@ export interface StylePropsInterfaceWithTheme extends StylePropsInterface {
   paddingRight?: number | string;
   opacity?: number;
   backgroundColorFromTheme?: keyof ColorsInterface;
- }
- 
-
+}

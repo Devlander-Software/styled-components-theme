@@ -1,4 +1,3 @@
-
 export enum UnitOfMeasurementNative {
   PX = "px",
 }
@@ -14,42 +13,45 @@ export enum UnitOfMeasurementWeb {
   PERCENT = "%",
 }
 
+type UnitOfMeasurement = UnitOfMeasurementNative | UnitOfMeasurementWeb;
 
-type UnitOfMeasurement = UnitOfMeasurementNative | UnitOfMeasurementWeb
-
-export interface handleUnitPropsInterface {
-  (units?: any, unitOfMeasurement?: UnitOfMeasurement): any
+export interface HandleUnitPropsInterface {
+  (units?: any, unitOfMeasurement?: UnitOfMeasurement): any;
 }
-export const handleUnitProps: handleUnitPropsInterface = (
+export const handleUnitProps: HandleUnitPropsInterface = (
   units?: any,
-  unitOfMeasurement? : UnitOfMeasurementNative | UnitOfMeasurementWeb
+  unitOfMeasurement?: UnitOfMeasurementNative | UnitOfMeasurementWeb,
 ): any => {
-  if(!unitOfMeasurement){
-    unitOfMeasurement = UnitOfMeasurementWeb.PX
+  if (!unitOfMeasurement) {
+    unitOfMeasurement = UnitOfMeasurementWeb.PX;
   }
-  if (units && units === 'auto') {
-    return units
+  if (units && units === "auto") {
+    return units;
   }
 
-  if (!units || units === undefined || units === 0 || typeof units === 'undefined') {
-    units = '0px'
+  if (
+    !units ||
+    units === undefined ||
+    units === 0 ||
+    typeof units === "undefined"
+  ) {
+    units = "0px";
   }
 
   const hasPercentage =
-    units && units.toString().includes('%')
-      ? units.toString().includes('%')
-      : false
+    units && units.toString().includes("%")
+      ? units.toString().includes("%")
+      : false;
 
-  if (units && typeof units === 'number') {
+  if (units && typeof units === "number") {
     if (hasPercentage) {
-      units = units.toString()
+      units = units.toString();
     } else {
-      units = `${units}${unitOfMeasurement}`
+      units = `${units}${unitOfMeasurement}`;
     }
   }
 
-  return units.toString() as any
-}
+  return units.toString() as any;
+};
 
-
-export default handleUnitProps
+export default handleUnitProps;

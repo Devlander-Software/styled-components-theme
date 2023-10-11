@@ -1,19 +1,23 @@
 {
   "parser": "@typescript-eslint/parser",
-  "parserOptions": {},
+  "parserOptions": {
+        "project": "./tsconfig.json",
+        "ecmaVersion": 2020,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+
+  },
   "extends": [
-    "@devlander/eslint-prettier",
 
       "eslint:recommended",
-      "react-native",
-      "react-native/jest",
+  
       "plugin:storybook/recommended",
       "plugin:jest-dom/recommended",
-      "plugin:testing-library/react",
-      "prettier"
+      "plugin:testing-library/react"
   ],
   "plugins": [
-      "jest-native",
       "testing-library",
       "promise",
       "prettier",

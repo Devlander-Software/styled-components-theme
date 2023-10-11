@@ -1,4 +1,4 @@
-import { MaterialIcons, Ionicons, FontAwesome, FontAwesome5 } from '@expo/vector-icons';
+import { FontAwesome, FontAwesome5, Ionicons, MaterialIcons } from "@expo/vector-icons";
 export declare enum IoniconNames {
     "eye-off-outline" = 0,
     "eye-outline" = 1,
@@ -1002,4 +1002,4 @@ export declare enum FontAwesomeIconNames {
     "wpexplorer" = 784,
     "meetup" = 785
 }
-export type IconNames = typeof MaterialIcons['name'] | typeof Ionicons['name'] | typeof FontAwesome5['name'] | typeof FontAwesome['name'];
+export type IconNames = (typeof MaterialIcons)["name"] | (typeof Ionicons)["name"] | (typeof FontAwesome5)["name"] | (typeof FontAwesome)["name"];

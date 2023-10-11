@@ -1,8 +1,13 @@
-import { BackgroundColors, BrandColors, ColorsInterface, ElementColors, FeedbackColors, GrayScaleColors, InteractionColors } from "../types/color.types";
+import {
+  BackgroundColors,
+  BrandColors,
+  ColorsInterface,
+  ElementColors,
+  FeedbackColors,
+  GrayScaleColors,
+  InteractionColors,
+} from "../types/color.types";
 import adjustColor from "../utils/adjust-color";
-
-
-
 
 export const defaultLightGrayScaleColors: GrayScaleColors = {
   // Adjusting blackAlpha series for dark theme
@@ -69,81 +74,76 @@ export const defaultLightGrayScaleColors: GrayScaleColors = {
   black70: adjustColor("#000000", 70, "dark", true),
   black90: adjustColor("#000000", 90, "dark", true),
   black100: adjustColor("#000000", 100, "dark", true),
-
-}
-
-
-
+};
 
 export const defaultLightBrandColors: BrandColors = {
-  colorOne: '#E57373',
-  colorTwo: '#81C784',
-  colorThree: '#64B5F6',
-  colorFour: '#FFD54F',
-  colorFive: '#BA68C8',
-  primary: '#007BFF',
-  primaryLighter: '#66AFFF',
-  secondary: '#6C757D',
-  accent: '#FFC107',
-  accentLighter: '#FFECB3',
-  accent50: 'rgba(255, 193, 7, 0.5)',
-  accent80: 'rgba(255, 193, 7, 0.8)',
-  primaryIconColor: '#007BFF',
-  secondaryIconColor: '#6C757D',
+  colorOne: "#E57373",
+  colorTwo: "#81C784",
+  colorThree: "#64B5F6",
+  colorFour: "#FFD54F",
+  colorFive: "#BA68C8",
+  primary: "#007BFF",
+  primaryLighter: "#66AFFF",
+  secondary: "#6C757D",
+  accent: "#FFC107",
+  accentLighter: "#FFECB3",
+  accent50: "rgba(255, 193, 7, 0.5)",
+  accent80: "rgba(255, 193, 7, 0.8)",
+  primaryIconColor: "#007BFF",
+  secondaryIconColor: "#6C757D",
 };
 
 export const defaultLightBackgroundColors: BackgroundColors = {
-  backdrop: '#F5F5F5',
-  background: '#FAFAFA',
-  headerBackground: '#FFFFFF',
-  cardBackgroundColor: '#FFFFFF',
-  commentBackgroundColor: '#EDEDED',
-  tabBarColor: '#F2F2F2',
-  surface: '#FFFFFF',
-  surfaceVariant: '#F7F7F7',
-  webWashColor: '#F5F5F5',
+  backdrop: "#F5F5F5",
+  background: "#FAFAFA",
+  headerBackground: "#FFFFFF",
+  cardBackgroundColor: "#FFFFFF",
+  commentBackgroundColor: "#EDEDED",
+  tabBarColor: "#F2F2F2",
+  surface: "#FFFFFF",
+  surfaceVariant: "#F7F7F7",
+  webWashColor: "#F5F5F5",
 };
 
 export const defaultLightElementColors: ElementColors = {
-  dividerColor: '#E0E0E0',
-  primaryContainer: '#007BFF',
-  secondaryContainer: '#E0E0E0',
-  tertiary: '#F5F5F5',
-  tertiaryContainer: '#FFFFFF',
-  outline: '#D5D5D5',
-  shadow: 'rgba(0, 0, 0, 0.15)',
-  secondaryButtonBackgroundColor: '#F7F7F7',
-  secondaryIconTextColor: '#757575',
-  primaryIconTextColor: '#FFFFFF',
+  dividerColor: "#E0E0E0",
+  primaryContainer: "#007BFF",
+  secondaryContainer: "#E0E0E0",
+  tertiary: "#F5F5F5",
+  tertiaryContainer: "#FFFFFF",
+  outline: "#D5D5D5",
+  shadow: "rgba(0, 0, 0, 0.15)",
+  secondaryButtonBackgroundColor: "#F7F7F7",
+  secondaryIconTextColor: "#757575",
+  primaryIconTextColor: "#FFFFFF",
 };
 
 export const defaultLightFeedbackColors: FeedbackColors = {
-  error: '#D32F2F',
-  successColor: '#43A047',
-  warningAlpha22: 'rgba(255, 165, 0, 0.22)',
-  warningAlpha62: 'rgba(255, 165, 0, 0.62)',
-  errorContainer: '#D32F2F',
-  onError: '#FFFFFF',
-  onErrorContainer: '#FF5722',
+  error: "#D32F2F",
+  successColor: "#43A047",
+  warningAlpha22: "rgba(255, 165, 0, 0.22)",
+  warningAlpha62: "rgba(255, 165, 0, 0.62)",
+  errorContainer: "#D32F2F",
+  onError: "#FFFFFF",
+  onErrorContainer: "#FF5722",
 };
 
 export const defaultLightInteractionColors: InteractionColors = {
-  placeholder: '#A8A8A8',
-  selectedColorOne10: 'rgba(229, 115, 115, 0.1)',
-  selectedColorOne40: 'rgba(229, 115, 115, 0.4)',
-  selectedColorOne100: '#E57373',
-  accentDarkest: '#FFA000',
-  primaryDarkest: '#0055AA',
-  onPrimary: '#FFFFFF',
-  onPrimaryContainer: '#007BFF',
-  onSecondary: '#333333',
-  onSecondaryContainer: '#F5F5F5',
-  onSurface: '#212121',
-  onSurfaceVariant: '#757575',
-  onSurfaceDisabled: '#BDBDBD',
-  onBackground: '#333333',
-  hyperLinkColor: "#1b88bf"
-
+  placeholder: "#A8A8A8",
+  selectedColorOne10: "rgba(229, 115, 115, 0.1)",
+  selectedColorOne40: "rgba(229, 115, 115, 0.4)",
+  selectedColorOne100: "#E57373",
+  accentDarkest: "#FFA000",
+  primaryDarkest: "#0055AA",
+  onPrimary: "#FFFFFF",
+  onPrimaryContainer: "#007BFF",
+  onSecondary: "#333333",
+  onSecondaryContainer: "#F5F5F5",
+  onSurface: "#212121",
+  onSurfaceVariant: "#757575",
+  onSurfaceDisabled: "#BDBDBD",
+  onBackground: "#333333",
+  hyperLinkColor: "#1b88bf",
 };
 
 export const lightColors: ColorsInterface = {
@@ -152,5 +152,5 @@ export const lightColors: ColorsInterface = {
   ...defaultLightElementColors,
   ...defaultLightFeedbackColors,
   ...defaultLightInteractionColors,
-  ...defaultLightGrayScaleColors
+  ...defaultLightGrayScaleColors,
 };

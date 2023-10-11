@@ -1,5 +1,5 @@
-import { ColorNameOrValueFromTheme } from '../../types/color.types';
-import { ThemeInterface } from '../../types/theme.types';
+import { ColorNameOrValueFromTheme } from "../../types/color.types";
+import { ThemeInterface } from "../../types/theme.types";
 export declare enum NameOrValue {
     Name = "name",
     Value = "value"

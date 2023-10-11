@@ -1,5 +1,3 @@
 import { BaseViewInterface } from "./base-view.interface";
 
-export interface BaseScrollViewInterface extends BaseViewInterface {
-    
-}
+export interface BaseScrollViewInterface extends BaseViewInterface {}

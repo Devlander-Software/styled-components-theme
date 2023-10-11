@@ -1,10 +1,8 @@
-import { ContainerStyleInterfaceWithTheme } from "../../types/container-style.props.interface"
-
+import { ContainerStyleInterfaceWithTheme } from "../../types/container-style.props.interface";
 
 export interface GetStyleForContainerPropsParameters {
-	(props: ContainerStyleInterfaceWithTheme): string
+  (props: ContainerStyleInterfaceWithTheme): string;
 }
-
 
 export const getStyleForContainerProps: GetStyleForContainerPropsParameters = ({
   maxWidth,
@@ -27,8 +25,8 @@ export const getStyleForContainerProps: GetStyleForContainerPropsParameters = ({
   flex,
   paddingTop,
 }: ContainerStyleInterfaceWithTheme): string => {
-  const handleUnitProps = theme.handleUnitProps
-  const handleColorFromTheme = theme.handleColorFromTheme
+  const handleUnitProps = theme.handleUnitProps;
+  const handleColorFromTheme = theme.handleColorFromTheme;
 
   const css = `${
     backgroundColorFromTheme
@@ -37,37 +35,32 @@ export const getStyleForContainerProps: GetStyleForContainerPropsParameters = ({
           1,
           theme,
         )};`
-      : ''
+      : ""
   }
-  ${flex ? `flex: ${flex};` : ''}
-  ${paddingLeft ? `padding-left: ${handleUnitProps(paddingLeft)};` : ''}
-  ${paddingTop ? `padding-top: ${handleUnitProps(paddingTop)};` : ''}
-  ${paddingRight ? `padding-right: ${handleUnitProps(paddingRight)};` : ''}
-  ${width ? `width: ${handleUnitProps(width)};` : ''}
-  ${marginTop ? `margin-top: ${handleUnitProps(marginTop)};` : ''}
-  ${marginBottom ? `margin-bottom: ${handleUnitProps(marginBottom)};` : ''}
-  ${opacity ? `opacity: ${opacity};` : ''}
-  ${marginLeft ? `margin-left: ${handleUnitProps(marginLeft)};` : ''}
-  ${marginRight ? `margin-right: ${handleUnitProps(marginRight)};` : ''}
-  ${height ? `height: ${handleUnitProps(height)};` : ''}
-  ${maxWidth ? `max-width: ${handleUnitProps(maxWidth)};` : ''}
-  ${maxHeight ? `max-height: ${handleUnitProps(maxHeight)};` : ''}
-  ${minHeight ? `min-height: ${handleUnitProps(minHeight)};` : ''}
+  ${flex ? `flex: ${flex};` : ""}
+  ${paddingLeft ? `padding-left: ${handleUnitProps(paddingLeft)};` : ""}
+  ${paddingTop ? `padding-top: ${handleUnitProps(paddingTop)};` : ""}
+  ${paddingRight ? `padding-right: ${handleUnitProps(paddingRight)};` : ""}
+  ${width ? `width: ${handleUnitProps(width)};` : ""}
+  ${marginTop ? `margin-top: ${handleUnitProps(marginTop)};` : ""}
+  ${marginBottom ? `margin-bottom: ${handleUnitProps(marginBottom)};` : ""}
+  ${opacity ? `opacity: ${opacity};` : ""}
+  ${marginLeft ? `margin-left: ${handleUnitProps(marginLeft)};` : ""}
+  ${marginRight ? `margin-right: ${handleUnitProps(marginRight)};` : ""}
+  ${height ? `height: ${handleUnitProps(height)};` : ""}
+  ${maxWidth ? `max-width: ${handleUnitProps(maxWidth)};` : ""}
+  ${maxHeight ? `max-height: ${handleUnitProps(maxHeight)};` : ""}
+  ${minHeight ? `min-height: ${handleUnitProps(minHeight)};` : ""}
   ${
     borderColorFromTheme
-      ? `border-color: ${handleColorFromTheme(
-          borderColorFromTheme,
-          1,
-          theme,
-        )};`
-      : ''
+      ? `border-color: ${handleColorFromTheme(borderColorFromTheme, 1, theme)};`
+      : ""
   };
-  ${borderWidth ? `border-width: ${handleUnitProps(borderWidth)};` : ''};
-  ${margin ? `margin: ${handleUnitProps(margin)};` : ''};
-`
+  ${borderWidth ? `border-width: ${handleUnitProps(borderWidth)};` : ""};
+  ${margin ? `margin: ${handleUnitProps(margin)};` : ""};
+`;
 
-  return css    
-}
+  return css;
+};
 
-
-export default getStyleForContainerProps
+export default getStyleForContainerProps;
