@@ -18,9 +18,25 @@
       "promise",
       "prettier",
       "simple-import-sort",
-      "@typescript-eslint"  // Add this for TypeScript linting
+      "@typescript-eslint",
+      "import"
   ],
   "rules": {
+    "import/imports-first": "error",
+    "import/order": ["error", {
+      "groups": ["builtin", "external", "internal", "parent", "sibling", "index", "type"],
+      "pathGroups": [{
+        "pattern": "react-native",
+        "group": "external",
+        "position": "before"
+      }],
+      "pathGroupsExcludedImportTypes": [],
+      "alphabetize": {
+        "order": "asc",
+        "caseInsensitive": true
+      },
+      "newlines-between": "always"
+    }],
       "simple-import-sort/imports": "error",
       "simple-import-sort/exports": "error",
       "prettier/prettier": "warn",
@@ -75,3 +91,5 @@
       ]
   }
 }
+
+
