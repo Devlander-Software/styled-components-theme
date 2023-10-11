@@ -1,6 +1,6 @@
 {
   "name": "@devlander/shared-react-native-types",
-  "version": "1.0.138",
+  "version": "1.0.139",
   "description": "Shared npm modules between the design system, and expo app",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -47,8 +47,9 @@
     "@babel/plugin-transform-class-properties": "^7.22.5",
     "@babel/plugin-transform-object-rest-spread": "^7.22.15",
     "@babel/plugin-transform-react-jsx": "^7.22.15",
-    "@babel/plugin-transform-runtime": "^7.22.15",
+    "@babel/plugin-transform-runtime": "^7.23.2",
     "@babel/preset-env": "^7.22.15",
+    "@babel/preset-react": "^7.22.15",
     "@babel/preset-typescript": "^7.22.15",
     "@babel/runtime": "^7.22.15",
     "@expo/vector-icons": "^13.0.0",
