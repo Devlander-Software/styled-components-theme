@@ -1,3 +1,5 @@
+
+
 export interface GrayScaleColors {
     whiteAlpha00: string
     whiteAlpha01: string
@@ -167,3 +169,15 @@ export interface ColorsInterface extends
 
 
 export type ColorFromTheme = keyof ColorsInterface;
+
+
+export type ValueOfColor = ColorsInterface[ColorFromTheme];
+
+
+export type ColorNameOrValueFromTheme = ColorFromTheme | ValueOfColor;
+
+export interface ColorInfoItem {
+    name: ColorFromTheme;
+    value: ValueOfColor,
+    description?: string;
+}

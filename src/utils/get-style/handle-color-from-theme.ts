@@ -1,31 +1,53 @@
-import hexToRgba from 'hex-to-rgba'
+import hexToRgba from "hex-to-rgba";
 
-import { ColorFromTheme } from '../../types/color.types'
-import { HandleColorFromThemeParameters, ThemeInterface } from '../../types/theme.types'
-import { isValidHex } from './is-valid-hex'
+import {
+  ColorFromTheme,
+  ColorNameOrValueFromTheme,
+} from "../../types/color.types";
+import {
+  HandleColorFromThemeParameters,
+  ThemeInterface,
+} from "../../types/theme.types";
+import { NameOrValue, isColorNameOrValue } from "./is-color-name-or-value";
+import { isValidHex } from "./is-valid-hex";
 
-export type HandleColorFromThemeInterfaceNative  = HandleColorFromThemeParameters<ThemeInterface>
+/**
+ * Type definition for handling color from theme.
+ */
+export type HandleColorFromThemeInterfaceNative =
+  HandleColorFromThemeParameters<ThemeInterface>;
 
-
+/**
+ * Retrieve a color from the theme based on the given color name, value, and opacity.
+ * If the color is not found, it defaults to the primary text color from the theme.
+ *
+ * @param color - The name or value of the color from the theme.
+ * @param opacity - The desired opacity. Defaults to 1 if not provided.
+ * @param theme - The theme object containing the color definitions.
+ * @returns The RGBA color string.
+ */
 export const handleColorFromTheme: HandleColorFromThemeInterfaceNative = (
-  color:  ColorFromTheme,
+  color: ColorNameOrValueFromTheme,
   opacity: number = 1,
   theme: ThemeInterface
 ): string => {
-
-  const tempColor = color? color : 'primaryTextColor' as string;
-  const colorExistsInTheme = theme && theme.colors && theme.colors[tempColor as ColorFromTheme] ? true : false;
-  if (
-    colorExistsInTheme &&
-    isValidHex(theme.colors[color] as any)
-  ) {
-    return hexToRgba(theme.colors[color] as string, opacity)
-  } else if (theme.colors[color]) {
-    return theme.colors[color]
+  const valueOrName: NameOrValue | boolean = isColorNameOrValue(color, theme);
+  if (valueOrName) {
+    if (valueOrName === NameOrValue.Name) {
+      if (isValidHex(theme.colors[color as ColorFromTheme] as any)) {
+        return hexToRgba(
+          theme.colors[color as ColorFromTheme] as string,
+          opacity
+        );
+      } else {
+        return theme.colors[color as ColorFromTheme];
+      }
+    } else {
+      return hexToRgba(color as string, opacity);
+    }
   } else {
-    return theme.colors.primaryTextColor
+    return theme.colors.primaryTextColor;
   }
-}
+};
 
-
-export default handleColorFromTheme
+export default handleColorFromTheme;

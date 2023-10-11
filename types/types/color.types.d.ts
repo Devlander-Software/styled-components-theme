@@ -137,3 +137,10 @@ export interface InteractionColors {
 export interface ColorsInterface extends GrayScaleColors, BrandColors, BackgroundColors, ElementColors, FeedbackColors, InteractionColors {
 }
 export type ColorFromTheme = keyof ColorsInterface;
+export type ValueOfColor = ColorsInterface[ColorFromTheme];
+export type ColorNameOrValueFromTheme = ColorFromTheme | ValueOfColor;
+export interface ColorInfoItem {
+    name: ColorFromTheme;
+    value: ValueOfColor;
+    description?: string;
+}
