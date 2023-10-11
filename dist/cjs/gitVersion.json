@@ -1,7 +1,7 @@
 {
-	"Branch": "(HEAD -> main, origin/main)",
-	"Hash": "4b54fd733f67f32298386e457d2c9d279f2dc266",
+	"Branch": "(HEAD -> main)",
+	"Hash": "22a6c45a02ba3508b80a741f37e71c5125617896",
 	"CommitUser": "Landon Johnson(landonwjohnson@gmail.com)",
 	"CommitContent": "updated build",
-	"Date": "Wed Oct 11 14:08:08 2023 -0600"
+	"Date": "Wed Oct 11 14:14:56 2023 -0600"
 }
