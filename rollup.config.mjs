@@ -1,20 +1,19 @@
 
 
 import commonjs from '@rollup/plugin-commonjs';
+import terser from '@rollup/plugin-terser';
 import typescript from '@rollup/plugin-typescript';
 import dts from 'rollup-plugin-dts';
-import terser from '@rollup/plugin-terser';
-import packageJson from './package.json' assert { type: 'json' };
 import babelJson from './babel.config.json' assert { type: 'json' };
+import packageJson from './package.json' assert { type: 'json' };
 
 import babel from "@rollup/plugin-babel";
 import generateGitVersion from "rollup-plugin-generate-git-version";
 // @ts-ignore
-import { nodeResolve } from "@rollup/plugin-node-resolve";
-import swcPreserveDirectives from "rollup-swc-preserve-directives";
-import auto from '@rollup/plugin-auto-install';
 import json from "@rollup/plugin-json";
+import { nodeResolve } from "@rollup/plugin-node-resolve";
 import styles from "rollup-plugin-styles";
+import swcPreserveDirectives from "rollup-swc-preserve-directives";
 
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 
@@ -96,6 +95,7 @@ const config = [
                 file: packageJson.main,
                 format: 'cjs',
                 sourcemap: true,
+                exports: 'named'
                
             },
             {
