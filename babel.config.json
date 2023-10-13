@@ -4,13 +4,14 @@
       "@babel/preset-env",
       {
         "modules": false,
-        "loose": false
+        "loose": false,
+        "useBuiltIns": true
       }
     ],
-    "module:@babel/plugin-transform-runtime",
+    "@babel/plugin-transform-runtime",
     "@babel/preset-typescript",
     "module:metro-react-native-babel-preset",
-    "module:@babel/preset-react"
+    "@babel/preset-react"
   ],
 
   "plugins": [

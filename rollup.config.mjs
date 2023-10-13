@@ -94,7 +94,7 @@ const config = [
             {
                 file: packageJson.main,
                 format: 'cjs',
-              
+                sourcemap: true,
                
             },
             {

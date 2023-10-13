@@ -9,7 +9,7 @@ import {
   ThemeInterface,
 } from "../../types/theme.types";
 
-import { isColorNameOrValue, NameOrValue } from "./is-color-name-or-value";
+import { ColorNameOrValueEnum, isColorNameOrValue } from "./is-color-name-or-value";
 import { isValidHex } from "./is-valid-hex";
 
 /**
@@ -32,9 +32,9 @@ export const handleColorFromTheme: HandleColorFromThemeInterfaceNative = (
   opacity: number = 1,
   theme: ThemeInterface,
 ): string => {
-  const valueOrName: NameOrValue | boolean = isColorNameOrValue(color, theme);
+  const valueOrName: ColorNameOrValueEnum | boolean = isColorNameOrValue(color, theme);
   if (valueOrName) {
-    if (valueOrName === NameOrValue.Name) {
+    if (valueOrName === ColorNameOrValueEnum.ColorName) {
       if (isValidHex(theme.colors[color as ColorFromTheme] as any)) {
         return hexToRgba(
           theme.colors[color as ColorFromTheme] as string,
