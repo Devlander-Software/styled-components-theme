@@ -1834,7 +1834,7 @@ declare const createThemeForWeb: (config: ThemeConfig) => ThemeInterfaceForHTML;
  * @param to - A string, either 'light' or 'dark', to determine the direction to adjust the colors.
  * @returns The adjusted color palette.
  */
-declare const generateColorsFrom: (colors: ColorsInterface, to: "light" | "dark") => ColorsInterface;
+declare const generateColorsFrom: (colors: Partial<ColorsInterface>, to: "light" | "dark") => ColorsInterface;
 
 interface BaseButtonPropsInterface extends ViewStyle, CustomStylePropsInterface {
     onPress?: () => void;

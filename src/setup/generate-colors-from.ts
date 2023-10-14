@@ -8,7 +8,7 @@ import adjustColor from "../utils/adjust-color";
  * @returns The adjusted color palette.
  */
 export const generateColorsFrom = (
-  colors: ColorsInterface,
+  colors: Partial<ColorsInterface>,
   to: "light" | "dark",
 ): ColorsInterface => {
   const adjustedColors: Partial<ColorsInterface> = {};
@@ -16,6 +16,10 @@ export const generateColorsFrom = (
   // Loop through each property in the provided colors object
   for (const colorKey in colors) {
     const colorValue = colors[colorKey as keyof ColorsInterface];
+
+    if(colorValue === undefined) continue;
+    if(colorValue === "transparent") continue;
+
 
     // Swap logic for black and white series
     if (to === "dark" && colorKey.startsWith("white")) {
