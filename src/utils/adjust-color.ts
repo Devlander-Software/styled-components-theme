@@ -18,7 +18,7 @@ export interface AdjustColorParams {
   ): string;
 }
 
-const adjustColor: AdjustColorParams = (
+export const adjustColor: AdjustColorParams = (
   colorValue: string,
   alphaValue: number,
   mode: "light" | "dark",
