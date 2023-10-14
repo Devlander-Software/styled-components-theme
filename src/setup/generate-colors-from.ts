@@ -1,5 +1,7 @@
-import { ColorsInterface } from "../types/color.types";
+import { lightColors } from '../defaults/light-colors.defaults';
+import { ColorFromTheme, ColorsInterface } from "../types/color.types";
 import adjustColor from "../utils/adjust-color";
+
 
 /**
  * Generates a new color palette based on the provided colors and a direction ('light' or 'dark').
@@ -8,14 +10,16 @@ import adjustColor from "../utils/adjust-color";
  * @returns The adjusted color palette.
  */
 export const generateColorsFrom = (
-  colors: Partial<ColorsInterface>,
+  colors: ColorsInterface,
   to: "light" | "dark",
 ): ColorsInterface => {
-  const adjustedColors: Partial<ColorsInterface> = {};
+  const adjustedColors: Partial<ColorsInterface> = {
+    ...lightColors,
+  };
 
   // Loop through each property in the provided colors object
   for (const colorKey in colors) {
-    const colorValue = colors[colorKey as keyof ColorsInterface];
+    const colorValue = colors[colorKey as ColorFromTheme];
 
     if(colorValue === undefined) continue;
     if(colorValue === "transparent") continue;
@@ -24,22 +28,22 @@ export const generateColorsFrom = (
     // Swap logic for black and white series
     if (to === "dark" && colorKey.startsWith("white")) {
       const blackKey = colorKey.replace("white", "black");
-      adjustedColors[colorKey as keyof ColorsInterface] =
-        colors[blackKey as keyof ColorsInterface];
+      adjustedColors[colorKey as ColorFromTheme] =
+        colors[blackKey as ColorFromTheme];
       continue;
     } else if (to === "light" && colorKey.startsWith("black")) {
       const whiteKey = colorKey.replace("black", "white");
-      adjustedColors[colorKey as keyof ColorsInterface] =
-        colors[whiteKey as keyof ColorsInterface];
+      adjustedColors[colorKey as ColorFromTheme] =
+        colors[whiteKey as ColorFromTheme];
       continue;
     }
 
     // Check if the color property name contains "Alpha" and retain original value
     if (colorKey.includes("Alpha")) {
-      adjustedColors[colorKey as keyof ColorsInterface] = colorValue;
+      adjustedColors[colorKey as ColorFromTheme] = colorValue;
     } else {
       // Use the adjustColor function to modify the color towards the desired shade (light or dark)
-      adjustedColors[colorKey as keyof ColorsInterface] = adjustColor(
+      adjustedColors[colorKey as ColorFromTheme] = adjustColor(
         colorValue,
         100,
         to,

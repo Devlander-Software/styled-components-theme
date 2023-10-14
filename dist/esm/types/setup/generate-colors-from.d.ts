@@ -5,5 +5,5 @@ import { ColorsInterface } from "../types/color.types";
  * @param to - A string, either 'light' or 'dark', to determine the direction to adjust the colors.
  * @returns The adjusted color palette.
  */
-export declare const generateColorsFrom: (colors: Partial<ColorsInterface>, to: "light" | "dark") => ColorsInterface;
+export declare const generateColorsFrom: (colors: ColorsInterface, to: "light" | "dark") => ColorsInterface;
 export default generateColorsFrom;
