@@ -44,13 +44,14 @@ jobs:
             npm version patch
           fi
 
-      - name: Set npm registry
-        run: npm config set registry https://registry.npmjs.org/
-
       - name: Set up .npmrc for authentication
         run: |
           echo "@devlander:registry=https://registry.npmjs.org/" > ~/.npmrc
           echo "//registry.npmjs.org/:_authToken=${NPM_PUBLISH_TOKEN}" >> ~/.npmrc
 
+      - name: Debug - Display .npmrc
+        run: cat ~/.npmrc
+        continue-on-error: true
+
       - name: Publish to npm
-        run: npm publish --access public --registry https://registry.npmjs.org/
+        run: npm publish --access public
