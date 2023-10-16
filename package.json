@@ -1,6 +1,6 @@
 {
   "name": "@devlander/shared-react-native-types",
-  "version": "1.0.154",
+  "version": "1.0.155",
   "description": "Shared npm modules between the design system, and expo app",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -23,6 +23,8 @@
   },
   "packageManager": "yarn@3.6.3",
   "scripts": {
+    "prepare": "dotenv -e .env -- bash -c 'export'",
+    "export-env": "dotenv -e .env -- bash -c 'export'",
     "pull-submodules": "node ./pull-external-modules.js",
     "build:index": "yarn run pull-submodules && node ./external-modules/auto-exporter-script",
     "increment-version": "yarn version --patch",
@@ -35,8 +37,7 @@
     "push-main": "git add -A && yarn run timeout && git commit -m 'updated build' && yarn run timeout  && git push origin main",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage",
-    "predeploy": "yarn test"
+    "test:coverage": "jest --coverage"
   },
   "dependencies": {
     "@sentry/browser": "^7.73.0",
@@ -86,6 +87,7 @@
     "@typescript-eslint/eslint-plugin": "^6.4.1",
     "@typescript-eslint/parser": "^6.4.1",
     "delay-cli": "2.0.0",
+    "dotenv-cli": "^7.3.0",
     "eslint": "^8.47.0",
     "eslint-plugin-import": "^2.28.1",
     "eslint-plugin-jest-dom": "latest",
