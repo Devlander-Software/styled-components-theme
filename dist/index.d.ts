@@ -198,6 +198,7 @@ declare const isConsoleAvailable: () => false | {
     (message?: any, ...optionalParams: any[]): void;
     (message?: any, ...optionalParams: any[]): void;
     (message?: any, ...optionalParams: any[]): void;
+    (message?: any, ...optionalParams: any[]): void;
 };
 declare const log: (message: string) => void;
 declare const adjustColor: AdjustColorParams;
