@@ -1,4 +1,4 @@
-import { isEmpty } from "lodash";
+import isEmpty from "lodash.isempty";
 
 export const getErrorMessageFromErrorMessages = (
   field: any,
