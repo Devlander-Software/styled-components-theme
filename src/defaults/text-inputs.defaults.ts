@@ -1,4 +1,4 @@
-import { IconNames } from "../types/icon-names.enum";
+import { IconNames } from "../types/icons/icon-names.enum";
 import {
   AutoCapitalizeEnum,
   AutoCompleteTypeEnum,

@@ -1,9 +1,6 @@
-import {
-  FontAwesome,
-  FontAwesome5,
-  Ionicons,
-  MaterialIcons,
-} from "@expo/vector-icons";
+import { NameOfFontAwesomeIcon } from "./name-of-font-awesome-icon.type";
+import { NameOfIoniconIcon } from "./name-of-ionicon-icon.type";
+import { NameOfMaterialIcon } from "./name-of-material-icon.type";
 
 export enum IoniconNames {
   "eye-off-outline",
@@ -1015,7 +1012,6 @@ export enum FontAwesomeIconNames {
 }
 
 export type IconNames =
-  | (typeof MaterialIcons)["name"]
-  | (typeof Ionicons)["name"]
-  | (typeof FontAwesome5)["name"]
-  | (typeof FontAwesome)["name"];
+  | NameOfMaterialIcon
+  | NameOfIoniconIcon
+  | NameOfFontAwesomeIcon;

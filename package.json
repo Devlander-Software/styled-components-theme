@@ -39,7 +39,6 @@
     "predeploy": "yarn test"
   },
   "dependencies": {
-    "@expo/vector-icons": "^13.0.0",
     "@rollup/plugin-alias": "^5.0.0",
     "@rollup/plugin-auto-install": "^3.0.4",
     "@rollup/plugin-babel": "^6.0.3",
