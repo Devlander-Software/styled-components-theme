@@ -24,6 +24,7 @@ jobs:
             source .env
             set +a
           fi
+
       - name: Set Environment Variables with fallback to .env
         run: |
           echo "NPM_READ_TOKEN=${{ secrets.NPM_READ_TOKEN || env.NPM_READ_TOKEN }}" >> $GITHUB_ENV
@@ -43,10 +44,13 @@ jobs:
             npm version patch
           fi
 
+      - name: Set npm registry
+        run: npm config set registry https://registry.npmjs.org/
+
       - name: Set up .npmrc for authentication
         run: |
           echo "@devlander:registry=https://registry.npmjs.org/" > ~/.npmrc
           echo "//registry.npmjs.org/:_authToken=${NPM_PUBLISH_TOKEN}" >> ~/.npmrc
 
       - name: Publish to npm
-        run: npm publish --access public
+        run: npm publish --access public --registry https://registry.npmjs.org/
