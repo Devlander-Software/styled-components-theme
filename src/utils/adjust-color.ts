@@ -1,13 +1,6 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-console */
 import Color from "color";
-
-/**
- * Adjusts a color's alpha and brightness.
- * @param colorValue - A string representing a color (e.g. hex, rgb, rgba).
- * @param alphaValue - A number between 0 to 100 representing the alpha value.
- * @param mode - A string, either 'light' or 'dark', to adjust the brightness.
- * @param isSolid - A boolean value. If true, returns the solid version of the color with no transparency.
- * @returns The adjusted color as a string.
- */
 
 export interface AdjustColorParams {
   (
@@ -18,38 +11,72 @@ export interface AdjustColorParams {
   ): string;
 }
 
+const cssColorNames = ["transparent"];
+
+const isConsoleAvailable = () => typeof console !== "undefined" && console.log;
+
+const log = (message: string) => {
+  if (isConsoleAvailable()) {
+    console.log(message);
+  }
+};
+
+const canBeConvertedIntoColor = (colorValue: string): boolean => {
+  if (cssColorNames.includes(colorValue)) return true;
+
+  try {
+    const color = Color(colorValue);
+    return Boolean(color);
+  } catch (e) {
+    return false;
+  }
+};
+
 export const adjustColor: AdjustColorParams = (
   colorValue: string,
   alphaValue: number,
   mode: "light" | "dark",
   isSolid = false,
 ): string => {
-  // Validate the alpha value
+  if (cssColorNames.includes(colorValue)) return colorValue;
+
   if (alphaValue < 0 || alphaValue > 100) {
-    throw new Error("Alpha value should be between 0 and 100");
+    log("Alpha value should be between 0 and 100. Returning default color.");
+    return "#FF0000"; // Default color (Red in this case)
   }
 
-  let adjustedColor = Color(colorValue);
+  if (canBeConvertedIntoColor(colorValue)) {
+    try {
+      let adjustedColor = Color(colorValue);
 
-  // Adjust the brightness based on the mode
-  if (mode === "light") {
-    adjustedColor = adjustedColor.lighten(0.2); // Adjust this value as needed
-  } else if (mode === "dark") {
-    adjustedColor = adjustedColor.darken(0.2); // Adjust this value as needed
-  }
+      if (mode === "light") {
+        adjustedColor = adjustedColor.lighten(0.2);
+      } else if (mode === "dark") {
+        adjustedColor = adjustedColor.darken(0.2);
+      }
 
-  // Convert alpha from 0-100 scale to 0-1 scale
-  const alphaScale = alphaValue / 100;
+      const alphaScale = alphaValue / 100;
 
-  if (isSolid) {
-    const solidColor = adjustedColor
-      .alpha(alphaScale)
-      .mix(Color("white"), 1 - alphaScale);
-    return solidColor.hex();
+      if (isSolid) {
+        const solidColor = adjustedColor
+          .alpha(alphaScale)
+          .mix(Color("white"), 1 - alphaScale);
+        return solidColor.hex();
+      } else {
+        adjustedColor = adjustedColor.alpha(alphaScale);
+        return adjustedColor.toString();
+      }
+    } catch (error) {
+      log(
+        `Error adjusting color with value: ${colorValue}. Returning default color.`,
+      );
+      return "#FF0000"; // Default color (Red in this case)
+    }
   } else {
-    // Set the alpha value
-    adjustedColor = adjustedColor.alpha(alphaScale);
-    return adjustedColor.toString();
+    log(
+      `Failed to convert ${colorValue} into a color. Returning default color.`,
+    );
+    return "#FF0000"; // Default color (Red in this case)
   }
 };
 
