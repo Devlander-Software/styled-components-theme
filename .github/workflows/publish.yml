@@ -17,15 +17,16 @@ jobs:
           node-version: '18'
           registry-url: 'https://registry.npmjs.org/' # Specifying npm public registry
 
-      - name: Define ORG_NAME dynamically
-        run: echo "ORG_NAME=${{ github.repository_owner }}" >> $GITHUB_ENV
+      - name: Construct Secret Names
+        id: construct_secret_names
+        run: |
+          echo "::set-output name=read_secret_name::${{ github.repository_owner }}.NPM_DEVLANDER_ORG_READ_TOKEN"
+          echo "::set-output name=publish_secret_name::${{ github.repository_owner }}.NPM_DEVLANDER_ORG_PUBLISH_TOKEN"
 
       - name: Set Environment Variables
         run: |
-          READ_SECRET_NAME="${ORG_NAME}.NPM_DEVLANDER_ORG_READ_TOKEN"
-          PUBLISH_SECRET_NAME="${ORG_NAME}.NPM_DEVLANDER_ORG_PUBLISH_TOKEN"
-          echo "NPM_READ_TOKEN=${{ secrets[READ_SECRET_NAME] }}" >> $GITHUB_ENV
-          echo "NPM_PUBLISH_TOKEN=${{ secrets[PUBLISH_SECRET_NAME] }}" >> $GITHUB_ENV
+          echo "NPM_READ_TOKEN=${{ secrets[steps.construct_secret_names.outputs.read_secret_name] }}" >> $GITHUB_ENV
+          echo "NPM_PUBLISH_TOKEN=${{ secrets[steps.construct_secret_names.outputs.publish_secret_name] }}" >> $GITHUB_ENV
           # Replace the placeholders in .yarnrc.yml with actual environment variables
           sed -i "s/\$NPM_READ_TOKEN/$NPM_READ_TOKEN/" .yarnrc.yml
           sed -i "s/\$NPM_PUBLISH_TOKEN/$NPM_PUBLISH_TOKEN/" .yarnrc.yml
