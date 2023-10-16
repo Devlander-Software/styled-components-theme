@@ -73,6 +73,7 @@ export * from "./utils/get-style/web/get-style-from-props.web";
 export * from "./utils/get-style/web/handle-color-for-theme.web";
 export * from "./utils/get-style/web/handle-font-for-theme.web";
 export * from "./utils/has-letter";
+export * from "./utils/hsl-to-rgba";
 export * from "./utils/is-json";
 export * from "./utils/remove-keys-with-substrings";
 export * from "./utils/slice-into-chunks";
