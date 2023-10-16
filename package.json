@@ -1,6 +1,6 @@
 {
   "name": "@devlander/shared-react-native-types",
-  "version": "1.0.160",
+  "version": "1.0.161",
   "description": "Shared npm modules between the design system, and expo app",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -23,7 +23,7 @@
   },
   "packageManager": "yarn@3.6.3",
   "scripts": {
-    "prepare": "dotenv -e .env -- bash -c 'export'",
+    "prepare": "dotenv -e .env -- bash -c 'export' && yarn run prettier",
     "export-env": "dotenv -e .env -- bash -c 'export'",
     "pull-submodules": "node ./pull-external-modules.js",
     "build:index": "yarn run pull-submodules && node ./external-modules/auto-exporter-script",
