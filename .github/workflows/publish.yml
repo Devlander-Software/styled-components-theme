@@ -18,8 +18,10 @@ jobs:
           registry-url: 'https://registry.npmjs.org/'
 
       - name: Load .env file
-        run: |
-          export $(cat .env | xargs)
+        id: load_env
+        uses: dotenv-linter/action@v2
+        with:
+          path: .env
 
       - name: Set Environment Variables with fallback to .env
         run: |
@@ -38,5 +40,10 @@ jobs:
             npm version patch
           fi
 
+      - name: Set up .npmrc for authentication
+        run: |
+          echo "@devlander:registry=https://registry.npmjs.org/" > ~/.npmrc
+          echo "//registry.npmjs.org/:_authToken=${NPM_PUBLISH_TOKEN}" >> ~/.npmrc
+
       - name: Publish to npm
-        run: npm publish
+        run: npm publish --access public
