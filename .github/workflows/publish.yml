@@ -22,8 +22,10 @@ jobs:
 
       - name: Set Environment Variables
         run: |
-          echo "NPM_READ_TOKEN=${{ secrets[env.ORG_NAME + '.NPM_DEVLANDER_ORG_READ_TOKEN'] }}" >> $GITHUB_ENV
-          echo "NPM_PUBLISH_TOKEN=${{ secrets[env.ORG_NAME + '.NPM_DEVLANDER_ORG_PUBLISH_TOKEN'] }}" >> $GITHUB_ENV
+          READ_SECRET_NAME="${ORG_NAME}.NPM_DEVLANDER_ORG_READ_TOKEN"
+          PUBLISH_SECRET_NAME="${ORG_NAME}.NPM_DEVLANDER_ORG_PUBLISH_TOKEN"
+          echo "NPM_READ_TOKEN=${{ secrets[READ_SECRET_NAME] }}" >> $GITHUB_ENV
+          echo "NPM_PUBLISH_TOKEN=${{ secrets[PUBLISH_SECRET_NAME] }}" >> $GITHUB_ENV
           # Replace the placeholders in .yarnrc.yml with actual environment variables
           sed -i "s/\$NPM_READ_TOKEN/$NPM_READ_TOKEN/" .yarnrc.yml
           sed -i "s/\$NPM_PUBLISH_TOKEN/$NPM_PUBLISH_TOKEN/" .yarnrc.yml
