@@ -15,18 +15,29 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '18'
-          registry-url: 'https://registry.npmjs.org/' # Specifying npm public registry
+          registry-url: 'https://registry.npmjs.org/'
 
-      - name: Set Environment Variables
+      - name: Load .env file
+        id: load_env
+        uses: dotenv-linter/action@v2
+        with:
+          path: .env
+
+      - name: Set Environment Variables with fallback to .env
         run: |
           echo "NPM_READ_TOKEN=${{ secrets.NPM_READ_TOKEN || env.NPM_READ_TOKEN }}" >> $GITHUB_ENV
           echo "NPM_PUBLISH_TOKEN=${{ secrets.NPM_PUBLISH_TOKEN || env.NPM_PUBLISH_TOKEN }}" >> $GITHUB_ENV
-          # Replace the placeholders in .yarnrc.yml with actual environment variables
-          sed -i "s/\$NPM_READ_TOKEN/$NPM_READ_TOKEN/" .yarnrc.yml
-          sed -i "s/\$NPM_PUBLISH_TOKEN/$NPM_PUBLISH_TOKEN/" .yarnrc.yml
 
       - name: Install dependencies
         run: yarn install
 
+      - name: Check and bump version if needed
+        run: |
+          CURRENT_VERSION=$(npm view @devlander/hooks version)
+          LOCAL_VERSION=$(node -p "require('./package.json').version")
+          if [ "$CURRENT_VERSION" == "$LOCAL_VERSION" ]; then
+            npm version patch
+          fi
+
       - name: Publish to npm
-        run: npm publish 
+        run: npm publish
