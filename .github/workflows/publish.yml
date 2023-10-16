@@ -18,10 +18,10 @@ jobs:
           registry-url: 'https://registry.npmjs.org/'
 
       - name: Load .env file
-        id: load_env
-        uses: dotenv-linter/action@v2
-        with:
-          path: .env
+        run: |
+          set -a
+          source .env
+          set +a
 
       - name: Set Environment Variables with fallback to .env
         run: |
