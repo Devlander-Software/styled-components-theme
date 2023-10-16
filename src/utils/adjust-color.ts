@@ -1,5 +1,4 @@
 /* eslint-disable no-undef */
-/* eslint-disable no-console */
 import Color from "color";
 
 export interface AdjustColorParams {
@@ -65,7 +64,12 @@ export const adjustColor: AdjustColorParams = (
         return solidColor.hex();
       } else {
         adjustedColor = adjustedColor.alpha(alphaScale);
-        return adjustedColor.toString();
+
+        if (adjustedColor.alpha() === 1) {
+          return adjustedColor.hex();
+        } else {
+          return adjustedColor.rgb().string();
+        }
       }
     } catch (error) {
       log(
