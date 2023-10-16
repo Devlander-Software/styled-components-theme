@@ -75,6 +75,11 @@ export interface ElementColors {
   primaryContainer: string;
   secondaryContainer: string;
   tertiary: string;
+  outline: string;
+  shadow: string;
+  secondaryButtonBackgroundColor: string;
+  secondaryIconTextColor: string;
+  primaryIconTextColor: string;
   tertiaryContainer: string;
 }
 
@@ -105,19 +110,6 @@ export interface BackgroundColors {
   surface: string;
   surfaceVariant: string;
   webWashColor: string;
-}
-
-export interface ElementColors {
-  dividerColor: string;
-  primaryContainer: string;
-  secondaryContainer: string;
-  tertiary: string;
-  tertiaryContainer: string;
-  outline: string;
-  shadow: string;
-  secondaryButtonBackgroundColor: string;
-  secondaryIconTextColor: string;
-  primaryIconTextColor: string;
 }
 
 export interface FeedbackColors {

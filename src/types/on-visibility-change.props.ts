@@ -1,3 +1,4 @@
+import React from "react";
 export interface OnVisibilityChangeProps {
   onVisibilityChange: (visible: boolean) => void;
   parentVisible?: boolean;

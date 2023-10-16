@@ -1,5 +1,5 @@
-import generateColorsFrom from '../dist/esm/types/setup/generate-colors-from';
 import { lightColors } from '../src/defaults/light-colors.defaults';
+import generateColorsFrom from '../src/setup/generate-colors-from';
 // generateColorsFrom.test.ts
 
 

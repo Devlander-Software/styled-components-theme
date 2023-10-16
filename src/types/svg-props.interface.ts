@@ -1,10 +1,11 @@
-import { ColorFromTheme } from "./color.types";
+import { ColorNameOrValueEnum } from "../utils/get-style/shared/is-color-name-or-value";
+
 
 export interface SVGPropsInterface {
   width?: string | number;
   height?: string | number;
   viewBox?: string;
-  backgroundColorFromTheme?: ColorFromTheme;
+  backgroundColorFromTheme?: ColorNameOrValueEnum;
 }
 
 export const defaultSVGProps = {

@@ -1,6 +1,6 @@
-/// <reference types="react" />
+import React from "react";
 import { TextFontWeightTypesEnum } from "../font-weight.types";
-import { textDecorationLineTypes } from "../text.types";
+import { TextDecorationLineTypes } from "../text.types";
 import { ThemeInterfaceForHTML } from "../theme.types";
 export interface HtmlParagraphInterface extends Partial<React.HTMLProps<HTMLParagraphElement>> {
     fontSize?: number;
@@ -24,7 +24,7 @@ export interface HtmlParagraphInterface extends Partial<React.HTMLProps<HTMLPara
     fontWeight?: TextFontWeightTypesEnum;
     paddingTop?: number;
     paddingBottom?: number;
-    textDecoration?: textDecorationLineTypes;
+    textDecoration?: TextDecorationLineTypes;
     error?: boolean;
     fontFamily?: string;
     textAlign?: "auto" | "left" | "right" | "center" | "justify";

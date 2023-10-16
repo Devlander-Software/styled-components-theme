@@ -1,8 +1,9 @@
+/* eslint-disable import/order */
 import { CustomTextStylesFromTheme } from "../custom-style-props.interface";
 import { FontTypeEnum } from "../font-type.enum";
 import { FontWeightType } from "../font-weight.enum";
 import { TextFontWeightTypesEnum } from "../font-weight.types";
-import { textDecorationLineTypes } from "../text.types";
+import { TextDecorationLineTypes } from "../text.types";
 import { ThemeInterfaceForHTML } from "../theme.types";
 import { HtmlSpanInterface } from "./span.types.web";
 
@@ -38,7 +39,7 @@ export interface HtmlSpanStyleProps
   paddingRight?: number;
   textAlign?: "left" | "center" | "right";
   textTransform?: "uppercase" | "lowercase" | "capitalize" | "none" | undefined;
-  textDecorationLine?: textDecorationLineTypes;
+  textDecorationLine?: TextDecorationLineTypes;
 }
 
 export interface HtmlSpanStylePropsWithTheme extends HtmlSpanStyleProps {

@@ -1,12 +1,12 @@
-import { ColorsInterface } from "./color.types";
+import { ColorNameOrValueFromTheme } from "./color.types";
 import { FontTypeEnum } from "./font-type.enum";
 import { FontWeightType } from "./font-weight.enum";
 import { ThemeInterfaceForHTML } from "./theme.types";
 
 export interface CustomTextStylesFromTheme {
-  textDecorationColorFromTheme?: keyof ColorsInterface;
-  colorFromTheme?: keyof ColorsInterface;
-  textColorFromTheme?: keyof ColorsInterface;
+  textDecorationColorFromTheme?: ColorNameOrValueFromTheme;
+  colorFromTheme?: ColorNameOrValueFromTheme;
+  textColorFromTheme?: ColorNameOrValueFromTheme;
   fontTypeWeight?: FontWeightType;
   highlight?: boolean;
   onDark?: boolean;
@@ -15,20 +15,20 @@ export interface CustomTextStylesFromTheme {
   focused?: boolean;
   ghost?: boolean;
   destructive?: boolean;
-  boxShadowColorFromTheme?: keyof ColorsInterface;
+  boxShadowColorFromTheme?: ColorNameOrValueFromTheme;
 }
 
 export interface CustomViewStylePropsInterface {
-  borderColorFromTheme?: keyof ColorsInterface;
-  backgroundColorFromTheme?: keyof ColorsInterface;
-  boxShadowColorFromTheme?: keyof ColorsInterface;
+  borderColorFromTheme?: ColorNameOrValueFromTheme;
+  backgroundColorFromTheme?: ColorNameOrValueFromTheme;
+  boxShadowColorFromTheme?: ColorNameOrValueFromTheme;
   ghost?: boolean;
   destructive?: boolean;
 }
 
 export interface CustomButtonTypes {
   submitting?: boolean;
-  backgroundColorFromTheme?: keyof ColorsInterface;
+  backgroundColorFromTheme?: ColorNameOrValueFromTheme;
 }
 
 export interface CustomStylePropsInterface
@@ -60,5 +60,5 @@ export interface StylePropsInterfaceWithTheme extends StylePropsInterface {
   paddingLeft?: number | string;
   paddingRight?: number | string;
   opacity?: number;
-  backgroundColorFromTheme?: keyof ColorsInterface;
+  backgroundColorFromTheme?: ColorNameOrValueFromTheme;
 }

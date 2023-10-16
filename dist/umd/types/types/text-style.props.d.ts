@@ -1,11 +1,11 @@
 import { FontTypeEnum } from "./font-type.enum";
-import { FontTypeWeight } from "./font-weight.enum";
+import { FontTypeWeightEnum, FontWeightType } from "./font-weight.enum";
 import { TextFontWeightTypesEnum } from "./font-weight.types";
-import { textDecorationLineTypes, TextInterface } from "./text.types";
+import { TextDecorationLineTypes, TextInterface } from "./text.types";
 import { ThemeInterface } from "./theme.types";
 export interface TextStyleProps extends Partial<TextInterface> {
     fontType?: FontTypeEnum;
-    fontTypeWeight?: keyof FontTypeWeight;
+    fontTypeWeight?: FontWeightType | FontTypeWeightEnum;
     maxFontSizeMultiplier?: number;
     onDark?: boolean;
     fontStyle?: "normal" | "italic";
@@ -33,7 +33,7 @@ export interface TextStyleProps extends Partial<TextInterface> {
     paddingRight?: number;
     textAlign?: "left" | "center" | "right";
     textTransform?: "uppercase" | "lowercase" | "capitalize" | "none" | undefined;
-    textDecorationLine?: textDecorationLineTypes;
+    textDecorationLine?: TextDecorationLineTypes;
 }
 export interface TextStylePropsWithTheme extends TextStyleProps {
     theme: ThemeInterface;

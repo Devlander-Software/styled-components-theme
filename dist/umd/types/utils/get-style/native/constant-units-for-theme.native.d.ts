@@ -1,0 +1,20 @@
+import { PaddingOnThemeType } from "../../../types/theme.types";
+export declare const statusBarHeight: number;
+export declare const windowHeight: number;
+export declare const windowWidth: number;
+export declare const screenHeight: number;
+export declare const screenWidth: number;
+export declare const paddingForScrollView = 15;
+export declare const paddingForScrollViewTwo = 5;
+export declare const paddingObj: PaddingOnThemeType;
+declare const _default: {
+    statusBarHeight: number;
+    windowHeight: number;
+    windowWidth: number;
+    screenHeight: number;
+    screenWidth: number;
+    paddingForScrollView: number;
+    paddingForScrollViewTwo: number;
+    paddingObj: PaddingOnThemeType;
+};
+export default _default;

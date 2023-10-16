@@ -12,4 +12,5 @@ export declare enum TextFontWeightTypesEnum {
     nineHundred = "900",
     light = "light"
 }
-export declare const TextFontWeightTypes: (TextFontWeightTypesEnum | undefined)[];
+export declare const textFontWeightTypes: (TextFontWeightTypesEnum | undefined)[];
+export type TextFontWeightType = typeof textFontWeightTypes;

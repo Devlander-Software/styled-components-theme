@@ -1,5 +1,7 @@
+import React from "react";
+
 import { TextFontWeightTypesEnum } from "../font-weight.types";
-import { textDecorationLineTypes } from "../text.types";
+import { TextDecorationLineTypes } from "../text.types";
 import { ThemeInterfaceForHTML } from "../theme.types";
 
 export interface HtmlParagraphInterface
@@ -25,7 +27,7 @@ export interface HtmlParagraphInterface
   fontWeight?: TextFontWeightTypesEnum;
   paddingTop?: number;
   paddingBottom?: number;
-  textDecoration?: textDecorationLineTypes;
+  textDecoration?: TextDecorationLineTypes;
   error?: boolean;
   fontFamily?: string;
   textAlign?: "auto" | "left" | "right" | "center" | "justify";

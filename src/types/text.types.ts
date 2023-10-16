@@ -1,6 +1,6 @@
 import { TextProps } from "react-native";
 
-import { ColorsInterface } from "./color.types";
+import { ColorNameOrValueFromTheme } from "./color.types";
 import { CustomTextStylesFromTheme } from "./custom-style-props.interface";
 import { FontTypeEnum } from "./font-type.enum";
 import { FontTypeWeightEnum } from "./font-weight.enum";
@@ -13,7 +13,7 @@ export enum TextTransformTypes {
   lowercase = "lowercase",
 }
 
-export enum textDecorationLineTypes {
+export enum TextDecorationLineTypes {
   none = "none",
   underline = "underline",
   lineThrough = "line-through",
@@ -42,7 +42,7 @@ export interface TextInterface extends TextProps, CustomTextStylesFromTheme {
   fontWeight?: TextFontWeightTypesEnum;
   paddingTop?: number;
   paddingBottom?: number;
-  textDecoration?: textDecorationLineTypes;
+  textDecoration?: TextDecorationLineTypes;
   error?: boolean;
   fontFamily?: string;
   textAlign?: "auto" | "left" | "right" | "center" | "justify";
@@ -57,8 +57,8 @@ export interface GhostTextInterface extends Partial<TextInterface> {
   fontTypeWeight: FontTypeWeightEnum;
   ghost: boolean;
   disabled: boolean;
-  textColorFromTheme: keyof ColorsInterface;
-  backgroundColorFromTheme: keyof ColorsInterface;
+  textColorFromTheme: ColorNameOrValueFromTheme;
+  backgroundColorFromTheme: ColorNameOrValueFromTheme;
 
   theme: ThemeInterface;
 }

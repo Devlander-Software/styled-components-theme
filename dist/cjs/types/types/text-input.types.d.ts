@@ -5,7 +5,7 @@ import { AutoCapitalizeEnum, DataDetectorEnum, KeyBoardTypeEnum, TextContentType
 export interface FormInputGroupProps extends TextInputProps {
     opacity?: number;
     dense?: boolean;
-    renderRight?: () => JSX.Element;
+    renderRight?: () => JSX.Element | null;
     containerStyleProps?: ViewStyle;
     containerStyleFromTheme?: ContainerStyleProps;
     renderBottom?: () => JSX.Element | null;

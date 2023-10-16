@@ -11,11 +11,12 @@ export interface AdjustColorParams {
   ): string;
 }
 
-const cssColorNames = ["transparent"];
+export const cssColorNames = ["transparent"];
 
-const isConsoleAvailable = () => typeof console !== "undefined" && console.log;
+export const isConsoleAvailable = () =>
+  typeof console !== "undefined" && console.log;
 
-const log = (message: string) => {
+export const log = (message: string) => {
   if (isConsoleAvailable()) {
     console.log(message);
   }

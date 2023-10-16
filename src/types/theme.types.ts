@@ -1,22 +1,24 @@
+/* eslint-disable import/order */
+// eslint-disable-next-line simple-import-sort/imports
 import { AdjustColorParams } from "../utils/adjust-color";
-import { capFontSizeInterface } from "../utils/get-style/cap-font-size";
-import { GetStyleForContainerPropsParameters } from "../utils/get-style/get-style-for-container-props";
-import { GetStyleForGhostPropsParametersNative } from "../utils/get-style/get-style-for-ghost-props";
-import { GetStyleForTextPropsParametersNative } from "../utils/get-style/get-style-for-text-props";
-import { GetStyleForTouchableOpacityInterface } from "../utils/get-style/get-style-for-touchable-opacity-props";
-import { BoxShadowFuncInterface } from "../utils/get-style/handle-box-shadows";
-import { HandleColorFromThemeInterfaceNative } from "../utils/get-style/handle-color-from-theme";
-import { HandleFontFromThemeParametersForNative } from "../utils/get-style/handle-font-for-theme";
-import { HandleFontSizePropsInterface } from "../utils/get-style/handle-font-size-props";
-import { HandleSnackbarColorInterface } from "../utils/get-style/handle-snackbar-color";
-import { HandleUnitPropsInterface } from "../utils/get-style/handle-unit-props";
+import { GetStyleForContainerPropsParametersNative } from "../utils/get-style/native/get-style-for-container-props.native";
+import { GetStyleForGhostPropsParametersNative } from "../utils/get-style/native/get-style-for-ghost-props.native";
+import { GetStyleForTextPropsParametersNative } from "../utils/get-style/native/get-style-for-text-props.native";
+import { GetStyleForTouchableOpacityInterface } from "../utils/get-style/native/get-style-for-touchable-opacity-props.native";
+import { HandleFontFromThemeParametersForNative } from "../utils/get-style/native/handle-font-for-theme.native";
+import { CapFontSizeInterface } from "../utils/get-style/shared/cap-font-size";
+import { BoxShadowFuncInterface } from "../utils/get-style/shared/handle-box-shadows";
+import { HandleColorFromThemeInterfaceNative } from "../utils/get-style/shared/handle-color-from-theme";
+import { HandleFontSizePropsInterface } from "../utils/get-style/shared/handle-font-size-props";
+import { HandleSnackbarColorInterface } from "../utils/get-style/shared/handle-snackbar-color";
+import { HandleUnitPropsInterface } from "../utils/get-style/shared/handle-unit-props";
 import { GetStyleForGhostPropsParametersWeb } from "../utils/get-style/web/get-style-for-ghost-props.web";
-import { GetStyleForImgPropsInterface } from "../utils/get-style/web/get-style-for-img-props";
-import { GetStyleForParagraphPropsWeb } from "../utils/get-style/web/get-style-for-paragraph-props";
+import { GetStyleForImgPropsInterface } from "../utils/get-style/web/get-style-for-img-props.web";
+import { GetStyleForParagraphPropsWeb } from "../utils/get-style/web/get-style-for-paragraph-props.web";
+import { GetStyleForContainerPropsParametersWeb } from "../utils/get-style/web/get-style-from-props.web";
 import { HandleColorFromThemeInterfaceWeb } from "../utils/get-style/web/handle-color-for-theme.web";
 import { HandleFontFromThemeParametersForWeb } from "../utils/get-style/web/handle-font-for-theme.web";
-import { ColorFromTheme, ColorsInterface } from "./color.types";
-import { ContainerStyleInterfaceWithTheme } from "./container-style.props.interface";
+import { ColorNameOrValueFromTheme, ColorsInterface } from "./color.types";
 import { DeviceOnTheme } from "./device-on-theme.type";
 import { ElevationObjType } from "./elevation-obj.type";
 import { FontWeightType } from "./font-weight.enum";
@@ -31,7 +33,11 @@ export interface HandleFontFromThemeParameters<T> {
 }
 
 export interface HandleColorFromThemeParameters<T> {
-  (color: ColorFromTheme, opacity: number, theme: T): string;
+  (color: ColorNameOrValueFromTheme, opacity: number, theme: T): string;
+}
+
+export interface GetStyleForContainerParameters<T> {
+  (props: T): string;
 }
 
 export interface GetStyleForGhostPropsParameters<T> {
@@ -55,9 +61,7 @@ export interface ThemeInterface {
   handleFontSizeProps: HandleFontSizePropsInterface;
   handleUnitProps: HandleUnitPropsInterface;
   getStyleForTouchableOpacityProps: GetStyleForTouchableOpacityInterface;
-  getStyleForContainerProps: (
-    props: ContainerStyleInterfaceWithTheme,
-  ) => string;
+  getStyleForContainerProps: GetStyleForContainerPropsParametersNative;
   handleGhost: GetStyleForGhostPropsParametersNative;
   getStyleForTextProps: GetStyleForTextPropsParametersNative;
   boxShadowOne: BoxShadowFuncInterface;
@@ -71,7 +75,7 @@ export interface ThemeInterface {
   fonts: FontsInterface;
   darkThemeEnabled?: boolean;
   deviceOnTheme: DeviceOnTheme;
-  capFontSize: capFontSizeInterface;
+  capFontSize: CapFontSizeInterface;
   adjustColor: AdjustColorParams;
 }
 
@@ -80,7 +84,7 @@ export interface ThemeInterfaceForHTML {
   handleSnackbarColor: HandleSnackbarColorInterface;
   handleFontSizeProps: HandleFontSizePropsInterface;
   handleUnitProps: HandleUnitPropsInterface;
-  getStyleForContainerProps: GetStyleForContainerPropsParameters;
+  getStyleForContainerProps: GetStyleForContainerPropsParametersWeb;
   getStyleForImageProps: GetStyleForImgPropsInterface;
 
   handleGhost: GetStyleForGhostPropsParametersWeb;
@@ -96,6 +100,6 @@ export interface ThemeInterfaceForHTML {
   fonts: FontsInterface;
   darkThemeEnabled?: boolean;
   deviceOnTheme: DeviceOnTheme;
-  capFontSize: capFontSizeInterface;
+  capFontSize: CapFontSizeInterface;
   adjustColor: AdjustColorParams;
 }

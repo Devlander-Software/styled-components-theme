@@ -1,7 +1,8 @@
+/* eslint-disable no-undef */
 import { TextInputProps, ViewStyle } from "react-native";
 
 import { ContainerStyleProps } from "./container-style.props.interface";
-import { IconNames, IoniconNames } from "./icon-names.enum";
+import { IconNames } from "./icon-names.enum";
 import {
   AutoCapitalizeEnum,
   DataDetectorEnum,
@@ -12,7 +13,7 @@ import {
 export interface FormInputGroupProps extends TextInputProps {
   opacity?: number;
   dense?: boolean;
-  renderRight?: () => JSX.Element;
+  renderRight?: () => JSX.Element | null;
   containerStyleProps?: ViewStyle;
   containerStyleFromTheme?: ContainerStyleProps;
 

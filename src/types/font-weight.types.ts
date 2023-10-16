@@ -13,7 +13,9 @@ export enum TextFontWeightTypesEnum {
   light = "light",
 }
 
-export const TextFontWeightTypes = [
+export const textFontWeightTypes = [
   ...Object.values(TextFontWeightTypesEnum),
   undefined,
 ];
+
+export type TextFontWeightType = typeof textFontWeightTypes;

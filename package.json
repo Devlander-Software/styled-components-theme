@@ -1,6 +1,6 @@
 {
   "name": "@devlander/shared-react-native-types",
-  "version": "1.0.148",
+  "version": "1.0.149",
   "description": "Shared npm modules between the design system, and expo app",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -28,7 +28,7 @@
     "increment-version": "yarn version patch",
     "prettier": "prettier --write ./src/**/*.{ts,tsx,js,jsx,json,md}",
     "lint": "yarn run prettier && eslint ./src --ext .ts,.tsx --fix",
-    "build:esm": "tsc",
+    "build:esm": "rm -rf ./types && rm -rf ./dist && tsc",
     "build": "yarn run build:index && yarn build:esm && yarn build:cjs",
     "build:cjs": "yarn run increment-version && rollup -c && yarn run push-main",
     "timeout": "delay 5",
