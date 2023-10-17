@@ -1,4 +1,4 @@
-declare module "@env" {
+export declare module "@env" {
   export const SENTRY_DSN: string;
   export const SENTRY_ENVIRONMENT: string;
   export const SENTRY_RELEASE: string;
