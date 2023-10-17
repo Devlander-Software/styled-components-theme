@@ -2152,7 +2152,12 @@ declare const hslToRgb: (h: number, s: number, l: number) => [number, number, nu
 
 declare function isJson(str: string): boolean;
 
-declare function initializeSentry(): void;
+type SentryConfig = {
+    SENTRY_DSN: string;
+    SENTRY_ENVIRONMENT?: string;
+    SENTRY_RELEASE?: string;
+};
+declare function initializeSentry(config: SentryConfig): void;
 declare function logError(error: unknown): void;
 declare function logMessage(message: string): void;
 

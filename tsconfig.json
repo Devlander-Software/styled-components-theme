@@ -16,10 +16,7 @@
     "sourceMap": true,
     "strict": true,
     "target": "ESNext",
-    "baseUrl": ".", // To resolve non-relative module names
-    "paths": {
-      "@env": ["declarations/env.d.ts"]
-    }
+    "baseUrl": "." // To resolve non-relative module names
   },
   "include": [
     "src/**/*",
@@ -27,7 +24,7 @@
     "src/**/*.tsx",
     "src/rollup.config.js",
     "src/**/*.d.ts",
-    "./declarations/**/*.d.ts"
+    "./declarations/**/*.styled.d.ts"
   ],
   "exclude": ["node_modules", "dist/**/*", "types/**/*"]
 }

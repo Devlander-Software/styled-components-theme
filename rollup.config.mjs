@@ -38,12 +38,12 @@ const treeshake = {
 };
 const nodePlugins = [
     nodeResolve({
-        extensions: [".ts", ".d.ts", ".tsx", ".js", ".jsx", ".json", ".env.d.ts"],
+        extensions: [".ts", ".d.ts", ".tsx", ".js", ".jsx", ".json"],
     }),
     json(),
     commonjs({
         ignoreTryCatch: false,
-        include: ['node_modules/**',  "declarations/**/*"]
+        include: ['node_modules/**', './src/declarations/styled.d.ts']
     }),
     typescript({
         tsconfig: './tsconfig.json',
