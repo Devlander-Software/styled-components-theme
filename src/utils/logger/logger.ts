@@ -1,7 +1,6 @@
 /* eslint-disable import/order */
 /* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable no-undef */
-import { SENTRY_DSN, SENTRY_ENVIRONMENT, SENTRY_RELEASE } from "@env";
 import { Platform } from "react-native";
 
 import {
@@ -9,6 +8,12 @@ import {
     LogError,
     MessageError,
 } from "../../types/error.types";
+
+type SentryConfig = {
+  SENTRY_DSN: string;
+  SENTRY_ENVIRONMENT?: string;
+  SENTRY_RELEASE?: string;
+};
 
 type SentryType = {
   init: (config: {
@@ -29,24 +34,17 @@ if (Platform.OS === "web") {
   Sentry = require("@sentry/react-native") as SentryType;
 }
 
-export function initializeSentry(): void {
+export function initializeSentry(config: SentryConfig): void {
   try {
     Sentry.init({
-      dsn: SENTRY_DSN,
-      environment: SENTRY_ENVIRONMENT,
-      release: SENTRY_RELEASE,
+      dsn: config.SENTRY_DSN,
+      environment: config.SENTRY_ENVIRONMENT,
+      release: config.SENTRY_RELEASE,
     });
     isSentryInitialized = true;
   } catch (error) {
-    if (error instanceof Error) {
-      throw new InitializationError(
-        `Failed to initialize Sentry: ${error.message}`,
-      );
-    } else {
-      throw new InitializationError(
-        `Failed to initialize Sentry: An unexpected error occurred.`,
-      );
-    }
+    const initError = new InitializationError(`Failed to initialize Sentry: ${error instanceof Error ? error.message : "An unexpected error occurred."}`);
+    console.warn(initError.message);
   }
 }
 
@@ -54,11 +52,9 @@ export function logError(error: unknown): void {
   if (isSentryInitialized) {
     Sentry.captureException(error);
   } else {
-    const errorMessage =
-      typeof error === "string" ? error : "An unknown error occurred";
-    throw new LogError(
-      `Sentry not initialized. Original error: ${errorMessage}`,
-    );
+    const errorMessage = `Sentry not initialized. Original error: ${typeof error === "string" ? error : "An unknown error occurred"}`;
+    const logErr = new LogError(errorMessage);
+    console.warn(logErr.message);
   }
 }
 
@@ -66,9 +62,8 @@ export function logMessage(message: string): void {
   if (isSentryInitialized) {
     Sentry.captureMessage(message);
   } else {
-    throw new MessageError(
-      `Sentry not initialized. Original message: ${message}`,
-    );
+    const msgError = new MessageError(`Sentry not initialized. Original message: ${message}`);
+    console.warn(msgError.message);
   }
 }
 
