@@ -43,7 +43,7 @@ const nodePlugins = [
     json(),
     commonjs({
         ignoreTryCatch: false,
-        include: ['node_modules/**', './src/declarations/styled.d.ts']
+        include: ['node_modules/**',  "declarations/**/*"]
     }),
     typescript({
         tsconfig: './tsconfig.json',
