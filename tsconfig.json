@@ -18,7 +18,7 @@
     "target": "ESNext",
     "baseUrl": ".", // To resolve non-relative module names
     "paths": {
-      "@env": ["types/env.d.ts"]
+      "@env": ["declarations/env.d.ts"]
     }
   },
   "include": [
