@@ -38,7 +38,7 @@ const treeshake = {
 };
 const nodePlugins = [
     nodeResolve({
-        extensions: [".ts", ".d.ts", ".tsx", ".js", ".jsx", ".json"],
+        extensions: [".ts", ".d.ts", ".tsx", ".js", ".jsx", ".json", ".env.d.ts"],
     }),
     json(),
     commonjs({
