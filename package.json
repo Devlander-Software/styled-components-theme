@@ -1,6 +1,6 @@
 {
   "name": "@devlander/shared-react-native-types",
-  "version": "1.0.179",
+  "version": "1.0.180",
   "description": "Shared npm modules between the design system, and expo app",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -42,9 +42,6 @@
   },
   "dependencies": {
     "@devlander/collect-exports-for-bundle": "^1.0.63",
-    "@devlander/react": "gist:a773a60265123568189d94d242924f38",
-    "@devlander/rollup": "gist:85a0cc9660e26ce4f6bf9629da1ca5c7",
-    "@devlander/sync-dep-versions": "gist:6c444d07e8686711347fa474dd5540f5",
     "@swc/core": "^1.3.84",
     "color": "^4.2.3",
     "hex-to-rgba": "^2.0.1",
