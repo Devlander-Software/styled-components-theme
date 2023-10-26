@@ -1,6 +1,6 @@
 {
   "name": "@devlander/shared-react-native-types",
-  "version": "1.0.180",
+  "version": "1.0.181",
   "description": "Shared npm modules between the design system, and expo app",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -41,7 +41,7 @@
     "build": "yarn run build:index && npx rimraf ./dist &&  yarn run format && yarn run typecheck && yarn run buildESM && yarn run buildCJS && yarn run patch"
   },
   "dependencies": {
-    "@devlander/collect-exports-for-bundle": "^1.0.63",
+    "@devlander/collect-exports-for-bundle": "^1.0.94",
     "@swc/core": "^1.3.84",
     "color": "^4.2.3",
     "hex-to-rgba": "^2.0.1",
@@ -99,6 +99,10 @@
     "rollup-plugin-delete": "^2.0.0",
     "rollup-plugin-dts": "^6.0.2",
     "rollup-plugin-generate-git-version": "^1.0.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-styles": "^4.0.0",
+    "rollup-plugin-url": "^3.0.1",
+    "rollup-swc-preserve-directives": "^0.5.0",
     "typedoc": "^0.25.2"
   }
 }
