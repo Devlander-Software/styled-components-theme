@@ -1,7 +1,0 @@
-[submodule "external-modules/create-env"]
-	path = external-modules/create-env
-	url = https://gist.github.com/cbe8f1c5a1a9f7e8b6591ea55c20cd9a.git
-	branch = main
-[submodule "external-modules/auto-exporter-script"]
-	path = external-modules/auto-exporter-script
-	url = https://gist.github.com/landonwjohnson/2ca297f86cf9e25ae2fcc01752f80908
