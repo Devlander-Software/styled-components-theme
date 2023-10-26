@@ -4,9 +4,9 @@
 import { Platform } from "react-native";
 
 import {
-    InitializationError,
-    LogError,
-    MessageError,
+  InitializationError,
+  LogError,
+  MessageError,
 } from "../../types/error.types";
 
 type SentryConfig = {
@@ -43,7 +43,11 @@ export function initializeSentry(config: SentryConfig): void {
     });
     isSentryInitialized = true;
   } catch (error) {
-    const initError = new InitializationError(`Failed to initialize Sentry: ${error instanceof Error ? error.message : "An unexpected error occurred."}`);
+    const initError = new InitializationError(
+      `Failed to initialize Sentry: ${
+        error instanceof Error ? error.message : "An unexpected error occurred."
+      }`,
+    );
     console.warn(initError.message);
   }
 }
@@ -52,7 +56,9 @@ export function logError(error: unknown): void {
   if (isSentryInitialized) {
     Sentry.captureException(error);
   } else {
-    const errorMessage = `Sentry not initialized. Original error: ${typeof error === "string" ? error : "An unknown error occurred"}`;
+    const errorMessage = `Sentry not initialized. Original error: ${
+      typeof error === "string" ? error : "An unknown error occurred"
+    }`;
     const logErr = new LogError(errorMessage);
     console.warn(logErr.message);
   }
@@ -62,7 +68,9 @@ export function logMessage(message: string): void {
   if (isSentryInitialized) {
     Sentry.captureMessage(message);
   } else {
-    const msgError = new MessageError(`Sentry not initialized. Original message: ${message}`);
+    const msgError = new MessageError(
+      `Sentry not initialized. Original message: ${message}`,
+    );
     console.warn(msgError.message);
   }
 }

@@ -1,3 +1,3 @@
 import { FormInputGroupProps, SecureInputProps } from "../types/text-input.types";
-export declare const FormInputGroupDefaultProps: FormInputGroupProps;
-export declare const SecureInputDefaultProps: SecureInputProps;
+export declare const formInputGroupDefaultProps: FormInputGroupProps;
+export declare const secureInputDefaultProps: SecureInputProps;

@@ -1,5 +1,5 @@
 
-const { syncPackageVersions } = require("sync-dep-versions"); // Use __dirname
+const { syncPackageVersions } = require("@devlander/sync-dep-versions"); // Use __dirname
 
 
 

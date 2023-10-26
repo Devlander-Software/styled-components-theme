@@ -1,5 +1,4 @@
 import { ThemeInterface, ThemeInterfaceForHTML } from "../theme.types";
-
 import { HtmlImageInterface } from "./img.type.web";
 
 export interface HtmlImgStyleProps extends Partial<HtmlImageInterface> {

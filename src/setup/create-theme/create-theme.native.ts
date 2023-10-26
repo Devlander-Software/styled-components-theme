@@ -1,7 +1,7 @@
 /* eslint-disable import/order */
 /* eslint-disable prettier/prettier */
 import { defaultFonts } from "../../defaults/fonts.defaults";
-import { lightColors } from '../../defaults/light-colors.defaults';
+import { lightColors } from "../../defaults/light-colors.defaults";
 import { ThemeInterface } from "../../types/theme.types";
 import adjustColor from "../../utils/adjust-color";
 import getStyleForContainerProps from "../../utils/get-style/native/get-style-for-container-props.native";

@@ -1,0 +1,19 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    "src/**/*",
+    "jest.config.js",
+    "build-script.config.js",
+    "test/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "example",
+    "external-modules/**/*",
+    "**/*.spec.ts",
+    "*.d.ts",
+    "declarations",
+    "typings",
+    "dist"
+  ]
+}

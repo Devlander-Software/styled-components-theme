@@ -10,7 +10,7 @@ import {
   SecureInputProps,
 } from "../types/text-input.types";
 
-export const FormInputGroupDefaultProps: FormInputGroupProps = {
+export const formInputGroupDefaultProps: FormInputGroupProps = {
   label: "Label",
   underlineColor: "#000",
   backgroundColor: "transparent",
@@ -30,9 +30,9 @@ export const FormInputGroupDefaultProps: FormInputGroupProps = {
     console.log("this is onSubmitEditing prop in text field"),
 };
 
-export const SecureInputDefaultProps: SecureInputProps = {
+export const secureInputDefaultProps: SecureInputProps = {
   securePressOnChange: () => console.log("this is secure"),
   secureTextOffIcon: "eye-off-outline" as IconNames,
   secureTextOnIcon: "eye-outline" as IconNames,
-  ...FormInputGroupDefaultProps,
+  ...formInputGroupDefaultProps,
 };

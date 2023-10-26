@@ -1,7 +1,12 @@
 {
+  "globals": {
+    "React": true,
+    "console": true,
+    "JSX": true
+  },
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "project": "./tsconfig.json",
+    "project": "./tsconfig.eslint.json",
     "ecmaVersion": 2020,
     "sourceType": "module",
     "ecmaFeatures": {
@@ -48,8 +53,7 @@
         "alphabetize": {
           "order": "asc",
           "caseInsensitive": true
-        },
-        "newlines-between": "always"
+        }
       }
     ],
     "simple-import-sort/imports": "error",
@@ -89,31 +93,7 @@
     "camelcase": ["error", { "properties": "always" }],
     "@typescript-eslint/naming-convention": [
       "error",
-      {
-        "selector": "variable",
-        "format": ["camelCase"],
-        "leadingUnderscore": "allow",
-        "trailingUnderscore": "allow"
-      },
-      {
-        "selector": "function",
-        "format": ["camelCase", "PascalCase"]
-      },
-      {
-        "selector": "typeLike",
-        "format": ["PascalCase"]
-      },
-      {
-        "selector": "variable",
-        "format": ["UPPER_CASE"],
-        "filter": {
-          "regex": "^[A-Z_]+$",
-          "match": true
-        },
-        "modifiers": ["exported"],
-        "type": ["boolean", "string", "number", "array"],
-        "files": ["*.d.ts"]
-      }
+      { "selector": "variable", "format": ["camelCase"] }
     ]
   }
 }
