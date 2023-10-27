@@ -1,6 +1,6 @@
 {
   "name": "@devlander/shared-react-native-types",
-  "version": "1.0.184",
+  "version": "1.0.185",
   "description": "Shared npm modules between the design system, and expo app",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -52,7 +52,7 @@
     "color-convert": "^2.0.1",
     "color-name": "^2.0.0",
     "color-string": "^1.9.1",
-    "core-js": "^3.33.1",
+    "core-js": "3",
     "hex-to-rgba": "^2.0.1",
     "is-arrayish": "^0.3.2",
     "jest": "^29.7.0",
