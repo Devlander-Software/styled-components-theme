@@ -1,6 +1,6 @@
 {
   "name": "@devlander/shared-react-native-types",
-  "version": "1.0.188",
+  "version": "1.0.189",
   "description": "Shared npm modules between the design system, and expo app",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -27,6 +27,7 @@
   },
   "packageManager": "yarn@3.6.3",
   "scripts": {
+    "pack": "./pack-and-move.sh",
     "prepare-rollup": "cd ./rollup-config && tsc",
     "docs": "typedoc --out ./docs ./src",
     "remove-unused-packages": "node ./external-modules/remove-unused-packages.js",
@@ -45,9 +46,10 @@
     "typecheck": "tsc --project tsconfig.json --noEmit --emitDeclarationOnly false",
     "buildESM": "tsc --project tsconfig.json",
     "buildCJS": "rollup -c",
-    "build": "yarn run prepare-rollup && yarn run docs &&yarn run build:index && npx rimraf ./dist &&  yarn run format && yarn run typecheck && yarn run buildESM && yarn run buildCJS && yarn run patch"
+    "build": "yarn run prepare-rollup && yarn run docs &&yarn run build:index && npx rimraf ./dist &&  yarn run format && yarn run typecheck && yarn run buildESM && yarn run buildCJS && yarn run patch && yarn run pack"
   },
   "dependencies": {
+    "@babel/core": "^7.0.0",
     "color": "^4.2.3",
     "color-convert": "^2.0.1",
     "color-name": "^2.0.0",
