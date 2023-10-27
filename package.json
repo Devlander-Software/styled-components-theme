@@ -1,6 +1,6 @@
 {
   "name": "@devlander/shared-react-native-types",
-  "version": "1.0.193",
+  "version": "1.0.194",
   "description": "Shared npm modules between the design system, and expo app",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -23,7 +23,8 @@
   },
   "config": {
     "rollupEntryPoint": "./src/index.ts",
-    "umdName": "SharedReactNativeTypes"
+    "umdName": "SharedReactNativeTypes",
+    "esEntry": "dist/es/index.mjs"
   },
   "packageManager": "yarn@3.6.3",
   "scripts": {
@@ -110,7 +111,7 @@
     "@devlander/collect-exports-for-bundle": "^1.0.94",
     "@rollup/plugin-auto-install": "^3.0.4",
     "@rollup/plugin-babel": "^6.0.3",
-    "@rollup/plugin-commonjs": "^25.0.4",
+    "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-json": "^6.0.0",
     "@rollup/plugin-node-resolve": "^15.2.1",
     "@rollup/plugin-typescript": "^11.1.3",
