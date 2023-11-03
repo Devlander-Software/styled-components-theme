@@ -19,7 +19,7 @@ All theme colors and utilities are centralized in Devlander React Native Shared 
 - **getStyleForContainerProps**: Manages predefined CSS properties and units.
 - **handleGhost**: Takes two colors and swaps them to generate ghost buttons.
 - **getStyleForImageProps**: Simplifies image styling.
-- **handleUnitProps**: Handles units, whether expressed as strings or numbers, and appends appropriate metrics.
+- **unitPropsHandler**: Handles units, whether expressed as strings or numbers, and appends appropriate metrics.
 - **handleFontSizeProps**: Provides responsive design flexibility by defining **fontSize** and maxFontSize for text elements.
 - **deviceOnTheme**: Reflects the current device's dimensions. This is essential when adapting UI elements based on device size. This attribute is updated within the **ThemeProvider**.
 

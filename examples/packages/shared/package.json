@@ -1,0 +1,10 @@
+{
+    "version": "0.0.0",
+    "name": "shared",
+    "main": "src/index.tsx",
+    "dependencies": {
+      "@devlander/shared-react-native-types": "workspace:*"
+
+    },
+    "sideEffects": false
+  }

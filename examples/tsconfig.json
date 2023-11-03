@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "noEmit": true,
+    "emitDecoratorMetadata": false,
+    "allowJs": true,
+  },
+  "include": ["get-latest-bundle.js", "apps/**/*/src", "packages/**/*/src", "./get-latest-bundle.js", "apps/react-native-example/babel.config.js"], // Adjust the path to your TypeScript source files
+  "exclude": ["node_modules", "dist/**/*", "types/**/*"]
+}
