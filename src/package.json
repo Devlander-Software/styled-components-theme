@@ -1,0 +1,47 @@
+{
+    "name": "main",
+    "version": "1.0.199",
+    "license": "MIT",
+    "main": "index.tsx",
+    "engines": {
+      "node": ">=10"
+    },
+    "scripts": {
+
+      "build:imports": "node ../external-modules/auto-export",
+      "build:types": "cd .. && tsc",
+      "build": "npm run build:imports && npm run build:types"
+
+    },
+    "peerDependencies": {
+      "react": ">=16.8.0",
+      "react-dom": ">=16.8.0",
+      "react-native-web": "0.x.x"
+    },
+  
+    "author": "Landon Johnson",
+
+    "dependencies": {
+      "react-native-responsive-fontsize": "0.5.1",
+      "lodash.isempty": "4.4.0"
+
+    },
+  
+
+   
+    "devDependencies": {
+      "@types/color": "3.0.4",
+
+      "color": "4.2.3",
+  
+  
+      
+      "hex-to-rgba": "2.0.1",
+      "lodash.isempty": "4.4.0",
+      "react": "18.2.0",
+      "react-dom": "18.2.0",
+      "react-native-web": "^0.19.9",
+      "typescript": "^5.2.2"
+    }
+  }
+  

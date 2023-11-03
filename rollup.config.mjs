@@ -1,142 +1,81 @@
-
-
+import alias from "@rollup/plugin-alias";
 import babel from "@rollup/plugin-babel";
-import commonjs from '@rollup/plugin-commonjs';
+import commonjs from "@rollup/plugin-commonjs";
 import json from "@rollup/plugin-json";
 import { nodeResolve } from "@rollup/plugin-node-resolve";
-import terser from '@rollup/plugin-terser';
-import typescript from '@rollup/plugin-typescript';
-import dts from 'rollup-plugin-dts';
-import generateGitVersion from "rollup-plugin-generate-git-version";
-import peerDepsExternal from 'rollup-plugin-peer-deps-external';
-import styles from "rollup-plugin-styles";
-import swcPreserveDirectives from "rollup-swc-preserve-directives";
+import typescript from "@rollup/plugin-typescript";
+import fs from "fs";
+import nodePolyfills from "rollup-plugin-polyfill-node";
+import { terser } from "rollup-plugin-terser";
 
-import babelJson from './babel.config.json' assert { type: 'json' };
-import packageJson from './package.json' assert { type: 'json' };
+const packageJson = JSON.parse(fs.readFileSync("./package.json", "utf-8"));
+const tsconfigJson = JSON.parse(fs.readFileSync("./tsconfig.json", "utf-8"));
 
+const extensions = [".js", ".jsx", ".ts", ".tsx", ".web.js", ".native.js"];
 
-// @ts-ignore
+// Exclude certain dependencies from being bundled
+const external = [
+  "react",
+  "react-dom",
+  "react-native",
+  // Add more peer dependencies here
+];
 
-
-
-function removeKeysWithSubstrings(obj, substrings) {
-    return Object.keys(obj)
-      .filter(key => !substrings.some(substring => key.includes(substring)))
-      .reduce((result, key) => {
-        result[key] = obj[key];
-        return result;
-      }, {});
-}
-
-
-
-const filteredPackage = removeKeysWithSubstrings(packageJson.dependencies, ['rollup', 'path', '@babel']);
-// eslint-disable-next-line no-undef
-const dev = process.env.NODE_ENV !== "production";
-const treeshake = {
-    moduleSideEffects: false,
-    propertyReadSideEffects: false,
-    tryCatchDeoptimization: false
+const makeExternalPredicate = externalArr => {
+  if (externalArr.length === 0) {
+    return () => false;
+  }
+  const pattern = new RegExp(`^(${externalArr.join("|")})($|/)`);
+  return id => pattern.test(id);
 };
-const nodePlugins = [
+
+export default {
+  input: "src/bundle/index.tsx", // Your entry point
+  output: [
+    {
+      file: packageJson.main, // UMD build
+      format: "umd",
+      name: "ReactNativeSharedTypes", // Replace with your library's name
+      globals: {
+        react: "React",
+        "react-native": "ReactNative",
+      },
+      sourcemap: true,
+    },
+    {
+      file: packageJson.module, // ESM build
+      format: "esm",
+      sourcemap: true,
+    }
+  ],
+  external: makeExternalPredicate(external),
+  plugins: [
+    alias({
+      entries: [
+        // Define aliases if you have some
+      ],
+    }),
     nodeResolve({
-        extensions: [".ts", ".d.ts", ".tsx", ".js", ".jsx", ".json"],
+      extensions,
+      preferBuiltins: true,
     }),
-    json(),
     commonjs({
-        ignoreTryCatch: false,
-        include: ['node_modules/**', './src/declarations/styled.d.ts']
+      include: /node_modules/,
+      extensions,
     }),
-    typescript({
-        tsconfig: './tsconfig.json',
-        sourceMap: true,
-        inlineSources: true,
-      
+    babel({
+      extensions,
+      babelHelpers: "bundled",
+      exclude: /node_modules/,
+      presets: [
+        "@babel/preset-env",
+        "@babel/preset-react",
+        "@babel/preset-typescript",
+      ],
     }),
-];
-
-
-const stylingPlugins = [
-    styles()
-]
-
-const generalPlugins =   [
-    ...nodePlugins,
-    ...stylingPlugins,
- 
-   
-    babel({...babelJson}),
-    terser({
-        ecma: 2020,
-        mangle: { toplevel: true },
-        compress: {
-            toplevel: true,
-            drop_console: !dev,
-            drop_debugger: !dev,
-        },
-        output: { quote_style: 1 },
-    }),
- 
-    generateGitVersion({ fileName: "gitVersion.json" }),
-    swcPreserveDirectives(),
-    peerDepsExternal(),
-
-]
-
-const config = [
-    {
-        plugins: [
-            ...generalPlugins,
-           
-           
-        ],
-        treeshake,
-        input: './src/index.ts',
-        output: [
-            {
-                file: packageJson.main,
-                format: 'cjs',
-                sourcemap: true,
-               
-            },
-            {
-                file: packageJson.module,
-                format: 'esm',
-                sourcemap: true,
-                exports: 'named'
-               
-            },
-       
-            {
-                file: packageJson.browser,
-                format: 'umd',
-                name: "sharedReactNativeTypes",
-                globals: {
-                    lodash: 'lodash',
-                    'react-native': 'reactNative',
-                    'hex-to-rgba': 'hexToRgba',
-                    'react-native-responsive-fontsize': 'reactNativeResponsiveFontsize'
-                  }
-            }
-        ],
-        external: Object.keys(filteredPackage),
-      
-        
-    },
-    {
-        treeshake,
-        include: ['src/**/*'],
-        exclude: ["**/*.d.ts"],
-
-        input: 'dist/esm/types/index.d.ts',
-        output: [{ file: 'dist/index.d.ts', format: 'esm' }],
-        plugins: [dts()],
-    },
-  
-];
-
-export default config;
-
-
-
+    typescript({ tsconfig: "./tsconfig.json" }),
+    nodePolyfills(),
+    json(),
+    terser(), // Use terser for minification
+  ],
+};

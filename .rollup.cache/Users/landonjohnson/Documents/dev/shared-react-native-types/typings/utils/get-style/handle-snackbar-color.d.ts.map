@@ -1,1 +1,0 @@
-{"version":3,"file":"handle-snackbar-color.d.ts","sourceRoot":"","sources":["../../../src/utils/get-style/handle-snackbar-color.tsx"],"names":[],"mappings":"AAAA,OAAO,EAAE,cAAc,EAAE,MAAM,yBAAyB,CAAA;AAGxD,MAAM,WAAW,4BAA4B;IAC3C,CAAC,SAAS,CAAC,EAAE,SAAS,GAAG,MAAM,GAAG,SAAS,GAAG,OAAO,EAAE,KAAK,CAAC,EAAE,cAAc,GAAG,MAAM,CAAA;CACvF;AACD,eAAO,MAAM,mBAAmB,EAAE,4BAkBjC,CAAA"}

@@ -4,6 +4,15 @@
     "console": true,
     "JSX": true
   },
+  "ignorePatterns": [
+    "rollup.config.mjs",
+    "get-latest-bundle.js",
+    "examples/packages/**/*",
+    "examples/**/*/tsconfig.json",
+    "*/**/babel.config.js",
+    "examples/**/*/src",
+    "types/**/*.d.ts"
+  ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "project": "./tsconfig.eslint.json",
@@ -15,8 +24,6 @@
   },
   "extends": [
     "eslint:recommended",
-
-    "plugin:storybook/recommended",
     "plugin:jest-dom/recommended",
     "plugin:testing-library/react"
   ],
@@ -56,6 +63,13 @@
         }
       }
     ],
+    "comma-dangle": ["warn", {
+      "arrays": "never",
+      "objects": "never",
+      "imports": "never",
+      "exports": "never",
+      "functions": "never"
+  }],
     "simple-import-sort/imports": "error",
     "simple-import-sort/exports": "error",
     "prettier/prettier": "warn",
@@ -95,5 +109,35 @@
       "error",
       { "selector": "variable", "format": ["camelCase"] }
     ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "src/**/*.tsx",
+        "src/**/*.ts",
+        "!rollup-config/webpack.config.js"
+      ],
+      "rules": {
+        "@typescript-eslint/naming-convention": [
+          "error",
+          { "selector": "variable", "format": ["camelCase", "PascalCase"] }
+        ]
+      }
+    },
+    {
+      "files": ["**/*/webpack.config.js"],
+      "rules": {
+        "@typescript-eslint/naming-convention": [
+          "error",
+          {
+            "selector": "variable",
+            "format": ["camelCase", "PascalCase", "snake_case"]
+          }
+        ]
+      }
+    }
+  ],
+  "env": {
+    "node": true
   }
 }
