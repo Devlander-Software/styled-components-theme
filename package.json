@@ -1,6 +1,6 @@
 {
   "name": "@devlander/shared-react-native-types",
-  "version": "1.0.201",
+  "version": "1.0.202",
   "license": "MIT",
   "main": "dist/umd/index.js",
   "react-native": "dist/native/index.js",
@@ -21,7 +21,6 @@
   },
   "scripts": {
     "timeout": "delay 5",
-    "preinstall": "node ./merge-deps.js",
     "rollup:native": "npx rollup -c rollup.config.mjs",
     "rollup:web": "npx rollup -c rollup.config.mjs",
     "build": "npx rimraf ./dist && npx rimraf ./typings && yarn run build:index && yarn run timeout   && yarn run rollup:web ",
