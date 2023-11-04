@@ -1,0 +1,8 @@
+# Add new submodules with latest changes
+git submodule add -b main https://landonwjohnson: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@github.com/TheRawOutdoors/raw-design-system packages/@devlander/raw-design-system
+git submodule add -b main https://landonwjohnson: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@github.com/TheRawOutdoors/rawstack-axios-module packages/@devlander/rawstack-axios
+git submodule add -b main https://landonwjohnson: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@github.com/Devlander-Software/shared-react-native-types packages/@devlander/shared-react-native-types
+git submodule add -b main https://landonwjohnson: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@github.com/Devlander-Software/hooks packages/@devlander/hooks
+
+# Update submodules to get the latest changes
+git submodule update --init --recursive

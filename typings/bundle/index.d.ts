@@ -227,6 +227,10 @@ export * from "./shared/types/on-visibility-change.props";
  */
 export * from "./shared/types/secure-input-props";
 /**
+ * TSDoc for style-attributes.interfaces
+ */
+export * from "./shared/types/style-attributes.interfaces";
+/**
  * TSDoc for svg-props.interface
  */
 export * from "./shared/types/svg-props.interface";
