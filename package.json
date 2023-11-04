@@ -1,6 +1,6 @@
 {
   "name": "@devlander/shared-react-native-types",
-  "version": "1.0.199",
+  "version": "1.0.202",
   "license": "MIT",
   "main": "dist/umd/index.js",
   "react-native": "dist/native/index.js",
@@ -21,10 +21,9 @@
   },
   "scripts": {
     "timeout": "delay 5",
-    "preinstall": "node ./merge-deps.js",
     "rollup:native": "npx rollup -c rollup.config.mjs",
     "rollup:web": "npx rollup -c rollup.config.mjs",
-    "rollup": "npx rimraf ./dist && npx rimraf ./typings && yarn run build:index && yarn run timeout   && yarn run rollup:web ",
+    "build": "npx rimraf ./dist && npx rimraf ./typings && yarn run build:index && yarn run timeout   && yarn run rollup:web ",
     "start": "tsdx watch",
     "build:index": "cd ./src && yarn run build",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx ./src --fix",
@@ -33,7 +32,7 @@
     "size": "size-limit",
     "patch": "yarn version --new-version patch",
     "analyze": "size-limit --why",
-    "start-publish": " yarn run build && yarn run size && yarn run patch && npm publish"
+    "start-publish": " yarn run build  && yarn version --patch && npm publish"
   },
   "peerDependencies": {
     "react": ">=16.8.0",
@@ -52,24 +51,6 @@
     "trailingComma": "es5"
   },
   "author": "Landon Johnson",
-  "size-limit": [
-    {
-      "path": "dist/umd/index.js",
-      "limit": "10 KB"
-    },
-    {
-      "path": "dist/native/index.js",
-      "limit": "10 KB"
-    },
-    {
-      "path": "dist/esm/index.js",
-      "limit": "10 KB"
-    },
-    {
-      "path": "dist/types/index.d.ts",
-      "limit": "10 KB"
-    }
-  ],
   "devDependencies": {
     "@babel/preset-react": "^7.22.15",
     "@babel/preset-typescript": "^7.23.2",

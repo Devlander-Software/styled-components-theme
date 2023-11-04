@@ -52,6 +52,16 @@ export default {
   plugins: [
     alias({
       entries: [
+        { find: "react-native", replacement: "react-native-web" },
+        { find: "react-native-web/dist/exports/StyleSheet", replacement: "react-native-web/dist/exports/StyleSheet/index" },
+        { find: "react-native-web/dist/exports/View", replacement: "react-native-web/dist/exports/View/index" },
+        { find: "react-native-web/dist/exports/Text", replacement: "react-native-web/dist/exports/Text/index" },
+        { find: "react-native-web/dist/exports/TextInput", replacement: "react-native-web/dist/exports/TextInput/index" },
+        { find: "react-native-web/dist/exports/Platform", replacement: "react-native-web/dist/exports/Platform/index" },
+        { find: "react-native-web/dist/exports/Dimensions", replacement: "react-native-web/dist/exports/Dimensions/index" },
+        { find: "react-native-web/dist/exports/Animated", replacement: "react-native-web/dist/exports/Animated/index" },
+        { find: "react-native-web/dist/exports/Animated/AnimatedImplementation", replacement: "react-native-web/dist/exports/Animated/AnimatedImplementation/index" },
+      
         // Define aliases if you have some
       ],
     }),
