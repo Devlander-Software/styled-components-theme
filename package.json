@@ -2,6 +2,7 @@
   "name": "@devlander/shared-react-native-types",
   "version": "1.0.202",
   "license": "MIT",
+  "type": "commonjs",
   "main": "dist/umd/index.js",
   "react-native": "dist/native/index.js",
   "browser": "dist/umd/index.js",
@@ -28,7 +29,7 @@
     "build:index": "cd ./src && yarn run build",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx ./src --fix",
     "test": "jest",
-    "prepare": "tsdx build",
+    "prepare": "yarn run build",
     "size": "size-limit",
     "patch": "yarn version --new-version patch",
     "analyze": "size-limit --why",
@@ -49,6 +50,8 @@
     "semi": true,
     "singleQuote": true,
     "trailingComma": "es5"
+
+    
   },
   "author": "Landon Johnson",
   "devDependencies": {
@@ -103,6 +106,7 @@
     "react-test-renderer": "^18.2.0",
     "rollup-plugin-dts": "^6.1.0",
     "rollup-plugin-polyfill-node": "^0.12.0",
+    "rollup-plugin-terser": "^7.0.2",
     "size-limit": "^10.0.1",
     "ts-jest": "^29.1.1",
     "tsdx": "^0.14.1",

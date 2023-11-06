@@ -4,6 +4,7 @@
 node_modules/
 
 
+dist
 # Native
 *.orig.*
 *.jks
@@ -15,6 +16,8 @@ node_modules/
 # Metro
 .metro-health-check*
 
+
+typings
 # debug
 npm-debug.*
 yarn-debug.*

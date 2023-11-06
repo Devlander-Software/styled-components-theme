@@ -6,6 +6,8 @@ export declare const isConsoleAvailable: () => false | {
     (...data: any[]): void;
     (message?: any, ...optionalParams: any[]): void;
     (message?: any, ...optionalParams: any[]): void;
+    (message?: any, ...optionalParams: any[]): void;
+    (message?: any, ...optionalParams: any[]): void;
 };
 export declare const log: (message: string) => void;
 export declare const canBeConvertedIntoColor: (colorValue: string) => boolean;
