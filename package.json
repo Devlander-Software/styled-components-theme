@@ -1,6 +1,6 @@
 {
   "name": "@devlander/shared-react-native-types",
-  "version": "1.0.202",
+  "version": "1.0.203",
   "license": "MIT",
   "type": "commonjs",
   "main": "dist/umd/index.js",
@@ -44,8 +44,6 @@
     "semi": true,
     "singleQuote": true,
     "trailingComma": "es5"
-
-    
   },
   "author": "Landon Johnson",
   "devDependencies": {
