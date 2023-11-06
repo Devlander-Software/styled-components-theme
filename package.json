@@ -1,6 +1,6 @@
 {
   "name": "@devlander/shared-react-native-types",
-  "version": "1.0.208",
+  "version": "1.0.209",
   "license": "MIT",
   "type": "commonjs",
   "main": "dist/umd/index.js",
@@ -22,9 +22,8 @@
   },
   "scripts": {
     "timeout": "delay 5",
-    "rollup:native": "npx rollup -c rollup.config.mjs",
-    "rollup:web": "npx rollup -c rollup.config.mjs",
-    "build": "npx rimraf ./dist && npx rimraf ./typings && yarn run build:index   && yarn run rollup:web ",
+    "rollup": "npx rollup -c rollup.config.mjs",
+    "build": "npx rimraf ./dist && npx rimraf ./typings && yarn run build:index   && yarn run rollup",
     "build:index": "cd ./src && yarn run build",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx ./src --fix",
     "test": "jest",
