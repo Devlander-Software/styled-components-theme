@@ -1,4 +1,3 @@
-import { ThemeColorAttributes } from '@devlander/shared-react-native-types';
 import type { TextProps } from 'react-native';
 import { NativeTheme } from '../../shared/types/base-theme-types';
 import { ColorNameOrValueFromTheme } from '../../shared/types/color.types';
@@ -7,7 +6,7 @@ import { FontTypeWeightEnum } from '../../shared/types/font-weight.enum';
 import { TextFontWeightTypesEnum } from '../../shared/types/font-weight.types';
 import { ThemeFontAttributes } from '../../shared/types/style-attributes.interfaces';
 import { TextDecorationLineTypes } from '../../shared/types/text-decoration-line-types.enum';
-export interface TextInterfaceNative extends TextProps, ThemeFontAttributes, ThemeColorAttributes {
+export interface TextInterfaceNative extends TextProps, ThemeFontAttributes {
     fontSize?: number;
     color?: string;
     maxLineHeight?: number;

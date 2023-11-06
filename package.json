@@ -15,7 +15,7 @@
   },
   "files": [
     "dist",
-    "src"
+    "typings"
   ],
   "engines": {
     "node": ">=10"
@@ -24,8 +24,7 @@
     "timeout": "delay 5",
     "rollup:native": "npx rollup -c rollup.config.mjs",
     "rollup:web": "npx rollup -c rollup.config.mjs",
-    "build": "npx rimraf ./dist && npx rimraf ./typings && yarn run build:index && yarn run timeout   && yarn run rollup:web ",
-    "start": "tsdx watch",
+    "build": "npx rimraf ./dist && npx rimraf ./typings && yarn run build:index   && yarn run rollup:web ",
     "build:index": "cd ./src && yarn run build",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx ./src --fix",
     "test": "jest",
@@ -39,11 +38,6 @@
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0",
     "react-native-web": "0.x.x"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "tsdx lint"
-    }
   },
   "prettier": {
     "printWidth": 80,
