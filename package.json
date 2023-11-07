@@ -1,36 +1,49 @@
 {
   "name": "@devlander/shared-react-native-types",
-  "version": "1.0.208",
+  "version": "1.0.209",
   "license": "MIT",
   "type": "commonjs",
-  "main": "dist/umd/index.js",
-  "types": "typings/bundle/index.d.ts",
-  "module": "dist/esm/index.js",
+  "main": "dist/native/umd/index.js",
+  "browser": "dist/web/umd/index.js",
+  "types": [
+    "typings/bundle/index.d.ts"
+  ],
+  "module": [
+    "dist/native/esm/index.js",
+    "dist/web/esm/index.js"
+  ],
   "config": {
     "nativeInput": "index",
     "webInput": "index",
     "umdName": "SharedReactNativeTypes"
   },
   "files": [
-    "dist",
-    "typings"
+    "dist"
   ],
   "engines": {
     "node": ">=10"
   },
   "scripts": {
+    "scripts": {
+      "start:react-native": "node src/main.js --native",
+      "start:browser": "node src/browser.js --browser"
+    },
     "timeout": "delay 5",
+    "build:web": "TARGET_ENV=\"browser\" && yarn run build:start",
+    "build:native": "TARGET_ENV=\"react-native\" && yarn run build:start",
     "build:start": "if [ \"$TARGET_ENV\" = \"browser\" ]; then yarn run build; elif [ \"$TARGET_ENV\" = \"react-native\" ]; then yarn run build; else echo 'Invalid or unspecified TARGET_ENV'; TARGET_ENV=\"react-native\" yarn run build; fi",
-    "rollup:react-native": "yarn run build:index && npx rollup -c rollup.native.config.mjs",
-    "rollup:react": "yarn run build:index && npx rollup -c rollup.web.config.mjs",
+    "rollup:react-native": "yarn run build:native:index && npx rollup -c rollup.native.config.mjs",
+    "rollup:react": "yarn run build:web:index && npx rollup -c rollup.web.config.mjs",
     "typecheck": "tsc --project ./tsconfig.json --emitDeclarationOnly",
-    "prep-build": "npx rimraf ./dist && npx rimraf ./typings",
-    "build": "yarn run prep-build  && node build.js",
-    "build:index": "cd ./src && yarn run build",
+    "prep-build-web": "npx rimraf ./dist/web && npx rimraf ./typings",
+    "prep-build-native": "npx rimraf ./dist/native && npx rimraf ./typings",
+    "build": "node build.js",
+    "build:native:index": "cd ./src && yarn run build:native",
+    "build:web:index": "cd ./src && yarn run build:native",
     "web": "cd ./examples/apps/react-example && TARGET_ENV=browser && yarn add @devlander/shared-react-native-types && yarn run dev",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx ./src --fix",
     "test": "jest",
-    "prepare": "yarn run build",
+    "prepare": "yarn run build:web && yarn run build:native",
     "size": "size-limit",
     "patch": "yarn version --new-version patch",
     "analyze": "size-limit --why",
