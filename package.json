@@ -1,6 +1,6 @@
 {
   "name": "@devlander/shared-react-native-types",
-  "version": "1.0.202",
+  "version": "1.0.203",
   "license": "MIT",
   "type": "commonjs",
   "main": "dist/umd/index.js",
@@ -24,8 +24,9 @@
     "timeout": "delay 5",
     "rollup:native": "npx rollup -c rollup.config.mjs",
     "rollup:web": "npx rollup -c rollup.config.mjs",
-    "build": "npx rimraf ./dist && npx rimraf ./typings && yarn run build:index   && yarn run rollup:web ",
+    "build": "npx rimraf ./dist && npx rimraf ./typings && yarn run build:index   && yarn run rollup:web",
     "build:index": "cd ./src && yarn run build",
+    "web": "yarn run build && cd ./examples/apps/react-example && yarn add @devlander/shared-react-native-types && yarn run dev",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx ./src --fix",
     "test": "jest",
     "prepare": "yarn run build",
@@ -44,8 +45,6 @@
     "semi": true,
     "singleQuote": true,
     "trailingComma": "es5"
-
-    
   },
   "author": "Landon Johnson",
   "devDependencies": {
