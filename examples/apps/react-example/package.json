@@ -7,20 +7,26 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "install:types": "TARGET_ENV=\"browser\" yarn add @devlander/shared-react-native-types"
   },
   "dependencies": {
+    "@devlander/shared-react-native-types": "^1.1.214",
+    "@types/styled-components": "^5.1.26",
     "next": "14.0.0",
     "react": "^18",
     "react-dom": "^18",
-    "react-native": "^0.72.6",
-    "react-native-web": "^0.19.9"
+    "react-native-web": "^0.19.9",
+    "styled-components": "^6.1.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.23.2",
+    "@babel/preset-env": "^7.23.2",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10",
+    "babel-loader": "^9.1.3",
     "eslint": "^8",
     "eslint-config-next": "14.0.0",
     "postcss": "^8",

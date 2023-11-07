@@ -1,8 +1,17 @@
 {
-  "exclude": ["node_modules", "dist", "coverage", "rollup.config.mjs", "src/package.json", "src/tsconfig.json", "typings"],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "coverage",
+    "rollup.config.mjs",
+    "src/package.json",
+    "src/tsconfig.json",
+    "typings",
+    "examples"
+  ],
   "compilerOptions": {
     "module": "esnext",
-    "lib": [ "esnext", "dom"],
+    "lib": ["esnext", "dom"],
     "importHelpers": true,
     "declaration": true,
     "declarationDir": "typings",
@@ -34,5 +43,4 @@
     "declarations/**/*.styled.d.ts",
     "babel.config.js"
   ]
-
 }

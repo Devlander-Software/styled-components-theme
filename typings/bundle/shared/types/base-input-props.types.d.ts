@@ -1,3 +1,4 @@
+/// <reference types="react" />
 export interface BaseTextInputProps {
     renderBottom?: () => JSX.Element | null;
     onChangeText: (text: string) => void;
