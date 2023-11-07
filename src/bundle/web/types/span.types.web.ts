@@ -1,8 +1,6 @@
 import type React from 'react';
 
 import { WebTheme } from '../../shared/types/base-theme-types';
-import { TextFontWeightTypesEnum } from '../../shared/types/font-weight.types';
-import { TextDecorationLineTypes } from '../../shared/types/text-decoration-line-types.enum';
 
 export interface HtmlSpanInterface
   extends Partial<React.HTMLProps<HTMLSpanElement>> {
@@ -24,10 +22,8 @@ export interface HtmlSpanInterface
   letterSpacing?: number;
   flex?: number;
   width?: number;
-  fontWeight?: TextFontWeightTypesEnum;
   paddingTop?: number;
   paddingBottom?: number;
-  textDecoration?: TextDecorationLineTypes;
   error?: boolean;
   fontFamily?: string;
   textAlign?: 'auto' | 'left' | 'right' | 'center' | 'justify';

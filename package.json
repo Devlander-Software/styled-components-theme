@@ -1,6 +1,6 @@
 {
   "name": "@devlander/shared-react-native-types",
-  "version": "1.1.215",
+  "version": "1.1.217",
   "license": "MIT",
   "type": "commonjs",
   "main": "dist/umd/index.js",
@@ -27,7 +27,6 @@
     "build:index": "cd ./src && yarn run build",
     "web": "cd ./examples/apps/react-example && yarn add @devlander/shared-react-native-types && yarn run dev",
     "native": "cd ./examples/apps/react-native-example && yarn add @devlander/shared-react-native-types && yarn run dev",
-
     "lint": "eslint --ext .js,.jsx,.ts,.tsx ./src --fix",
     "test": "jest",
     "prepare": "yarn run build",

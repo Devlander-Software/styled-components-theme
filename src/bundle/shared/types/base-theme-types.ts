@@ -43,6 +43,7 @@ export interface GhostStyleGenerator<T> {
 
 export type PaddingOnThemeType = {
   paddingForScrollView: number;
+  
   paddingForScrollViewTwo: number;
 };
 
@@ -84,7 +85,9 @@ export interface ThemeBase {
 }
 
 export interface GenericTheme<ExpectingNumOrString>
-  extends ThemeBase, BaseThemeFunctions<GenericTheme<ExpectingNumOrString>, ExpectingNumOrString> {}
+  extends ThemeBase, BaseThemeFunctions<GenericTheme<ExpectingNumOrString>, ExpectingNumOrString> {
+    
+  }
 
 export type NativeTheme = GenericTheme<number>;
 export type WebTheme = GenericTheme<string | number>;

@@ -1,10 +1,10 @@
+import { ViewStyle } from 'react-native';
 import { IconNames } from '../../shared/types/icons/icon-names.enum';
-import type { FormInputGroupPropsForNative } from './text-input-props.native';
-import type { SecureInputProps } from '../../shared/types/secure-input-props';
+import { SecureInputProps } from '../../shared/types/secure-input-props';
 
-export interface SecureInputPropsForNative
-  extends FormInputGroupPropsForNative,
-    SecureInputProps {
+export interface SecureInputPropsForNative<ContainerStyleProps = ViewStyle> extends
+ 
+    SecureInputProps<ContainerStyleProps> {
   secureTextOnIcon?: IconNames;
   secureTextOffIcon?: IconNames;
   securePressOnChange: () => void;

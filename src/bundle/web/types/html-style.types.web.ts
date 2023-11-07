@@ -6,7 +6,6 @@ import { WebTheme } from '../../shared/types/base-theme-types'
 import { DataDetectorEnum } from "../../shared/types/data-detector.enum"
 import { FontTypeEnum } from '../../shared/types/font-type.enum'
 import { FontWeightType } from '../../shared/types/font-weight.enum'
-import { TextFontWeightTypesEnum } from '../../shared/types/font-weight.types'
 import { IconNames } from '../../shared/types/icons/icon-names.enum'
 import { KeyBoardTypeEnum } from "../../shared/types/keyboard-type.enum"
 import { LayoutStyleProperties, ThemedLayoutStyleProps } from "../../shared/types/style-attributes.interfaces"
@@ -88,7 +87,6 @@ export interface HtmlSpanStyleProps
   shadowOpacity?: number;
   shadowColor?: string;
   shadowOffsetX?: number;
-  fontWeight?: TextFontWeightTypesEnum;
   shadowOffsetY?: number;
   shadowRadius?: number;
   maxFontSize?: number;

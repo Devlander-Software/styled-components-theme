@@ -82,7 +82,12 @@ export const getStyleForTextPropsForNative: TextStyleGenerator<NativeTheme, numb
         )}: bold;`
       : null;
 
+const handleShadowType =    restProps.shadowColor
+? `text-shadow-color: ${String(restProps.shadowColor)};`
+: null
+
   const cssProperties = [
+    handleShadowType,
     fontFamilyProperties,
 
     restProps.textDecorationLine && restProps.textDecorationLine !== 'none'
@@ -126,9 +131,7 @@ export const getStyleForTextPropsForNative: TextStyleGenerator<NativeTheme, numb
     restProps.shadowOpacity
       ? `text-shadow-opacity: ${restProps.shadowOpacity};`
       : null,
-    restProps.shadowColor
-      ? `text-shadow-color: ${restProps.shadowColor};`
-      : null,
+ 
     restProps.shadowOffsetX || restProps.shadowOffsetY
       ? `text-shadow-offset: ${unitPropsHandler(
           restProps.shadowOffsetX || 0

@@ -6,11 +6,10 @@ import { DataDetectorEnum } from '../../shared/types/data-detector.enum';
 import { KeyBoardTypeEnum } from '../../shared/types/keyboard-type.enum';
 import { LayoutStyleProperties } from '../../shared/types/style-attributes.interfaces';
 import { TextContentTypeEnum } from '../../shared/types/text-field-content.enum';
-export interface FormInputGroupPropsForWeb extends BaseTextInputProps {
+export interface FormInputGroupPropsForWeb extends BaseTextInputProps<CSSProperties, (e: string | number) => void, (e: any) => void> {
     opacity?: number;
     dense?: boolean;
     renderRight?: () => JSX.Element | null;
-    containerStyleProps?: CSSProperties;
     containerStyleFromTheme?: LayoutStyleProperties<string | number>;
     autoComplete?: AutoCompleteTypeEnum;
     renderBottom?: () => JSX.Element | null;
@@ -24,7 +23,6 @@ export interface FormInputGroupPropsForWeb extends BaseTextInputProps {
     label?: string;
     defaultValue?: string;
     value?: string;
-    onChangeText: (text: string) => void;
     placeholder?: string;
     underlineColor?: string;
     editable?: boolean;

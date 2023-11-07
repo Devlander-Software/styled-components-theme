@@ -39,6 +39,10 @@ export * from "./native/types/secure-input-props.native";
  */
 export * from "./native/types/text-input-props.native";
 /**
+ * TSDoc for text-style-props.native
+ */
+export * from "./native/types/text-style-props.native";
+/**
  * TSDoc for text-types.native
  */
 export * from "./native/types/text-types.native";
