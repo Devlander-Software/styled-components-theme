@@ -26,6 +26,8 @@
     "build": "yarn run prep-build && yarn run rollup",
     "build:index": "cd ./src && yarn run build",
     "web": "cd ./examples/apps/react-example && yarn add @devlander/shared-react-native-types && yarn run dev",
+    "native": "cd ./examples/apps/react-native-example && yarn add @devlander/shared-react-native-types && yarn run dev",
+
     "lint": "eslint --ext .js,.jsx,.ts,.tsx ./src --fix",
     "test": "jest",
     "prepare": "yarn run build",
