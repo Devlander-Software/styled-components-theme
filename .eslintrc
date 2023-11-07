@@ -63,15 +63,18 @@
         }
       }
     ],
-    "comma-dangle": ["warn", {
-      "arrays": "never",
-      "objects": "never",
-      "imports": "never",
-      "exports": "never",
-      "functions": "never"
-  }],
-    "simple-import-sort/imports": "error",
-    "simple-import-sort/exports": "error",
+    "comma-dangle": [
+      "warn",
+      {
+        "arrays": "never",
+        "objects": "never",
+        "imports": "never",
+        "exports": "never",
+        "functions": "never"
+      }
+    ],
+    "simple-import-sort/imports": "off",
+    "simple-import-sort/exports": "off",
     "prettier/prettier": "warn",
     "arrow-body-style": "off",
     "prefer-arrow-callback": "off",

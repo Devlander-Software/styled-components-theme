@@ -1,13 +1,21 @@
 {
-  "exclude": ["node_modules", "dist", "coverage", "rollup.config.mjs", "index.ts", "index.web.ts", "index.native.ts", "shared.tsx", "main.native.tsx", "main.web.tsx", "main.tsx", "package.json", "tsconfig.json", "tsconfig.web.json", "tsconfig.native.json",
+  "exclude": [
+    "node_modules",
+    "dist",
+    "coverage",
+    "rollup.config.mjs",
+    "index.ts",
+    "shared.tsx",
+    "main.native.tsx",
+    "main.web.tsx",
+    "main.tsx",
+    "**/*.web.tsx",
 
-  "index.native.tsx",
-  "index.web.tsx",
-
-],
+    "package.json"
+  ],
   "compilerOptions": {
     "module": "esnext",
-    "lib": [ "esnext", "dom"],
+    "lib": ["esnext", "dom"],
     "importHelpers": true,
     "declaration": true,
     "declarationDir": "typings",
@@ -16,7 +24,8 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "noUnusedLocals": true,
-   
+    "baseUrl": ".",
+    "allowJs": false,
     "noUnusedParameters": true,
     "moduleResolution": "node",
     "jsx": "preserve",
@@ -25,9 +34,11 @@
     "noUncheckedIndexedAccess": true,
     "noImplicitOverride": true,
     "noEmitOnError": true,
+    "emitDeclarationOnly": false,
+
     "noImplicitAny": true,
     "noImplicitThis": true,
-    
+
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true
@@ -39,6 +50,6 @@
     "bundle/**/*.native.tsx",
     "bundle/**/*.web.tsx",
     "bundle/**/*.defaults.ts",
-    "bundle/**/*.d.ts",
+    "bundle/**/*.d.ts"
   ]
 }

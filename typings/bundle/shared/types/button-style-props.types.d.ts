@@ -1,4 +1,4 @@
-import { ColorNameOrValueFromTheme } from "./color.types";
+import { ColorNameOrValueFromTheme } from './color.types';
 export interface ButtonStyleProps<ValueType = number> {
     paddingLeft?: ValueType;
     paddingRight?: ValueType;

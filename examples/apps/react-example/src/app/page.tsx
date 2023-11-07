@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { ThemeProvider } from 'shared';
+import { ThemeProvider } from './providers/ColoredThemeProvider';
 
 export default function Home() {
   return (

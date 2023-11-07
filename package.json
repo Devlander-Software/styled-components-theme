@@ -1,11 +1,9 @@
 {
   "name": "@devlander/shared-react-native-types",
-  "version": "1.0.220",
+  "version": "1.1.214",
   "license": "MIT",
   "type": "commonjs",
   "main": "dist/umd/index.js",
-  "react-native": "dist/umd/index.js",
-  "browser": "dist/umd/index.js",
   "types": "typings/bundle/index.d.ts",
   "module": "dist/esm/index.js",
   "config": {
@@ -22,16 +20,19 @@
   },
   "scripts": {
     "timeout": "delay 5",
-    "rollup": "npx rollup -c rollup.config.mjs",
-    "build": "npx rimraf ./dist && npx rimraf ./typings && yarn run build:index   && yarn run rollup",
+    "rollup": "yarn run build:index && npx rollup -c rollup.config.mjs",
+    "typecheck": "tsc --project ./tsconfig.json --emitDeclarationOnly",
+    "prep-build": "npx rimraf ./dist && npx rimraf ./typings",
+    "build": "yarn run prep-build && yarn run rollup",
     "build:index": "cd ./src && yarn run build",
+    "web": "cd ./examples/apps/react-example && yarn add @devlander/shared-react-native-types && yarn run dev",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx ./src --fix",
     "test": "jest",
     "prepare": "yarn run build",
     "size": "size-limit",
     "patch": "yarn version --new-version patch",
     "analyze": "size-limit --why",
-    "start-publish": " yarn run build  && yarn version --patch && npm publish"
+    "start-publish": "yarn version --patch && yarn run timeout &&  npm publish"
   },
   "peerDependencies": {
     "react": ">=16.8.0",

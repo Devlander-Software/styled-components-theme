@@ -2,7 +2,10 @@ import { defaultFonts } from '../../../shared/defaults/fonts.defaults';
 import { lightColors } from '../../../shared/defaults/light-colors.defaults';
 
 import { NativeTheme } from '../../../shared/types/base-theme-types';
-import { CreateThemeForNative, ThemeConfig } from '../../../shared/types/create-theme.types';
+import {
+  CreateThemeForNative,
+  ThemeConfig,
+} from '../../../shared/types/create-theme.types';
 import { adjustColor } from '../../../shared/utils/adjust-color';
 import { capFontSize } from '../../../shared/utils/cap-font-size';
 import { boxShadowOne } from '../../../shared/utils/handle-box-shadows';
@@ -23,11 +26,11 @@ export const createThemeForNative: CreateThemeForNative = (
   const theme: NativeTheme = {
     colors: {
       ...lightColors,
-      ...colorPreferences,
+      ...colorPreferences
     },
     fonts: {
       ...defaultFonts,
-      ...fontPreferences,
+      ...fontPreferences
     },
 
     elevation: {
@@ -35,7 +38,7 @@ export const createThemeForNative: CreateThemeForNative = (
       level2: '',
       level3: '',
       level4: '',
-      level5: '',
+      level5: ''
     },
     padding: {
       paddingForScrollView: 10,
@@ -49,7 +52,7 @@ export const createThemeForNative: CreateThemeForNative = (
       hasNotch: false,
       hasDynamicIsland: false,
       platform: 'ios',
-      ...deviceOnTheme,
+      ...deviceOnTheme
     },
     fontSizeCap: capFontSize,
     colorThemeHandler: colorThemeHandlerNative,
@@ -62,7 +65,7 @@ export const createThemeForNative: CreateThemeForNative = (
     boxShadowOne: boxShadowOne,
     unitPropsHandler: unitPropsHandler,
     layoutStyleGenerator: getStyleFromPropsNative,
-    colorAdjuster: adjustColor
+    colorAdjuster: adjustColor,
   };
 
   return theme;

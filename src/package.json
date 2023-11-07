@@ -7,9 +7,10 @@
       "node": ">=10"
     },
     "scripts": {
-
       "build:imports": "node ../external-modules/auto-export",
-      "build:types": "cd .. && tsc",
+
+      "build:types": " cd .. &&  tsc ",
+
       "build": "npm run build:imports && npm run build:types"
 
     },
@@ -44,4 +45,3 @@
       "typescript": "^5.2.2"
     }
   }
-  

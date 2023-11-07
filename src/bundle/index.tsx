@@ -363,6 +363,10 @@ export * from "./web/hoc/withThemeFunctions.web";
  */
 export * from "./web/providers/FunctionsProvider/FunctionsProvider.web";
 /**
+ * TSDoc for create-theme.web
+ */
+export * from "./web/setup/create-theme.web";
+/**
  * TSDoc for base-button-props.web
  */
 export * from "./web/types/base-button-props.web";
