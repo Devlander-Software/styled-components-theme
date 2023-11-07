@@ -1,13 +1,19 @@
+import { OpaqueColorValue } from 'react-native';
 import { ColorNameOrValueFromTheme } from './color.types';
-import { FontTypeEnum } from './font-type.enum';
+import { FontProperty } from './font-type.enum';
 import { FontTypeWeightEnum, FontWeightType } from './font-weight.enum';
-import { TextFontWeightTypesEnum } from './font-weight.types';
 import { ThemeColorAttributes, ThemeFontAttributes } from './style-attributes.interfaces';
-import { TextDecorationLineTypes } from './text-decoration-line-types.enum';
-export interface UITextStylingAttributes<ExpectedValueType> extends ThemeFontAttributes, ThemeColorAttributes {
-    maxFontSizeMultiplier?: number;
+interface SharedTextProperties {
+    textAlign?: 'auto' | 'left' | 'right' | 'center' | 'justify' | undefined;
+    textTransform?: 'uppercase' | 'lowercase' | 'capitalize' | 'none' | undefined;
     onDark?: boolean;
     fontStyle?: 'normal' | 'italic';
+    textDecorationLine?: 'none' | 'underline' | 'line-through' | 'underline line-through' | undefined;
+    fontType?: FontProperty;
+    fontWeight?: 'normal' | 'bold' | '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900' | undefined;
+}
+export interface UITextStylingAttributes<ExpectedValueType> extends ThemeFontAttributes, ThemeColorAttributes, SharedTextProperties {
+    maxFontSizeMultiplier?: number;
     numberOfLines?: ExpectedValueType;
     paddingLeft?: ExpectedValueType;
     highlight?: boolean;
@@ -23,28 +29,30 @@ export interface UITextStylingAttributes<ExpectedValueType> extends ThemeFontAtt
     destructive?: boolean;
     flex?: ExpectedValueType;
     shadowOpacity?: ExpectedValueType;
-    shadowColor?: string;
+    shadowColor?: string | OpaqueColorValue;
     shadowOffsetX?: ExpectedValueType;
     shadowOffsetY?: ExpectedValueType;
     shadowRadius?: ExpectedValueType;
     paddingRight?: ExpectedValueType;
-    textAlign?: 'left' | 'center' | 'right';
-    textTransform?: 'uppercase' | 'lowercase' | 'capitalize' | 'none' | undefined;
-    textDecorationLine?: TextDecorationLineTypes;
     textDecorationColorFromTheme?: ColorNameOrValueFromTheme;
     colorFromTheme?: ColorNameOrValueFromTheme;
     textColorFromTheme?: ColorNameOrValueFromTheme;
     textColorNameOrValueFromTheme?: ColorNameOrValueFromTheme;
-    fontWeight?: TextFontWeightTypesEnum;
+    textAlign?: 'auto' | 'left' | 'right' | 'center' | 'justify' | undefined;
+    textTransform?: 'uppercase' | 'lowercase' | 'capitalize' | 'none' | undefined;
+    onDark?: boolean;
+    fontStyle?: 'normal' | 'italic';
+    textDecorationLine?: 'none' | 'underline' | 'line-through' | 'underline line-through' | undefined;
+    fontType?: FontProperty;
+    fontWeight?: 'normal' | 'bold' | '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900' | undefined;
 }
 export interface TextStylingPropsWrapper<ExpectedValueType = number, StyleProps extends UITextStylingAttributes<ExpectedValueType> = UITextStylingAttributes<ExpectedValueType>> {
     style?: StyleProps;
 }
-export interface ThemedTextStylingProps<Theme, ExpectedValueType = number> extends TextStylingPropsWrapper<ExpectedValueType> {
+export interface ThemedTextStylingProps<Theme, ExpectedValueType = number> extends TextStylingPropsWrapper<ExpectedValueType>, SharedTextProperties {
     theme: Theme;
     maxFontSizeMultiplier?: number;
-    onDark?: boolean;
-    fontStyle?: 'normal' | 'italic';
+    shadowColor?: string | OpaqueColorValue;
     numberOfLines?: ExpectedValueType;
     paddingLeft?: ExpectedValueType;
     highlight?: boolean;
@@ -60,24 +68,26 @@ export interface ThemedTextStylingProps<Theme, ExpectedValueType = number> exten
     destructive?: boolean;
     flex?: ExpectedValueType;
     shadowOpacity?: ExpectedValueType;
-    shadowColor?: string;
     shadowOffsetX?: ExpectedValueType;
     shadowOffsetY?: ExpectedValueType;
     shadowRadius?: ExpectedValueType;
     paddingRight?: ExpectedValueType;
-    textAlign?: 'left' | 'center' | 'right';
-    textTransform?: 'uppercase' | 'lowercase' | 'capitalize' | 'none' | undefined;
-    textDecorationLine?: TextDecorationLineTypes;
     textDecorationColorFromTheme?: ColorNameOrValueFromTheme;
     colorFromTheme?: ColorNameOrValueFromTheme;
     textColorFromTheme?: ColorNameOrValueFromTheme;
     textColorNameOrValueFromTheme?: ColorNameOrValueFromTheme;
-    fontWeight?: TextFontWeightTypesEnum;
-    fontType?: FontTypeEnum;
     fontTypeWeight?: FontWeightType | FontTypeWeightEnum;
     focused?: boolean;
     maxFontSize?: number;
+    textAlign?: 'auto' | 'left' | 'right' | 'center' | 'justify' | undefined;
+    textTransform?: 'uppercase' | 'lowercase' | 'capitalize' | 'none' | undefined;
+    onDark?: boolean;
+    fontStyle?: 'normal' | 'italic';
+    textDecorationLine?: 'none' | 'underline' | 'line-through' | 'underline line-through' | undefined;
+    fontType?: FontProperty;
+    fontWeight?: 'normal' | 'bold' | '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900' | undefined;
 }
-export interface ResolvedThemedTextStylingProps<T, U> extends ThemedTextStylingProps<T, U> {
+export interface ResolvedThemedTextStylingProps<T, U> extends ThemedTextStylingProps<T, U>, SharedTextProperties {
     theme: T;
 }
+export {};

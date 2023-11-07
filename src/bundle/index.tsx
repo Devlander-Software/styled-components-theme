@@ -31,9 +31,17 @@ export * from "./native/types/base-view-style-props.native";
  */
 export * from "./native/types/button-style-props.native";
 /**
+ * TSDoc for secure-input-props.native
+ */
+export * from "./native/types/secure-input-props.native";
+/**
  * TSDoc for text-input-props.native
  */
 export * from "./native/types/text-input-props.native";
+/**
+ * TSDoc for text-style-props.native
+ */
+export * from "./native/types/text-style-props.native";
 /**
  * TSDoc for text-types.native
  */

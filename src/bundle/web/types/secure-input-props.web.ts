@@ -1,6 +1,5 @@
-import type { SecureInputProps } from '../../shared/types/secure-input-props';
-import type { FormInputGroupPropsForWeb } from './text-input-props.web';
+import { CSSProperties } from "react";
+import { SecureInputProps } from "../../shared/types/secure-input-props";
 
-export interface SecureInputPropsForWeb
-  extends FormInputGroupPropsForWeb,
-    SecureInputProps {}
+export interface SecureInputPropsForWeb extends
+    SecureInputProps<CSSProperties> {}

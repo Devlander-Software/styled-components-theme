@@ -1,5 +1,10 @@
 {
-  "exclude": ["node_modules", "dist", "coverage", "rollup.config.mjs", "index.ts", "index.web.ts", "index.native.ts", "shared.tsx", "main.native.tsx", "main.web.tsx", "main.tsx", "package.json", "tsconfig.json", "tsconfig.web.json", "tsconfig.native.json"],
+  "exclude": ["node_modules", "dist", "coverage", "rollup.config.mjs", "index.ts", "index.web.ts", "index.native.ts", "shared.tsx", "main.native.tsx", "main.web.tsx", "main.tsx", "package.json", "tsconfig.json", "tsconfig.web.json", "tsconfig.native.json",
+
+  "index.native.tsx",
+  "index.web.tsx",
+
+],
   "compilerOptions": {
     "module": "esnext",
     "lib": [ "esnext", "dom"],
@@ -11,10 +16,7 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "noUnusedLocals": true,
-    "baseUrl": ".",
-    "paths": {
-      "bundle/*": ["./bundle/*"],
-    },
+   
     "noUnusedParameters": true,
     "moduleResolution": "node",
     "jsx": "preserve",

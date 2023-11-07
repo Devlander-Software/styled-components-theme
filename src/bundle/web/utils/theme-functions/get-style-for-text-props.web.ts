@@ -80,7 +80,12 @@ export const getStyleForTextPropsForWeb: TextStyleGenerator<WebTheme, string | n
       ? `line-height: ${unitPropsHandler(fontSize as number + 6)};`
       :  null;
 
+      const handleShadowType = restProps.shadowColor && typeof restProps.shadowColor === "string"
+      ? `text-shadow-color: ${restProps.shadowColor};`
+      : null;
+
   const cssProperties = [
+    handleShadowType,
     handleLineHeight,
     fontFamilyProperties,
     restProps.textDecorationLine && restProps.textDecorationLine !== 'none'
@@ -120,9 +125,7 @@ export const getStyleForTextPropsForWeb: TextStyleGenerator<WebTheme, string | n
     restProps.shadowOpacity
       ? `text-shadow-opacity: ${restProps.shadowOpacity};`
       : null,
-    restProps.shadowColor
-      ? `text-shadow-color: ${restProps.shadowColor};`
-      : null,
+    
     restProps.shadowOffsetX || restProps.shadowOffsetY
       ? `text-shadow-offset: ${unitPropsHandler(
           restProps.shadowOffsetX || 0

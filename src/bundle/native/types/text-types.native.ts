@@ -4,13 +4,13 @@ import { ColorNameOrValueFromTheme } from '../../shared/types/color.types';
 import { FontTypeEnum } from '../../shared/types/font-type.enum';
 import { FontTypeWeightEnum } from '../../shared/types/font-weight.enum';
 import { TextFontWeightTypesEnum } from '../../shared/types/font-weight.types';
-import { ThemeFontAttributes } from '../../shared/types/style-attributes.interfaces';
+import { ThemeColorAttributes, ThemeFontAttributes } from '../../shared/types/style-attributes.interfaces';
 import { TextDecorationLineTypes } from '../../shared/types/text-decoration-line-types.enum';
 
 
 export interface TextInterfaceNative
   extends TextProps,
-    ThemeFontAttributes{
+    ThemeFontAttributes, ThemeColorAttributes{
   fontSize?: number;
   color?: string;
   maxLineHeight?: number;

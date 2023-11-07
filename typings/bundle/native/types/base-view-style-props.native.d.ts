@@ -1,4 +1,5 @@
 import { NativeTheme } from '../../shared/types/base-theme-types';
+import { ColorNameOrValueFromTheme } from '../../shared/types/color.types';
 import { ThemedLayoutStyleProps } from '../../shared/types/style-attributes.interfaces';
 export interface BaseViewStyleProps extends ThemedLayoutStyleProps<NativeTheme, any> {
     padding?: number;
@@ -16,7 +17,8 @@ export interface BaseViewStyleProps extends ThemedLayoutStyleProps<NativeTheme, 
     paddingBottom?: number;
     height?: number;
     borderWidth?: number;
-    flex: number;
+    flex?: number;
     borderColor?: string;
     backgroundOpacity?: number;
+    backgroundColorFromTheme?: ColorNameOrValueFromTheme;
 }

@@ -38,8 +38,8 @@ export const createThemeForNative: CreateThemeForNative = (
       level5: '',
     },
     padding: {
-      paddingForScrollView: 0,
-      paddingForScrollViewTwo: 0,
+      paddingForScrollView: 10,
+      paddingForScrollViewTwo: 10,
     },
     deviceOnTheme: {
       screenWidth: 0,

@@ -1,5 +1,5 @@
 import { ColorNameOrValueFromTheme } from "./color.types";
-import { FontTypeEnum } from "./font-type.enum";
+import { FontProperty } from "./font-type.enum";
 import { FontTypeWeightEnum, FontWeightType } from "./font-weight.enum";
 
 /**
@@ -20,7 +20,7 @@ export interface ThemeColorAttributes {
  * maxFontSize is used to limit the font size for a component.
  */
 export interface ThemeFontAttributes {
-  fontType?: FontTypeEnum;
+  fontType?: FontProperty;
   fontTypeWeight?: FontWeightType | FontTypeWeightEnum;
   highlight?: boolean;
   onDark?: boolean;
@@ -72,7 +72,7 @@ export interface LayoutStyleProperties<ExpectedValueType = number> extends Theme
 export interface LayoutStyleProps<ExpectedValueType = number, StyleProps extends  LayoutStyleProperties<ExpectedValueType> = LayoutStyleProperties<ExpectedValueType>> extends  ThemeColorAttributes {
  
   // Plus the extended style props
-
+  position?: "absolute" | "relative" | "fixed" | "sticky" | string;
   paddingLeft?: ExpectedValueType | ((props: StyleProps) => ExpectedValueType)
   paddingRight?: ExpectedValueType | ((props: StyleProps) => ExpectedValueType)
   marginTop?: ExpectedValueType | ((props: StyleProps) => ExpectedValueType)

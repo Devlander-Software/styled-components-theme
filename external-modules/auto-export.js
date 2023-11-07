@@ -55,33 +55,16 @@ console.log(webExtensions, "webExtensions");
   // });
 
 
-  // // This is for exporting the web index file
-  // autoExporter({
-  //   rootDir: "bundle",
-  //   outputFilenameExtension: ".tsx",
-  //   bundleAsObjectForDefaultExport: "SharedFunctionsForStyles",
-  //   outputFileName: "main.shared",
-  //   excludedFolders: ["web", "native"],
-
-  //   allowedExtensions: [
-  //     ...sharedAllowedExtensions,
-  //   ],
-  // });
 
   autoExporter({
     rootDir: "bundle",
     outputFilenameExtension: ".tsx",
     outputFileName: "index",
-    allowedExtensions: [...createExtensions("web", ["props", "type", "types", "interface", "enum", "styles", "provider", "defaults", "interfaces"], [".tsx", ".ts"]),
-    ...createExtensions("native", ["props", "type", "types", "interface", "enum", "styles", "provider", "defaults"], [".tsx", ".ts"])
+    allowedExtensions: [...createExtensions("web", ["props", "type", "types", "interface", "enum", "styles", "provider", "defaults", "interfaces", "types.web"], [".tsx", ".ts"]),
+    ...createExtensions("native", ["props", "type", "types", "interface", "enum", "styles", "provider", "defaults", "types.native"], [".tsx", ".ts"])
   ]
   });
-
-  console.log(sharedAllowedExtensions, "sharedAllowedExtensions");
-
-  console.log(sharedIgnoredExtensions, "sharedIgnoredExtensions");
-
-  console.log(nativeExtensions, "nativeExtensions");
+ 
 };
 
 main();
