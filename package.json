@@ -1,6 +1,6 @@
 {
   "name": "@devlander/shared-react-native-types",
-  "version": "1.0.207",
+  "version": "1.0.208",
   "license": "MIT",
   "type": "commonjs",
   "main": "dist/umd/index.js",
@@ -34,7 +34,7 @@
     "size": "size-limit",
     "patch": "yarn version --new-version patch",
     "analyze": "size-limit --why",
-    "start-publish": "yarn version --patch && npm publish"
+    "start-publish": "yarn version --patch && yarn run timeout &&  npm publish"
   },
   "peerDependencies": {
     "react": ">=16.8.0",
