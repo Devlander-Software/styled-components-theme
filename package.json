@@ -29,6 +29,8 @@
     "native": "cd ./examples/apps/react-native-example && yarn add @devlander/shared-react-native-types && yarn run dev",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx ./src --fix",
     "test": "jest",
+    "test:coverage": "jest --coverage",
+
     "prepare": "yarn run build",
     "size": "size-limit",
     "patch": "yarn version --new-version patch",

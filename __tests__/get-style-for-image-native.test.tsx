@@ -45,6 +45,8 @@ describe('getStyleForImgPropsForNative', () => {
 
     // Verify if css string matches expected output (ignoring whitespace and line breaks)
     expect(normalizeCss(css)).toEqual(normalizeCss(expectedCss));
+    expect(css).toMatchSnapshot();
+
   });
 
   // Additional tests can be written for other scenarios such as missing properties or different theme handlers' behavior

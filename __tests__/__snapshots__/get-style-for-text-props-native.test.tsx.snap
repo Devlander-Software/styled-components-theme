@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getStyleForTextPropsForNative generates correct CSS for valid input 1`] = `
+"font-family: Montserrat-Bold;
+color: rgba(0, 0, 0, 1);
+line-height: 30px;
+font-size: 24px;"
+`;
+
+exports[`getStyleForTextPropsForNative getStyleForTextPropsForNative with maxFontSize generates correct CSS for valid input 1`] = `
+"font-family: Montserrat-Bold;
+color: rgba(0, 0, 0, 1);
+line-height: 22px;
+font-size: 16px;"
+`;

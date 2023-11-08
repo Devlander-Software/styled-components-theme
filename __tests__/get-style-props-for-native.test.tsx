@@ -56,6 +56,7 @@ describe('getStyleFromPropsNative', () => {
     const css = getStyleFromPropsNative(styleProps);
 
    
+    expect(css).toMatchSnapshot();
 
     // Check if css string matches expected output (normalize whitespace and line breaks)
     expect(normalizeCss(css)).toBe(normalizeCss(expectedCss));

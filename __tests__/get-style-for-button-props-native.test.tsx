@@ -53,6 +53,7 @@ describe('getStyleFromButtonPropsForNative', () => {
     const generatedCss = getStyleFromButtonPropsForNative(props as any)
     expect(normalizeCss(generatedCss)).toEqual(normalizeCss(expectedCss));
 
+    expect(generatedCss).toMatchSnapshot();
 
 
   });

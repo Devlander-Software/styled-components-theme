@@ -1,9 +1,9 @@
-import { ColorNameOrValueEnum } from "../utils/is-color-name-or-value";
+import { ColorNameOrValueFromTheme } from './color.types';
 export interface ImageStyle<ValueType = number> {
-    backgroundColorFromTheme: ColorNameOrValueEnum;
+    backgroundColorFromTheme: ColorNameOrValueFromTheme;
     maxWidth: ValueType;
     borderBottomRightRadius: ValueType;
-    borderColorFromTheme: ColorNameOrValueEnum;
+    borderColorFromTheme: ColorNameOrValueFromTheme;
     borderTopRightRadius: ValueType;
     maxHeight: ValueType;
     height: ValueType;

@@ -38,6 +38,9 @@ describe('getStyleForTextPropsForNative', () => {
     const generatedCSS = getStyleForTextPropsForNative(props as any)
 
     expect(normalizeCss(generatedCSS)).toEqual(normalizeCss(expectedCSS));
+
+    expect(generatedCSS).toMatchSnapshot();
+
   });
 
 
@@ -71,6 +74,7 @@ describe('getStyleForTextPropsForNative', () => {
   
   
     expect(normalizeCss(generatedCSS)).toEqual(normalizeCss(expectedCSS));
+    expect(generatedCSS).toMatchSnapshot();
 
   });
 
