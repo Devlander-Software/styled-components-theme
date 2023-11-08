@@ -1,6 +1,6 @@
 {
   "name": "@devlander/shared-react-native-types",
-  "version": "1.1.225",
+  "version": "1.1.226",
   "license": "MIT",
   "type": "commonjs",
   "main": "dist/umd/index.js",
@@ -33,7 +33,7 @@
     "size": "size-limit",
     "patch": "yarn version --new-version patch",
     "analyze": "size-limit --why",
-    "start-publish": "yarn version --patch && yarn run timeout &&  npm publish"
+    "start-publish": "yarn run test && yarn version --patch && yarn run timeout &&  npm publish"
   },
   "peerDependencies": {
     "react": ">=16.8.0",
@@ -48,6 +48,8 @@
   },
   "author": "Landon Johnson",
   "devDependencies": {
+    "@babel/core": "^7.23.2",
+    "@babel/preset-env": "^7.23.2",
     "@babel/preset-react": "^7.22.15",
     "@babel/preset-typescript": "^7.23.2",
     "@devlander/collect-exports-for-bundle": "^1.1.68",
@@ -72,6 +74,7 @@
     "@types/react-test-renderer": "^18.0.5",
     "@typescript-eslint/eslint-plugin": "^6.9.0",
     "@typescript-eslint/parser": "^6.8.0",
+    "babel-jest": "^29.7.0",
     "color": "4.2.3",
     "core-js": "3",
     "delay-cli": "2.0.0",
@@ -94,7 +97,6 @@
     "prettier": "^3.0.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-native-responsive-fontsize": "0.5.1",
     "react-native-web": "^0.19.9",
     "react-test-renderer": "^18.2.0",
     "rollup-plugin-dts": "^6.1.0",
@@ -107,7 +109,6 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
-    "lodash.isempty": "4.4.0",
-    "react-native-responsive-fontsize": "0.5.1"
+    "lodash.isempty": "4.4.0"
   }
 }
