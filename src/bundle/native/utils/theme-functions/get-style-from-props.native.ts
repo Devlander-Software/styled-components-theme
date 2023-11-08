@@ -1,6 +1,5 @@
 import { NativeTheme } from '../../../shared/types/base-theme-types';
-import { ComprehensiveStyleProps } from "../../../shared/types/style-attributes.interfaces";
-
+import { ComprehensiveStyleProps } from '../../../shared/types/style-attributes.interfaces';
 
 export const getStyleFromPropsNative = ({
   maxWidth,
@@ -21,7 +20,7 @@ export const getStyleFromPropsNative = ({
   margin,
   borderWidth,
   flex,
-  paddingTop,
+  paddingTop
 }: ComprehensiveStyleProps<NativeTheme, number>): string => {
   const unitPropsHandler = theme.unitPropsHandler;
   const colorThemeHandler = theme.colorThemeHandler;
@@ -49,12 +48,10 @@ export const getStyleFromPropsNative = ({
     borderColorFromTheme
       ? `border-color: ${colorThemeHandler(borderColorFromTheme, 1, theme)};`
       : ''
-  };
-  ${borderWidth ? `border-width: ${unitPropsHandler(borderWidth)};` : ''};
-  ${margin ? `margin: ${unitPropsHandler(margin)};` : ''};
+  }
+  ${borderWidth ? `border-width: ${unitPropsHandler(borderWidth)};` : ''}
+  ${margin ? `margin: ${unitPropsHandler(margin)};` : ''}
 `;
 
   return css;
 };
-
-

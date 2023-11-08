@@ -18,8 +18,6 @@ const getResponsiveFontSize = (
   screenHeight: number | undefined,
   responsiveBy: ResponsiveByPercentOrValue | ResponsiveBy
 ): number => {
-  console.log(process.env.NODE_ENV);
-
   // Helper function to calculate the font value based on responsiveness strategy.
   const getFontValue = (
     fontSize: number,
@@ -49,8 +47,6 @@ const getResponsiveFontSize = (
     responsiveBy === ResponsiveByPercentOrValue.Value
       ? maxFontSize
       : RFPercentageNative(maxFontSize);
-
-  console.log(adjustedFontSize, 'this is adjusted');
 
   // Cap the font size using the utility function.
   return capFontSize(adjustedFontSize, adjustedMaxFontSize);

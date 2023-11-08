@@ -28,8 +28,6 @@ export const getStyleForTextPropsForNative: TextStyleGenerator<
   const handleFontFromTheme = theme?.fontThemeHandler ?? null;
   const capFontSizeFunc = theme?.fontSizeCap ?? capFontSize;
 
-  console.log(fontSizePropsHandler, 'this is font size props handler');
-
   const getColor = () => {
     if (restProps.onDark) {
       return theme.colors.whiteAlpha100;
@@ -74,8 +72,6 @@ export const getStyleForTextPropsForNative: TextStyleGenerator<
         )};`
       : '',
   ];
-
-  console.log(fontTypeWeight, 'this is fontTypeWeight in getStyleForTextProps');
 
   const fontFamilyProperties =
     fontType &&

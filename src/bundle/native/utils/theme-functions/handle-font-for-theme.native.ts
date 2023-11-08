@@ -27,7 +27,6 @@ export const handleFontFromThemeForNative: FontThemeHandler<NativeTheme> = (
   ) {
     if (theme.fonts[fontType].name) {
       const webFont = theme.fonts[fontType].name as string;
-      console.log(webFont);
       fontToReturn = webFont;
     }
   } else if (

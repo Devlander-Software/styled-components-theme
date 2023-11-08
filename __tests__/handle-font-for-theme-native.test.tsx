@@ -57,13 +57,6 @@ describe('handleFontFromThemeForNative', () => {
     expect(font).toBe(defaultFonts.Font1.light);
   });
 
-  // Example of a test case that expects a console log (if needed)
-  it('should log the web font when platform is web and fontType is provided', () => {
-    Platform.OS = 'web';
-    const consoleSpy = jest.spyOn(console, 'log');
-    handleFontFromThemeForNative("Font1", 'bold', mockTheme);
-    expect(consoleSpy).toHaveBeenCalledWith(defaultFonts.Font1.name);
-  });
 
   // Add more test cases for edge cases and error handling if there are any
 });

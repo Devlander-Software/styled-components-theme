@@ -1,11 +1,10 @@
 /* eslint-disable simple-import-sort/imports */
 
+import { extractKeysAndValuesFromColorsInterface } from './extract-values-from-colors-interface';
 import type {
   ColorNameOrValueFromTheme,
   ColorsInterface,
 } from '../types/color.types';
-
-import { extractKeysAndValuesFromColorsInterface } from './extract-values-from-colors-interface';
 
 export enum ColorNameOrValueEnum {
   ColorName = 'colorName',
