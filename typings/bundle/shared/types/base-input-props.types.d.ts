@@ -1,4 +1,5 @@
-export interface BaseTextInputProps<ContainerStyleProps, OnChangeText, OnSubmitEditing> {
+/// <reference types="react" />
+export interface BaseTextInputProps<ContainerStyleProps, OnChangeText, OnSubmitEditing, KeyboardType, AutoCapitalize> {
     renderBottom?: () => JSX.Element | null;
     onChangeText: OnChangeText;
     secureTextEntry?: boolean;
@@ -6,6 +7,8 @@ export interface BaseTextInputProps<ContainerStyleProps, OnChangeText, OnSubmitE
     errorText?: string | null | boolean | undefined;
     error?: boolean;
     containerStyleProps?: ContainerStyleProps;
+    keyboardType?: KeyboardType;
+    autoCapitalize?: AutoCapitalize;
     label?: string;
     defaultValue?: string;
     value?: string;

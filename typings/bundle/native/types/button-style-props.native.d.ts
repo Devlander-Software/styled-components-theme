@@ -1,6 +1,6 @@
 import { DimensionValue, ViewStyle } from 'react-native';
 import { BaseButtonProps } from '../../shared/types/base-button.types';
-import { ColorFromTheme, ColorNameOrValueFromTheme } from '../../shared/types/color.types';
+import { ColorNameOrValueFromTheme } from '../../shared/types/color.types';
 export interface ButtonPropsForNative extends BaseButtonProps<DimensionValue, ViewStyle> {
     paddingLeft?: number;
     paddingRight?: number;
@@ -24,7 +24,7 @@ export interface ButtonPropsForNative extends BaseButtonProps<DimensionValue, Vi
     backgroundColorFromTheme?: ColorNameOrValueFromTheme;
 }
 export interface GhostButtonForNative extends BaseButtonProps<DimensionValue, ViewStyle> {
-    textColorFromTheme: ColorFromTheme;
+    textColorFromTheme: ColorNameOrValueFromTheme;
     paddingLeft?: number;
     paddingRight?: number;
     marginTop?: number;
@@ -45,5 +45,5 @@ export interface GhostButtonForNative extends BaseButtonProps<DimensionValue, Vi
     ghost?: boolean;
     borderBottomWidth?: number | string;
     paddingBottom?: number | string;
-    backgroundColorFromTheme?: ColorFromTheme;
+    backgroundColorFromTheme?: ColorNameOrValueFromTheme;
 }

@@ -5,20 +5,20 @@ export const defaultFonts: FontsInterface = {
     light: 'Roboto',
     regular: 'Roboto',
     bold: 'Roboto',
-    name: 'Roboto',
+    name: 'Roboto'
   },
 
   Font2: {
     light: 'OpenSans-Light',
     regular: 'OpenSans-Regular',
     bold: 'OpenSans-Bold',
-    name: '"Open Sans"',
+    name: '"Open Sans"'
   },
   CondensedFont: {
     light: 'OpenSans-Condensed-Light',
     regular: 'OpenSans-Condensed-Regular',
     bold: 'OpenSans-Condensed-Bold',
-    name: "'Open Sans Condensed'",
+    name: "'Open Sans Condensed'"
   },
 
   Font1: {

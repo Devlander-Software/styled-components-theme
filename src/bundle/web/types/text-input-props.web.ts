@@ -7,7 +7,14 @@ import { LayoutStyleProperties } from '../../shared/types/style-attributes.inter
 import { TextContentTypeEnum } from '../../shared/types/text-field-content.enum';
 import type { CSSProperties } from 'react';
 
-export interface FormInputGroupPropsForWeb extends BaseTextInputProps<CSSProperties, (e: string | number) => void, (e: any) => void> {
+export interface FormInputGroupPropsForWeb
+  extends BaseTextInputProps<
+    CSSProperties,
+    (e: string | number) => void,
+    (e: any) => void,
+    KeyBoardTypeEnum,
+    AutoCapitalizeEnum
+  > {
   opacity?: number;
   dense?: boolean;
   renderRight?: () => JSX.Element | null;
@@ -16,7 +23,6 @@ export interface FormInputGroupPropsForWeb extends BaseTextInputProps<CSSPropert
   renderBottom?: () => JSX.Element | null;
   dataDetectorTypes?: DataDetectorEnum;
   textContentType?: TextContentTypeEnum;
-  keyboardType?: KeyBoardTypeEnum;
   secureTextEntry?: boolean;
   disabled?: boolean;
   errorText?: string | null | boolean | undefined;
@@ -31,5 +37,3 @@ export interface FormInputGroupPropsForWeb extends BaseTextInputProps<CSSPropert
   backgroundColor?: string;
   submitting?: boolean;
 }
-
-

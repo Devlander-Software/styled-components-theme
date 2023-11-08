@@ -1,8 +1,13 @@
-import type { LayoutStyleGenerator, WebTheme } from '../../../shared/types/base-theme-types';
 import { ComprehensiveStyleProps } from '../../../shared/types/style-attributes.interfaces';
+import type {
+  LayoutStyleGenerator,
+  WebTheme
+} from '../../../shared/types/base-theme-types';
 
-
-export const getStyleFromPropsForWeb: LayoutStyleGenerator<WebTheme, string | number> = ({
+export const getStyleFromPropsForWeb: LayoutStyleGenerator<
+  WebTheme,
+  string | number
+> = ({
   theme,
   backgroundColorFromTheme,
   flex,
@@ -17,7 +22,7 @@ export const getStyleFromPropsForWeb: LayoutStyleGenerator<WebTheme, string | nu
   marginRight,
   height,
   maxWidth,
-  maxHeight,
+  maxHeight
 }: ComprehensiveStyleProps<WebTheme, string | number>): string => {
   // Precompute the values
   const computedBackgroundColor = backgroundColorFromTheme

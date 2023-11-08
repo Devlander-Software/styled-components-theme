@@ -1,6 +1,6 @@
-import type { FC, ReactElement } from 'react';
-
+import React from 'react';
 import { WebTheme } from '../../shared/types/base-theme-types';
+
 import { FunctionProviderProps } from '../../shared/types/function-provider.types';
 import { adjustColor } from '../../shared/utils/adjust-color';
 import { capFontSize } from '../../shared/utils/cap-font-size';
@@ -14,21 +14,19 @@ import { getStyleFromPropsForWeb } from '../utils/theme-functions/get-style-from
 import { colorThemeHandlerWeb } from '../utils/theme-functions/handle-color-for-theme.web';
 import { handleFontFromThemeForWeb } from '../utils/theme-functions/handle-font-for-theme.web';
 import { handleFontSizePropsForWeb } from '../utils/theme-functions/handle-font-size-props.web';
-import React from 'react';
+import type { FC, ReactElement } from 'react';
 // Interfaces and types for StyledProvider Web
 export interface WithThemeFunctionsAndStyleWeb
   extends FunctionProviderProps<WebTheme> {
   theme: WebTheme;
 }
 
-export type ComponentWithThemeFunctionsWeb =
-  FC<WithThemeFunctionsAndStyleWeb>;
+export type ComponentWithThemeFunctionsWeb = FC<WithThemeFunctionsAndStyleWeb>;
 export type WithThemeFunctionsForWeb = FC<FunctionProviderProps<WebTheme>>;
 
 export const withThemeFunctionsWeb = (
   Component: ComponentWithThemeFunctionsWeb
 ): WithThemeFunctionsForWeb => {
-
   return (props: FunctionProviderProps<WebTheme>): ReactElement => {
     const { baseTheme, children } = props;
     const theme: WebTheme = {
@@ -43,11 +41,11 @@ export const withThemeFunctionsWeb = (
       boxShadowOne: boxShadowOne,
       boxShadowTwo: boxShadowOne,
       boxShadowThree: boxShadowOne,
-  
+
       colorThemeHandler: colorThemeHandlerWeb,
       fontThemeHandler: handleFontFromThemeForWeb,
       fontSizeCap: capFontSize,
-      colorAdjuster: adjustColor,
+      colorAdjuster: adjustColor
     };
     return (
       <Component baseTheme={baseTheme} theme={theme}>

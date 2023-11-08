@@ -1,14 +1,16 @@
 /* eslint-disable import/order */
-import { Dimensions } from 'react-native';
-import { RFPercentage, RFValue } from 'react-native-responsive-fontsize';
 
 import type {
   FontSizePropsHandler,
-  ResponsiveBy,
+  ResponsiveBy
 } from '../../../shared/types/font-size-handler.type';
 import { ResponsiveByPercentOrValue } from '../../../shared/types/font-size-handler.type';
 import { capFontSize } from '../../../shared/utils/cap-font-size';
-
+import {
+  RFPercentageNative,
+  RFValueNative
+} from '../responsive-font-size.native';
+import { Dimensions } from 'react-native';
 // Define the function to get the responsive font size value.
 const getResponsiveFontSize = (
   fontSize: number,
@@ -16,6 +18,8 @@ const getResponsiveFontSize = (
   screenHeight: number | undefined,
   responsiveBy: ResponsiveByPercentOrValue | ResponsiveBy
 ): number => {
+  console.log(process.env.NODE_ENV);
+
   // Helper function to calculate the font value based on responsiveness strategy.
   const getFontValue = (
     fontSize: number,
@@ -25,12 +29,17 @@ const getResponsiveFontSize = (
     let fontValue: number = 0;
     if (responsiveBy === ResponsiveByPercentOrValue.Value) {
       fontValue = screenHeight
-        ? RFValue(fontSize, screenHeight)
-        : RFValue(fontSize);
+        ? RFValueNative(fontSize, screenHeight)
+        : RFValueNative(fontSize);
     } else if (responsiveBy === ResponsiveByPercentOrValue.Percent) {
-      fontValue = RFPercentage(fontSize);
+      fontValue = RFPercentageNative(fontSize);
     }
-    return fontValue;
+
+    if (fontValue === 0) {
+      return fontSize;
+    } else {
+      return fontValue;
+    }
   };
 
   // Get the adjusted font size value.
@@ -39,7 +48,9 @@ const getResponsiveFontSize = (
   const adjustedMaxFontSize =
     responsiveBy === ResponsiveByPercentOrValue.Value
       ? maxFontSize
-      : RFPercentage(maxFontSize);
+      : RFPercentageNative(maxFontSize);
+
+  console.log(adjustedFontSize, 'this is adjusted');
 
   // Cap the font size using the utility function.
   return capFontSize(adjustedFontSize, adjustedMaxFontSize);
@@ -55,7 +66,10 @@ export const handleFontSizePropsForNative: FontSizePropsHandler = (
   if (!fontSize) fontSize = 13;
   if (!maxFontSize) maxFontSize = 24;
   if (!standardScreenHeight)
-    standardScreenHeight = Dimensions.get('window').height;
+    standardScreenHeight =
+      Dimensions && typeof Dimensions.get === 'function'
+        ? Dimensions.get('window').height
+        : 50;
   if (!responsiveBy) responsiveBy = ResponsiveByPercentOrValue.Value;
 
   // Parse the input parameters and validate them.
@@ -88,4 +102,3 @@ export const handleFontSizePropsForNative: FontSizePropsHandler = (
   // Return the final font size as a string with 'px' suffix.
   return `${adjustedFontSizeValue}px`;
 };
-

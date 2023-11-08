@@ -1,6 +1,8 @@
 export function isValidHex(color: string) {
   if (!color || typeof color !== 'string') return false;
-
+  if (!color.includes('#')) {
+    return false;
+  }
   // Validate hex values
   if (color.substring(0, 1) === '#') color = color.substring(1);
 
