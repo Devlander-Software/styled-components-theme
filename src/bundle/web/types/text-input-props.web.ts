@@ -1,3 +1,4 @@
+/* eslint-disable import/order */
 import type { CSSProperties } from 'react';
 import { AutoCapitalizeEnum } from '../../shared/types/auto-capatlize.enum';
 import { AutoCompleteTypeEnum } from '../../shared/types/auto-complete.enum';

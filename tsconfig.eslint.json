@@ -1,7 +1,12 @@
 {
     "extends": "./tsconfig.json",
     "include": [
-      "src/**/*",
+      "src/**/*.styles.tsx",
+      "src/**/*.component.tsx",
+      "src/**/*.stories.tsx",
+      "src/**/*.index.tsx",
+      "src/**/*.tsx",
+
       "jest.config.js",
       "build-script.config.js",
       "test/**/*"

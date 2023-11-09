@@ -14,5 +14,4 @@ export interface FormInputGroupPropsForNative extends Partial<TextInputProps>, N
     onSubmitEditing: TextInputProps["onSubmitEditing"];
     containerStyleFromTheme?: LayoutStyleProps<number>;
 }
-export { };
-
+export {};

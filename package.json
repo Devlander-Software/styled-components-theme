@@ -108,5 +108,7 @@
   "dependencies": {
     "lodash.isempty": "4.4.0",
     "react-native-responsive-fontsize": "0.5.1"
-  }
+  },
+  "_id": "@devlander/shared-react-native-types@0.0.0"
+
 }

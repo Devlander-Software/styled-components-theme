@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import type { TextStyle, ViewProps } from 'react-native';
 import { ColorNameOrValueFromTheme } from '../../shared/types/color.types';
 import { ThemeColorAttributes } from '../../shared/types/style-attributes.interfaces';
