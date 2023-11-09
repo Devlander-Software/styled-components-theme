@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1699482165710" clover="3.2.0">
+  <project timestamp="1699482165710" name="All files">
+    <metrics statements="325" coveredstatements="260" conditionals="421" coveredconditionals="228" methods="34" coveredmethods="25" elements="780" coveredelements="513" complexity="0" loc="325" ncloc="325" packages="6" files="22" classes="22"/>
+    <package name="native.setup.create-theme">
+      <metrics statements="18" coveredstatements="18" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="create-theme.native.ts" path="/Users/landonjohnson/Documents/dev/shared-react-native-types/src/bundle/native/setup/create-theme/create-theme.native.ts">
+        <metrics statements="18" coveredstatements="18" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="7" type="stmt"/>
+        <line num="2" count="7" type="stmt"/>
+        <line num="9" count="7" type="stmt"/>
+        <line num="10" count="7" type="stmt"/>
+        <line num="11" count="7" type="stmt"/>
+        <line num="12" count="7" type="stmt"/>
+        <line num="13" count="7" type="stmt"/>
+        <line num="14" count="7" type="stmt"/>
+        <line num="15" count="7" type="stmt"/>
+        <line num="16" count="7" type="stmt"/>
+        <line num="17" count="7" type="stmt"/>
+        <line num="18" count="7" type="stmt"/>
+        <line num="19" count="7" type="stmt"/>
+        <line num="20" count="7" type="stmt"/>
+        <line num="22" count="7" type="stmt"/>
+        <line num="25" count="8" type="stmt"/>
+        <line num="26" count="8" type="stmt"/>
+        <line num="71" count="8" type="stmt"/>
+      </file>
+    </package>
+    <package name="native.utils">
+      <metrics statements="49" coveredstatements="22" conditionals="70" coveredconditionals="11" methods="7" coveredmethods="3"/>
+      <file name="responsive-font-size.native.tsx" path="/Users/landonjohnson/Documents/dev/shared-react-native-types/src/bundle/native/utils/responsive-font-size.native.tsx">
+        <metrics statements="49" coveredstatements="22" conditionals="70" coveredconditionals="11" methods="7" coveredmethods="3"/>
+        <line num="1" count="7" type="stmt"/>
+        <line num="3" count="7" type="stmt"/>
+        <line num="4" count="4" type="cond" truecount="1" falsecount="1"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="27" count="4" type="stmt"/>
+        <line num="31" count="7" type="stmt"/>
+        <line num="32" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="38" count="7" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="45" count="0" type="cond" truecount="0" falsecount="3"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="49" count="0" type="cond" truecount="0" falsecount="3"/>
+        <line num="50" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="53" count="0" type="stmt"/>
+        <line num="56" count="7" type="stmt"/>
+        <line num="57" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="62" count="4" type="stmt"/>
+        <line num="63" count="4" type="stmt"/>
+        <line num="64" count="4" type="cond" truecount="1" falsecount="2"/>
+        <line num="65" count="0" type="stmt"/>
+        <line num="66" count="0" type="stmt"/>
+        <line num="68" count="4" type="cond" truecount="1" falsecount="1"/>
+        <line num="72" count="7" type="stmt"/>
+        <line num="73" count="0" type="stmt"/>
+        <line num="74" count="0" type="stmt"/>
+        <line num="75" count="0" type="stmt"/>
+        <line num="76" count="0" type="cond" truecount="0" falsecount="3"/>
+        <line num="77" count="0" type="stmt"/>
+        <line num="78" count="0" type="stmt"/>
+        <line num="80" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="82" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="92" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="94" count="0" type="stmt"/>
+        <line num="95" count="0" type="stmt"/>
+        <line num="99" count="7" type="stmt"/>
+        <line num="103" count="4" type="stmt"/>
+        <line num="104" count="4" type="stmt"/>
+        <line num="105" count="4" type="stmt"/>
+        <line num="106" count="4" type="cond" truecount="1" falsecount="2"/>
+        <line num="107" count="0" type="stmt"/>
+        <line num="108" count="0" type="stmt"/>
+        <line num="110" count="4" type="cond" truecount="1" falsecount="1"/>
+        <line num="112" count="4" type="cond" truecount="1" falsecount="1"/>
+        <line num="122" count="4" type="cond" truecount="3" falsecount="1"/>
+        <line num="124" count="4" type="stmt"/>
+        <line num="125" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="native.utils.theme-functions">
+      <metrics statements="146" coveredstatements="126" conditionals="291" coveredconditionals="173" methods="11" coveredmethods="9"/>
+      <file name="get-style-for-ghost-props.native.ts" path="/Users/landonjohnson/Documents/dev/shared-react-native-types/src/bundle/native/utils/theme-functions/get-style-for-ghost-props.native.ts">
+        <metrics statements="2" coveredstatements="1" conditionals="14" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="6" count="7" type="stmt"/>
+        <line num="13" count="0" type="cond" truecount="0" falsecount="4"/>
+      </file>
+      <file name="get-style-for-img-props.native.ts" path="/Users/landonjohnson/Documents/dev/shared-react-native-types/src/bundle/native/utils/theme-functions/get-style-for-img-props.native.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="32" coveredconditionals="15" methods="1" coveredmethods="1"/>
+        <line num="7" count="7" type="stmt"/>
+        <line num="23" count="1" type="cond" truecount="3" falsecount="3"/>
+        <line num="50" count="1" type="stmt"/>
+        <line num="88" count="1" type="stmt"/>
+      </file>
+      <file name="get-style-for-text-props.native.ts" path="/Users/landonjohnson/Documents/dev/shared-react-native-types/src/bundle/native/utils/theme-functions/get-style-for-text-props.native.ts">
+        <metrics statements="34" coveredstatements="23" conditionals="129" coveredconditionals="79" methods="2" coveredmethods="1"/>
+        <line num="1" count="7" type="stmt"/>
+        <line num="6" count="7" type="stmt"/>
+        <line num="8" count="7" type="stmt"/>
+        <line num="10" count="7" type="stmt"/>
+        <line num="13" count="7" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="25" count="2" type="cond" truecount="6" falsecount="2"/>
+        <line num="26" count="2" type="cond" truecount="6" falsecount="2"/>
+        <line num="27" count="2" type="cond" truecount="6" falsecount="2"/>
+        <line num="28" count="2" type="cond" truecount="6" falsecount="2"/>
+        <line num="29" count="2" type="cond" truecount="6" falsecount="2"/>
+        <line num="31" count="2" type="stmt"/>
+        <line num="32" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="35" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="38" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="50" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="51" count="0" type="stmt"/>
+        <line num="53" count="0" type="stmt"/>
+        <line num="56" count="2" type="stmt"/>
+        <line num="66" count="2" type="stmt"/>
+        <line num="77" count="2" type="cond" truecount="5" falsecount="1"/>
+        <line num="86" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="90" count="2" type="stmt"/>
+        <line num="149" count="2" type="cond" truecount="3" falsecount="1"/>
+        <line num="150" count="0" type="stmt"/>
+        <line num="152" count="2" type="stmt"/>
+        <line num="155" count="2" type="stmt"/>
+        <line num="156" count="2" type="stmt"/>
+        <line num="158" count="2" type="stmt"/>
+      </file>
+      <file name="get-style-from-button-props.native.ts" path="/Users/landonjohnson/Documents/dev/shared-react-native-types/src/bundle/native/utils/theme-functions/get-style-from-button-props.native.ts">
+        <metrics statements="39" coveredstatements="37" conditionals="18" coveredconditionals="16" methods="1" coveredmethods="1"/>
+        <line num="5" count="7" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="28" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="37" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="38" count="1" type="stmt"/>
+        <line num="40" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="41" count="1" type="stmt"/>
+        <line num="43" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="46" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="47" count="1" type="stmt"/>
+        <line num="49" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="50" count="1" type="stmt"/>
+        <line num="52" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="53" count="1" type="stmt"/>
+        <line num="55" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="56" count="1" type="stmt"/>
+        <line num="58" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="59" count="1" type="stmt"/>
+        <line num="61" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="62" count="1" type="stmt"/>
+        <line num="64" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="65" count="1" type="stmt"/>
+        <line num="67" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="68" count="1" type="stmt"/>
+        <line num="70" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="71" count="0" type="stmt"/>
+        <line num="73" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="74" count="1" type="stmt"/>
+        <line num="76" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="77" count="0" type="stmt"/>
+        <line num="79" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="80" count="1" type="stmt"/>
+        <line num="82" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="83" count="1" type="stmt"/>
+        <line num="85" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="86" count="1" type="stmt"/>
+        <line num="91" count="1" type="stmt"/>
+      </file>
+      <file name="get-style-from-props.native.ts" path="/Users/landonjohnson/Documents/dev/shared-react-native-types/src/bundle/native/utils/theme-functions/get-style-from-props.native.ts">
+        <metrics statements="5" coveredstatements="5" conditionals="36" coveredconditionals="18" methods="1" coveredmethods="1"/>
+        <line num="4" count="7" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="56" count="1" type="stmt"/>
+      </file>
+      <file name="handle-color-from-theme.native.ts" path="/Users/landonjohnson/Documents/dev/shared-react-native-types/src/bundle/native/utils/theme-functions/handle-color-from-theme.native.ts">
+        <metrics statements="12" coveredstatements="12" conditionals="7" coveredconditionals="6" methods="1" coveredmethods="1"/>
+        <line num="5" count="7" type="stmt"/>
+        <line num="9" count="7" type="stmt"/>
+        <line num="13" count="7" type="stmt"/>
+        <line num="24" count="7" type="stmt"/>
+        <line num="29" count="11" type="stmt"/>
+        <line num="33" count="11" type="cond" truecount="2" falsecount="0"/>
+        <line num="34" count="10" type="cond" truecount="2" falsecount="0"/>
+        <line num="35" count="9" type="cond" truecount="2" falsecount="0"/>
+        <line num="36" count="3" type="stmt"/>
+        <line num="41" count="6" type="stmt"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="47" count="1" type="stmt"/>
+      </file>
+      <file name="handle-font-for-theme.native.ts" path="/Users/landonjohnson/Documents/dev/shared-react-native-types/src/bundle/native/utils/theme-functions/handle-font-for-theme.native.ts">
+        <metrics statements="18" coveredstatements="17" conditionals="28" coveredconditionals="25" methods="1" coveredmethods="1"/>
+        <line num="1" count="7" type="stmt"/>
+        <line num="2" count="7" type="stmt"/>
+        <line num="7" count="7" type="stmt"/>
+        <line num="11" count="7" type="stmt"/>
+        <line num="16" count="6" type="cond" truecount="3" falsecount="1"/>
+        <line num="17" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="18" count="6" type="stmt"/>
+        <line num="19" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="28" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="32" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="38" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="39" count="4" type="stmt"/>
+        <line num="41" count="1" type="cond" truecount="3" falsecount="1"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="47" count="6" type="stmt"/>
+      </file>
+      <file name="handle-font-size-props.native.ts" path="/Users/landonjohnson/Documents/dev/shared-react-native-types/src/bundle/native/utils/theme-functions/handle-font-size-props.native.ts">
+        <metrics statements="32" coveredstatements="27" conditionals="27" coveredconditionals="14" methods="3" coveredmethods="3"/>
+        <line num="7" count="7" type="stmt"/>
+        <line num="8" count="7" type="stmt"/>
+        <line num="9" count="7" type="stmt"/>
+        <line num="13" count="7" type="stmt"/>
+        <line num="15" count="7" type="stmt"/>
+        <line num="22" count="4" type="stmt"/>
+        <line num="27" count="4" type="stmt"/>
+        <line num="28" count="4" type="cond" truecount="1" falsecount="1"/>
+        <line num="29" count="4" type="cond" truecount="1" falsecount="1"/>
+        <line num="32" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="36" count="4" type="cond" truecount="1" falsecount="1"/>
+        <line num="37" count="4" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="44" count="4" type="stmt"/>
+        <line num="47" count="4" type="cond" truecount="1" falsecount="1"/>
+        <line num="52" count="4" type="stmt"/>
+        <line num="56" count="7" type="stmt"/>
+        <line num="62" count="4" type="cond" truecount="0" falsecount="1"/>
+        <line num="63" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="64" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="65" count="4" type="stmt"/>
+        <line num="69" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="72" count="4" type="stmt"/>
+        <line num="73" count="4" type="cond" truecount="1" falsecount="1"/>
+        <line num="78" count="4" type="cond" truecount="0" falsecount="1"/>
+        <line num="79" count="0" type="stmt"/>
+        <line num="81" count="4" type="cond" truecount="2" falsecount="1"/>
+        <line num="82" count="0" type="stmt"/>
+        <line num="86" count="4" type="cond" truecount="1" falsecount="1"/>
+        <line num="91" count="4" type="stmt"/>
+        <line num="99" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="shared.defaults">
+      <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="fonts.defaults.tsx" path="/Users/landonjohnson/Documents/dev/shared-react-native-types/src/bundle/shared/defaults/fonts.defaults.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="7" type="stmt"/>
+      </file>
+      <file name="light-colors.defaults.tsx" path="/Users/landonjohnson/Documents/dev/shared-react-native-types/src/bundle/shared/defaults/light-colors.defaults.tsx">
+        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="12" count="7" type="stmt"/>
+        <line num="14" count="7" type="stmt"/>
+        <line num="80" count="7" type="stmt"/>
+        <line num="97" count="7" type="stmt"/>
+        <line num="109" count="7" type="stmt"/>
+        <line num="122" count="7" type="stmt"/>
+        <line num="132" count="7" type="stmt"/>
+        <line num="150" count="7" type="stmt"/>
+      </file>
+    </package>
+    <package name="shared.types">
+      <metrics statements="19" coveredstatements="19" conditionals="8" coveredconditionals="8" methods="4" coveredmethods="4"/>
+      <file name="font-size-handler.type.ts" path="/Users/landonjohnson/Documents/dev/shared-react-native-types/src/bundle/shared/types/font-size-handler.type.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="1" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="2" count="7" type="stmt"/>
+        <line num="3" count="7" type="stmt"/>
+      </file>
+      <file name="font-type.enum.ts" path="/Users/landonjohnson/Documents/dev/shared-react-native-types/src/bundle/shared/types/font-type.enum.ts">
+        <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="1" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="2" count="7" type="stmt"/>
+        <line num="3" count="7" type="stmt"/>
+        <line num="4" count="7" type="stmt"/>
+        <line num="5" count="7" type="stmt"/>
+      </file>
+      <file name="unit-props.types.ts" path="/Users/landonjohnson/Documents/dev/shared-react-native-types/src/bundle/shared/types/unit-props.types.ts">
+        <metrics statements="11" coveredstatements="11" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+        <line num="1" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="2" count="7" type="stmt"/>
+        <line num="5" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="6" count="7" type="stmt"/>
+        <line num="7" count="7" type="stmt"/>
+        <line num="8" count="7" type="stmt"/>
+        <line num="9" count="7" type="stmt"/>
+        <line num="10" count="7" type="stmt"/>
+        <line num="11" count="7" type="stmt"/>
+        <line num="12" count="7" type="stmt"/>
+        <line num="13" count="7" type="stmt"/>
+      </file>
+    </package>
+    <package name="shared.utils">
+      <metrics statements="84" coveredstatements="66" conditionals="52" coveredconditionals="36" methods="11" coveredmethods="8"/>
+      <file name="adjust-color.ts" path="/Users/landonjohnson/Documents/dev/shared-react-native-types/src/bundle/shared/utils/adjust-color.ts">
+        <metrics statements="37" coveredstatements="26" conditionals="18" coveredconditionals="10" methods="4" coveredmethods="2"/>
+        <line num="2" count="7" type="stmt"/>
+        <line num="13" count="7" type="stmt"/>
+        <line num="15" count="7" type="stmt"/>
+        <line num="16" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="18" count="7" type="stmt"/>
+        <line num="19" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="24" count="7" type="stmt"/>
+        <line num="25" count="140" type="cond" truecount="0" falsecount="1"/>
+        <line num="27" count="140" type="stmt"/>
+        <line num="28" count="140" type="stmt"/>
+        <line num="29" count="140" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="35" count="7" type="stmt"/>
+        <line num="41" count="140" type="cond" truecount="0" falsecount="1"/>
+        <line num="43" count="140" type="cond" truecount="2" falsecount="1"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="45" count="0" type="stmt"/>
+        <line num="48" count="140" type="cond" truecount="1" falsecount="1"/>
+        <line num="49" count="140" type="stmt"/>
+        <line num="50" count="140" type="stmt"/>
+        <line num="52" count="140" type="cond" truecount="2" falsecount="0"/>
+        <line num="53" count="70" type="stmt"/>
+        <line num="54" count="70" type="cond" truecount="1" falsecount="0"/>
+        <line num="55" count="70" type="stmt"/>
+        <line num="58" count="140" type="stmt"/>
+        <line num="60" count="140" type="cond" truecount="2" falsecount="0"/>
+        <line num="61" count="126" type="stmt"/>
+        <line num="64" count="126" type="stmt"/>
+        <line num="66" count="14" type="stmt"/>
+        <line num="68" count="14" type="cond" truecount="1" falsecount="1"/>
+        <line num="69" count="14" type="stmt"/>
+        <line num="71" count="0" type="stmt"/>
+        <line num="75" count="0" type="stmt"/>
+        <line num="78" count="0" type="stmt"/>
+        <line num="81" count="0" type="stmt"/>
+        <line num="84" count="0" type="stmt"/>
+      </file>
+      <file name="cap-font-size.ts" path="/Users/landonjohnson/Documents/dev/shared-react-native-types/src/bundle/shared/utils/cap-font-size.ts">
+        <metrics statements="5" coveredstatements="4" conditionals="3" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="5" count="7" type="stmt"/>
+        <line num="11" count="6" type="cond" truecount="1" falsecount="1"/>
+        <line num="14" count="6" type="cond" truecount="0" falsecount="1"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="21" count="6" type="stmt"/>
+      </file>
+      <file name="extract-values-from-colors-interface.ts" path="/Users/landonjohnson/Documents/dev/shared-react-native-types/src/bundle/shared/utils/extract-values-from-colors-interface.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="7" type="stmt"/>
+        <line num="6" count="14" type="stmt"/>
+        <line num="7" count="14" type="stmt"/>
+        <line num="9" count="14" type="stmt"/>
+      </file>
+      <file name="handle-box-shadows.ts" path="/Users/landonjohnson/Documents/dev/shared-react-native-types/src/bundle/shared/utils/handle-box-shadows.ts">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="3" count="7" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+      </file>
+      <file name="handle-unit-props.ts" path="/Users/landonjohnson/Documents/dev/shared-react-native-types/src/bundle/shared/utils/handle-unit-props.ts">
+        <metrics statements="14" coveredstatements="12" conditionals="18" coveredconditionals="15" methods="1" coveredmethods="1"/>
+        <line num="1" count="7" type="stmt"/>
+        <line num="3" count="7" type="stmt"/>
+        <line num="7" count="38" type="cond" truecount="1" falsecount="0"/>
+        <line num="8" count="38" type="stmt"/>
+        <line num="10" count="38" type="cond" truecount="2" falsecount="1"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="14" count="38" type="cond" truecount="1" falsecount="0"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="24" count="38" type="cond" truecount="3" falsecount="1"/>
+        <line num="28" count="38" type="cond" truecount="3" falsecount="0"/>
+        <line num="29" count="36" type="cond" truecount="1" falsecount="1"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="32" count="36" type="stmt"/>
+        <line num="36" count="38" type="stmt"/>
+      </file>
+      <file name="is-color-name-or-value.ts" path="/Users/landonjohnson/Documents/dev/shared-react-native-types/src/bundle/shared/utils/is-color-name-or-value.ts">
+        <metrics statements="11" coveredstatements="11" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+        <line num="3" count="7" type="stmt"/>
+        <line num="9" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="10" count="7" type="stmt"/>
+        <line num="11" count="7" type="stmt"/>
+        <line num="26" count="7" type="stmt"/>
+        <line num="30" count="14" type="stmt"/>
+        <line num="32" count="14" type="cond" truecount="1" falsecount="0"/>
+        <line num="33" count="10" type="stmt"/>
+        <line num="36" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="37" count="2" type="stmt"/>
+        <line num="40" count="2" type="stmt"/>
+      </file>
+      <file name="is-valid-hex.ts" path="/Users/landonjohnson/Documents/dev/shared-react-native-types/src/bundle/shared/utils/is-valid-hex.ts">
+        <metrics statements="11" coveredstatements="8" conditionals="9" coveredconditionals="6" methods="1" coveredmethods="1"/>
+        <line num="1" count="7" type="stmt"/>
+        <line num="2" count="14" type="cond" truecount="3" falsecount="0"/>
+        <line num="3" count="13" type="cond" truecount="1" falsecount="0"/>
+        <line num="4" count="8" type="stmt"/>
+        <line num="7" count="5" type="cond" truecount="1" falsecount="0"/>
+        <line num="9" count="5" type="cond" truecount="1" falsecount="3"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="13" count="5" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="21" count="7" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

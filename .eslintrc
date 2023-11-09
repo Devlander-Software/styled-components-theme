@@ -2,6 +2,7 @@
   "globals": {
     "React": true,
     "console": true,
+    "window": true,
     "JSX": true
   },
   "ignorePatterns": [

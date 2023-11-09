@@ -1,5 +1,8 @@
-import { ImageStyleGenerator, NativeTheme } from "../../../shared/types/base-theme-types";
-import { ImageStyleFromProps } from "../../../shared/types/img-style-props";
+import {
+  ImageStyleGenerator,
+  NativeTheme,
+} from '../../../shared/types/base-theme-types';
+import { ImageStyleFromProps } from '../../../shared/types/img-style-props';
 
 export const getStyleForImgPropsForNative: ImageStyleGenerator<NativeTheme> = ({
   backgroundColorFromTheme,
@@ -14,8 +17,36 @@ export const getStyleForImgPropsForNative: ImageStyleGenerator<NativeTheme> = ({
   borderRadius,
   borderWidth,
   borderBottomLeftRadius,
-  borderTopLeftRadius,
+  borderTopLeftRadius
 }: ImageStyleFromProps<NativeTheme, number>): string => {
+  const getBorderRadius =
+    !borderBottomLeftRadius &&
+    !borderTopRightRadius &&
+    !borderBottomRightRadius &&
+    !borderBottomLeftRadius
+      ? `
+    border-radius: ${
+      borderRadius ? theme.unitPropsHandler(borderRadius) : '0px'
+    };
+  `
+      : `  border-radius: ${
+          borderTopLeftRadius
+            ? theme.unitPropsHandler(borderTopLeftRadius)
+            : theme.unitPropsHandler(0)
+        } ${
+          borderTopRightRadius
+            ? theme.unitPropsHandler(borderTopRightRadius)
+            : theme.unitPropsHandler(0)
+        } ${
+          borderBottomRightRadius
+            ? theme.unitPropsHandler(borderBottomRightRadius)
+            : theme.unitPropsHandler(0)
+        } ${
+          borderBottomLeftRadius
+            ? theme.unitPropsHandler(borderBottomLeftRadius)
+            : theme.unitPropsHandler(0)
+        };`;
+
   const css = `
         ${
           backgroundColorFromTheme
@@ -49,23 +80,7 @@ export const getStyleForImgPropsForNative: ImageStyleGenerator<NativeTheme> = ({
         ${maxWidth ? `max-width: ${theme.unitPropsHandler(maxWidth)};` : ''}
         ${maxHeight ? `max-height: ${theme.unitPropsHandler(maxHeight)};` : ''}
 
- border-radius: ${
-   borderTopLeftRadius
-     ? theme.unitPropsHandler(borderTopLeftRadius)
-     : theme.unitPropsHandler(borderRadius)
- } ${
-   borderTopRightRadius
-     ? theme.unitPropsHandler(borderTopRightRadius)
-     : theme.unitPropsHandler(borderRadius)
- } ${
-   borderBottomRightRadius
-     ? theme.unitPropsHandler(borderBottomRightRadius)
-     : theme.unitPropsHandler(borderRadius)
- } ${
-   borderBottomLeftRadius
-     ? theme.unitPropsHandler(borderBottomLeftRadius)
-     : theme.unitPropsHandler(borderRadius)
- }};
+        ${getBorderRadius}
 
 
 

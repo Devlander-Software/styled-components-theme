@@ -47,6 +47,10 @@ export * from "./native/types/text-style-props.native";
  */
 export * from "./native/types/text-types.native";
 /**
+ * TSDoc for responsive-font-size.native
+ */
+export * from "./native/utils/responsive-font-size.native";
+/**
  * TSDoc for constant-units-for-theme.native
  */
 export * from "./native/utils/theme-functions/constant-units-for-theme.native";
@@ -390,6 +394,10 @@ export * from "./web/types/text-input-props.web";
  * TSDoc for text-types.web
  */
 export * from "./web/types/text-types.web";
+/**
+ * TSDoc for responsive-font-size.web
+ */
+export * from "./web/utils/responsive-font-size.web";
 /**
  * TSDoc for constant-units-for-theme.web
  */

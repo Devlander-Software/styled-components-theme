@@ -1,10 +1,10 @@
-
-import { FontThemeHandler, WebTheme } from '../../../shared/types/base-theme-types';
+import {
+  FontThemeHandler,
+  WebTheme,
+} from '../../../shared/types/base-theme-types';
 import { FontTypeEnum } from '../../../shared/types/font-type.enum';
 import type { FontWeightType } from '../../../shared/types/font-weight.enum';
 import type { FontType } from '../../../shared/types/fonts.interface';
-
-
 
 export const handleFontFromThemeForWeb: FontThemeHandler<WebTheme> = (
   fontType: FontType,
@@ -23,4 +23,3 @@ export const handleFontFromThemeForWeb: FontThemeHandler<WebTheme> = (
     return theme.fonts.Font2.bold as string;
   }
 };
-

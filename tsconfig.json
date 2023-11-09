@@ -15,6 +15,7 @@
     "importHelpers": true,
     "declaration": true,
     "declarationDir": "typings",
+
     "sourceMap": true,
     "rootDir": "src",
     "strict": true,

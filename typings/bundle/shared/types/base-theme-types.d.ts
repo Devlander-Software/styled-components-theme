@@ -1,16 +1,16 @@
-import type { ColorAdjuster } from '../utils/adjust-color';
-import type { FontSizeCap } from '../utils/cap-font-size';
 import { ButtonStyleFromProps } from './button-style-props.types';
+import { ImageStyleFromProps } from './img-style-props';
+import { ComprehensiveStyleProps } from './style-attributes.interfaces';
+import { ResolvedThemedTextStylingProps } from './text-style.types';
+import { UnitPropsHandler } from './unit-props.types';
 import type { ColorNameOrValueFromTheme, ColorsInterface } from './color.types';
 import type { DeviceOnTheme } from './device-on-theme.type';
 import type { ElevationType } from './elevation.type';
 import type { FontSizePropsHandler } from './font-size-handler.type';
 import type { FontWeightType } from './font-weight.enum';
 import type { FontType, FontsInterface } from './fonts.interface';
-import { ImageStyleFromProps } from './img-style-props';
-import { ComprehensiveStyleProps } from './style-attributes.interfaces';
-import { ResolvedThemedTextStylingProps } from './text-style.types';
-import { UnitPropsHandler } from './unit-props.types';
+import type { ColorAdjuster } from '../utils/adjust-color';
+import type { FontSizeCap } from '../utils/cap-font-size';
 export interface FontThemeHandler<T> {
     (fontType: FontType, fontTypeWeight: FontWeightType, theme: T): string;
 }

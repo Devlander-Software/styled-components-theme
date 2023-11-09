@@ -3,7 +3,7 @@ import { ColorNameOrValueFromTheme } from './color.types';
 import { FontProperty } from './font-type.enum';
 import { FontTypeWeightEnum, FontWeightType } from './font-weight.enum';
 import { ThemeColorAttributes, ThemeFontAttributes } from './style-attributes.interfaces';
-interface SharedTextProperties {
+export interface SharedTextProperties {
     textAlign?: 'auto' | 'left' | 'right' | 'center' | 'justify' | undefined;
     textTransform?: 'uppercase' | 'lowercase' | 'capitalize' | 'none' | undefined;
     onDark?: boolean;
@@ -13,7 +13,6 @@ interface SharedTextProperties {
     fontWeight?: 'normal' | 'bold' | '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900' | undefined;
 }
 export interface UITextStylingAttributes<ExpectedValueType> extends ThemeFontAttributes, ThemeColorAttributes, SharedTextProperties {
-    maxFontSizeMultiplier?: number;
     numberOfLines?: ExpectedValueType;
     paddingLeft?: ExpectedValueType;
     highlight?: boolean;
@@ -51,7 +50,6 @@ export interface TextStylingPropsWrapper<ExpectedValueType = number, StyleProps 
 }
 export interface ThemedTextStylingProps<Theme, ExpectedValueType = number> extends TextStylingPropsWrapper<ExpectedValueType>, SharedTextProperties {
     theme: Theme;
-    maxFontSizeMultiplier?: number;
     shadowColor?: string | OpaqueColorValue;
     numberOfLines?: ExpectedValueType;
     paddingLeft?: ExpectedValueType;
@@ -90,4 +88,3 @@ export interface ThemedTextStylingProps<Theme, ExpectedValueType = number> exten
 export interface ResolvedThemedTextStylingProps<T, U> extends ThemedTextStylingProps<T, U>, SharedTextProperties {
     theme: T;
 }
-export {};

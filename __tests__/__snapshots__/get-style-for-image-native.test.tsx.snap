@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getStyleForImgPropsForNative returns correct CSS string with provided style properties 1`] = `
+"
+        background-color: rgba(0, 0, 0, 0.5);
+
+        border-color: rgba(255, 255, 255, 0.5);
+        border-width: 2px;
+       
+        width: 300px;
+
+        height: 150px;
+        width: 300px;
+        max-width: 100px;
+        max-height: 200px;
+
+          border-radius: 0px 5px 10px 0px;
+
+
+
+    "
+`;

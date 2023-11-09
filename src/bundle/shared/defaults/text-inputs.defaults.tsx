@@ -2,7 +2,13 @@ import type { BaseTextInputProps } from '../types/base-input-props.types';
 import type { IconNames } from '../types/icons/icon-names.enum';
 import type { SecureInputProps } from '../types/secure-input-props';
 
-export const formInputGroupDefaultProps: BaseTextInputProps<any, (e: any) => void, (e: any) => void> = {
+export const formInputGroupDefaultProps: BaseTextInputProps<
+  any,
+  (e: any) => void,
+  (e: any) => void,
+  any,
+  any
+> = {
   label: 'Label',
   underlineColor: '#000',
   backgroundColor: 'transparent',
