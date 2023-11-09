@@ -60,7 +60,7 @@ export const getStyleForTextPropsForNative: TextStyleGenerator<
       ? `font-size: ${fontSizePropsHandler(
           capFontSizeFunc(fontSize, maxFontSize)
         )};`
-      : '',
+      : ''
   ];
 
   const cssPropertiesForWeb = [
@@ -80,7 +80,11 @@ export const getStyleForTextPropsForNative: TextStyleGenerator<
     handleFontFromTheme
       ? `font-family: ${handleFontFromTheme(fontType, fontTypeWeight, theme)};`
       : handleFontFromTheme
-      ? `font-family: ${handleFontFromTheme(FontTypeEnum.Font1, 'bold', theme)}`
+      ? `font-family: ${handleFontFromTheme(
+          FontTypeEnum.Font1,
+          'bold',
+          theme
+        )};`
       : '';
 
   const handleShadowType = restProps.shadowColor
