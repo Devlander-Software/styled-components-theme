@@ -16,7 +16,9 @@ const extensions = [".js", ".jsx", ".ts", ".tsx",  ".native.js"];
 const external = [
   "react",
   "react-dom",
-  "react-native-web"  // Add more peer dependencies here
+  "react-native-web",
+  "lodash.isempty",
+  "color"
 ];
 
 const makeExternalPredicate = externalArr => {
@@ -36,7 +38,8 @@ export default {
       name: "ReactNativeSharedTypes", // Replace with your library's name
       globals: {
         react: "React",
-        "react-native-web": "reactNativeWeb"
+        "react-native-web": "reactNativeWeb",
+        "lodash.isempty": "isEmpty"
       },
       sourcemap: true,
     },

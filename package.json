@@ -1,6 +1,6 @@
 {
   "name": "@devlander/shared-react-native-types",
-  "version": "1.1.226",
+  "version": "1.1.230",
   "license": "MIT",
   "type": "commonjs",
   "main": "dist/umd/index.js",
@@ -30,7 +30,6 @@
     "lint": "eslint --ext .js,.jsx,.ts,.tsx ./src --fix",
     "test": "jest",
     "test:coverage": "jest --coverage",
-
     "prepare": "yarn run build",
     "size": "size-limit",
     "patch": "yarn version --new-version patch",
@@ -38,9 +37,17 @@
     "start-publish": "yarn run test && yarn version --patch && yarn run timeout &&  npm publish"
   },
   "peerDependencies": {
+    "color": "4.2.3",
+    "hex-to-rgba": "2.0.1",
+    "lodash.isempty": "4.4.0",
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0",
     "react-native-web": "0.x.x"
+  },
+  "dependencies": {
+    "color": "4.2.3",
+    "hex-to-rgba": "2.0.1",
+    "lodash.isempty": "4.4.0"
   },
   "prettier": {
     "printWidth": 80,
@@ -77,7 +84,6 @@
     "@typescript-eslint/eslint-plugin": "^6.9.0",
     "@typescript-eslint/parser": "^6.8.0",
     "babel-jest": "^29.7.0",
-    "color": "4.2.3",
     "core-js": "3",
     "delay-cli": "2.0.0",
     "eslint": "^8.52.0",
@@ -92,10 +98,8 @@
     "eslint-plugin-sort-imports-es6-autofix": "^0.6.0",
     "eslint-plugin-testing-library": "latest",
     "eslint-plugin-unused-imports": "3.0.0",
-    "hex-to-rgba": "2.0.1",
     "husky": "^8.0.3",
     "jest": "^29.7.0",
-    "lodash.isempty": "4.4.0",
     "prettier": "^3.0.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -109,6 +113,7 @@
     "tsdx": "^0.14.1",
     "tslib": "^2.6.2",
     "typescript": "^5.2.2"
+<<<<<<< HEAD
   },
   "dependencies": {
 <<<<<<< HEAD
@@ -119,6 +124,8 @@
 
 =======
     "lodash.isempty": "4.4.0"
+=======
+>>>>>>> 4239714c72041c60e661cc4e1c0674bad719982a
   }
 >>>>>>> 67a913ae845aeccf4a65f81b28be11d7633806d9
 }
