@@ -1,6 +1,6 @@
 {
   "name": "@devlander/shared-react-native-types",
-  "version": "1.1.237",
+  "version": "1.1.238",
   "license": "MIT",
   "type": "commonjs",
   "main": "dist/umd/index.js",
