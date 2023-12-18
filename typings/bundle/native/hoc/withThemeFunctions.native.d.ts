@@ -1,6 +1,6 @@
-import type { FC } from 'react';
 import { NativeTheme } from '../../shared/types/base-theme-types';
 import { FunctionProviderProps } from '../../shared/types/function-provider.types';
+import type { FC } from 'react';
 export interface WithThemeFunctionsAndStyleNative extends FunctionProviderProps<NativeTheme> {
     theme: NativeTheme;
 }

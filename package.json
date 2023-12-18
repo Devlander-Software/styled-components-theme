@@ -113,19 +113,6 @@
     "tsdx": "^0.14.1",
     "tslib": "^2.6.2",
     "typescript": "^5.2.2"
-<<<<<<< HEAD
-  },
-  "dependencies": {
-<<<<<<< HEAD
-    "lodash.isempty": "4.4.0",
-    "react-native-responsive-fontsize": "0.5.1"
-  },
-  "_id": "@devlander/shared-react-native-types@0.0.0"
-
-=======
-    "lodash.isempty": "4.4.0"
-=======
->>>>>>> 4239714c72041c60e661cc4e1c0674bad719982a
   }
->>>>>>> 67a913ae845aeccf4a65f81b28be11d7633806d9
+ 
 }

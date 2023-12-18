@@ -1,7 +1,7 @@
 import { Platform } from 'react-native';
 import {
   NativeTheme,
-  TextStyleGenerator
+  TextStyleGenerator,
 } from '../../../shared/types/base-theme-types';
 import { FontTypeEnum } from '../../../shared/types/font-type.enum';
 import { ResolvedThemedTextStylingProps } from '../../../shared/types/text-style.types';
@@ -19,8 +19,11 @@ export const getStyleForTextPropsForNative: TextStyleGenerator<
     fontType,
     fontTypeWeight,
     fontWeight,
+    color,
     ...restProps
   } = props;
+
+  // if there is a value for value, prioritize that over over textColorFromTheme
 
   const unitPropsHandler = theme?.unitPropsHandler ?? null;
   const colorThemeHandler = theme?.colorThemeHandler ?? null;
@@ -60,7 +63,7 @@ export const getStyleForTextPropsForNative: TextStyleGenerator<
       ? `font-size: ${fontSizePropsHandler(
           capFontSizeFunc(fontSize, maxFontSize)
         )};`
-      : ''
+      : '',
   ];
 
   const cssPropertiesForWeb = [
@@ -70,7 +73,7 @@ export const getStyleForTextPropsForNative: TextStyleGenerator<
       ? `font-size: ${fontSizePropsHandler(
           capFontSizeFunc(fontSize, maxFontSize)
         )};`
-      : '',
+      : ''
   ];
 
   const fontFamilyProperties =
@@ -91,16 +94,20 @@ export const getStyleForTextPropsForNative: TextStyleGenerator<
     ? `text-shadow-color: ${String(restProps.shadowColor)};`
     : '';
 
+  const handleColor = color
+    ? `color: ${color};`
+    : textColorFromTheme && colorThemeHandler
+    ? `color: ${colorThemeHandler(textColorFromTheme, 1, theme)};`
+    : `color: ${getColor()};`;
+
   const cssProperties = [
     handleShadowType,
     fontFamilyProperties,
-
+    handleColor,
     restProps.textDecorationLine && restProps.textDecorationLine !== 'none'
       ? `text-decoration-line: ${restProps.textDecorationLine};`
       : '',
-    textColorFromTheme && colorThemeHandler
-      ? `color: ${colorThemeHandler(textColorFromTheme, 1, theme)};`
-      : `color: ${getColor()};`,
+
     restProps.flex ? `flex: ${restProps.flex};` : '',
     fontWeight ? `font-weight: ${fontWeight};` : '',
     restProps.paddingLeft
@@ -147,7 +154,7 @@ export const getStyleForTextPropsForNative: TextStyleGenerator<
       : '',
     restProps.textTransform
       ? `text-transform: ${restProps.textTransform};`
-      : '',
+      : ''
   ];
 
   if (Platform && Platform.OS === 'web') {
@@ -157,7 +164,6 @@ export const getStyleForTextPropsForNative: TextStyleGenerator<
   }
 
   const css = cssProperties.filter(Boolean).join('\n');
-  console.log('css', css);
 
   return css;
 };

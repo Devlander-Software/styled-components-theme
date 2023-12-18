@@ -1,79 +1,81 @@
-{
-  "globals": {
-    "React": true,
-    "console": true,
-    "window": true,
-    "JSX": true
+/* eslint-disable @typescript-eslint/no-var-requires */
+const path = require("path");
+
+module.exports = {
+  globals: {
+    React: true,
+    console: true,
+    window: true,
+    JSX: true,
   },
-  "ignorePatterns": [
+  ignorePatterns: [
     "rollup.config.mjs",
     "get-latest-bundle.js",
     "examples/packages/**/*",
     "examples/**/*/tsconfig.json",
     "*/**/babel.config.js",
     "examples/**/*/src",
-    "types/**/*.d.ts"
+    "types/**/*.d.ts",
   ],
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "tsconfigRootDir": "./packages/@devlander/shared-react-native-types",
-    "project": "./tsconfig.eslint.json",
-    "ecmaVersion": 2020,
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "jsx": true
-    }
+  parser: "@typescript-eslint/parser",
+  parserOptions: {
+    project: path.join(__dirname, 'tsconfig.eslint.json'),
+    ecmaVersion: 2020,
+    sourceType: "module",
+    ecmaFeatures: {
+      jsx: true,
+    },
   },
-  "extends": [
+  extends: [
     "eslint:recommended",
     "plugin:jest-dom/recommended",
-    "plugin:testing-library/react"
+    "plugin:testing-library/react",
   ],
-  "plugins": [
+  plugins: [
     "testing-library",
     "promise",
     "prettier",
     "simple-import-sort",
     "@typescript-eslint",
-    "import"
+    "import",
   ],
-  "rules": {
+  rules: {
     "import/imports-first": "error",
     "import/order": [
       "error",
       {
-        "groups": [
+        groups: [
           "builtin",
           "external",
           "internal",
           "parent",
           "sibling",
           "index",
-          "type"
+          "type",
         ],
-        "pathGroups": [
+        pathGroups: [
           {
-            "pattern": "react-native",
-            "group": "external",
-            "position": "before"
-          }
+            pattern: "react-native",
+            group: "external",
+            position: "before",
+          },
         ],
-        "pathGroupsExcludedImportTypes": [],
-        "alphabetize": {
-          "order": "asc",
-          "caseInsensitive": true
-        }
-      }
+        pathGroupsExcludedImportTypes: [],
+        alphabetize: {
+          order: "asc",
+          caseInsensitive: true,
+        },
+      },
     ],
     "comma-dangle": [
       "warn",
       {
-        "arrays": "never",
-        "objects": "never",
-        "imports": "never",
-        "exports": "never",
-        "functions": "never"
-      }
+        arrays: "never",
+        objects: "never",
+        imports: "never",
+        exports: "never",
+        functions: "never",
+      },
     ],
     "simple-import-sort/imports": "off",
     "simple-import-sort/exports": "off",
@@ -90,13 +92,13 @@
     "no-prototype-builtins": "off",
     "@typescript-eslint/no-unused-vars": [
       "warn",
-      { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }
+      { argsIgnorePattern: "^_", varsIgnorePattern: "^_" },
     ],
     "@typescript-eslint/no-non-null-assertion": "off",
     "promise/always-return": "warn",
     "promise/no-return-wrap": "warn",
     "promise/param-names": "warn",
-    "promise/catch-or-return": ["warn", { "allowFinally": true }],
+    "promise/catch-or-return": ["warn", { allowFinally: true }],
     "promise/no-native": "off",
     "promise/no-nesting": "warn",
     "promise/no-promise-in-callback": "warn",
@@ -109,40 +111,40 @@
     "jest/no-commented-out-tests": "off",
 
     // Naming conventions rules
-    "camelcase": ["error", { "properties": "always" }],
+    camelcase: ["error", { properties: "always" }],
     "@typescript-eslint/naming-convention": [
       "error",
-      { "selector": "variable", "format": ["camelCase"] }
-    ]
+      { selector: "variable", format: ["camelCase"] },
+    ],
   },
-  "overrides": [
+  overrides: [
     {
-      "files": [
+      files: [
         "src/**/*.tsx",
         "src/**/*.ts",
-        "!rollup-config/webpack.config.js"
+        "!rollup-config/webpack.config.js",
       ],
-      "rules": {
+      rules: {
         "@typescript-eslint/naming-convention": [
           "error",
-          { "selector": "variable", "format": ["camelCase", "PascalCase"] }
-        ]
-      }
+          { selector: "variable", format: ["camelCase", "PascalCase"] },
+        ],
+      },
     },
     {
-      "files": ["**/*/webpack.config.js"],
-      "rules": {
+      files: ["**/*/webpack.config.js"],
+      rules: {
         "@typescript-eslint/naming-convention": [
           "error",
           {
-            "selector": "variable",
-            "format": ["camelCase", "PascalCase", "snake_case"]
-          }
-        ]
-      }
-    }
+            selector: "variable",
+            format: ["camelCase", "PascalCase", "snake_case"],
+          },
+        ],
+      },
+    },
   ],
-  "env": {
-    "node": true
-  }
-}
+  env: {
+    node: true,
+  },
+};
