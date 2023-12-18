@@ -1,3 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`getStyleFromButtonPropsForNative generates correct CSS from props 1`] = `"background-color: rgba(255, 213, 79, 1); flex: 1; padding-left: 10px; width: 50px; padding-bottom: 10px; padding-top: 10px; padding-right: 10px; max-width: 100px; margin-top: 15px; margin-bottom: 10px; margin-left: 5px; margin-right: 5px; padding: 20px; align-items: center; border-radius: 5; border-bottom-width: 2px;"`;
+
+exports[`getStyleFromButtonPropsForNative it should prefer backgroundColor over backgroundColorFromTheme prop 1`] = `"background-color: red; flex: 1; padding-left: 10px; width: 50px; padding-bottom: 10px; padding-top: 10px; padding-right: 10px; max-width: 100px; margin-top: 15px; margin-bottom: 10px; margin-left: 5px; margin-right: 5px; padding: 20px; align-items: center; border-radius: 5; border-bottom-width: 2px;"`;

@@ -1,8 +1,13 @@
-import { ButtonStyleGenerator, NativeTheme } from "../../../shared/types/base-theme-types";
-import { ButtonStyleFromProps } from "../../../shared/types/button-style-props.types";
+import {
+  ButtonStyleGenerator,
+  NativeTheme,
+} from '../../../shared/types/base-theme-types';
+import { ButtonStyleFromProps } from '../../../shared/types/button-style-props.types';
 
-
-export const getStyleFromButtonPropsForNative: ButtonStyleGenerator<NativeTheme, number> = ({
+export const getStyleFromButtonPropsForNative: ButtonStyleGenerator<
+  NativeTheme,
+  number
+> = ({
   borderBottomWidth,
   maxWidth,
   borderRadius,
@@ -12,6 +17,7 @@ export const getStyleFromButtonPropsForNative: ButtonStyleGenerator<NativeTheme,
   padding,
   theme,
   marginTop,
+  backgroundColor,
   width,
   backgroundColorFromTheme,
   marginBottom,
@@ -21,11 +27,17 @@ export const getStyleFromButtonPropsForNative: ButtonStyleGenerator<NativeTheme,
   paddingRight,
   flex,
   paddingTop,
-  alignSelf,
-}: ButtonStyleFromProps<NativeTheme,number>): string => {
+  alignSelf
+}: ButtonStyleFromProps<NativeTheme, number>): string => {
   const css: string[] = [];
 
-  if (backgroundColorFromTheme) {
+  if (
+    backgroundColor &&
+    typeof backgroundColor !== 'undefined' &&
+    typeof backgroundColor == 'string'
+  ) {
+    css.push(`background-color: ${backgroundColor};`);
+  } else if (backgroundColorFromTheme) {
     css.push(
       `background-color: ${theme.colorThemeHandler(
         backgroundColorFromTheme,
@@ -90,4 +102,3 @@ export const getStyleFromButtonPropsForNative: ButtonStyleGenerator<NativeTheme,
 
   return css.join(' ');
 };
-
