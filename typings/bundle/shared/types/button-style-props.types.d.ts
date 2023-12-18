@@ -17,7 +17,9 @@ export interface ButtonStyleProps<ValueType = number> {
     marginRight?: ValueType;
     paddingTop?: ValueType;
     padding?: ValueType;
-    backgroundColor?: string;
+    backgroundColor?: string | (symbol & {
+        __TYPE__: 'Color';
+    });
     borderBottomWidth?: ValueType | string;
     paddingBottom?: ValueType | string;
     backgroundColorFromTheme?: ColorNameOrValueFromTheme;

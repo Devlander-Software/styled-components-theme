@@ -60,6 +60,7 @@ export interface LayoutStyleProperties<ExpectedValueType = number>
   opacity?: ExpectedValueType;
   flex?: ExpectedValueType;
   width?: ExpectedValueType;
+  flexDirection?: 'row' | 'column' | 'row-reverse' | 'column-reverse';
 
   paddingTop?: ExpectedValueType;
   marginLeft?: ExpectedValueType;
@@ -95,7 +96,7 @@ export interface LayoutStyleProps<
   maxWidth?: ExpectedValueType;
   maxHeight?: ExpectedValueType;
   backgroundColor?: string | (symbol & { __TYPE__: 'Color' });
-
+  flexDirection?: 'row' | 'column' | 'row-reverse' | 'column-reverse';
   minHeight?: ExpectedValueType;
   margin?: ExpectedValueType;
   borderWidth?: ExpectedValueType;

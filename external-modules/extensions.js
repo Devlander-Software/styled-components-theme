@@ -6,6 +6,8 @@ const webExtensions = [...createExtensions("web", commonExtensionsWords, [".tsx"
 const nativeExtensions = [...createExtensions("native", commonExtensionsWords, [".tsx", ".ts"])];
 
 
+console.log("webExtensions", webExtensions);
+
 module.exports = {
   commonExtensionsWords,
   webExtensions,

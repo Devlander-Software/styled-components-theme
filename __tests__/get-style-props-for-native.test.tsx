@@ -113,5 +113,32 @@ describe('getStyleFromPropsNative', () => {
     expect(normalizeCss(css)).toBe(normalizeCss(expectedCss));
   });
 
+  it('It should work with flexDirection', () => {
+    const styleProps: ComprehensiveStyleProps<NativeTheme, number> = {
+      maxWidth: 100,
+      maxHeight: 200,
+      height: 150,
+      theme: mockTheme,
+      marginTop: 10,
+      flexDirection: 'row',
+    };
+
+    const expectedCss = `
+    flex-direction:row;
+    margin-top:10px;
+    height:150px;
+
+    max-width:100px;
+    max-height:200px;
+    `;
+
+    const css = getStyleFromPropsNative(styleProps);
+
+    expect(css).toMatchSnapshot();
+
+    // Check if css string matches expected output (normalize whitespace and line breaks)
+    expect(normalizeCss(css)).toBe(normalizeCss(expectedCss));
+  });
+
   // More tests could be added to cover different scenarios, such as when properties are not provided
 });

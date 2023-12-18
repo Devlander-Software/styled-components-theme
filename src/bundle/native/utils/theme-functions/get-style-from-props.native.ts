@@ -13,6 +13,7 @@ export const getStyleFromPropsNative = ({
   minHeight,
   opacity,
   marginLeft,
+  flexDirection,
   marginRight,
   backgroundColor,
   paddingLeft,
@@ -21,7 +22,7 @@ export const getStyleFromPropsNative = ({
   margin,
   borderWidth,
   flex,
-  paddingTop,
+  paddingTop
 }: ComprehensiveStyleProps<NativeTheme, number>): string => {
   const unitPropsHandler = theme.unitPropsHandler;
   const colorThemeHandler = theme.colorThemeHandler;
@@ -34,6 +35,7 @@ export const getStyleFromPropsNative = ({
       : '');
 
   const css = `
+  ${flexDirection ? `flex-direction: ${flexDirection};` : ''}
     ${backgroundValue && `background: ${backgroundValue};`}
     ${flex ? `flex: ${flex};` : ''}
     ${paddingLeft ? `padding-left: ${unitPropsHandler(paddingLeft)};` : ''}

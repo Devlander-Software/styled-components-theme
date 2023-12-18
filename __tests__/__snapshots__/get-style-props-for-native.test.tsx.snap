@@ -1,7 +1,32 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`getStyleFromPropsNative It should work with flexDirection 1`] = `
+"
+  flex-direction: row;
+    
+    
+    
+    
+    
+    
+    margin-top: 10px;
+    
+    
+    
+    
+    height: 150px;
+    max-width: 100px;
+    max-height: 200px;
+    
+    
+    
+    
+  "
+`;
+
 exports[`getStyleFromPropsNative returns correct CSS string with provided style properties 1`] = `
 "
+  
     background: rgba(0, 123, 255, 1);
     flex: 1;
     padding-left: 25px;
@@ -25,6 +50,7 @@ exports[`getStyleFromPropsNative returns correct CSS string with provided style 
 
 exports[`getStyleFromPropsNative returns prefers backgroundColor prop over backgroundColorFromTheme prop 1`] = `
 "
+  
     background: red;
     flex: 1;
     padding-left: 25px;
