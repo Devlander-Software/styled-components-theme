@@ -23,6 +23,7 @@ export interface ButtonPropsForNative
   marginRight?: number | string;
   paddingTop?: number | string;
   padding?: number | string;
+  backgroundColor?: ColorValue | undefined;
   borderBottomWidth?: number | string;
   paddingBottom?: number | string;
   backgroundColorFromTheme?: ColorNameOrValueFromTheme;
@@ -33,6 +34,7 @@ export interface GhostButtonForNative
   textColorFromTheme: ColorNameOrValueFromTheme;
   paddingLeft?: number;
   borderColor?: ColorValue | undefined;
+  backgroundColor?: ColorValue | undefined;
 
   paddingRight?: number;
   marginTop?: number;

@@ -1,6 +1,6 @@
 /// <reference types="react" />
 import type { ColorFromTheme, ColorNameOrValueFromTheme } from './color.types';
-import { LayoutStyleProps } from './style-attributes.interfaces';
+import type { LayoutStyleProps } from './style-attributes.interfaces';
 export interface BaseButtonProps<Value = number, StyleProps extends LayoutStyleProps<Value> = LayoutStyleProps<Value>> {
     onPress?: () => void;
     text?: string;

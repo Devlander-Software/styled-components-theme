@@ -80,7 +80,9 @@ export interface LayoutStyleProps<ExpectedValueType = number, StyleProps extends
     height?: ExpectedValueType;
     maxWidth?: ExpectedValueType;
     maxHeight?: ExpectedValueType;
-    backgroundColor?: string;
+    backgroundColor?: string | (symbol & {
+        __TYPE__: 'Color';
+    });
     minHeight?: ExpectedValueType;
     margin?: ExpectedValueType;
     borderWidth?: ExpectedValueType;

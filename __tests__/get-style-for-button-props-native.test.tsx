@@ -6,12 +6,11 @@ import { ButtonStyleFromProps } from "../src/bundle/shared/types/button-style-pr
 describe('getStyleFromButtonPropsForNative', () => {
   // Mock theme object with necessary handlers
   const mockTheme = createThemeForNative({});
-    const normalizeCss = (str: string) => str.replace(/\s/g, '');
-
+  const normalizeCss = (str: string) => str.replace(/\s/g, '');
 
   it('generates correct CSS from props', () => {
-    const props: ButtonStyleFromProps<NativeTheme,number> = {
-        theme: mockTheme,
+    const props: ButtonStyleFromProps<NativeTheme, number> = {
+      theme: mockTheme,
       borderBottomWidth: 2,
       maxWidth: 100,
       borderRadius: 5,
@@ -31,7 +30,7 @@ describe('getStyleFromButtonPropsForNative', () => {
     };
 
     const expectedCss = [
-      `background-color: rgba(255,213,79,1);`,
+      `background-color: rgba(255, 213, 79, 1);`,
       `flex: 1;`,
       `padding-left: 10px;`,
       `width: 50px;`,
@@ -49,18 +48,15 @@ describe('getStyleFromButtonPropsForNative', () => {
       `border-bottom-width: 2px;`,
     ].join(' ');
 
-
-    const generatedCss = getStyleFromButtonPropsForNative(props as any)
+    const generatedCss = getStyleFromButtonPropsForNative(props as any);
     expect(normalizeCss(generatedCss)).toEqual(normalizeCss(expectedCss));
 
     expect(generatedCss).toMatchSnapshot();
-
-
   });
 
-  it('it should prefer backgroundColor over backgroundColorFromTheme prop', () => {
-    const props: ButtonStyleFromProps<NativeTheme,number> = {
-        theme: mockTheme,
+  it('should prefer backgroundColor over backgroundColorFromTheme prop', () => {
+    const props: ButtonStyleFromProps<NativeTheme, number> = {
+      theme: mockTheme,
       borderBottomWidth: 2,
       maxWidth: 100,
       borderRadius: 5,
@@ -99,12 +95,12 @@ describe('getStyleFromButtonPropsForNative', () => {
       `border-bottom-width: 2px;`,
     ].join(' ');
 
-
-    const generatedCss = getStyleFromButtonPropsForNative(props as any)
+    const generatedCss = getStyleFromButtonPropsForNative(props as any);
     expect(normalizeCss(generatedCss)).toEqual(normalizeCss(expectedCss));
 
     expect(generatedCss).toMatchSnapshot();
-
-
   });
+
+
+  
 });

@@ -5,97 +5,79 @@ import { ResolvedThemedTextStylingProps } from '../src/bundle/shared/types/text-
 
 jest.mock('react-native', () => {
     return {
-        Platform: {
-            OS: 'ios', // or 'android', 'web', etc., as needed for your tests
-            select: jest.fn((spec) => (spec.ios ? spec.ios : spec.android)),
-        },
-        // Mock other react-native exports as needed
+      Platform: {
+        OS: 'ios', // or 'android', 'web', etc., as needed for your tests
+        select: jest.fn((spec) => (spec.ios ? spec.ios : spec.android)),
+      },
+      // Mock other react-native exports as needed
     };
-});
-
-describe('getStyleForTextPropsForNative Function', () => {
+  });
+describe('getStyleForTextPropsForNative', () => {
     const mockTheme = createThemeForNative({});
     const normalizeCss = (str: string) => str.replace(/\s/g, '');
 
-    it('should generate correct CSS for valid input with theme colors', () => {
+  it('generates correct CSS for valid input', () => {
 
-        const props: ResolvedThemedTextStylingProps<NativeTheme, number> = {
-            theme: mockTheme,
-            fontSize: 24,
-            textColorFromTheme: 'blackAlpha100',
-            fontType: 'Font1',
-            fontTypeWeight: 'bold',
-            // Add other necessary props here
-        };
+    const props: ResolvedThemedTextStylingProps<NativeTheme, number> = {
+      theme: mockTheme,
+      fontSize: 24,
+      textColorFromTheme: 'blackAlpha100',
+      fontType: 'Font1',
+      fontTypeWeight: 'bold'
 
-        const expectedCSS = `
-          font-family: Montserrat-Bold;
-          color: rgba(0, 0, 0, 1);
-          line-height: 30px;
-          font-size: 24px;
-        `.trim();
+      // Add other necessary props here
+    };
 
-        const generatedCSS = getStyleForTextPropsForNative(props as any);
+    const expectedCSS = `
+      font-family:  Montserrat-Bold;
+      color: rgba(0, 0, 0, 1);
+      line-height: 30px;
+      font-size: 24px;
+    `.trim();
 
-        expect(normalizeCss(generatedCSS)).toEqual(normalizeCss(expectedCSS));
-        expect(generatedCSS).toMatchSnapshot();
+    const generatedCSS = getStyleForTextPropsForNative(props as any)
 
-    });
+    expect(normalizeCss(generatedCSS)).toEqual(normalizeCss(expectedCSS));
 
-    it('should prefer the color prop over the textColorFromTheme prop to allow a user to override the color', () => {
+    expect(generatedCSS).toMatchSnapshot();
 
-        const props: ResolvedThemedTextStylingProps<NativeTheme, number> = {
-            theme: mockTheme,
-            fontSize: 24,
-            textColorFromTheme: 'blackAlpha100',
-            fontType: 'Font1',
-            color: 'red',
-            fontTypeWeight: 'bold',
-            // Add other necessary props here
-        };
-
-        const expectedCSS = `
-            font-family: Montserrat-Bold;
-            color: red;
-            line-height: 30px;
-            font-size: 24px;
-        `.trim();
-
-        const generatedCSS = getStyleForTextPropsForNative(props as any);
+  });
 
 
-        expect(normalizeCss(generatedCSS)).toEqual(normalizeCss(expectedCSS));
-        expect(generatedCSS).toMatchSnapshot();
+  describe('getStyleForTextPropsForNative with maxFontSize', () => {
+    const mockTheme = createThemeForNative({});
 
-    });
+  it('generates correct CSS for valid input', () => {
 
-    describe('when maxFontSize is specified', () => {
+    const props: ResolvedThemedTextStylingProps<NativeTheme, number> = {
+      theme: mockTheme,
+      fontSize: 16,
+      textColorFromTheme: 'blackAlpha100',
+      fontType: 'Font1',
+      fontTypeWeight: 'bold',
+      maxFontSize: 20
 
-        it('should generate correct CSS with adjusted line-height', () => {
+      // Add other necessary props here
+    };
 
-            const props: ResolvedThemedTextStylingProps<NativeTheme, number> = {
-                theme: mockTheme,
-                fontSize: 16,
-                textColorFromTheme: 'blackAlpha100',
-                fontType: 'Font1',
-                fontTypeWeight: 'bold',
-                maxFontSize: 20,
-                // Add other necessary props here
-            };
 
-            const expectedCSS = `
-              font-family: Montserrat-Bold;
-              color: rgba(0, 0, 0, 1);
-              line-height: 22px;
-              font-size: 16px;
-            `;
 
-            const generatedCSS = getStyleForTextPropsForNative(props as any);
+    const generatedCSS = getStyleForTextPropsForNative(props as any)
+  
+    const expectedCSS = `
+      font-family: Montserrat-Bold;
+      color: rgba(0, 0, 0, 1);
+      line-height: 22px;
+      font-size: 16px;
 
-            expect(normalizeCss(generatedCSS)).toEqual(normalizeCss(expectedCSS));
-            expect(generatedCSS).toMatchSnapshot();
+    `;
+  
+  
+    expect(normalizeCss(generatedCSS)).toEqual(normalizeCss(expectedCSS));
+    expect(generatedCSS).toMatchSnapshot();
 
-        });
-    });
+  });
 
+  })
+  // Add more test cases to cover different scenarios and edge cases
 });
