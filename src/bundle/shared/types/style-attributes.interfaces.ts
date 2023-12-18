@@ -60,6 +60,7 @@ export interface LayoutStyleProperties<ExpectedValueType = number>
   opacity?: ExpectedValueType;
   flex?: ExpectedValueType;
   width?: ExpectedValueType;
+
   paddingTop?: ExpectedValueType;
   marginLeft?: ExpectedValueType;
   marginRight?: ExpectedValueType;
@@ -93,7 +94,8 @@ export interface LayoutStyleProps<
   height?: ExpectedValueType;
   maxWidth?: ExpectedValueType;
   maxHeight?: ExpectedValueType;
-  backgroundColor?: string;
+  backgroundColor?: string | (symbol & { __TYPE__: 'Color' });
+
   minHeight?: ExpectedValueType;
   margin?: ExpectedValueType;
   borderWidth?: ExpectedValueType;

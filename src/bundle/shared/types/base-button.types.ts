@@ -1,8 +1,11 @@
 import type { ColorFromTheme, ColorNameOrValueFromTheme } from './color.types';
-import { LayoutStyleProps } from './style-attributes.interfaces';
+import type { LayoutStyleProps } from './style-attributes.interfaces';
 
 // BaseButtonProps now has two generics, one for the value type (like number) and one for the style props (which extends LayoutStyleProps<Value>)
-export interface BaseButtonProps<Value = number, StyleProps extends LayoutStyleProps<Value> = LayoutStyleProps<Value>> {
+export interface BaseButtonProps<
+  Value = number,
+  StyleProps extends LayoutStyleProps<Value> = LayoutStyleProps<Value>,
+> {
   onPress?: () => void;
   text?: string;
   renderLeft?: () => React.ReactElement;
@@ -13,9 +16,9 @@ export interface BaseButtonProps<Value = number, StyleProps extends LayoutStyleP
 }
 
 // GhostBaseButton extends BaseButtonProps with specific color properties and uses ViewStyle & LayoutStyleProps<Value>
-export interface BaseGhostButtonProps<Value = number, StyleProps = {}> extends BaseButtonProps<Value, StyleProps & LayoutStyleProps<Value>> {
+export interface BaseGhostButtonProps<Value = number, StyleProps = {}>
+  extends BaseButtonProps<Value, StyleProps & LayoutStyleProps<Value>> {
   textColorNameOrValueFromTheme: ColorFromTheme;
   backgroundColorFromTheme: ColorNameOrValueFromTheme;
   // Other properties specific to GhostBaseButton
 }
-

@@ -29,10 +29,10 @@ describe('getStyleForTextPropsForNative Function', () => {
         };
 
         const expectedCSS = `
-            font-family: Montserrat-Bold;
-            color: rgba(0, 0, 0, 1);
-            line-height: 30px;
-            font-size: 24px;
+          font-family: Montserrat-Bold;
+          color: rgba(0, 0, 0, 1);
+          line-height: 30px;
+          font-size: 24px;
         `.trim();
 
         const generatedCSS = getStyleForTextPropsForNative(props as any);
@@ -84,10 +84,10 @@ describe('getStyleForTextPropsForNative Function', () => {
             };
 
             const expectedCSS = `
-                font-family: Montserrat-Bold;
-                color: rgba(0, 0, 0, 1);
-                line-height: 22px;
-                font-size: 16px;
+              font-family: Montserrat-Bold;
+              color: rgba(0, 0, 0, 1);
+              line-height: 22px;
+              font-size: 16px;
             `;
 
             const generatedCSS = getStyleForTextPropsForNative(props as any);

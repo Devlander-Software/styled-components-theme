@@ -1,7 +1,7 @@
-import { DimensionValue, ViewStyle } from 'react-native';
+import { ColorValue, DimensionValue, ViewStyle } from 'react-native';
 
-import { BaseButtonProps } from '../../shared/types/base-button.types';
 import { ColorNameOrValueFromTheme } from '../../shared/types/color.types';
+import type { BaseButtonProps } from '../../shared/types/base-button.types';
 
 export interface ButtonPropsForNative
   extends BaseButtonProps<DimensionValue, ViewStyle> {
@@ -19,6 +19,7 @@ export interface ButtonPropsForNative
   alignSelf?: 'center' | 'flex-start' | 'flex-end';
   flexShrink?: number;
   marginLeft?: number | string;
+  borderColor?: ColorValue | undefined;
   marginRight?: number | string;
   paddingTop?: number | string;
   padding?: number | string;
@@ -31,6 +32,8 @@ export interface GhostButtonForNative
   extends BaseButtonProps<DimensionValue, ViewStyle> {
   textColorFromTheme: ColorNameOrValueFromTheme;
   paddingLeft?: number;
+  borderColor?: ColorValue | undefined;
+
   paddingRight?: number;
   marginTop?: number;
   marginBottom?: number;

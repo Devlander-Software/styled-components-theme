@@ -8,7 +8,6 @@ describe('getStyleFromPropsNative', () => {
   const mockTheme = createThemeForNative({});
   const normalizeCss = (str: string) => str.replace(/\s/g, '');
 
-
   it('returns correct CSS string with provided style properties', () => {
     const styleProps: ComprehensiveStyleProps<NativeTheme, number> = {
       maxWidth: 100,
@@ -55,7 +54,6 @@ describe('getStyleFromPropsNative', () => {
 
     const css = getStyleFromPropsNative(styleProps);
 
-   
     expect(css).toMatchSnapshot();
 
     // Check if css string matches expected output (normalize whitespace and line breaks)
@@ -107,11 +105,8 @@ describe('getStyleFromPropsNative', () => {
       margin: 40px;
     `;
 
-
     const css = getStyleFromPropsNative(styleProps);
 
-
-   
     expect(css).toMatchSnapshot();
 
     // Check if css string matches expected output (normalize whitespace and line breaks)

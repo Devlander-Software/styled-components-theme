@@ -1,6 +1,6 @@
-import { ColorNameOrValueFromTheme } from "./color.types";
-import { FontProperty } from "./font-type.enum";
-import { FontTypeWeightEnum, FontWeightType } from "./font-weight.enum";
+import { ColorNameOrValueFromTheme } from './color.types';
+import { FontProperty } from './font-type.enum';
+import { FontTypeWeightEnum, FontWeightType } from './font-weight.enum';
 /**
  * Attributes for specifying theme-based color styles in a component.
  */
@@ -49,6 +49,7 @@ export interface LayoutStyleProperties<ExpectedValueType = number> extends Theme
     paddingRight?: ExpectedValueType;
     marginTop?: ExpectedValueType;
     marginBottom?: ExpectedValueType;
+    backgroundColor?: string;
     opacity?: ExpectedValueType;
     flex?: ExpectedValueType;
     width?: ExpectedValueType;
@@ -64,7 +65,7 @@ export interface LayoutStyleProperties<ExpectedValueType = number> extends Theme
     borderWidth?: ExpectedValueType;
 }
 export interface LayoutStyleProps<ExpectedValueType = number, StyleProps extends LayoutStyleProperties<ExpectedValueType> = LayoutStyleProperties<ExpectedValueType>> extends ThemeColorAttributes {
-    position?: "absolute" | "relative" | "fixed" | "sticky" | string;
+    position?: 'absolute' | 'relative' | 'fixed' | 'sticky' | string;
     paddingLeft?: ExpectedValueType | ((props: StyleProps) => ExpectedValueType);
     paddingRight?: ExpectedValueType | ((props: StyleProps) => ExpectedValueType);
     marginTop?: ExpectedValueType | ((props: StyleProps) => ExpectedValueType);
@@ -79,6 +80,7 @@ export interface LayoutStyleProps<ExpectedValueType = number, StyleProps extends
     height?: ExpectedValueType;
     maxWidth?: ExpectedValueType;
     maxHeight?: ExpectedValueType;
+    backgroundColor?: string;
     minHeight?: ExpectedValueType;
     margin?: ExpectedValueType;
     borderWidth?: ExpectedValueType;
