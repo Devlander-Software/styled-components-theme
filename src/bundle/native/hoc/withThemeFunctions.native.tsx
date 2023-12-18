@@ -1,4 +1,3 @@
-import type { FC, ReactElement } from 'react';
 import React from 'react';
 
 import { NativeTheme } from '../../shared/types/base-theme-types';
@@ -15,6 +14,7 @@ import { getStyleFromPropsNative } from '../utils/theme-functions/get-style-from
 import { colorThemeHandlerNative } from '../utils/theme-functions/handle-color-from-theme.native';
 import { handleFontFromThemeForNative } from '../utils/theme-functions/handle-font-for-theme.native';
 import { handleFontSizePropsForNative } from '../utils/theme-functions/handle-font-size-props.native';
+import type { FC, ReactElement } from 'react';
 // Interfaces and types for StyledProvider Native
 
 export interface WithThemeFunctionsAndStyleNative
@@ -23,14 +23,14 @@ export interface WithThemeFunctionsAndStyleNative
 }
 
 export type ComponentWithThemeFunctionsNative =
-  FC<WithThemeFunctionsAndStyleNative>; 
-export type WithThemeFunctionsForNative = FC<FunctionProviderProps<NativeTheme>>;
+  FC<WithThemeFunctionsAndStyleNative>;
+export type WithThemeFunctionsForNative = FC<
+  FunctionProviderProps<NativeTheme>
+>;
 
 export const withThemeFunctionsNative = (
   Component: ComponentWithThemeFunctionsNative
 ): WithThemeFunctionsForNative => {
-  
-
   return (props: FunctionProviderProps<NativeTheme>): ReactElement => {
     const { baseTheme, children } = props;
     const theme: NativeTheme = {
@@ -45,11 +45,11 @@ export const withThemeFunctionsNative = (
       boxShadowOne: boxShadowOne,
       boxShadowTwo: boxShadowOne,
       boxShadowThree: boxShadowOne,
-  
+
       colorThemeHandler: colorThemeHandlerNative,
       fontThemeHandler: handleFontFromThemeForNative,
       fontSizeCap: capFontSize,
-      colorAdjuster: adjustColor,
+      colorAdjuster: adjustColor
     };
     return (
       <Component baseTheme={baseTheme} theme={theme}>

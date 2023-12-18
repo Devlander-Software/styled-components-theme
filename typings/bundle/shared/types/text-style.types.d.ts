@@ -74,6 +74,7 @@ export interface ThemedTextStylingProps<Theme, ExpectedValueType = number> exten
     colorFromTheme?: ColorNameOrValueFromTheme;
     textColorFromTheme?: ColorNameOrValueFromTheme;
     textColorNameOrValueFromTheme?: ColorNameOrValueFromTheme;
+    color?: string;
     fontTypeWeight?: FontWeightType | FontTypeWeightEnum;
     focused?: boolean;
     maxFontSize?: number;

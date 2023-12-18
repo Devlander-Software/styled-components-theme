@@ -4,7 +4,7 @@ import { FontProperty } from './font-type.enum';
 import { FontTypeWeightEnum, FontWeightType } from './font-weight.enum';
 import {
   ThemeColorAttributes,
-  ThemeFontAttributes,
+  ThemeFontAttributes
 } from './style-attributes.interfaces';
 
 export interface SharedTextProperties {
@@ -133,7 +133,7 @@ export interface ThemedTextStylingProps<Theme, ExpectedValueType = number>
   colorFromTheme?: ColorNameOrValueFromTheme;
   textColorFromTheme?: ColorNameOrValueFromTheme;
   textColorNameOrValueFromTheme?: ColorNameOrValueFromTheme;
-
+  color?: string;
   fontTypeWeight?: FontWeightType | FontTypeWeightEnum;
   focused?: boolean;
   maxFontSize?: number;

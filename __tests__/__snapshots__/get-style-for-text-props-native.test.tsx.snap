@@ -1,13 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`getStyleForTextPropsForNative generates correct CSS for valid input 1`] = `
+exports[`getStyleForTextPropsForNative Function should generate correct CSS for valid input with theme colors 1`] = `
 "font-family: Montserrat-Bold;
 color: rgba(0, 0, 0, 1);
 line-height: 30px;
 font-size: 24px;"
 `;
 
-exports[`getStyleForTextPropsForNative getStyleForTextPropsForNative with maxFontSize generates correct CSS for valid input 1`] = `
+exports[`getStyleForTextPropsForNative Function should prefer the color prop over the textColorFromTheme prop to allow a user to override the color 1`] = `
+"font-family: Montserrat-Bold;
+color: red;
+line-height: 30px;
+font-size: 24px;"
+`;
+
+exports[`getStyleForTextPropsForNative Function when maxFontSize is specified should generate correct CSS with adjusted line-height 1`] = `
 "font-family: Montserrat-Bold;
 color: rgba(0, 0, 0, 1);
 line-height: 22px;
