@@ -14,6 +14,7 @@ export const getStyleFromPropsNative = ({
   opacity,
   marginLeft,
   marginRight,
+  backgroundColor,
   paddingLeft,
   borderColorFromTheme,
   paddingRight,
@@ -24,12 +25,15 @@ export const getStyleFromPropsNative = ({
 }: ComprehensiveStyleProps<NativeTheme, number>): string => {
   const unitPropsHandler = theme.unitPropsHandler;
   const colorThemeHandler = theme.colorThemeHandler;
-
-  const css = `${
-    backgroundColorFromTheme
+  const handleBackground =
+    backgroundColor && typeof backgroundColor !== 'undefined'
+      ? `background: ${backgroundColor};`
+      : backgroundColorFromTheme && colorThemeHandler
       ? `background: ${colorThemeHandler(backgroundColorFromTheme, 1, theme)};`
-      : ''
-  }
+      : '';
+
+  const css = `
+  ${handleBackground}
   ${flex ? `flex: ${flex};` : ''}
   ${paddingLeft ? `padding-left: ${unitPropsHandler(paddingLeft)};` : ''}
   ${paddingTop ? `padding-top: ${unitPropsHandler(paddingTop)};` : ''}
