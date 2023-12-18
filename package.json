@@ -1,6 +1,6 @@
 {
   "name": "@devlander/shared-react-native-types",
-  "version": "1.1.230",
+  "version": "1.1.231",
   "license": "MIT",
   "type": "commonjs",
   "main": "dist/umd/index.js",
@@ -114,5 +114,4 @@
     "tslib": "^2.6.2",
     "typescript": "^5.2.2"
   }
- 
 }
