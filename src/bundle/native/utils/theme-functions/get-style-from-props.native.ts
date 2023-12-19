@@ -22,7 +22,7 @@ export const getStyleFromPropsNative = ({
   margin,
   borderWidth,
   flex,
-  paddingTop
+  paddingTop,
 }: ComprehensiveStyleProps<NativeTheme, number>): string => {
   const unitPropsHandler = theme.unitPropsHandler;
   const colorThemeHandler = theme.colorThemeHandler;

@@ -2,6 +2,19 @@ import { ColorNameOrValueFromTheme } from './color.types';
 import { FontProperty } from './font-type.enum';
 import { FontTypeWeightEnum, FontWeightType } from './font-weight.enum';
 
+export type FlexDirectionTypes =
+  | 'row'
+  | 'column'
+  | 'row-reverse'
+  | 'column-reverse'
+  | '-moz-initial'
+  | 'inherit'
+  | 'initial'
+  | 'revert'
+  | 'revert-layer'
+  | 'unset'
+  | undefined;
+
 /**
  * Attributes for specifying theme-based color styles in a component.
  */
@@ -60,7 +73,7 @@ export interface LayoutStyleProperties<ExpectedValueType = number>
   opacity?: ExpectedValueType;
   flex?: ExpectedValueType;
   width?: ExpectedValueType;
-  flexDirection?: 'row' | 'column' | 'row-reverse' | 'column-reverse';
+  flexDirection?: FlexDirectionTypes;
 
   paddingTop?: ExpectedValueType;
   marginLeft?: ExpectedValueType;
@@ -96,7 +109,7 @@ export interface LayoutStyleProps<
   maxWidth?: ExpectedValueType;
   maxHeight?: ExpectedValueType;
   backgroundColor?: string | (symbol & { __TYPE__: 'Color' });
-  flexDirection?: 'row' | 'column' | 'row-reverse' | 'column-reverse';
+  flexDirection?: FlexDirectionTypes;
   minHeight?: ExpectedValueType;
   margin?: ExpectedValueType;
   borderWidth?: ExpectedValueType;
