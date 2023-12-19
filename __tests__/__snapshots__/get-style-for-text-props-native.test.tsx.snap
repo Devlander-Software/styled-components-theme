@@ -7,9 +7,16 @@ line-height: 30px;
 font-size: 24px;"
 `;
 
-exports[`getStyleForTextPropsForNative getStyleForTextPropsForNative with maxFontSize generates correct CSS for valid input 1`] = `
+exports[`getStyleForTextPropsForNative generates correct CSS for valid input 2`] = `
 "font-family: Montserrat-Bold;
 color: rgba(0, 0, 0, 1);
+line-height: 22px;
+font-size: 16px;"
+`;
+
+exports[`getStyleForTextPropsForNative it prefers color prop over textColorFromTheme prop 1`] = `
+"font-family: Montserrat-Bold;
+color: red;
 line-height: 22px;
 font-size: 16px;"
 `;

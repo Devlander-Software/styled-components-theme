@@ -1,73 +1,118 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`getStyleFromPropsNative It should work with flexDirection 1`] = `
+exports[`getStyleFromPropsNative handles properties with undefined values 1`] = `
 "
-  flex-direction: row;
-    
-    
-    
-    
-    
-    
-    margin-top: 10px;
-    
-    
-    
-    
-    height: 150px;
-    max-width: 100px;
-    max-height: 200px;
-    
-    
-    
-    
-  "
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"
 `;
 
-exports[`getStyleFromPropsNative returns correct CSS string with provided style properties 1`] = `
+exports[`getStyleFromPropsNative prefers backgroundColor prop over backgroundColorFromTheme prop with other properties set 1`] = `
 "
-  
-    background: rgba(0, 123, 255, 1);
-    flex: 1;
-    padding-left: 25px;
-    padding-top: 35px;
-    padding-right: 30px;
-    width: 300px;
-    margin-top: 10px;
-    margin-bottom: 5px;
-    opacity: 0.8;
-    margin-left: 15px;
-    margin-right: 20px;
-    height: 150px;
-    max-width: 100px;
-    max-height: 200px;
-    min-height: 50px;
-    border-color: rgba(255, 255, 255, 0.2);
-    border-width: 1px;
-    margin: 40px;
-  "
+
+
+
+
+align-items: center;
+background: red;
+border-color: rgba(255, 255, 255, 0.2);
+border-radius: 10px;
+border-width: 1px;
+elevation: 8;
+flex-direction: row;
+flex: 1;
+height: 150px;
+justify-content: flex-start;
+margin-bottom: 5px;
+margin-left: 15px;
+margin-right: 20px;
+margin-top: 10px;
+margin: 40px;
+max-height: 200px;
+max-width: 100px;
+min-height: 50px;
+opacity: 0.8;
+overflow: hidden;
+padding-left: 25px;
+padding-right: 30px;
+padding-top: 35px;
+shadow-color: rgba(0, 0, 0, 0.2);
+shadow-offset-x: 2px;
+shadow-offset-y: 4px;
+shadow-opacity: 0.5;
+shadow-radius: 5px;
+transform: translateX(10px) rotate(45deg);
+width: 300px;
+z-index: 5;"
 `;
 
-exports[`getStyleFromPropsNative returns prefers backgroundColor prop over backgroundColorFromTheme prop 1`] = `
+exports[`getStyleFromPropsNative returns correct CSS string with all properties provided 1`] = `
 "
-  
-    background: red;
-    flex: 1;
-    padding-left: 25px;
-    padding-top: 35px;
-    padding-right: 30px;
-    width: 300px;
-    margin-top: 10px;
-    margin-bottom: 5px;
-    opacity: 0.8;
-    margin-left: 15px;
-    margin-right: 20px;
-    height: 150px;
-    max-width: 100px;
-    max-height: 200px;
-    min-height: 50px;
-    border-color: rgba(255, 255, 255, 0.2);
-    border-width: 1px;
-    margin: 40px;
-  "
+
+
+
+
+align-items: center;
+background: red;
+border-color: rgba(255, 255, 255, 0.2);
+border-radius: 10px;
+border-width: 1px;
+elevation: 8;
+flex-direction: row;
+flex: 1;
+height: 150px;
+justify-content: flex-start;
+margin-bottom: 5px;
+margin-left: 15px;
+margin-right: 20px;
+margin-top: 10px;
+margin: 40px;
+max-height: 200px;
+max-width: 100px;
+min-height: 50px;
+opacity: 0.8;
+overflow: hidden;
+padding-left: 25px;
+padding-right: 30px;
+padding-top: 35px;
+shadow-color: rgba(0, 0, 0, 0.2);
+shadow-offset-x: 2px;
+shadow-offset-y: 4px;
+shadow-opacity: 0.5;
+shadow-radius: 5px;
+transform: translateX(10px) rotate(45deg);
+width: 300px;
+z-index: 5;"
 `;

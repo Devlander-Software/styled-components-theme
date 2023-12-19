@@ -15,6 +15,15 @@ export type FlexDirectionTypes =
   | 'unset'
   | undefined;
 
+export type JustifyContentTypes =
+  | 'center'
+  | 'flex-start'
+  | 'flex-end'
+  | 'space-between'
+  | 'space-around'
+  | '-moz-initial'
+  | 'inherit'
+  | undefined;
 /**
  * Attributes for specifying theme-based color styles in a component.
  */
@@ -73,8 +82,17 @@ export interface LayoutStyleProperties<ExpectedValueType = number>
   opacity?: ExpectedValueType;
   flex?: ExpectedValueType;
   width?: ExpectedValueType;
+  borderBottomWidth?: ExpectedValueType;
+  borderTopWidth?: ExpectedValueType;
+  borderLeftWidth?: ExpectedValueType;
+  borderRightWidth?: ExpectedValueType;
   flexDirection?: FlexDirectionTypes;
-
+  justifyContent?: JustifyContentTypes;
+  borderRadius?: ExpectedValueType;
+  zIndex?: number;
+  overflow?: 'visible' | 'hidden' | 'scroll';
+  shadowOffSetX?: ExpectedValueType;
+  padding?: ExpectedValueType;
   paddingTop?: ExpectedValueType;
   marginLeft?: ExpectedValueType;
   marginRight?: ExpectedValueType;
@@ -83,6 +101,13 @@ export interface LayoutStyleProperties<ExpectedValueType = number>
   maxWidth?: ExpectedValueType;
   maxHeight?: ExpectedValueType;
   minHeight?: ExpectedValueType;
+  elevation?: number;
+  transform?: string;
+  shadowColor?: string;
+  shadowOpacity?: number;
+  shadowRadius?: number;
+  shadowOffsetY?: number;
+  shadowOffsetX?: number;
   margin?: ExpectedValueType;
   borderWidth?: ExpectedValueType;
 }
@@ -93,10 +118,12 @@ export interface LayoutStyleProps<
     LayoutStyleProperties<ExpectedValueType> = LayoutStyleProperties<ExpectedValueType>,
 > extends ThemeColorAttributes {
   // Plus the extended style props
+  justifyContent?: JustifyContentTypes;
   position?: 'absolute' | 'relative' | 'fixed' | 'sticky' | string;
   paddingLeft?: ExpectedValueType | ((props: StyleProps) => ExpectedValueType);
   paddingRight?: ExpectedValueType | ((props: StyleProps) => ExpectedValueType);
   marginTop?: ExpectedValueType | ((props: StyleProps) => ExpectedValueType);
+  alignItems?: 'center' | 'flex-start' | 'flex-end';
   marginBottom?: ExpectedValueType | ((props: StyleProps) => ExpectedValueType);
   opacity?: ExpectedValueType | ((props: StyleProps) => ExpectedValueType);
   flex?: ExpectedValueType | ((props: StyleProps) => ExpectedValueType);
@@ -114,6 +141,24 @@ export interface LayoutStyleProps<
   margin?: ExpectedValueType;
   borderWidth?: ExpectedValueType;
   style?: StyleProps;
+  borderRadius?: ExpectedValueType;
+  zIndex?: number;
+  overflow?: 'visible' | 'hidden' | 'scroll';
+  elevation?: number;
+
+  padding?: ExpectedValueType;
+
+  // Additional properties
+  shadowColor?: string;
+  shadowOpacity?: number;
+  shadowRadius?: number;
+  shadowOffsetY?: number;
+  shadowOffsetX?: number;
+  transform?: string;
+  borderBottomWidth?: ExpectedValueType;
+  borderTopWidth?: ExpectedValueType;
+  borderLeftWidth?: ExpectedValueType;
+  borderRightWidth?: ExpectedValueType;
 }
 /**
  * Extends the layout style properties with theming capabilities.

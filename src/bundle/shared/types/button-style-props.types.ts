@@ -22,6 +22,21 @@ export interface ButtonStyleProps<ValueType = number> {
   borderBottomWidth?: ValueType | string;
   paddingBottom?: ValueType | string;
   backgroundColorFromTheme?: ColorNameOrValueFromTheme;
+  borderColor?: string | (symbol & { __TYPE__: 'Color' });
+  borderWidth?: ValueType;
+  borderLeftWidth?: ValueType;
+  borderRightWidth?: ValueType;
+  borderTopWidth?: ValueType;
+  borderColorFromTheme?: ColorNameOrValueFromTheme;
+  opacity?: number;
+  overflow?: 'visible' | 'hidden' | 'scroll';
+  shadowColor?: string;
+  shadowOffsetX?: ValueType;
+  shadowOffsetY?: ValueType;
+  shadowOpacity?: number;
+  shadowRadius?: number;
+  elevation?: number;
+  transform?: string;
 }
 
 export interface ButtonStylePropsWithThemeGeneric<

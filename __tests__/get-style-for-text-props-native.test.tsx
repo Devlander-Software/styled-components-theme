@@ -43,10 +43,6 @@ describe('getStyleForTextPropsForNative', () => {
 
   });
 
-
-  describe('getStyleForTextPropsForNative with maxFontSize', () => {
-    const mockTheme = createThemeForNative({});
-
   it('generates correct CSS for valid input', () => {
 
     const props: ResolvedThemedTextStylingProps<NativeTheme, number> = {
@@ -76,8 +72,45 @@ describe('getStyleForTextPropsForNative', () => {
     expect(normalizeCss(generatedCSS)).toEqual(normalizeCss(expectedCSS));
     expect(generatedCSS).toMatchSnapshot();
 
-  });
 
   })
+
+  it('it prefers color prop over textColorFromTheme prop', () => {
+
+    const props: ResolvedThemedTextStylingProps<NativeTheme, number> = {
+      theme: mockTheme,
+      fontSize: 16,
+      color: 'red',
+      textColorFromTheme: 'blackAlpha100',
+      fontType: 'Font1',
+      fontTypeWeight: 'bold',
+      maxFontSize: 20
+
+      // Add other necessary props here
+    };
+
+
+
+    const generatedCSS = getStyleForTextPropsForNative(props as any)
+  
+    const expectedCSS = `
+      font-family: Montserrat-Bold;
+      color: red;
+      line-height: 22px;
+      font-size: 16px;
+
+    `;
+
+  
+  
+  
+    expect(normalizeCss(generatedCSS)).toEqual(normalizeCss(expectedCSS));
+    expect(generatedCSS).toMatchSnapshot();
+
+
+  })
+
+
+ 
   // Add more test cases to cover different scenarios and edge cases
 });

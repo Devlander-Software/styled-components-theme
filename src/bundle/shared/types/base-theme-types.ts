@@ -96,7 +96,7 @@ export interface ThemeBase {
   colors: ColorsInterface;
   fonts: FontsInterface;
   darkThemeEnabled?: boolean;
-  padding?: PaddingOnThemeType;
+  paddingOnTheme?: PaddingOnThemeType;
   elevation?: ElevationType;
   deviceOnTheme: DeviceOnTheme;
 }
