@@ -1,3 +1,4 @@
+import { ColorValue } from 'react-native';
 import { ColorNameOrValueFromTheme } from './color.types';
 import { FontProperty } from './font-type.enum';
 import { FontTypeWeightEnum, FontWeightType } from './font-weight.enum';
@@ -16,14 +17,32 @@ export type FlexDirectionTypes =
   | undefined;
 
 export type JustifyContentTypes =
+  | 'flex-start'
+  | 'flex-end'
+  | 'center'
+  | 'space-between'
+  | 'space-around'
+  | 'space-evenly'
+  | undefined;
+
+export type AlignItemTypes =
   | 'center'
   | 'flex-start'
   | 'flex-end'
-  | 'space-between'
-  | 'space-around'
-  | '-moz-initial'
-  | 'inherit'
+  | 'stretch' // Add 'stretch' as an option
   | undefined;
+
+export type AlignSelfTypes =
+  | 'auto'
+  | 'flex-start'
+  | 'flex-end'
+  | 'center'
+  | 'stretch'
+  | 'baseline'
+  | undefined;
+
+export type ColorValueStyled = string | (symbol & { __TYPE__: 'Color' });
+
 /**
  * Attributes for specifying theme-based color styles in a component.
  */
@@ -78,16 +97,16 @@ export interface LayoutStyleProperties<ExpectedValueType = number>
   paddingRight?: ExpectedValueType;
   marginTop?: ExpectedValueType;
   marginBottom?: ExpectedValueType;
-  backgroundColor?: string;
+  backgroundColor?: ColorValue | undefined;
   opacity?: ExpectedValueType;
   flex?: ExpectedValueType;
   width?: ExpectedValueType;
   borderBottomWidth?: ExpectedValueType;
   borderTopWidth?: ExpectedValueType;
+
   borderLeftWidth?: ExpectedValueType;
   borderRightWidth?: ExpectedValueType;
   flexDirection?: FlexDirectionTypes;
-  justifyContent?: JustifyContentTypes;
   borderRadius?: ExpectedValueType;
   zIndex?: number;
   overflow?: 'visible' | 'hidden' | 'scroll';
@@ -98,12 +117,13 @@ export interface LayoutStyleProperties<ExpectedValueType = number>
   marginRight?: ExpectedValueType;
   paddingBottom?: ExpectedValueType;
   height?: ExpectedValueType;
+  justifyContent?: JustifyContentTypes;
+  alignItems?: AlignItemTypes;
   maxWidth?: ExpectedValueType;
   maxHeight?: ExpectedValueType;
   minHeight?: ExpectedValueType;
   elevation?: number;
   transform?: string;
-  shadowColor?: string;
   shadowOpacity?: number;
   shadowRadius?: number;
   shadowOffsetY?: number;
@@ -118,12 +138,11 @@ export interface LayoutStyleProps<
     LayoutStyleProperties<ExpectedValueType> = LayoutStyleProperties<ExpectedValueType>,
 > extends ThemeColorAttributes {
   // Plus the extended style props
-  justifyContent?: JustifyContentTypes;
+
   position?: 'absolute' | 'relative' | 'fixed' | 'sticky' | string;
   paddingLeft?: ExpectedValueType | ((props: StyleProps) => ExpectedValueType);
   paddingRight?: ExpectedValueType | ((props: StyleProps) => ExpectedValueType);
   marginTop?: ExpectedValueType | ((props: StyleProps) => ExpectedValueType);
-  alignItems?: 'center' | 'flex-start' | 'flex-end';
   marginBottom?: ExpectedValueType | ((props: StyleProps) => ExpectedValueType);
   opacity?: ExpectedValueType | ((props: StyleProps) => ExpectedValueType);
   flex?: ExpectedValueType | ((props: StyleProps) => ExpectedValueType);
@@ -131,30 +150,37 @@ export interface LayoutStyleProps<
   paddingTop?: ExpectedValueType | ((props: StyleProps) => ExpectedValueType);
   marginLeft?: ExpectedValueType | ((props: StyleProps) => ExpectedValueType);
   marginRight?: ExpectedValueType | ((props: StyleProps) => ExpectedValueType);
-  paddingBottom?: ExpectedValueType;
-  height?: ExpectedValueType;
-  maxWidth?: ExpectedValueType;
-  maxHeight?: ExpectedValueType;
+  paddingBottom?:
+    | ExpectedValueType
+    | ((props: StyleProps) => ExpectedValueType);
+  height?: ExpectedValueType | ((props: StyleProps) => ExpectedValueType);
+  maxWidth?: ExpectedValueType | ((props: StyleProps) => ExpectedValueType);
+  maxHeight?: ExpectedValueType | ((props: StyleProps) => ExpectedValueType);
   backgroundColor?: string | (symbol & { __TYPE__: 'Color' });
   flexDirection?: FlexDirectionTypes;
   minHeight?: ExpectedValueType;
   margin?: ExpectedValueType;
   borderWidth?: ExpectedValueType;
-  style?: StyleProps;
+  style?: StyleProps & {
+    justifyContent?: JustifyContentTypes;
+    alignItems?: AlignItemTypes;
+    alignSelf?: AlignSelfTypes;
+    zIndex: number;
+    overflow?: 'visible' | 'hidden' | 'scroll';
+    shadowColor?: ColorValueStyled;
+    shadowOpacity?: number | ((props: StyleProps) => number);
+    shadowRadius?: number | ((props: StyleProps) => number);
+    shadowOffsetY?: number | ((props: StyleProps) => number);
+    shadowOffsetX?: number | ((props: StyleProps) => number);
+    transform?: string;
+  };
   borderRadius?: ExpectedValueType;
-  zIndex?: number;
-  overflow?: 'visible' | 'hidden' | 'scroll';
   elevation?: number;
 
   padding?: ExpectedValueType;
 
   // Additional properties
-  shadowColor?: string;
-  shadowOpacity?: number;
-  shadowRadius?: number;
-  shadowOffsetY?: number;
-  shadowOffsetX?: number;
-  transform?: string;
+
   borderBottomWidth?: ExpectedValueType;
   borderTopWidth?: ExpectedValueType;
   borderLeftWidth?: ExpectedValueType;

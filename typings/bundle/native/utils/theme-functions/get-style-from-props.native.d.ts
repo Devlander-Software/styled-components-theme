@@ -1,3 +1,3 @@
 import { NativeTheme } from '../../../shared/types/base-theme-types';
-import { ComprehensiveStyleProps } from '../../../shared/types/style-attributes.interfaces';
-export declare const getStyleFromPropsNative: ({ maxWidth, maxHeight, height, theme, marginTop, width, backgroundColorFromTheme, marginBottom, minHeight, opacity, marginLeft, flexDirection, marginRight, backgroundColor, paddingLeft, borderColorFromTheme, paddingRight, margin, borderWidth, flex, paddingTop }: ComprehensiveStyleProps<NativeTheme, number>) => string;
+import type { ComprehensiveStyleProps } from '../../../shared/types/style-attributes.interfaces';
+export declare const getStyleFromPropsNative: ({ backgroundColor, backgroundColorFromTheme, borderColorFromTheme, borderBottomWidth, borderTopWidth, borderLeftWidth, borderRightWidth, borderRadius, borderWidth, elevation, flex, flexDirection, height, marginLeft, marginRight, marginTop, marginBottom, margin, maxHeight, maxWidth, theme, minHeight, opacity, padding, paddingLeft, paddingTop, paddingRight, style, width, }: ComprehensiveStyleProps<NativeTheme, number>) => string;

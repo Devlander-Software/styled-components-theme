@@ -137,3 +137,4 @@ export interface ColorInfoItem {
     value: ValueOfColor;
     description?: string;
 }
+export declare const colorKeysArray: ColorFromTheme[];

@@ -1,9 +1,9 @@
 import { NativeTheme } from '../../../shared/types/base-theme-types';
+import { generateShadowColorStyle } from '../../../shared/utils/generate-shadow-color-css';
 import { sortPropertiesAlphabetically } from '../../../shared/utils/sort-properties-alphabetically';
 import type { ComprehensiveStyleProps } from '../../../shared/types/style-attributes.interfaces';
 
 export const getStyleFromPropsNative = ({
-  alignItems,
   backgroundColor,
   backgroundColorFromTheme,
   borderColorFromTheme,
@@ -17,7 +17,6 @@ export const getStyleFromPropsNative = ({
   flex,
   flexDirection,
   height,
-  justifyContent,
   marginLeft,
   marginRight,
   marginTop,
@@ -28,20 +27,26 @@ export const getStyleFromPropsNative = ({
   theme,
   minHeight,
   opacity,
-  overflow,
   padding,
   paddingLeft,
   paddingTop,
   paddingRight,
-  shadowColor,
-  shadowOffsetX,
-  shadowOffsetY,
-  shadowOpacity,
-  shadowRadius,
-  zIndex,
-  transform,
-  width
+
+  style,
+  width,
 }: ComprehensiveStyleProps<NativeTheme, number>): string => {
+  console.log(style, 'style');
+  const zIndex = style?.zIndex;
+  const justifyContent = style?.justifyContent;
+  const overflow = style?.overflow;
+  const alignItems = style?.alignItems;
+  const transform = style?.transform;
+  const shadowColor = style?.shadowColor;
+  const shadowOpacity = style?.shadowOpacity;
+  const shadowRadius = style?.shadowRadius;
+  const shadowOffsetX = style?.shadowOffsetX;
+  const shadowOffsetY = style?.shadowOffsetY;
+
   const unitPropsHandler = theme.unitPropsHandler;
   const colorThemeHandler = theme.colorThemeHandler;
 
@@ -51,6 +56,10 @@ export const getStyleFromPropsNative = ({
     (backgroundColorFromTheme && colorThemeHandler
       ? colorThemeHandler(backgroundColorFromTheme, 1, theme)
       : '');
+
+  const shadowColorValue = shadowColor
+    ? generateShadowColorStyle(shadowColor)
+    : '';
 
   // Define an array of CSS properties to sort alphabetically
   const propertiesToSort: string[] = [
@@ -93,13 +102,13 @@ export const getStyleFromPropsNative = ({
     paddingLeft ? `padding-left: ${unitPropsHandler(paddingLeft)};` : '',
     paddingTop ? `padding-top: ${unitPropsHandler(paddingTop)};` : '',
     paddingRight ? `padding-right: ${unitPropsHandler(paddingRight)};` : '',
-    shadowColor ? `shadow-color: ${shadowColor};` : '',
+    shadowColorValue,
     shadowOffsetX ? `shadow-offset-x: ${unitPropsHandler(shadowOffsetX)};` : '',
     shadowOffsetY ? `shadow-offset-y: ${unitPropsHandler(shadowOffsetY)};` : '',
     shadowOpacity ? `shadow-opacity: ${shadowOpacity};` : '',
     shadowRadius ? `shadow-radius: ${unitPropsHandler(shadowRadius)};` : '',
     transform ? `transform: ${transform};` : '',
-    width ? `width: ${unitPropsHandler(width)};` : ''
+    width ? `width: ${unitPropsHandler(width)};` : '',
   ];
 
   // Sort the properties alphabetically

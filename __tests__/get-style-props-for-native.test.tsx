@@ -18,8 +18,20 @@ describe('getStyleFromPropsNative', () => {
       backgroundColorFromTheme: 'primary',
       marginBottom: 5,
       minHeight: 50,
-      justifyContent: 'flex-start',
-      alignItems: 'center',
+      style: {
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+        zIndex: 5,
+        overflow: 'hidden',
+        shadowColor: 'rgba(0, 0, 0, 0.2)',
+        shadowOffsetX: 2,
+        shadowOffsetY: 4,
+        shadowOpacity: 0.5,
+        shadowRadius: 5,
+        transform: 'translateX(10px) rotate(45deg)',
+
+      },
+      
       opacity: 0.8,
       marginLeft: 15,
       flexDirection: 'row',
@@ -33,15 +45,8 @@ describe('getStyleFromPropsNative', () => {
       flex: 1,
       paddingTop: 35,
       borderRadius: 10,
-      overflow: 'hidden',
-      zIndex: 5,
-      shadowColor: 'rgba(0, 0, 0, 0.2)',
-      shadowOffsetX: 2,
-      shadowOffsetY: 4,
-      shadowOpacity: 0.5,
-      shadowRadius: 5,
+    
       elevation: 8,
-      transform: 'translateX(10px) rotate(45deg)',
     };
 
     const expectedCss: string[] = [
@@ -120,8 +125,19 @@ describe('getStyleFromPropsNative', () => {
       backgroundColor: 'red',
       marginBottom: 5,
       minHeight: 50,
-      justifyContent: 'flex-start',
-      alignItems: 'center',
+      style: {
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+        overflow: 'hidden',
+        zIndex: 5,
+        shadowColor: 'rgba(0, 0, 0, 0.2)',
+        shadowOffsetX: 2,
+        shadowOffsetY: 4,
+        shadowOpacity: 0.5,
+        shadowRadius: 5,
+        transform: 'translateX(10px) rotate(45deg)',
+
+      },
       opacity: 0.8,
       marginLeft: 15,
       flexDirection: 'row',
@@ -134,15 +150,8 @@ describe('getStyleFromPropsNative', () => {
       flex: 1,
       paddingTop: 35,
       borderRadius: 10,
-      overflow: 'hidden',
-      zIndex: 5,
-      shadowColor: 'rgba(0, 0, 0, 0.2)',
-      shadowOffsetX: 2,
-      shadowOffsetY: 4,
-      shadowOpacity: 0.5,
-      shadowRadius: 5,
+    
       elevation: 8,
-      transform: 'translateX(10px) rotate(45deg)',
     };
 
     const expectedCss: string[] = [

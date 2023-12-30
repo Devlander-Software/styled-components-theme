@@ -3,7 +3,7 @@
 
 # Devlander's Shared React Native Types
 
-Devlander's team utilizes this package during the development of their React Native projects. Its primary purpose is to facilitate code reuse by sharing types across multiple projects.
+Devlander's team utilizes this package during the development of their React Native projects. Its primary purpose is to facilitate code reuse by sharing types across multiple projects that uses the styled-components library. 
 
 # Purpose
 

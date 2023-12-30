@@ -1,7 +1,14 @@
+import { ColorValue } from 'react-native';
 import { ColorNameOrValueFromTheme } from './color.types';
 import { FontProperty } from './font-type.enum';
 import { FontTypeWeightEnum, FontWeightType } from './font-weight.enum';
 export type FlexDirectionTypes = 'row' | 'column' | 'row-reverse' | 'column-reverse' | '-moz-initial' | 'inherit' | 'initial' | 'revert' | 'revert-layer' | 'unset' | undefined;
+export type JustifyContentTypes = 'flex-start' | 'flex-end' | 'center' | 'space-between' | 'space-around' | 'space-evenly' | undefined;
+export type AlignItemTypes = 'center' | 'flex-start' | 'flex-end' | 'stretch' | undefined;
+export type AlignSelfTypes = 'auto' | 'flex-start' | 'flex-end' | 'center' | 'stretch' | 'baseline' | undefined;
+export type ColorValueStyled = string | (symbol & {
+    __TYPE__: 'Color';
+});
 /**
  * Attributes for specifying theme-based color styles in a component.
  */
@@ -50,19 +57,36 @@ export interface LayoutStyleProperties<ExpectedValueType = number> extends Theme
     paddingRight?: ExpectedValueType;
     marginTop?: ExpectedValueType;
     marginBottom?: ExpectedValueType;
-    backgroundColor?: string;
+    backgroundColor?: ColorValue | undefined;
     opacity?: ExpectedValueType;
     flex?: ExpectedValueType;
     width?: ExpectedValueType;
+    borderBottomWidth?: ExpectedValueType;
+    borderTopWidth?: ExpectedValueType;
+    borderLeftWidth?: ExpectedValueType;
+    borderRightWidth?: ExpectedValueType;
     flexDirection?: FlexDirectionTypes;
+    borderRadius?: ExpectedValueType;
+    zIndex?: number;
+    overflow?: 'visible' | 'hidden' | 'scroll';
+    shadowOffSetX?: ExpectedValueType;
+    padding?: ExpectedValueType;
     paddingTop?: ExpectedValueType;
     marginLeft?: ExpectedValueType;
     marginRight?: ExpectedValueType;
     paddingBottom?: ExpectedValueType;
     height?: ExpectedValueType;
+    justifyContent?: JustifyContentTypes;
+    alignItems?: AlignItemTypes;
     maxWidth?: ExpectedValueType;
     maxHeight?: ExpectedValueType;
     minHeight?: ExpectedValueType;
+    elevation?: number;
+    transform?: string;
+    shadowOpacity?: number;
+    shadowRadius?: number;
+    shadowOffsetY?: number;
+    shadowOffsetX?: number;
     margin?: ExpectedValueType;
     borderWidth?: ExpectedValueType;
 }
@@ -78,10 +102,10 @@ export interface LayoutStyleProps<ExpectedValueType = number, StyleProps extends
     paddingTop?: ExpectedValueType | ((props: StyleProps) => ExpectedValueType);
     marginLeft?: ExpectedValueType | ((props: StyleProps) => ExpectedValueType);
     marginRight?: ExpectedValueType | ((props: StyleProps) => ExpectedValueType);
-    paddingBottom?: ExpectedValueType;
-    height?: ExpectedValueType;
-    maxWidth?: ExpectedValueType;
-    maxHeight?: ExpectedValueType;
+    paddingBottom?: ExpectedValueType | ((props: StyleProps) => ExpectedValueType);
+    height?: ExpectedValueType | ((props: StyleProps) => ExpectedValueType);
+    maxWidth?: ExpectedValueType | ((props: StyleProps) => ExpectedValueType);
+    maxHeight?: ExpectedValueType | ((props: StyleProps) => ExpectedValueType);
     backgroundColor?: string | (symbol & {
         __TYPE__: 'Color';
     });
@@ -89,7 +113,26 @@ export interface LayoutStyleProps<ExpectedValueType = number, StyleProps extends
     minHeight?: ExpectedValueType;
     margin?: ExpectedValueType;
     borderWidth?: ExpectedValueType;
-    style?: StyleProps;
+    style?: StyleProps & {
+        justifyContent?: JustifyContentTypes;
+        alignItems?: AlignItemTypes;
+        alignSelf?: AlignSelfTypes;
+        zIndex: number;
+        overflow?: 'visible' | 'hidden' | 'scroll';
+        shadowColor?: ColorValueStyled;
+        shadowOpacity?: number | ((props: StyleProps) => number);
+        shadowRadius?: number | ((props: StyleProps) => number);
+        shadowOffsetY?: number | ((props: StyleProps) => number);
+        shadowOffsetX?: number | ((props: StyleProps) => number);
+        transform?: string;
+    };
+    borderRadius?: ExpectedValueType;
+    elevation?: number;
+    padding?: ExpectedValueType;
+    borderBottomWidth?: ExpectedValueType;
+    borderTopWidth?: ExpectedValueType;
+    borderLeftWidth?: ExpectedValueType;
+    borderRightWidth?: ExpectedValueType;
 }
 /**
  * Extends the layout style properties with theming capabilities.

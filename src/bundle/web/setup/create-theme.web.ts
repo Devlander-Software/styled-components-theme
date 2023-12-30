@@ -3,7 +3,7 @@ import { lightColors } from '../../shared/defaults/light-colors.defaults';
 import { WebTheme } from '../../shared/types/base-theme-types';
 import {
   CreateThemeForWeb,
-  ThemeConfig
+  ThemeConfig,
 } from '../../shared/types/create-theme.types';
 import { adjustColor } from '../../shared/utils/adjust-color';
 import { capFontSize } from '../../shared/utils/cap-font-size';
@@ -25,11 +25,11 @@ export const createThemeForWeb: CreateThemeForWeb = (
   const theme: WebTheme = {
     colors: {
       ...lightColors,
-      ...colorPreferences
+      ...colorPreferences,
     },
     fonts: {
       ...defaultFonts,
-      ...fontPreferences
+      ...fontPreferences,
     },
 
     elevation: {
@@ -37,11 +37,11 @@ export const createThemeForWeb: CreateThemeForWeb = (
       level2: '',
       level3: '',
       level4: '',
-      level5: ''
+      level5: '',
     },
-    padding: {
+    paddingOnTheme: {
       paddingForScrollView: 0,
-      paddingForScrollViewTwo: 0
+      paddingForScrollViewTwo: 0,
     },
     deviceOnTheme: {
       screenWidth: 0,
@@ -51,7 +51,7 @@ export const createThemeForWeb: CreateThemeForWeb = (
       hasNotch: false,
       hasDynamicIsland: false,
       platform: 'ios',
-      ...deviceOnTheme
+      ...deviceOnTheme,
     },
     fontSizeCap: capFontSize,
     colorThemeHandler: colorThemeHandlerWeb,
@@ -64,7 +64,7 @@ export const createThemeForWeb: CreateThemeForWeb = (
     boxShadowOne: boxShadowOne,
     unitPropsHandler: unitPropsHandler,
     layoutStyleGenerator: getStyleFromPropsForWeb,
-    colorAdjuster: adjustColor,
+    colorAdjuster: adjustColor
   };
 
   return theme;

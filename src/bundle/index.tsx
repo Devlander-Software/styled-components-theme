@@ -299,6 +299,10 @@ export * from "./shared/utils/errors/get-error-message-from-errors-messages";
  */
 export * from "./shared/utils/extract-values-from-colors-interface";
 /**
+ * TSDoc for generate-shadow-color-css
+ */
+export * from "./shared/utils/generate-shadow-color-css";
+/**
  * TSDoc for get-first-word-capitalized
  */
 export * from "./shared/utils/get-first-word-capitalized";
@@ -306,6 +310,14 @@ export * from "./shared/utils/get-first-word-capitalized";
  * TSDoc for get-line-height
  */
 export * from "./shared/utils/get-line-height";
+/**
+ * TSDoc for get-random-color-key
+ */
+export * from "./shared/utils/get-random-color-key";
+/**
+ * TSDoc for get-random-value-value
+ */
+export * from "./shared/utils/get-random-value-value";
 /**
  * TSDoc for get-range
  */
@@ -343,6 +355,10 @@ export * from "./shared/utils/is-valid-hex";
  */
 export * from "./shared/utils/logger/logger";
 /**
+ * TSDoc for normalize-css
+ */
+export * from "./shared/utils/normalize-css";
+/**
  * TSDoc for rbga-to-hex
  */
 export * from "./shared/utils/rbga-to-hex";
@@ -354,6 +370,10 @@ export * from "./shared/utils/remove-keys-with-substrings";
  * TSDoc for slice-into-chunks
  */
 export * from "./shared/utils/slice-into-chunks";
+/**
+ * TSDoc for sort-properties-alphabetically
+ */
+export * from "./shared/utils/sort-properties-alphabetically";
 /**
  * TSDoc for video-timestamp-to-seconds
  */
