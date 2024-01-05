@@ -1,8 +1,8 @@
-import type { ColorNameOrValueEnum } from '../utils/is-color-name-or-value';
+import type { ColorNameOrValueFromTheme } from './color.types';
 
 export interface SVGPropsInterface {
   width?: string | number;
   height?: string | number;
   viewBox?: string;
-  backgroundColorFromTheme?: ColorNameOrValueEnum;
+  backgroundColorFromTheme?: ColorNameOrValueFromTheme;
 }
