@@ -1,7 +1,4 @@
-import {
-  ColorFromTheme,
-  colorKeysArray,
-} from '../types/color.types';
+import { ColorFromTheme, colorKeysArray } from '../types/color.types';
 
 // Function to get a random key from ColorsInterface
 export function getRandomColorKey(): ColorFromTheme {

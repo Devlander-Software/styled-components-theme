@@ -164,7 +164,6 @@ export const getStyleForTextPropsForNative: TextStyleGenerator<
   }
 
   const css = cssProperties.filter(Boolean).join('\n');
-  console.log('css', css);
 
   return css;
 };

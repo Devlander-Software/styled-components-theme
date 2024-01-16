@@ -40,6 +40,7 @@ module.exports = {
     "import",
   ],
   rules: {
+
     "import/imports-first": "error",
     "import/order": [
       "error",

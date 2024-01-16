@@ -19,12 +19,12 @@ export const formInputGroupDefaultProps: BaseTextInputProps<
   error: false,
   errorText: null,
   secureTextEntry: false,
-  onSubmitEditing: (e) => console.log(`this is onSubmitEditing prop ${e}`),
+  onSubmitEditing: (e) => console.log(`this is onSubmitEditing prop ${e}`)
 };
 
 export const secureInputDefaultProps: SecureInputProps = {
   securePressOnChange: () => console.log('this is secure'),
   secureTextOffIcon: 'eye-off-outline' as IconNames,
   secureTextOnIcon: 'eye-outline' as IconNames,
-  ...formInputGroupDefaultProps,
+  ...formInputGroupDefaultProps
 };

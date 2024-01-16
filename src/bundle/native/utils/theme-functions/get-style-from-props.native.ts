@@ -35,7 +35,6 @@ export const getStyleFromPropsNative = ({
   style,
   width,
 }: ComprehensiveStyleProps<NativeTheme, number>): string => {
-  console.log(style, 'style');
   const zIndex = style?.zIndex;
   const justifyContent = style?.justifyContent;
   const overflow = style?.overflow;
