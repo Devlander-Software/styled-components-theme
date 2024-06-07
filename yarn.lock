@@ -1087,6 +1087,11 @@
     ts-node "^10.9.1"
     typescript "^5.2.2"
 
+"@devlander/utils@^0.0.28":
+  version "0.0.28"
+  resolved "https://registry.yarnpkg.com/@devlander/utils/-/utils-0.0.28.tgz#632d7981175769d5309daf1c30dbea4901671252"
+  integrity sha512-G54b44tSRUmHiAjfloIRsicw6OFbNJ9npSXszdusyIzzgMdOxe5g3XMVVh0tIt6F/OoRJEe3j3820RMSe/kDHQ==
+
 "@esbuild/android-arm64@0.19.5":
   version "0.19.5"
   resolved "https://registry.yarnpkg.com/@esbuild/android-arm64/-/android-arm64-0.19.5.tgz#276c5f99604054d3dbb733577e09adae944baa90"
@@ -6634,11 +6639,6 @@ lodash.debounce@^4.0.8:
   version "4.0.8"
   resolved "https://registry.yarnpkg.com/lodash.debounce/-/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
   integrity sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==
-
-lodash.isempty@4.4.0:
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/lodash.isempty/-/lodash.isempty-4.4.0.tgz#6f86cbedd8be4ec987be9aaf33c9684db1b31e7e"
-  integrity sha512-oKMuF3xEeqDltrGMfDxAPGIVMSSRv8tbRSODbrs4KGsRRLEhrW8N8Rd4DRgB2+621hY8A8XwwrTVhXWpxFvMzg==
 
 lodash.memoize@4.x:
   version "4.1.2"

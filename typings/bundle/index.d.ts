@@ -271,29 +271,9 @@ export * from "./shared/types/unit-props.types";
  */
 export * from "./shared/utils/adjust-color";
 /**
- * TSDoc for calculate-percentage-by-part-and-whole
- */
-export * from "./shared/utils/calculate-percentage-by-part-and-whole";
-/**
  * TSDoc for cap-font-size
  */
 export * from "./shared/utils/cap-font-size";
-/**
- * TSDoc for dash-to-camel-case
- */
-export * from "./shared/utils/dash-to-camel-case";
-/**
- * TSDoc for get-error-from-errors-object
- */
-export * from "./shared/utils/errors/get-error-from-errors-object";
-/**
- * TSDoc for get-error-message-by-field
- */
-export * from "./shared/utils/errors/get-error-message-by-field";
-/**
- * TSDoc for get-error-message-from-errors-messages
- */
-export * from "./shared/utils/errors/get-error-message-from-errors-messages";
 /**
  * TSDoc for extract-values-from-colors-interface
  */
@@ -302,10 +282,6 @@ export * from "./shared/utils/extract-values-from-colors-interface";
  * TSDoc for generate-shadow-color-css
  */
 export * from "./shared/utils/generate-shadow-color-css";
-/**
- * TSDoc for get-first-word-capitalized
- */
-export * from "./shared/utils/get-first-word-capitalized";
 /**
  * TSDoc for get-line-height
  */
@@ -319,10 +295,6 @@ export * from "./shared/utils/get-random-color-key";
  */
 export * from "./shared/utils/get-random-value-value";
 /**
- * TSDoc for get-range
- */
-export * from "./shared/utils/get-range";
-/**
  * TSDoc for handle-box-shadows
  */
 export * from "./shared/utils/handle-box-shadows";
@@ -331,10 +303,6 @@ export * from "./shared/utils/handle-box-shadows";
  */
 export * from "./shared/utils/handle-unit-props";
 /**
- * TSDoc for has-letter
- */
-export * from "./shared/utils/has-letter";
-/**
  * TSDoc for hsl-to-rgba
  */
 export * from "./shared/utils/hsl-to-rgba";
@@ -342,10 +310,6 @@ export * from "./shared/utils/hsl-to-rgba";
  * TSDoc for is-color-name-or-value
  */
 export * from "./shared/utils/is-color-name-or-value";
-/**
- * TSDoc for is-json
- */
-export * from "./shared/utils/is-json";
 /**
  * TSDoc for is-valid-hex
  */
@@ -374,10 +338,6 @@ export * from "./shared/utils/slice-into-chunks";
  * TSDoc for sort-properties-alphabetically
  */
 export * from "./shared/utils/sort-properties-alphabetically";
-/**
- * TSDoc for video-timestamp-to-seconds
- */
-export * from "./shared/utils/video-timestamp-to-seconds";
 /**
  * TSDoc for withThemeFunctions.web
  */
