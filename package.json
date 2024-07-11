@@ -1,6 +1,6 @@
 {
   "name": "@devlander/styled-components-theme",
-  "version": "1.1.252",
+  "version": "1.1.253",
   "description": "A utility for creating styled-components themes with a focus on keeping types consistent between web and native.",
   "type": "commonjs",
   "main": "dist/umd/index.js",
