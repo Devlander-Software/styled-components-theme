@@ -9,8 +9,8 @@ import type { ElevationType } from './elevation.type';
 import type { FontSizePropsHandler } from './font-size-handler.type';
 import type { FontWeightType } from './font-weight.enum';
 import type { FontType, FontsInterface } from './fonts.interface';
-import type { ColorAdjuster } from '../utils/adjust-color';
 import type { FontSizeCap } from '../utils/cap-font-size';
+import type { AdjustColorFunc } from '@devlander/colors';
 
 export interface FontThemeHandler<T> {
   (fontType: FontType, fontTypeWeight: FontWeightType, theme: T): string;
@@ -89,7 +89,7 @@ export interface BaseThemeFunctions<T, ExpectingNumOrString> {
   unitPropsHandler: UnitPropsHandler;
   layoutStyleGenerator: LayoutStyleGenerator<T, ExpectingNumOrString>;
 
-  colorAdjuster: ColorAdjuster;
+  colorAdjuster: AdjustColorFunc;
 }
 
 export interface ThemeBase {

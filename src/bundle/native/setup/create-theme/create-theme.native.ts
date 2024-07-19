@@ -1,3 +1,4 @@
+import { adjustColor } from '@devlander/colors';
 import { defaultFonts } from '../../../shared/defaults/fonts.defaults';
 import { lightColors } from '../../../shared/defaults/light-colors.defaults';
 
@@ -6,7 +7,6 @@ import {
   CreateThemeForNative,
   ThemeConfig
 } from '../../../shared/types/create-theme.types';
-import { adjustColor } from '../../../shared/utils/adjust-color';
 import { capFontSize } from '../../../shared/utils/cap-font-size';
 import { boxShadowOne } from '../../../shared/utils/handle-box-shadows';
 import { unitPropsHandler } from '../../../shared/utils/handle-unit-props';

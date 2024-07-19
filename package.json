@@ -9,7 +9,7 @@
   "config": {
     "nativeInput": "index",
     "webInput": "index",
-    "umdName": "SharedReactNativeTypes"
+    "umdName": "StyledComponentsTheme"
   },
   "files": [
     "dist",
@@ -23,6 +23,7 @@
     "rollup": "yarn run build:index && npx rollup -c rollup.config.mjs",
     "typecheck": "tsc --project ./tsconfig.json --emitDeclarationOnly",
     "prep-build": "npx rimraf ./dist && npx rimraf ./typings",
+    "docs": "typedoc --out ./docs ./src",
     "build": "yarn run prep-build && yarn run rollup",
     "build:index": "cd ./src && yarn run build",
     "web": "cd ./examples/apps/react-example && yarn add @devlander/shared-react-native-types && yarn run dev",
@@ -34,20 +35,20 @@
     "size": "size-limit",
     "patch": "yarn version --new-version patch",
     "analyze": "size-limit --why",
-    "start-publish": "yarn run test && yarn version --patch && yarn run timeout &&  npm publish"
+    "start-publish": "yarn run test && yarn version --patch && yarn run timeout &&  npm publish",
+    "test:failed": "jest --onlyFailures"
+
   },
   "peerDependencies": {
     "color": "4.2.3",
-    "hex-to-rgba": "2.0.1",
-    "lodash.isempty": "4.4.0",
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0",
     "react-native-web": "0.x.x"
   },
   "dependencies": {
-    "color": "4.2.3",
-    "hex-to-rgba": "2.0.1",
-    "lodash.isempty": "4.4.0"
+    "@devlander/colors": "^0.0.4",
+    "@devlander/utils": "^0.0.66",
+    "color": "4.2.3"
   },
   "prettier": {
     "printWidth": 80,

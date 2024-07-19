@@ -85,5 +85,5 @@ export const getStyleForImgPropsForNative: ImageStyleGenerator<NativeTheme> = ({
 
 
     `;
-  return css;
+  return css.trim()
 };

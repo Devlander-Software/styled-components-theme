@@ -1,5 +1,6 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable import/order */
+import { adjustColor } from "@devlander/colors";
 import type {
   BackgroundColors,
   BrandColors,
@@ -9,7 +10,6 @@ import type {
   GrayScaleColors,
   InteractionColors
 } from "../types/color.types";
-import { adjustColor } from "../utils/adjust-color";
 
 export const defaultLightGrayScaleColors: GrayScaleColors = {
   blackAlpha01: "rgba(0, 0, 0, 0.01)",
@@ -56,25 +56,25 @@ export const defaultLightGrayScaleColors: GrayScaleColors = {
   white80: "#D9D9D9",
 
   white: adjustColor("#FFFFFF", 100, "light"),
-  white10: adjustColor("#FFFFFF", 10, "light", true),
-  white20: adjustColor("#FFFFFF", 20, "light", true),
-  white30: adjustColor("#FFFFFF", 30, "light", true),
-  white40: adjustColor("#FFFFFF", 40, "light", true),
-  white50: adjustColor("#FFFFFF", 50, "light", true),
-  white60: adjustColor("#FFFFFF", 60, "light", true),
-  white70: adjustColor("#FFFFFF", 70, "light", true),
-  white90: adjustColor("#FFFFFF", 90, "light", true),
-  white100: adjustColor("#FFFFFF", 100, "light", true),
+  white10: adjustColor("#FFFFFF", 10, "light"),
+  white20: adjustColor("#FFFFFF", 20, "light"),
+  white30: adjustColor("#FFFFFF", 30, "light"),
+  white40: adjustColor("#FFFFFF", 40, "light"),
+  white50: adjustColor("#FFFFFF", 50, "light"),
+  white60: adjustColor("#FFFFFF", 60, "light"),
+  white70: adjustColor("#FFFFFF", 70, "light"),
+  white90: adjustColor("#FFFFFF", 90, "light"),
+  white100: adjustColor("#FFFFFF", 100, "light"),
   black: adjustColor("#000000", 100, "dark"),
-  black10: adjustColor("#000000", 10, "dark", true),
-  black20: adjustColor("#000000", 20, "dark", true),
-  black30: adjustColor("#000000", 30, "dark", true),
-  black40: adjustColor("#000000", 40, "dark", true),
-  black50: adjustColor("#000000", 50, "dark", true),
-  black60: adjustColor("#000000", 60, "dark", true),
-  black70: adjustColor("#000000", 70, "dark", true),
-  black90: adjustColor("#000000", 90, "dark", true),
-  black100: adjustColor("#000000", 100, "dark", true)
+  black10: adjustColor("#000000", 10, "dark"),
+  black20: adjustColor("#000000", 20, "dark"),
+  black30: adjustColor("#000000", 30, "dark"),
+  black40: adjustColor("#000000", 40, "dark"),
+  black50: adjustColor("#000000", 50, "dark"),
+  black60: adjustColor("#000000", 60, "dark"),
+  black70: adjustColor("#000000", 70, "dark"),
+  black90: adjustColor("#000000", 90, "dark"),
+  black100: adjustColor("#000000", 100, "dark")
 };
 
 export const defaultLightBrandColors: BrandColors = {
