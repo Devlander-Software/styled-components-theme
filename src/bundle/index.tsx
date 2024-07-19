@@ -271,18 +271,6 @@ export * from "./shared/types/unit-props.types";
  */
 export * from "./shared/utils/cap-font-size";
 /**
- * TSDoc for get-error-from-errors-object
- */
-export * from "./shared/utils/errors/get-error-from-errors-object";
-/**
- * TSDoc for get-error-message-by-field
- */
-export * from "./shared/utils/errors/get-error-message-by-field";
-/**
- * TSDoc for get-error-message-from-errors-messages
- */
-export * from "./shared/utils/errors/get-error-message-from-errors-messages";
-/**
  * TSDoc for extract-values-from-colors-interface
  */
 export * from "./shared/utils/extract-values-from-colors-interface";
@@ -290,10 +278,6 @@ export * from "./shared/utils/extract-values-from-colors-interface";
  * TSDoc for generate-shadow-color-css
  */
 export * from "./shared/utils/generate-shadow-color-css";
-/**
- * TSDoc for get-first-word-capitalized
- */
-export * from "./shared/utils/get-first-word-capitalized";
 /**
  * TSDoc for get-line-height
  */

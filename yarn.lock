@@ -1087,6 +1087,7 @@
     ts-node "^10.9.1"
     typescript "^5.2.2"
 
+<<<<<<< HEAD
 "@devlander/colors@^0.0.4":
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/@devlander/colors/-/colors-0.0.4.tgz#78d6d18aa3c27f926d2cc7a80d90bfe03ebab05f"
@@ -1098,6 +1099,12 @@
   version "0.0.66"
   resolved "https://registry.yarnpkg.com/@devlander/utils/-/utils-0.0.66.tgz#df0b299a5cca036c065479004ab2025642d3a51d"
   integrity sha512-ZnsoFsEWKJNPzVak3ZiXyVQiMnqldBG3+WU2amyTNRU5M1sGqnYIwZvOfW3L019klOTLPB0CMJT0FHiyr4mm6g==
+=======
+"@devlander/utils@^0.0.28":
+  version "0.0.28"
+  resolved "https://registry.yarnpkg.com/@devlander/utils/-/utils-0.0.28.tgz#632d7981175769d5309daf1c30dbea4901671252"
+  integrity sha512-G54b44tSRUmHiAjfloIRsicw6OFbNJ9npSXszdusyIzzgMdOxe5g3XMVVh0tIt6F/OoRJEe3j3820RMSe/kDHQ==
+>>>>>>> 535c462851df06b704ff40bbfe7f70f1d641af15
 
 "@esbuild/android-arm64@0.19.5":
   version "0.19.5"

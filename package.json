@@ -9,7 +9,7 @@
   "config": {
     "nativeInput": "index",
     "webInput": "index",
-    "umdName": "StyledComponentsTheme"
+    "umdName": "DevlanderStyledComponentsTheme"
   },
   "files": [
     "dist",
@@ -18,6 +18,20 @@
   "engines": {
     "node": ">=10"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Devlander-Software/styled-components-theme.git"
+  },
+  "keywords": [
+    "typescript",
+    "styled-components",
+    "devlander"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Devlander-Software/styled-components-theme/issues"
+  },
+  "homepage": "https://github.com/Devlander-Software/styled-components-theme#readme",
   "scripts": {
     "timeout": "delay 5",
     "rollup": "yarn run build:index && npx rollup -c rollup.config.mjs",
@@ -55,7 +69,7 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "author": "Landon Johnson",
+  "author": "Landon Johnson / Devlander",
   "devDependencies": {
     "@babel/core": "^7.23.2",
     "@babel/preset-env": "^7.23.2",
@@ -75,7 +89,6 @@
     "@types/color": "3.0.4",
     "@types/hoist-non-react-statics": "3.3.1",
     "@types/jest": "^29.5.7",
-    "@types/lodash.isempty": "4.4.7",
     "@types/node": "^20.8.10",
     "@types/react": "^18.2.33",
     "@types/react-dom": "^18.2.14",

@@ -77,6 +77,8 @@ export const defaultLightGrayScaleColors: GrayScaleColors = {
   black100: adjustColor("#000000", 100, "dark")
 };
 
+console.log(defaultLightGrayScaleColors, "defaultLightGrayScaleColors");
+
 export const defaultLightBrandColors: BrandColors = {
   colorOne: "#E57373",
   colorTwo: "#81C784",
