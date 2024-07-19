@@ -1,6 +1,6 @@
 {
-  "name": "@devlander/shared-react-native-types",
-  "version": "1.1.253",
+  "name": "@devlander/styled-components-theme",
+  "version": "1.1.254",
   "license": "MIT",
   "type": "commonjs",
   "main": "dist/umd/index.js",
