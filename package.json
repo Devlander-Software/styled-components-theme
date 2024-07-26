@@ -1,7 +1,7 @@
 {
   "name": "@devlander/styled-components-theme",
   "version": "1.1.254",
-  "license": "MIT",
+  "license": "ISC",
   "type": "commonjs",
   "main": "dist/umd/index.js",
   "types": "typings/bundle/index.d.ts",
@@ -27,7 +27,6 @@
     "styled-components",
     "devlander"
   ],
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/Devlander-Software/styled-components-theme/issues"
   },
@@ -53,15 +52,13 @@
     "test:failed": "jest --onlyFailures"
   },
   "peerDependencies": {
-    "color": "4.2.3",
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0",
     "react-native-web": "0.x.x"
   },
   "dependencies": {
-    "@devlander/colors": "^0.0.4",
-    "@devlander/utils": "^0.0.66",
-    "color": "4.2.3"
+    "@devlander/colors": "^0.0.5",
+    "@devlander/utils": "^0.0.66"
   },
   "prettier": {
     "printWidth": 80,

@@ -1087,11 +1087,10 @@
     ts-node "^10.9.1"
     typescript "^5.2.2"
 
-<<<<<<< HEAD
-"@devlander/colors@^0.0.4":
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/@devlander/colors/-/colors-0.0.4.tgz#78d6d18aa3c27f926d2cc7a80d90bfe03ebab05f"
-  integrity sha512-/x+DEg/qPTbhgffhgnmHIfw+xD4lWCkIRxJK4s/U98GbVph3hueGM402CoZmj77S5/C0ClTOZ8ppkW0gywUsrg==
+"@devlander/colors@^0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@devlander/colors/-/colors-0.0.5.tgz#9be514ba9a826e77f07a506a49ba12318f5f6174"
+  integrity sha512-Gqsu6lFcShxWwzIhh0QNt+T7UTaWO3/j8LGKrCzwmSWWGVdJ4DrH6e8+yZZVwqnjNE3/F2v4Jegspgqng7+31A==
   dependencies:
     "@devlander/utils" "^0.0.66"
 
@@ -1099,12 +1098,6 @@
   version "0.0.66"
   resolved "https://registry.yarnpkg.com/@devlander/utils/-/utils-0.0.66.tgz#df0b299a5cca036c065479004ab2025642d3a51d"
   integrity sha512-ZnsoFsEWKJNPzVak3ZiXyVQiMnqldBG3+WU2amyTNRU5M1sGqnYIwZvOfW3L019klOTLPB0CMJT0FHiyr4mm6g==
-=======
-"@devlander/utils@^0.0.28":
-  version "0.0.28"
-  resolved "https://registry.yarnpkg.com/@devlander/utils/-/utils-0.0.28.tgz#632d7981175769d5309daf1c30dbea4901671252"
-  integrity sha512-G54b44tSRUmHiAjfloIRsicw6OFbNJ9npSXszdusyIzzgMdOxe5g3XMVVh0tIt6F/OoRJEe3j3820RMSe/kDHQ==
->>>>>>> 535c462851df06b704ff40bbfe7f70f1d641af15
 
 "@esbuild/android-arm64@0.19.5":
   version "0.19.5"
@@ -2112,18 +2105,6 @@
   version "0.0.29"
   resolved "https://registry.yarnpkg.com/@types/json5/-/json5-0.0.29.tgz#ee28707ae94e11d2b827bcbe5270bcea7f3e71ee"
   integrity sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==
-
-"@types/lodash.isempty@4.4.7":
-  version "4.4.7"
-  resolved "https://registry.yarnpkg.com/@types/lodash.isempty/-/lodash.isempty-4.4.7.tgz#b1015d1adba560daf560ad04f294848939e75317"
-  integrity sha512-YOzlpoIn9jrfHzjIukKnu9Le3tmi+0PhUdOt2rMpJW/4J6jX7s0HeBatXdh9QckLga8qt4EKBxVIEqtEq6pzLg==
-  dependencies:
-    "@types/lodash" "*"
-
-"@types/lodash@*":
-  version "4.14.200"
-  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.200.tgz#435b6035c7eba9cdf1e039af8212c9e9281e7149"
-  integrity sha512-YI/M/4HRImtNf3pJgbF+W6FrXovqj+T+/HpENLTooK9PnkacBsDpeP3IpHab40CClUfhNmdM2WTNP2sa2dni5Q==
 
 "@types/minimist@^1.2.2":
   version "1.2.4"
@@ -3297,26 +3278,10 @@ color-name@1.1.3:
   resolved "https://registry.yarnpkg.com/color-name/-/color-name-1.1.3.tgz#a7d0558bd89c42f795dd42328f740831ca53bc25"
   integrity sha512-72fSenhMw2HZMTVHeCA9KCmpEIbzWiQsjN+BHcBbS9vr1mtt+vJjPdksIBNUmKAW8TFUDPJK5SUU3QhE9NEXDw==
 
-color-name@^1.0.0, color-name@~1.1.4:
+color-name@~1.1.4:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/color-name/-/color-name-1.1.4.tgz#c2a09a87acbde69543de6f63fa3995c826c536a2"
   integrity sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==
-
-color-string@^1.9.0:
-  version "1.9.1"
-  resolved "https://registry.yarnpkg.com/color-string/-/color-string-1.9.1.tgz#4467f9146f036f855b764dfb5bf8582bf342c7a4"
-  integrity sha512-shrVawQFojnZv6xM40anx4CkoDP+fZsw/ZerEMsW/pyzsRbElpsL/DBVW7q3ExxwusdNXI3lXpuhEZkzs8p5Eg==
-  dependencies:
-    color-name "^1.0.0"
-    simple-swizzle "^0.2.2"
-
-color@4.2.3:
-  version "4.2.3"
-  resolved "https://registry.yarnpkg.com/color/-/color-4.2.3.tgz#d781ecb5e57224ee43ea9627560107c0e0c6463a"
-  integrity sha512-1rXeuUUiGGrykh+CeBdu5Ie7OJwinCgQY0bc7GCRxy5xVHy+moaqkpL/jqQq0MtQOeYcrqEz4abc5f0KtU7W4A==
-  dependencies:
-    color-convert "^2.0.1"
-    color-string "^1.9.0"
 
 combined-stream@^1.0.6, combined-stream@~1.0.6:
   version "1.0.8"
@@ -5238,11 +5203,6 @@ is-arrayish@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/is-arrayish/-/is-arrayish-0.2.1.tgz#77c99840527aa8ecb1a8ba697b80645a7a926a9d"
   integrity sha512-zz06S8t0ozoDXMG+ube26zeCTNXcKIPJZJi8hBrF4idCLms4CG9QtK7qBl1boi5ODzFpjswb5JPmHCbMpjaYzg==
-
-is-arrayish@^0.3.1:
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/is-arrayish/-/is-arrayish-0.3.2.tgz#4574a2ae56f7ab206896fb431eaeed066fdf8f03"
-  integrity sha512-eVRqCvVlZbuw3GrM63ovNSNAeA1K16kaR/LRY/92w0zxQ5/1YzwblUX652i4Xs9RwAGjW9d9y6X88t8OaAJfWQ==
 
 is-async-function@^2.0.0:
   version "2.0.0"
@@ -8250,13 +8210,6 @@ signal-exit@^3.0.0, signal-exit@^3.0.2, signal-exit@^3.0.3, signal-exit@^3.0.7:
   version "3.0.7"
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.7.tgz#a9a1767f8af84155114eaabd73f99273c8f59ad9"
   integrity sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==
-
-simple-swizzle@^0.2.2:
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/simple-swizzle/-/simple-swizzle-0.2.2.tgz#a4da6b635ffcccca33f70d17cb92592de95e557a"
-  integrity sha512-JA//kQgZtbuY83m+xT+tXJkmJncGMTFT+C+g2h2R9uxkYIrE2yy9sgmcLhCnw57/WSD+Eh3J97FPEDFnbXnDUg==
-  dependencies:
-    is-arrayish "^0.3.1"
 
 sisteransi@^1.0.5:
   version "1.0.5"
