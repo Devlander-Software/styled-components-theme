@@ -1,6 +1,6 @@
 {
   "name": "@devlander/styled-components-theme",
-  "version": "1.1.254",
+  "version": "1.1.256",
   "license": "ISC",
   "type": "commonjs",
   "main": "dist/umd/index.js",
