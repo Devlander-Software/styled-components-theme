@@ -110,3 +110,26 @@ export interface GenericTheme<ExpectingNumOrString>
 
 export type NativeTheme = GenericTheme<number>;
 export type WebTheme = GenericTheme<string | number>;
+
+// heres an example of how you would apply layoutStyleGeneator in react native
+import { LayoutStyleProperties } from "@devlander/styled-components-theme"
+
+import { View } from "react-native"
+import styled from "styled-components/native"
+
+export const MetaDataTileContainer = styled(View)<LayoutStyleProperties>`
+  ${(props) => props.theme.layoutStyleGenerator(props)};
+`
+
+
+
+// heres an example of how you would apply layoutStyleGeneator in normal react
+import { LayoutStyleProperties } from "@devlander/styled-components-theme"
+
+import { View } from "react-native"
+import styled from "styled-components"
+
+export const MetaDataTileContainer = styled.div<LayoutStyleProperties<string |  number>>`
+  ${(props) => props.theme.layoutStyleGenerator(props)};
+`
+

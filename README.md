@@ -309,3 +309,18 @@ const darkColors: ColorsInterface = generateColorsFrom(lightColors, 'dark');
 
 ## To do 
 - [] run auto format imports with eslint automatically
+
+
+
+
+
+Who this package is not for. 
+- This package is not for people that are only using styled components on web, and don't plan on using it with React Native
+
+The purpose of this package is to ensure that the props and types for design systems created for both web and react native projects have the same color names, the same props, the same type of theme structure when it comes to color types, font pairings, and so it. it's to keep everything cohesive between development teams. 
+
+and there can be a standard wehn starting new projects for clients, or within the company, and there's one source of truth. 
+
+it's also meant to elminate retyping unnessary types over and over again using styled components, because if you are using styled components and typescript it can get time consuimg. and to provide the same theme provider for both web and react native applications
+
+This package also has built in methods to take care of responsive font sizes,and has methods within the theme to help convert units so things to break during production. 
