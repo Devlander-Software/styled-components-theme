@@ -3,7 +3,8 @@
     "devlander",
     "Roboto",
     "scrollview",
-    "treeshake"
+    "treeshake",
+    "unnessary"
   ],
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {

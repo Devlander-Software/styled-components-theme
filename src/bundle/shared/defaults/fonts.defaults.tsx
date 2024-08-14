@@ -7,7 +7,6 @@ export const defaultFonts: FontsInterface = {
     bold: 'Roboto',
     name: 'Roboto'
   },
-
   Font2: {
     light: 'OpenSans-Light',
     regular: 'OpenSans-Regular',
@@ -20,7 +19,6 @@ export const defaultFonts: FontsInterface = {
     bold: 'OpenSans-Condensed-Bold',
     name: "'Open Sans Condensed'"
   },
-
   Font1: {
     light: 'Montserrat-Light',
     regular: 'Montserrat-Regular',

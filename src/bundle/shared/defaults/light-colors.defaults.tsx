@@ -8,8 +8,55 @@ import type {
   ElementColors,
   FeedbackColors,
   GrayScaleColors,
-  InteractionColors
+  InteractionColors,
+  LegacyColors
 } from "../types/color.types";
+
+export const defaultLegacyLightColors: LegacyColors = {
+  placeholder: "#A8A8A8",
+  selectedColorOne10: "rgba(229, 115, 115, 0.1)",
+  selectedColorOne40: "rgba(229, 115, 115, 0.4)",
+  selectedColorOne100: "#E57373",
+  accentDarkest: "#FFA000",
+  primaryDarkest: "#0055AA",
+  onPrimary: "#FFFFFF",
+  error: "#D32F2F",
+  onPrimaryContainer: "#007BFF",
+  onSecondary: "#333333",
+  onSecondaryContainer: "#F5F5F5",
+  onSurface: "#212121",
+  onSurfaceVariant: "#757575",
+  onSurfaceDisabled: "#BDBDBD",
+  onBackground: "#333333",
+  warningAlpha22: "rgba(255, 165, 0, 0.22)",
+  warningAlpha62: "rgba(255, 165, 0, 0.62)",
+  hyperLinkColor: "#1b88bf",
+  colorOne: "#E57373",
+  colorTwo: "#81C784",
+  colorThree: "#64B5F6",
+  colorFour: "#FFD54F",
+  colorFive: "#BA68C8",
+  primary: "#007BFF",
+  primaryLighter: "#66AFFF",
+  secondary: "#6C757D",
+  background: "#FAFAFA",
+  headerBackground: "#FFFFFF",
+  surface: "#FFFFFF",
+  surfaceVariant: "#F7F7F7",
+  accent: "#FFC107",
+  accentLighter: "#FFECB3",
+  accent50: "rgba(255, 193, 7, 0.5)",
+  accent80: "rgba(255, 193, 7, 0.8)",
+  backdrop: "#F5F5F5",
+  tertiary: "#F5F5F5",
+  outline: "#D5D5D5",
+  shadow: "rgba(0, 0, 0, 0.15)",
+  secondaryButtonBackgroundColor: "#F7F7F7",
+  errorContainer: "#D32F2F",
+  onError: "#FFFFFF",
+  onErrorContainer: "#FF5722",
+
+}
 
 export const defaultLightGrayScaleColors: GrayScaleColors = {
   blackAlpha01: "rgba(0, 0, 0, 0.01)",
@@ -80,73 +127,72 @@ export const defaultLightGrayScaleColors: GrayScaleColors = {
 console.log(defaultLightGrayScaleColors, "defaultLightGrayScaleColors");
 
 export const defaultLightBrandColors: BrandColors = {
-  colorOne: "#E57373",
-  colorTwo: "#81C784",
-  colorThree: "#64B5F6",
-  colorFour: "#FFD54F",
-  colorFive: "#BA68C8",
-  primary: "#007BFF",
-  primaryLighter: "#66AFFF",
-  secondary: "#6C757D",
-  accent: "#FFC107",
-  accentLighter: "#FFECB3",
-  accent50: "rgba(255, 193, 7, 0.5)",
-  accent80: "rgba(255, 193, 7, 0.8)",
   primaryIconColor: "#007BFF",
-  secondaryIconColor: "#6C757D"
+  secondaryIconColor: "#6C757D",
+  baseColor: defaultLegacyLightColors['colorOne'],
+  complementColor: defaultLegacyLightColors['colorTwo'],
+  supportColor: defaultLegacyLightColors['colorThree'],
+  highlightColor: defaultLegacyLightColors['colorFour'],
+  contrastColor: defaultLegacyLightColors['colorFive'],
+  primaryColor: defaultLegacyLightColors['primary'],
+  primaryLighterColor: defaultLegacyLightColors['primaryLighter'],
+  secondaryColor: defaultLegacyLightColors['secondary'],
+  accentColor: defaultLegacyLightColors['accent'],
+  accentLighterColor: defaultLegacyLightColors['accentLighter'],
+  accentMutedColor: defaultLegacyLightColors['accent50'],
+  accentStrongColor: defaultLegacyLightColors['accent80']
 };
 
 export const defaultLightBackgroundColors: BackgroundColors = {
-  backdrop: "#F5F5F5",
-  background: "#FAFAFA",
-  headerBackground: "#FFFFFF",
   cardBackgroundColor: "#FFFFFF",
   commentBackgroundColor: "#EDEDED",
   tabBarColor: "#F2F2F2",
-  surface: "#FFFFFF",
-  surfaceVariant: "#F7F7F7",
-  webWashColor: "#F5F5F5"
+  webWashColor: "#F5F5F5",
+  backdropColor: defaultLegacyLightColors['backdrop'],
+  backgroundColor: defaultLegacyLightColors['background'],
+  headerBackgroundColor: defaultLegacyLightColors['headerBackground'],
+  surfaceColor: defaultLegacyLightColors['surface'],
+  surfaceVariantColor: defaultLegacyLightColors['surfaceVariant']
 };
 
 export const defaultLightElementColors: ElementColors = {
   dividerColor: "#E0E0E0",
   primaryContainer: "#007BFF",
   secondaryContainer: "#E0E0E0",
-  tertiary: "#F5F5F5",
   tertiaryContainer: "#FFFFFF",
-  outline: "#D5D5D5",
-  shadow: "rgba(0, 0, 0, 0.15)",
-  secondaryButtonBackgroundColor: "#F7F7F7",
   secondaryIconTextColor: "#757575",
-  primaryIconTextColor: "#FFFFFF"
+  primaryIconTextColor: "#FFFFFF",
+  outlineColor: defaultLegacyLightColors['outline'],
+  shadowColor: defaultLegacyLightColors['shadow'],
+  secondaryButtonBgColor: defaultLegacyLightColors['secondaryButtonBackgroundColor']
 };
 
 export const defaultLightFeedbackColors: FeedbackColors = {
-  error: "#D32F2F",
   successColor: "#43A047",
-  warningAlpha22: "rgba(255, 165, 0, 0.22)",
-  warningAlpha62: "rgba(255, 165, 0, 0.62)",
-  errorContainer: "#D32F2F",
-  onError: "#FFFFFF",
-  onErrorContainer: "#FF5722"
+  errorColor: defaultLegacyLightColors['error'],
+  warningLightColor: defaultLegacyLightColors['warningAlpha22'],
+  warningStrongColor: defaultLegacyLightColors['warningAlpha62'],
+  errorContainerColor: defaultLegacyLightColors['errorContainer'],
+  onErrorColor: defaultLegacyLightColors['onError'],
+  onErrorContainerColor: defaultLegacyLightColors['onErrorContainer']
 };
 
 export const defaultLightInteractionColors: InteractionColors = {
-  placeholder: "#A8A8A8",
-  selectedColorOne10: "rgba(229, 115, 115, 0.1)",
-  selectedColorOne40: "rgba(229, 115, 115, 0.4)",
-  selectedColorOne100: "#E57373",
-  accentDarkest: "#FFA000",
-  primaryDarkest: "#0055AA",
-  onPrimary: "#FFFFFF",
-  onPrimaryContainer: "#007BFF",
-  onSecondary: "#333333",
-  onSecondaryContainer: "#F5F5F5",
-  onSurface: "#212121",
-  onSurfaceVariant: "#757575",
-  onSurfaceDisabled: "#BDBDBD",
-  onBackground: "#333333",
-  hyperLinkColor: "#1b88bf"
+  placeholderColor: defaultLegacyLightColors['placeholder'],
+  selectedBaseColorLight: defaultLegacyLightColors['selectedColorOne10'],
+  selectedBaseColorMuted: defaultLegacyLightColors['selectedColorOne40'],
+  selectedBaseColor: defaultLegacyLightColors['selectedColorOne100'],
+  darkestAccentColor: defaultLegacyLightColors['accentDarkest'],
+  darkestPrimaryColor: defaultLegacyLightColors['primaryDarkest'],
+  onPrimaryColor: defaultLegacyLightColors['onPrimary'],
+  onPrimaryContainerColor: defaultLegacyLightColors['onPrimaryContainer'],
+  onSecondaryColor: defaultLegacyLightColors['onSecondary'],
+  hyperLinkColor: defaultLegacyLightColors['hyperLinkColor'],
+  onSecondaryContainerColor: defaultLegacyLightColors['onSecondaryContainer'],
+  onSurfaceColor: defaultLegacyLightColors['onSurface'],
+  onSurfaceVariantColor: defaultLegacyLightColors['onSurfaceVariant'],
+  onSurfaceDisabledColor: defaultLegacyLightColors['onSurfaceDisabled'],
+  onBackgroundColor: defaultLegacyLightColors['onBackground']
 };
 
 export const lightColors: ColorsInterface = {
@@ -155,5 +201,6 @@ export const lightColors: ColorsInterface = {
   ...defaultLightElementColors,
   ...defaultLightFeedbackColors,
   ...defaultLightInteractionColors,
-  ...defaultLightGrayScaleColors
+  ...defaultLightGrayScaleColors,
+  ...defaultLegacyLightColors
 };

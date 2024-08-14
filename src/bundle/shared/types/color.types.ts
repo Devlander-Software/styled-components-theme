@@ -32,7 +32,6 @@ export interface GrayScaleColors {
   blackAlpha97: string;
   blackAlpha100: string;
   white: string;
-
   white10: string;
   white20: string;
   white30: string;
@@ -40,13 +39,10 @@ export interface GrayScaleColors {
   white50: string;
   white60: string;
   white70: string;
-
   white80: string;
   white90: string;
   white100: string;
-
   black: string;
-
   black10: string;
   black20: string;
   black30: string;
@@ -54,11 +50,9 @@ export interface GrayScaleColors {
   black50: string;
   black60: string;
   black70: string;
-
   black80: string;
   black90: string;
   black100: string;
-
   transparent: string;
   primaryTextColor: string;
   text: string;
@@ -74,71 +68,126 @@ export interface ElementColors {
   dividerColor: string;
   primaryContainer: string;
   secondaryContainer: string;
-  tertiary: string;
-  outline: string;
-  shadow: string;
-  secondaryButtonBackgroundColor: string;
+  tertiaryContainer: string;
+  outlineColor: string;                    // Used to be: outline
+  shadowColor: string;                     // Used to be: shadow
+  secondaryButtonBgColor: string;          // Used to be: secondaryButtonBackgroundColor
   secondaryIconTextColor: string;
   primaryIconTextColor: string;
-  tertiaryContainer: string;
 }
 
 export interface BrandColors {
-  colorOne: string;
-  colorTwo: string;
-  colorThree: string;
-  colorFour: string;
-  colorFive: string;
-  primary: string;
-  primaryLighter: string;
-  secondary: string;
-  accent: string;
-  accentLighter: string;
-  accent50: string;
-  accent80: string;
+  baseColor: string;                       // Used to be: colorOne
+  complementColor: string;                 // Used to be: colorTwo
+  supportColor: string;                    // Used to be: colorThree
+  highlightColor: string;                  // Used to be: colorFour
+  contrastColor: string;                   // Used to be: colorFive
+  primaryColor: string;                    // Used to be: primary
+  primaryLighterColor: string;             // Used to be: primaryLighter
+  secondaryColor: string;                  // Used to be: secondary
+  accentColor: string;                     // Used to be: accent
+  accentLighterColor: string;              // Used to be: accentLighter
+  accentMutedColor: string;                // Used to be: accent50
+  accentStrongColor: string;               // Used to be: accent80
   primaryIconColor: string;
   secondaryIconColor: string;
 }
 
 export interface BackgroundColors {
-  backdrop: string;
-  background: string;
-  headerBackground: string;
+  backdropColor: string;                   // Used to be: backdrop
+  backgroundColor: string;                 // Used to be: background
+  headerBackgroundColor: string;
   cardBackgroundColor: string;
   commentBackgroundColor: string;
   tabBarColor: string;
-  surface: string;
-  surfaceVariant: string;
+  surfaceColor: string;                    // Used to be: surface
+  surfaceVariantColor: string;             // Used to be: surfaceVariant
   webWashColor: string;
 }
 
 export interface FeedbackColors {
-  error: string;
+  errorColor: string;                      // Used to be: error
   successColor: string;
-  warningAlpha22: string;
-  warningAlpha62: string;
-  errorContainer: string;
-  onError: string;
-  onErrorContainer: string;
+  warningLightColor: string;               // Used to be: warningAlpha22
+  warningStrongColor: string;              // Used to be: warningAlpha62
+  errorContainerColor: string;             // Used to be: errorContainer
+  onErrorColor: string;                    // Used to be: onError
+  onErrorContainerColor: string;           // Used to be: onErrorContainer
 }
 
 export interface InteractionColors {
-  placeholder: string;
-  selectedColorOne10: string;
-  selectedColorOne40: string;
-  selectedColorOne100: string;
-  accentDarkest: string;
-  primaryDarkest: string;
-  onPrimary: string;
-  onPrimaryContainer: string;
-  onSecondary: string;
+  placeholderColor: string;                // Used to be: placeholder
+  selectedBaseColorLight: string;          // Used to be: selectedColorOne10
+  selectedBaseColorMuted: string;          // Used to be: selectedColorOne40
+  selectedBaseColor: string;               // Used to be: selectedColorOne100
+  darkestAccentColor: string;              // Used to be: accentDarkest
+  darkestPrimaryColor: string;             // Used to be: primaryDarkest
+  onPrimaryColor: string;                  // Used to be: onPrimary
+  onPrimaryContainerColor: string;         // Used to be: onPrimaryContainer
+  onSecondaryColor: string;                // Used to be: onSecondary
   hyperLinkColor: string;
-  onSecondaryContainer: string;
-  onSurface: string;
-  onSurfaceVariant: string;
-  onSurfaceDisabled: string;
-  onBackground: string;
+  onSecondaryContainerColor: string;       // Used to be: onSecondaryContainer
+  onSurfaceColor: string;                  // Used to be: onSurface
+  onSurfaceVariantColor: string;           // Used to be: onSurfaceVariant
+  onSurfaceDisabledColor: string;          // Used to be: onSurfaceDisabled
+  onBackgroundColor: string;               // Used to be: onBackground
 }
+// Interface for Legacy Colors, only including keys not present in other interfaces
+// Interface for Legacy Colors, only including keys not present in other interfaces
+export interface LegacyColors {
+  // Legacy Colors that do not exist in other interfaces
+  colorOne: BrandColors['baseColor'];
+  colorTwo: BrandColors['complementColor'];
+  colorThree: BrandColors['supportColor'];
+  colorFour: BrandColors['highlightColor'];
+  colorFive: BrandColors['contrastColor'];
+  primary: BrandColors['primaryColor'];
+  primaryLighter: BrandColors['primaryLighterColor'];
+  secondary: BrandColors['secondaryColor'];
+  accent: BrandColors['accentColor'];
+  accentLighter: BrandColors['accentLighterColor'];
+  accent50: BrandColors['accentMutedColor'];
+  accent80: BrandColors['accentStrongColor'];
+
+  tertiary: ElementColors['tertiaryContainer'];
+  outline: ElementColors['outlineColor'];
+  shadow: ElementColors['shadowColor'];
+  secondaryButtonBackgroundColor: ElementColors['secondaryButtonBgColor'];
+
+  backdrop: BackgroundColors['backdropColor'];
+  background: BackgroundColors['backgroundColor'];
+  headerBackground: BackgroundColors['headerBackgroundColor'];
+  surface: BackgroundColors['surfaceColor'];
+  surfaceVariant: BackgroundColors['surfaceVariantColor'];
+
+  error: FeedbackColors['errorColor'];
+  warningAlpha22: FeedbackColors['warningLightColor'];
+  warningAlpha62: FeedbackColors['warningStrongColor'];
+  errorContainer: FeedbackColors['errorContainerColor'];
+  onError: FeedbackColors['onErrorColor'];
+  onErrorContainer: FeedbackColors['onErrorContainerColor'];
+
+  placeholder: InteractionColors['placeholderColor'];
+  selectedColorOne10: InteractionColors['selectedBaseColorLight'];
+  selectedColorOne40: InteractionColors['selectedBaseColorMuted'];
+  selectedColorOne100: InteractionColors['selectedBaseColor'];
+  accentDarkest: InteractionColors['darkestAccentColor'];
+  primaryDarkest: InteractionColors['darkestPrimaryColor'];
+  onPrimary: InteractionColors['onPrimaryColor'];
+  onPrimaryContainer: InteractionColors['onPrimaryContainerColor'];
+  onSecondary: InteractionColors['onSecondaryColor'];
+  hyperLinkColor: InteractionColors['hyperLinkColor'];
+  onSecondaryContainer: InteractionColors['onSecondaryContainerColor'];
+  onSurface: InteractionColors['onSurfaceColor'];
+  onSurfaceVariant: InteractionColors['onSurfaceVariantColor'];
+  onSurfaceDisabled: InteractionColors['onSurfaceDisabledColor'];
+  onBackground: InteractionColors['onBackgroundColor'];
+}
+
+
+
+
+
 
 export interface ColorsInterface
   extends GrayScaleColors,
@@ -146,7 +195,8 @@ export interface ColorsInterface
     BackgroundColors,
     ElementColors,
     FeedbackColors,
-    InteractionColors {}
+    InteractionColors,
+    LegacyColors {}
 
 export type ColorFromTheme = keyof ColorsInterface;
 
@@ -159,6 +209,7 @@ export interface ColorInfoItem {
   value: ValueOfColor;
   description?: string;
 }
+
 
 export const colorKeysArray: ColorFromTheme[] = [
   // GrayScaleColors
@@ -228,47 +279,75 @@ export const colorKeysArray: ColorFromTheme[] = [
   'dividerColor',
   'primaryContainer',
   'secondaryContainer',
+  'tertiaryContainer',
+  'outlineColor',
+  'shadowColor',
+  'secondaryButtonBgColor',
+  'secondaryIconTextColor',
+  'primaryIconTextColor',
+  // BrandColors
+  'baseColor',
+  'complementColor',
+  'supportColor',
+  'highlightColor',
+  'contrastColor',
+  'primaryColor',
+  'primaryLighterColor',
+  'secondaryColor',
+  'accentColor',
+  'accentLighterColor',
+  'accentMutedColor',
+  'accentStrongColor',
+  'primaryIconColor',
+  'secondaryIconColor',
+  // BackgroundColors
+  'backdropColor',
+  'backgroundColor',
+  'headerBackgroundColor',
+  'cardBackgroundColor',
+  'commentBackgroundColor',
+  'tabBarColor',
+  'surfaceColor',
+  'surfaceVariantColor',
+  'webWashColor',
+  // FeedbackColors
+  'errorColor',
+  'successColor',
+  'warningLightColor',
+  'warningStrongColor',
+  'errorContainerColor',
+  'onErrorColor',
+  'onErrorContainerColor',
+  // InteractionColors
+  'placeholderColor',
+  'selectedBaseColorLight',
+  'selectedBaseColorMuted',
+  'selectedBaseColor',
+  'darkestAccentColor',
+  'darkestPrimaryColor',
+  'onPrimaryColor',
+  'onPrimaryContainerColor',
+  'onSecondaryColor',
+  'hyperLinkColor',
+  'onSecondaryContainerColor',
+  'onSurfaceColor',
+  'onSurfaceVariantColor',
+  'onSurfaceDisabledColor',
+  'onBackgroundColor',
+  // LegacyColors (only unique keys)
+  'accent50',
+  'accent80',
   'tertiary',
   'outline',
   'shadow',
   'secondaryButtonBackgroundColor',
-  'secondaryIconTextColor',
-  'primaryIconTextColor',
-  'tertiaryContainer',
-  // BrandColors
-  'colorOne',
-  'colorTwo',
-  'colorThree',
-  'colorFour',
-  'colorFive',
-  'primary',
-  'primaryLighter',
-  'secondary',
-  'accent',
-  'accentLighter',
-  'accent50',
-  'accent80',
-  'primaryIconColor',
-  'secondaryIconColor',
-  // BackgroundColors
-  'backdrop',
-  'background',
   'headerBackground',
-  'cardBackgroundColor',
-  'commentBackgroundColor',
-  'tabBarColor',
-  'surface',
-  'surfaceVariant',
-  'webWashColor',
-  // FeedbackColors
   'error',
-  'successColor',
   'warningAlpha22',
   'warningAlpha62',
   'errorContainer',
   'onError',
   'onErrorContainer',
-  // InteractionColors
   'placeholder',
   'selectedColorOne10',
   'selectedColorOne40',
@@ -278,12 +357,5 @@ export const colorKeysArray: ColorFromTheme[] = [
   'onPrimary',
   'onPrimaryContainer',
   'onSecondary',
-  'hyperLinkColor',
-  'onSecondaryContainer',
-  'onSurface',
-  'onSurfaceVariant',
-  'onSurfaceDisabled',
-  'onBackground',
 ];
 
-// Now you have all the color keys defined in colorKeysArray
