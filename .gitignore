@@ -34,3 +34,7 @@ yarn-error.*
 *.tsbuildinfo
 
 *.env
+
+.yarn
+
+./.yarn

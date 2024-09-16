@@ -1,10 +1,11 @@
-import type { ColorsInterface } from '../types/color.types';
+import { extractKeysAndValues } from '@devlander/utils';
+import { ColorsInterface } from '../types/color.types';
 
 export function extractKeysAndValuesFromColorsInterface(
   colors: ColorsInterface
 ): [string[], string[]] {
-  const keys = Object.keys(colors);
-  const values = Object.values(colors);
-
-  return [keys, values];
+  // Cast colors to unknown first, then to Record<string, unknown>
+  const { keys, values } = extractKeysAndValues(colors as unknown as Record<string, unknown>);
+  // Ensure that values are of type string[]
+  return [keys as string[], values as string[]];
 }

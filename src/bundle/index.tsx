@@ -151,6 +151,10 @@ export * from "./shared/types/button-variants.enum";
  */
 export * from "./shared/types/color.types";
 /**
+ * TSDoc for container-style.props
+ */
+export * from "./shared/types/container-style.props";
+/**
  * TSDoc for create-theme.types
  */
 export * from "./shared/types/create-theme.types";
@@ -231,10 +235,6 @@ export * from "./shared/types/keyboard-type.enum";
  */
 export * from "./shared/types/log-color.types";
 /**
- * TSDoc for on-visibility-change.props
- */
-export * from "./shared/types/on-visibility-change.props";
-/**
  * TSDoc for secure-input-props
  */
 export * from "./shared/types/secure-input-props";
@@ -267,10 +267,6 @@ export * from "./shared/types/text-transform-types.enum";
  */
 export * from "./shared/types/unit-props.types";
 /**
- * TSDoc for adjust-color
- */
-export * from "./shared/utils/adjust-color";
-/**
  * TSDoc for cap-font-size
  */
 export * from "./shared/utils/cap-font-size";
@@ -278,6 +274,10 @@ export * from "./shared/utils/cap-font-size";
  * TSDoc for extract-values-from-colors-interface
  */
 export * from "./shared/utils/extract-values-from-colors-interface";
+/**
+ * TSDoc for generate-box-shadow
+ */
+export * from "./shared/utils/generate-box-shadow";
 /**
  * TSDoc for generate-shadow-color-css
  */
@@ -303,17 +303,9 @@ export * from "./shared/utils/handle-box-shadows";
  */
 export * from "./shared/utils/handle-unit-props";
 /**
- * TSDoc for hsl-to-rgba
- */
-export * from "./shared/utils/hsl-to-rgba";
-/**
  * TSDoc for is-color-name-or-value
  */
 export * from "./shared/utils/is-color-name-or-value";
-/**
- * TSDoc for is-valid-hex
- */
-export * from "./shared/utils/is-valid-hex";
 /**
  * TSDoc for logger
  */
@@ -323,17 +315,9 @@ export * from "./shared/utils/logger/logger";
  */
 export * from "./shared/utils/normalize-css";
 /**
- * TSDoc for rbga-to-hex
- */
-export * from "./shared/utils/rbga-to-hex";
-/**
  * TSDoc for remove-keys-with-substrings
  */
 export * from "./shared/utils/remove-keys-with-substrings";
-/**
- * TSDoc for slice-into-chunks
- */
-export * from "./shared/utils/slice-into-chunks";
 /**
  * TSDoc for sort-properties-alphabetically
  */

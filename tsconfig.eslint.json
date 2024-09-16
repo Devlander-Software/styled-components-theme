@@ -1,23 +1,23 @@
 {
-    "extends": "./tsconfig.json",
-    "include": [
-      "src/**/*.styles.tsx",
-      "src/**/*.component.tsx",
-      "src/**/*.stories.tsx",
-      "src/**/*.index.tsx",
-      "src/**/*.tsx",
-
-      "jest.config.js",
-      "build-script.config.js",
-      "test/**/*"
-    ],
-    "exclude": [
-        "node_modules",
-        "example",
-
-        "**/*.spec.ts",
-        "*.d.ts",
-        "typings",
-        "dist"
-    ]
-  }
+  "extends": "./tsconfig.json",
+  "include": [
+    "src/**/*.styles.tsx",
+    "src/**/*.component.tsx",
+    "src/**/*.stories.tsx",
+    "src/**/*.index.tsx",
+    "src/**/*.tsx",
+    "jest.config.js",
+    "build-script.config.js",
+    "test/**/*",
+    "load-env.js",       
+    ".eslintrc.js"       
+  ],
+  "exclude": [
+    "node_modules",
+    "example",
+    "**/*.spec.ts",
+    "*.d.ts",
+    "typings",
+    "dist"
+  ]
+}

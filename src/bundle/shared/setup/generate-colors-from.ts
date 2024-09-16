@@ -1,27 +1,13 @@
 import { lightColors } from '../defaults/light-colors.defaults';
 import type { ColorFromTheme, ColorsInterface } from '../types/color.types';
-import { adjustColor } from '../utils/adjust-color';
-import { hslToRgb } from '../utils/hsl-to-rgba';
-
-const hexToRgb = (hex: string): string => {
-  hex = hex.charAt(0) === '#' ? hex.slice(1) : hex;
-  const bigint = parseInt(hex, 16);
-  const r = (bigint >> 16) & 255;
-  const g = (bigint >> 8) & 255;
-  const b = bigint & 255;
-
-  if (hex.length === 8) {
-    const a = ((bigint >> 24) & 255) / 255;
-    return `rgba(${r}, ${g}, ${b}, ${a.toFixed(2)})`;
-  }
-
-  return `rgb(${r}, ${g}, ${b})`;
-};
+import { hexToRgb, adjustColor, hslToRgb } from '@devlander/colors';
 
 export const generateColorsFrom = (
   colors: ColorsInterface,
   to: 'light' | 'dark'
 ): ColorsInterface => {
+  // This syntax requires an imported helper but module 'tslib' cannot be found.ts(2354)
+
   const adjustedColors: Partial<ColorsInterface> = { ...lightColors };
 
   for (const colorKey in colors) {
@@ -37,13 +23,17 @@ export const generateColorsFrom = (
 
     // Convert HSL to RGB if needed
     else if (colorValue.startsWith('hsl')) {
-      const hsl = colorValue.match(/\d+/g)!.map(Number);
-      let possibility = hsl && hsl[0] && typeof hsl[0] === "number" && hsl && hsl[1] && typeof hsl[1] === "number" && hsl && hsl[0] && typeof hsl[0] === "number"? true : false;
-      if(possibility){
-        const [r, g, b] = hslToRgb(hsl[0] as number, hsl[1] as number, hsl[2] as number);
-        colorValue = `rgb(${r}, ${g}, ${b})`;
+      const hslMatch = colorValue.match(/\d+/g);
+      if (hslMatch && hslMatch.length === 3) {
+        const hsl = hslMatch.map(Number);
+        if (hsl.every((value) => !isNaN(value))) {
+          if(hsl[0] && hsl[1] && hsl[2]){
+            const [r, g, b] = hslToRgb(hsl[0], hsl[1], hsl[2]);
+            colorValue = `rgb(${r}, ${g}, ${b})`;
+          }
+          
+        }
       }
-      
     }
 
     // Swap logic for black and white series
@@ -65,7 +55,7 @@ export const generateColorsFrom = (
     } else {
       adjustedColors[colorKey as ColorFromTheme] = adjustColor(
         colorValue,
-        100,
+        1, // assuming full alpha
         to
       );
     }

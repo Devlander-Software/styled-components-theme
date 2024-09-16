@@ -1,4 +1,3 @@
-import hexToRgba from 'hex-to-rgba';
 
 import type {
   ColorFromTheme,
@@ -10,7 +9,7 @@ import {
   ColorNameOrValueEnum,
   isColorNameOrValue,
 } from '../../../shared/utils/is-color-name-or-value';
-import isValidHex from '../../../shared/utils/is-valid-hex';
+import { hexToRgba, isValidHex } from '@devlander/colors';
 
 /**
  * Retrieve a color from the theme based on the given color name, value, and opacity.

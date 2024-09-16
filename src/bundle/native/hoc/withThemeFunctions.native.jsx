@@ -1,6 +1,5 @@
 import { __assign } from "tslib";
 import React from 'react';
-import { adjustColor } from '../../shared/utils/adjust-color';
 import { capFontSize } from '../../shared/utils/cap-font-size';
 import { boxShadowOne } from '../../shared/utils/handle-box-shadows';
 import { unitPropsHandler } from '../../shared/utils/handle-unit-props';
@@ -12,6 +11,7 @@ import { getStyleFromPropsNative } from '../utils/theme-functions/get-style-from
 import { colorThemeHandlerNative } from '../utils/theme-functions/handle-color-from-theme.native';
 import { handleFontFromThemeForNative } from '../utils/theme-functions/handle-font-for-theme.native';
 import { handleFontSizePropsForNative } from '../utils/theme-functions/handle-font-size-props.native';
+import { adjustColor } from "@devlander/colors";
 export var withThemeFunctionsNative = function (Component) {
     return function (props) {
         var baseTheme = props.baseTheme, children = props.children;

@@ -3,11 +3,12 @@
     "devlander",
     "Roboto",
     "scrollview",
-    "treeshake"
+    "treeshake",
+    "unnessary"
   ],
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit",
+    "source.fixAll.eslint": "never",
     "source.fixAll.tslint": "never",
     "source.organizeImports": "never",
     "source.fixAll": "never"

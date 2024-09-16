@@ -2,15 +2,14 @@
  * Type definition for handling color from theme.
  */
 
-import hexToRgba from 'hex-to-rgba';
 
+import { hexToRgba, isValidHex } from '@devlander/colors';
 import { ColorThemeHandler, NativeTheme } from '../../../shared/types/base-theme-types';
 import { ColorFromTheme, ColorNameOrValueFromTheme } from '../../../shared/types/color.types';
 import {
   ColorNameOrValueEnum,
   isColorNameOrValue,
 } from '../../../shared/utils/is-color-name-or-value';
-import isValidHex from '../../../shared/utils/is-valid-hex';
 
 /**
  * Retrieve a color from the theme based on the given color name, value, and opacity.

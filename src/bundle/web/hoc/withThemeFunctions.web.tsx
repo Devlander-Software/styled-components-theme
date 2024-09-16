@@ -2,7 +2,6 @@ import React from 'react';
 import { WebTheme } from '../../shared/types/base-theme-types';
 
 import { FunctionProviderProps } from '../../shared/types/function-provider.types';
-import { adjustColor } from '../../shared/utils/adjust-color';
 import { capFontSize } from '../../shared/utils/cap-font-size';
 import { boxShadowOne } from '../../shared/utils/handle-box-shadows';
 import { unitPropsHandler } from '../../shared/utils/handle-unit-props';
@@ -15,6 +14,7 @@ import { colorThemeHandlerWeb } from '../utils/theme-functions/handle-color-for-
 import { handleFontFromThemeForWeb } from '../utils/theme-functions/handle-font-for-theme.web';
 import { handleFontSizePropsForWeb } from '../utils/theme-functions/handle-font-size-props.web';
 import type { FC, ReactElement } from 'react';
+import { adjustColor } from '@devlander/colors';
 // Interfaces and types for StyledProvider Web
 export interface WithThemeFunctionsAndStyleWeb
   extends FunctionProviderProps<WebTheme> {
