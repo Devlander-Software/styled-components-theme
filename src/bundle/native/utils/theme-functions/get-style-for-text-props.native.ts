@@ -73,7 +73,7 @@ export const getStyleForTextPropsForNative: TextStyleGenerator<
       ? `font-size: ${fontSizePropsHandler(
           capFontSizeFunc(fontSize, maxFontSize)
         )};`
-      : ''
+      : '',
   ];
 
   const fontFamilyProperties =
@@ -154,7 +154,7 @@ export const getStyleForTextPropsForNative: TextStyleGenerator<
       : '',
     restProps.textTransform
       ? `text-transform: ${restProps.textTransform};`
-      : ''
+      : '',
   ];
 
   if (Platform && Platform.OS === 'web') {
@@ -164,7 +164,7 @@ export const getStyleForTextPropsForNative: TextStyleGenerator<
   }
 
   const css = cssProperties.filter(Boolean).join('\n');
-  console.log('css', css);
+  // console.log('css', css);
 
   return css;
 };

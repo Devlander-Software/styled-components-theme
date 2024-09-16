@@ -1,4 +1,5 @@
-import type { BackgroundColors, BrandColors, ColorsInterface, ElementColors, FeedbackColors, GrayScaleColors, InteractionColors } from "../types/color.types";
+import type { BackgroundColors, BrandColors, ColorsInterface, ElementColors, FeedbackColors, GrayScaleColors, InteractionColors, LegacyColors } from "../types/color.types";
+export declare const defaultLegacyLightColors: LegacyColors;
 export declare const defaultLightGrayScaleColors: GrayScaleColors;
 export declare const defaultLightBrandColors: BrandColors;
 export declare const defaultLightBackgroundColors: BackgroundColors;

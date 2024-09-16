@@ -151,6 +151,10 @@ export * from "./shared/types/button-variants.enum";
  */
 export * from "./shared/types/color.types";
 /**
+ * TSDoc for container-style.props
+ */
+export * from "./shared/types/container-style.props";
+/**
  * TSDoc for create-theme.types
  */
 export * from "./shared/types/create-theme.types";
@@ -231,10 +235,6 @@ export * from "./shared/types/keyboard-type.enum";
  */
 export * from "./shared/types/log-color.types";
 /**
- * TSDoc for on-visibility-change.props
- */
-export * from "./shared/types/on-visibility-change.props";
-/**
  * TSDoc for secure-input-props
  */
 export * from "./shared/types/secure-input-props";
@@ -274,6 +274,10 @@ export * from "./shared/utils/cap-font-size";
  * TSDoc for extract-values-from-colors-interface
  */
 export * from "./shared/utils/extract-values-from-colors-interface";
+/**
+ * TSDoc for generate-box-shadow
+ */
+export * from "./shared/utils/generate-box-shadow";
 /**
  * TSDoc for generate-shadow-color-css
  */

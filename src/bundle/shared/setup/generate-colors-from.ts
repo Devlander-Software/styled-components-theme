@@ -6,6 +6,8 @@ export const generateColorsFrom = (
   colors: ColorsInterface,
   to: 'light' | 'dark'
 ): ColorsInterface => {
+  // This syntax requires an imported helper but module 'tslib' cannot be found.ts(2354)
+
   const adjustedColors: Partial<ColorsInterface> = { ...lightColors };
 
   for (const colorKey in colors) {

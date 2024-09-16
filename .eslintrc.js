@@ -70,11 +70,8 @@ module.exports = {
     "comma-dangle": [
       "warn",
       {
-        arrays: "never",
-        objects: "never",
         imports: "never",
         exports: "never",
-        functions: "never",
       },
     ],
     "simple-import-sort/imports": "off",

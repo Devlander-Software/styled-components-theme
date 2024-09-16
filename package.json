@@ -32,17 +32,17 @@
   },
   "homepage": "https://github.com/Devlander-Software/styled-components-theme#readme",
   "scripts": {
+    "build": "yarn run prep-build && yarn run rollup",
+    "test": "jest",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx ./src --fix",
     "timeout": "delay 5",
     "rollup": "yarn run build:index && npx rollup -c rollup.config.mjs",
     "typecheck": "tsc --project ./tsconfig.json --emitDeclarationOnly",
     "prep-build": "npx rimraf ./dist && npx rimraf ./typings",
     "docs": "typedoc --out ./docs ./src",
-    "build": "yarn run prep-build && yarn run rollup",
     "build:index": "cd ./src && yarn run build",
     "web": "cd ./examples/apps/react-example && yarn add @devlander/shared-react-native-types && yarn run dev",
     "native": "cd ./examples/apps/react-native-example && yarn add @devlander/shared-react-native-types && yarn run dev",
-    "lint": "eslint --ext .js,.jsx,.ts,.tsx ./src --fix",
-    "test": "jest",
     "test:coverage": "jest --coverage",
     "prepare": "yarn run build",
     "size": "size-limit",
@@ -96,6 +96,7 @@
     "babel-jest": "^29.7.0",
     "core-js": "3",
     "delay-cli": "2.0.0",
+    "dotenv": "^16.4.5",
     "eslint": "^8.52.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-import": "2.28.1",
@@ -121,7 +122,10 @@
     "size-limit": "^10.0.1",
     "ts-jest": "^29.1.1",
     "tsdx": "^0.14.1",
-    "tslib": "^2.6.2",
+    "tslib": "^2.7.0",
     "typescript": "^5.2.2"
-  }
+  },
+  "workspaces": [
+    "./src"
+  ]
 }
