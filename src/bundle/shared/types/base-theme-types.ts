@@ -10,7 +10,8 @@ import type { FontSizePropsHandler } from './font-size-handler.type';
 import type { FontWeightType } from './font-weight.enum';
 import type { FontType, FontsInterface } from './fonts.interface';
 import type { FontSizeCap } from '../utils/cap-font-size';
-import type { AdjustColorFunc } from '@devlander/colors';
+import type { AlphaScale } from '@devlander/colors/typings/types/alpha-scale.type';
+import type { ThemeType } from '@devlander/colors/typings/types/theme.type';
 
 export interface FontThemeHandler<T> {
   (fontType: FontType, fontTypeWeight: FontWeightType, theme: T): string;
@@ -38,7 +39,8 @@ export interface GhostStyleGenerator<T> {
     disabled: boolean,
     theme: T,
     colorOne: ColorNameOrValueFromTheme,
-    colorTwo: ColorNameOrValueFromTheme
+    colorTwo: ColorNameOrValueFromTheme,
+    debug?: boolean
   ): string;
 }
 
@@ -74,6 +76,12 @@ export type LayoutStyleGenerator<
   InputType = number,
 > = ThemedPropsToValueMapper<T, ComprehensiveStyleProps<T, InputType>, string>;
 
+
+
+// this will be here until colors package is working
+export interface AdjustColorFunc {
+  (colorValue: string, alphaValue: AlphaScale, mode: ThemeType, cssColorNames?: string[], debug?: boolean): string;
+}
 export interface BaseThemeFunctions<T, ExpectingNumOrString> {
   fontSizeCap: FontSizeCap;
   colorThemeHandler: ColorThemeHandler<T>;
@@ -98,6 +106,7 @@ export interface ThemeBase {
   darkThemeEnabled?: boolean;
   paddingOnTheme?: PaddingOnThemeType;
   elevation?: ElevationType;
+  debug?: boolean;
   deviceOnTheme: DeviceOnTheme;
 }
 

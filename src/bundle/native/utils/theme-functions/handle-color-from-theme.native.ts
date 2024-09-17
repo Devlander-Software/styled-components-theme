@@ -1,15 +1,18 @@
-/**
- * Type definition for handling color from theme.
- */
-
-
 import { hexToRgba, isValidHex } from '@devlander/colors';
-import { ColorThemeHandler, NativeTheme } from '../../../shared/types/base-theme-types';
-import { ColorFromTheme, ColorNameOrValueFromTheme } from '../../../shared/types/color.types';
+import { logSeparator, logEnd, logFunction, logStart } from '@devlander/utils';
+import {
+  ColorThemeHandler,
+  NativeTheme,
+} from '../../../shared/types/base-theme-types';
+import {
+  ColorFromTheme,
+  ColorNameOrValueFromTheme,
+} from '../../../shared/types/color.types';
 import {
   ColorNameOrValueEnum,
-  isColorNameOrValue,
+  isColorNameOrValue
 } from '../../../shared/utils/is-color-name-or-value';
+import { isValidHexLegacy } from '../../../shared/utils/is-valid-hex-legacy';
 
 /**
  * Retrieve a color from the theme based on the given color name, value, and opacity.
@@ -25,25 +28,94 @@ export const colorThemeHandlerNative: ColorThemeHandler<NativeTheme> = (
   opacity: number = 1,
   theme: NativeTheme
 ): string => {
+  const debugModeEnabled =
+    theme?.debug && typeof theme.debug === 'boolean' && theme.debug === true;
+
+  if (debugModeEnabled) {
+    logStart('colorThemeHandlerNative', 'color-theme-handler.native');
+    logFunction(
+      'colorThemeHandlerNative',
+      { color, opacity },
+      '1. - Initial parameters'
+    );
+    logSeparator();
+  }
+
   const valueOrName: ColorNameOrValueEnum | boolean = isColorNameOrValue(
     color,
     theme
   );
+
+  if (debugModeEnabled) {
+    logFunction(
+      'colorThemeHandlerNative',
+      valueOrName,
+      '2. - Result of isColorNameOrValue'
+    );
+    logSeparator();
+  }
+
   if (valueOrName) {
     if (valueOrName === ColorNameOrValueEnum.ColorName) {
-      if (isValidHex(theme.colors[color as ColorFromTheme] as any)) {
-        return hexToRgba(
-          theme.colors[color as ColorFromTheme] as string,
-          opacity
-        );
+      const themeColorHex = theme.colors[color as ColorFromTheme] as string;
+
+      if (isValidHex(themeColorHex)) {
+        const rgbaColor = hexToRgba(themeColorHex, opacity);
+        if (debugModeEnabled) {
+          logFunction(
+            'colorThemeHandlerNative',
+            rgbaColor,
+            '3. - Hex color (new version) converted to RGBA'
+          );
+          logSeparator();
+        }
+        return rgbaColor;
+      } else if (isValidHexLegacy(themeColorHex)) {
+        const rgbaColorLegacy = hexToRgba(themeColorHex, opacity);
+        if (debugModeEnabled) {
+          logFunction(
+            'colorThemeHandlerNative',
+            rgbaColorLegacy,
+            '4. - Hex color (legacy version) converted to RGBA'
+          );
+          logSeparator();
+        }
+        return rgbaColorLegacy;
       } else {
-        return theme.colors[color as ColorFromTheme];
+        const themeColor = theme.colors[color as ColorFromTheme];
+        if (debugModeEnabled) {
+          logFunction(
+            'colorThemeHandlerNative',
+            themeColor,
+            '5. - Theme color returned as is'
+          );
+          logSeparator();
+        }
+        return themeColor;
       }
     } else {
-      return hexToRgba(color as string, opacity);
+      const rgbaColor = hexToRgba(color as string, opacity);
+      if (debugModeEnabled) {
+        logFunction(
+          'colorThemeHandlerNative',
+          rgbaColor,
+          '6. - Hex color value converted to RGBA'
+        );
+        logSeparator();
+      }
+      return rgbaColor;
     }
   } else {
-    return theme.colors.primaryTextColor;
+    const defaultColor = theme.colors.primaryTextColor;
+    if (debugModeEnabled) {
+      logFunction(
+        'colorThemeHandlerNative',
+        defaultColor,
+        '7. - Default primaryTextColor returned'
+      );
+      logSeparator();
+      logEnd('colorThemeHandlerNative');
+    }
+    return defaultColor;
   }
 };
-

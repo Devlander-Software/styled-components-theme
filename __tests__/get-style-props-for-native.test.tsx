@@ -1,3 +1,4 @@
+
 import { createThemeForNative } from "../src/bundle/native/setup/create-theme/create-theme.native";
 import { getStyleFromPropsNative } from "../src/bundle/native/utils/theme-functions/get-style-from-props.native";
 import { NativeTheme } from "../src/bundle/shared/types/base-theme-types";
@@ -29,9 +30,7 @@ describe('getStyleFromPropsNative', () => {
         shadowOpacity: 0.5,
         shadowRadius: 5,
         transform: 'translateX(10px) rotate(45deg)',
-
       },
-      
       opacity: 0.8,
       marginLeft: 15,
       flexDirection: 'row',
@@ -45,7 +44,6 @@ describe('getStyleFromPropsNative', () => {
       flex: 1,
       paddingTop: 35,
       borderRadius: 10,
-    
       elevation: 8,
     };
 
@@ -55,7 +53,6 @@ describe('getStyleFromPropsNative', () => {
       'border-color: rgba(255, 255, 255, 0.2);',
       'border-width: 1px;',
       'border-radius: 10px;',
- 
       'elevation: 8;',
       'flex: 1;',
       'flex-direction: row;',
@@ -93,7 +90,7 @@ describe('getStyleFromPropsNative', () => {
     });
   });
 
-  // More test cases for different combinations of properties
+ 
 
   it('handles properties with undefined values', () => {
     const styleProps = {
@@ -136,7 +133,6 @@ describe('getStyleFromPropsNative', () => {
         shadowOpacity: 0.5,
         shadowRadius: 5,
         transform: 'translateX(10px) rotate(45deg)',
-
       },
       opacity: 0.8,
       marginLeft: 15,
@@ -150,14 +146,12 @@ describe('getStyleFromPropsNative', () => {
       flex: 1,
       paddingTop: 35,
       borderRadius: 10,
-    
       elevation: 8,
     };
 
     const expectedCss: string[] = [
       'background: red;',
       'border-radius: 10px;',
-
       'flex: 1;',
       'flex-direction: row;',
       'justify-content: flex-start;',

@@ -1,4 +1,5 @@
 import { ColorNameOrValueFromTheme } from './color.types';
+import { TroubleShootingProps } from './troubleshoot.interface';
 
 export interface ButtonStyleProps<ValueType = number> {
   paddingLeft?: ValueType;
@@ -47,4 +48,4 @@ export interface ButtonStylePropsWithThemeGeneric<
 }
 
 export interface ButtonStyleFromProps<T, U>
-  extends ButtonStylePropsWithThemeGeneric<T, U> {}
+  extends ButtonStylePropsWithThemeGeneric<T, U>, TroubleShootingProps {}

@@ -124,7 +124,6 @@ export const defaultLightGrayScaleColors: GrayScaleColors = {
   black100: adjustColor("#000000", 100, "dark")
 };
 
-console.log(defaultLightGrayScaleColors, "defaultLightGrayScaleColors");
 
 export const defaultLightBrandColors: BrandColors = {
   primaryIconColor: "#007BFF",

@@ -107,10 +107,6 @@ export * from "./shared/defaults/svg-props.defaults";
  */
 export * from "./shared/defaults/text-inputs.defaults";
 /**
- * TSDoc for SharedThemeProviderCore.provider
- */
-export * from "./shared/providers/SharedThemeProviderCore/SharedThemeProviderCore.provider";
-/**
  * TSDoc for generate-colors-from
  */
 export * from "./shared/setup/generate-colors-from";
@@ -263,9 +259,17 @@ export * from "./shared/types/text-style.types";
  */
 export * from "./shared/types/text-transform-types.enum";
 /**
+ * TSDoc for troubleshoot.interface
+ */
+export * from "./shared/types/troubleshoot.interface";
+/**
  * TSDoc for unit-props.types
  */
 export * from "./shared/types/unit-props.types";
+/**
+ * TSDoc for adjust-color
+ */
+export * from "./shared/utils/adjust-color";
 /**
  * TSDoc for cap-font-size
  */
@@ -282,6 +286,10 @@ export * from "./shared/utils/generate-box-shadow";
  * TSDoc for generate-shadow-color-css
  */
 export * from "./shared/utils/generate-shadow-color-css";
+/**
+ * TSDoc for get-border-radius
+ */
+export * from "./shared/utils/get-border-radius";
 /**
  * TSDoc for get-line-height
  */
@@ -307,9 +315,9 @@ export * from "./shared/utils/handle-unit-props";
  */
 export * from "./shared/utils/is-color-name-or-value";
 /**
- * TSDoc for logger
+ * TSDoc for is-valid-hex-legacy
  */
-export * from "./shared/utils/logger/logger";
+export * from "./shared/utils/is-valid-hex-legacy";
 /**
  * TSDoc for normalize-css
  */
@@ -318,6 +326,10 @@ export * from "./shared/utils/normalize-css";
  * TSDoc for remove-keys-with-substrings
  */
 export * from "./shared/utils/remove-keys-with-substrings";
+/**
+ * TSDoc for rgba-to-hex-legacy
+ */
+export * from "./shared/utils/rgba-to-hex-legacy";
 /**
  * TSDoc for sort-properties-alphabetically
  */

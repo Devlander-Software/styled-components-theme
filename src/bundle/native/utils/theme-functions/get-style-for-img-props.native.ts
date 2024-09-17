@@ -1,8 +1,9 @@
 import {
   ImageStyleGenerator,
-  NativeTheme,
+  NativeTheme
 } from '../../../shared/types/base-theme-types';
 import { ImageStyleFromProps } from '../../../shared/types/img-style-props';
+import { getBorderRadius } from '../../../shared/utils/get-border-radius';
 
 export const getStyleForImgPropsForNative: ImageStyleGenerator<NativeTheme> = ({
   backgroundColorFromTheme,
@@ -17,36 +18,9 @@ export const getStyleForImgPropsForNative: ImageStyleGenerator<NativeTheme> = ({
   borderRadius,
   borderWidth,
   borderBottomLeftRadius,
-  borderTopLeftRadius
+  borderTopLeftRadius,
+  debug // Add the debug flag here to pass it to getBorderRadius
 }: ImageStyleFromProps<NativeTheme, number>): string => {
-  const getBorderRadius =
-    !borderBottomLeftRadius &&
-    !borderTopRightRadius &&
-    !borderBottomRightRadius &&
-    !borderBottomLeftRadius
-      ? `
-    border-radius: ${
-      borderRadius ? theme.unitPropsHandler(borderRadius) : '0px'
-    };
-  `
-      : `  border-radius: ${
-          borderTopLeftRadius
-            ? theme.unitPropsHandler(borderTopLeftRadius)
-            : theme.unitPropsHandler(0)
-        } ${
-          borderTopRightRadius
-            ? theme.unitPropsHandler(borderTopRightRadius)
-            : theme.unitPropsHandler(0)
-        } ${
-          borderBottomRightRadius
-            ? theme.unitPropsHandler(borderBottomRightRadius)
-            : theme.unitPropsHandler(0)
-        } ${
-          borderBottomLeftRadius
-            ? theme.unitPropsHandler(borderBottomLeftRadius)
-            : theme.unitPropsHandler(0)
-        };`;
-
   const css = `
         ${
           backgroundColorFromTheme
@@ -72,18 +46,23 @@ export const getStyleForImgPropsForNative: ImageStyleGenerator<NativeTheme> = ({
             ? `border-width: ${theme.unitPropsHandler(borderWidth)};`
             : ''
         }
-       
-        ${width ? `width: ${theme.unitPropsHandler(width)};` : ''}
 
-        ${height ? `height: ${theme.unitPropsHandler(height)};` : ''}
         ${width ? `width: ${theme.unitPropsHandler(width)};` : ''}
+        ${height ? `height: ${theme.unitPropsHandler(height)};` : ''}
         ${maxWidth ? `max-width: ${theme.unitPropsHandler(maxWidth)};` : ''}
         ${maxHeight ? `max-height: ${theme.unitPropsHandler(maxHeight)};` : ''}
 
-        ${getBorderRadius}
-
-
+        ${getBorderRadius(
+          theme,
+          borderRadius,
+          borderTopLeftRadius,
+          borderTopRightRadius,
+          borderBottomRightRadius,
+          borderBottomLeftRadius,
+          debug // Pass the debug flag to enable logging if needed
+        )}
 
     `;
-  return css.trim()
+
+  return css.trim();
 };

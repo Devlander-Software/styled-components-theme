@@ -1,8 +1,9 @@
-import { ComprehensiveStyleProps } from '../../../shared/types/style-attributes.interfaces';
+import { logSeparator, logEnd, logFunction, logStart } from '@devlander/utils';
 import type {
   LayoutStyleGenerator,
-  WebTheme
+  WebTheme,
 } from '../../../shared/types/base-theme-types';
+import type { ComprehensiveStyleProps } from '../../../shared/types/style-attributes.interfaces';
 
 export const getStyleFromPropsForWeb: LayoutStyleGenerator<
   WebTheme,
@@ -21,10 +22,39 @@ export const getStyleFromPropsForWeb: LayoutStyleGenerator<
   marginLeft,
   marginRight,
   height,
+  debug,
   maxWidth,
   maxHeight
 }: ComprehensiveStyleProps<WebTheme, string | number>): string => {
-  // Precompute the values
+  const debugModeEnabled =
+    debug && typeof debug === 'boolean' && debug === true;
+
+  if (debugModeEnabled) {
+    logStart('getStyleFromPropsForWeb', 'get-style-from-props.web');
+
+    logFunction(
+      'getStyleFromPropsForWeb',
+      {
+        backgroundColorFromTheme,
+        flex,
+        paddingLeft,
+        paddingTop,
+        paddingRight,
+        width,
+        marginTop,
+        marginBottom,
+        opacity,
+        marginLeft,
+        marginRight,
+        height,
+        maxWidth,
+        maxHeight
+      },
+      '1. - Initial properties object'
+    );
+    logSeparator();
+  }
+
   const computedBackgroundColor = backgroundColorFromTheme
     ? theme.colorThemeHandler(backgroundColorFromTheme, 1, theme)
     : undefined;
@@ -44,20 +74,40 @@ export const getStyleFromPropsForWeb: LayoutStyleGenerator<
   const computedMaxWidth = maxWidth && theme.unitPropsHandler(maxWidth);
   const computedMaxHeight = maxHeight && theme.unitPropsHandler(maxHeight);
 
-  return `
-    ${computedBackgroundColor ? `background: ${computedBackgroundColor};` : ''}
-    ${flex ? `flex: ${flex};` : ''}
-    ${computedPaddingLeft ? `padding-left: ${computedPaddingLeft};` : ''}
-    ${computedPaddingTop ? `padding-top: ${computedPaddingTop};` : ''}
-    ${computedPaddingRight ? `padding-right: ${computedPaddingRight};` : ''}
-    ${computedWidth ? `width: ${computedWidth};` : ''}
-    ${computedMarginTop ? `margin-top: ${computedMarginTop};` : ''}
-    ${computedMarginBottom ? `margin-bottom: ${computedMarginBottom};` : ''}
-    ${opacity ? `opacity: ${opacity};` : ''}
-    ${computedMarginLeft ? `margin-left: ${computedMarginLeft};` : ''}
-    ${computedMarginRight ? `margin-right: ${computedMarginRight};` : ''}
-    ${computedHeight ? `height: ${computedHeight};` : ''}
-    ${computedMaxWidth ? `max-width: ${computedMaxWidth};` : ''}
-    ${computedMaxHeight ? `max-height: ${computedMaxHeight};` : ''}
-  `;
+  const propertiesToSort: string[] = [
+    computedBackgroundColor ? `background: ${computedBackgroundColor};` : '',
+    flex ? `flex: ${flex};` : '',
+    computedPaddingLeft ? `padding-left: ${computedPaddingLeft};` : '',
+    computedPaddingTop ? `padding-top: ${computedPaddingTop};` : '',
+    computedPaddingRight ? `padding-right: ${computedPaddingRight};` : '',
+    computedWidth ? `width: ${computedWidth};` : '',
+    computedMarginTop ? `margin-top: ${computedMarginTop};` : '',
+    computedMarginBottom ? `margin-bottom: ${computedMarginBottom};` : '',
+    opacity ? `opacity: ${opacity};` : '',
+    computedMarginLeft ? `margin-left: ${computedMarginLeft};` : '',
+    computedMarginRight ? `margin-right: ${computedMarginRight};` : '',
+    computedHeight ? `height: ${computedHeight};` : '',
+    computedMaxWidth ? `max-width: ${computedMaxWidth};` : '',
+    computedMaxHeight ? `max-height: ${computedMaxHeight};` : '',
+  ];
+
+  if (debugModeEnabled) {
+    logFunction(
+      'getStyleFromPropsForWeb',
+      { properties: propertiesToSort },
+      '2. - Properties before sorting'
+    );
+    logSeparator();
+  }
+
+  const sortedProperties = propertiesToSort.filter(Boolean).sort();
+  const css = sortedProperties.join('\n');
+
+  if (debugModeEnabled) {
+    logFunction('getStyleFromPropsForWeb', css, '3. - Final CSS output');
+    logSeparator();
+    logEnd('getStyleFromPropsForWeb');
+  }
+
+  return css;
 };

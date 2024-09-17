@@ -1,6 +1,3 @@
-/**
- * Type definition for handling color from theme.
- */
 import { ColorThemeHandler, NativeTheme } from '../../../shared/types/base-theme-types';
 /**
  * Retrieve a color from the theme based on the given color name, value, and opacity.

@@ -1,12 +1,17 @@
 import { Platform } from 'react-native';
 
-import type { TextStyleGenerator, WebTheme } from '../../../shared/types/base-theme-types';
 import { FontTypeEnum } from '../../../shared/types/font-type.enum';
 import { ResolvedThemedTextStylingProps } from '../../../shared/types/text-style.types';
 import { capFontSize } from '../../../shared/utils/cap-font-size';
+import type {
+  TextStyleGenerator,
+  WebTheme,
+} from '../../../shared/types/base-theme-types';
 
-
-export const getStyleForTextPropsForWeb: TextStyleGenerator<WebTheme, string | number> = (
+export const getStyleForTextPropsForWeb: TextStyleGenerator<
+  WebTheme,
+  string | number
+> = (
   props: ResolvedThemedTextStylingProps<WebTheme, number | string>
 ): string => {
   const {
@@ -16,6 +21,7 @@ export const getStyleForTextPropsForWeb: TextStyleGenerator<WebTheme, string | n
     textColorFromTheme,
     fontType,
     fontTypeWeight,
+    debug,
     fontWeight,
     ...restProps
   } = props;
@@ -73,14 +79,14 @@ export const getStyleForTextPropsForWeb: TextStyleGenerator<WebTheme, string | n
         )};`
       : null;
 
+  const handleLineHeight = restProps.lineHeight
+    ? `line-height: ${unitPropsHandler(restProps.lineHeight)};`
+    : fontSize && typeof restProps.lineHeight === 'number'
+    ? `line-height: ${unitPropsHandler((fontSize as number) + 6)};`
+    : null;
 
-      const handleLineHeight = restProps.lineHeight
-      ? `line-height: ${unitPropsHandler(restProps.lineHeight)};`
-      : fontSize && typeof restProps.lineHeight === "number"
-      ? `line-height: ${unitPropsHandler(fontSize as number + 6)};`
-      :  null;
-
-      const handleShadowType = restProps.shadowColor && typeof restProps.shadowColor === "string"
+  const handleShadowType =
+    restProps.shadowColor && typeof restProps.shadowColor === 'string'
       ? `text-shadow-color: ${restProps.shadowColor};`
       : null;
 
@@ -106,7 +112,7 @@ export const getStyleForTextPropsForWeb: TextStyleGenerator<WebTheme, string | n
     restProps.paddingRight
       ? `padding-right: ${unitPropsHandler(restProps.paddingRight)};`
       : null,
-   
+
     restProps.width ? `width: ${unitPropsHandler(restProps.width)};` : null,
     restProps.textAlign ? `text-align: ${restProps.textAlign};` : null,
     restProps.marginTop
@@ -125,7 +131,7 @@ export const getStyleForTextPropsForWeb: TextStyleGenerator<WebTheme, string | n
     restProps.shadowOpacity
       ? `text-shadow-opacity: ${restProps.shadowOpacity};`
       : null,
-    
+
     restProps.shadowOffsetX || restProps.shadowOffsetY
       ? `text-shadow-offset: ${unitPropsHandler(
           restProps.shadowOffsetX || 0
@@ -147,6 +153,9 @@ export const getStyleForTextPropsForWeb: TextStyleGenerator<WebTheme, string | n
 
   const css = cssProperties.filter(Boolean).join('\n');
   // console.log("css", css)
+  if (debug && typeof debug === 'boolean' && debug) {
+    console.log(css, 'this is css inside of getStyleForTextProps.web');
+  }
 
   return css;
 };

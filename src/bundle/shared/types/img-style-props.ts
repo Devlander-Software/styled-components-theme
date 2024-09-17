@@ -1,4 +1,5 @@
 import { ColorNameOrValueFromTheme } from './color.types';
+import { TroubleShootingProps } from './troubleshoot.interface';
 
 // do not include the theme in the interface
 export interface ImageStyle<ValueType = number> {
@@ -17,9 +18,9 @@ export interface ImageStyle<ValueType = number> {
 }
 
 export interface ImageStyleWithThemeGeneric<Theme, CSSPropertyTypes = number>
-  extends ImageStyle<CSSPropertyTypes> {
+  extends ImageStyle<CSSPropertyTypes>, TroubleShootingProps {
   theme: Theme;
 }
 
 export interface ImageStyleFromProps<T, U>
-  extends ImageStyleWithThemeGeneric<T, U> {}
+  extends ImageStyleWithThemeGeneric<T, U>, TroubleShootingProps {}

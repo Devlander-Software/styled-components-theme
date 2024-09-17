@@ -1,3 +1,9 @@
+import {
+  logSeparator,
+  logEnd,
+  logFunction,
+  logStart,
+} from '@devlander/utils';
 import { NativeTheme } from '../../../shared/types/base-theme-types';
 import { generateShadowColorStyle } from '../../../shared/utils/generate-shadow-color-css';
 import { sortPropertiesAlphabetically } from '../../../shared/utils/sort-properties-alphabetically';
@@ -31,11 +37,24 @@ export const getStyleFromPropsNative = ({
   paddingLeft,
   paddingTop,
   paddingRight,
-
-  style,
+  debug,
+  style = {} as any,
   width,
 }: ComprehensiveStyleProps<NativeTheme, number>): string => {
-  console.log(style, 'style');
+  const debugModeEnabled =
+    debug && typeof debug === 'boolean' && debug === true;
+
+  if (debugModeEnabled) {
+    logStart('getStyleFromPropsNative', 'get-style-from-props.native');
+
+    logFunction(
+      'getStyleFromPropsNative',
+      style as any,
+      '1. - Initial style object'
+    );
+    logSeparator();
+  }
+
   const zIndex = style?.zIndex;
   const justifyContent = style?.justifyContent;
   const overflow = style?.overflow;
@@ -50,7 +69,6 @@ export const getStyleFromPropsNative = ({
   const unitPropsHandler = theme.unitPropsHandler;
   const colorThemeHandler = theme.colorThemeHandler;
 
-  // Use type assertions to ensure backgroundColor is treated as a string
   const backgroundValue =
     (typeof backgroundColor === 'string' ? backgroundColor : '') ||
     (backgroundColorFromTheme && colorThemeHandler
@@ -61,10 +79,9 @@ export const getStyleFromPropsNative = ({
     ? generateShadowColorStyle(shadowColor)
     : '';
 
-  // Define an array of CSS properties to sort alphabetically
   const propertiesToSort: string[] = [
     zIndex ? `z-index: ${zIndex};` : '',
-    alignItems ? `align-items: ${alignItems};` : '', // Ternary statement for alignItems
+    alignItems ? `align-items: ${alignItems};` : '',
     backgroundValue && `background: ${backgroundValue};`,
     borderRadius ? `border-radius: ${unitPropsHandler(borderRadius)};` : '',
     borderBottomWidth
@@ -111,11 +128,25 @@ export const getStyleFromPropsNative = ({
     width ? `width: ${unitPropsHandler(width)};` : '',
   ];
 
-  // Sort the properties alphabetically
-  const sortedProperties = sortPropertiesAlphabetically(propertiesToSort);
+  if (debugModeEnabled) {
+    logFunction(
+      'getStyleFromPropsNative',
+      {
+        properties: propertiesToSort,
+      },
+      '2. - Properties before sorting'
+    );
+    logSeparator();
+  }
 
-  // Combine the sorted properties into the final CSS string
+  const sortedProperties = sortPropertiesAlphabetically(propertiesToSort);
   const css = sortedProperties.join('\n');
+
+  if (debugModeEnabled) {
+    logFunction('getStyleFromPropsNative', css, '3. - Final CSS output');
+    logSeparator();
+    logEnd('getStyleFromPropsNative');
+  }
 
   return css;
 };

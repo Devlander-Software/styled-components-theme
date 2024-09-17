@@ -1566,7 +1566,7 @@ __metadata:
     "@babel/preset-typescript": ^7.23.2
     "@devlander/collect-exports-for-bundle": ^1.1.68
     "@devlander/colors": ^0.0.6
-    "@devlander/utils": ^0.0.66
+    "@devlander/utils": ^0.0.72
     "@rollup/plugin-alias": ^5.0.1
     "@rollup/plugin-auto-install": ^3.0.5
     "@rollup/plugin-babel": ^6.0.4
@@ -1588,6 +1588,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": ^6.9.0
     "@typescript-eslint/parser": ^6.8.0
     babel-jest: ^29.7.0
+    colors: ^1.4.0
     core-js: 3
     delay-cli: 2.0.0
     dotenv: ^16.4.5
@@ -1629,6 +1630,13 @@ __metadata:
   version: 0.0.66
   resolution: "@devlander/utils@npm:0.0.66"
   checksum: b85c05e57189963b4cde19800e7027ba532f62a4bf7041355e4be838007059fc84a694d614745e8cadd327992ea56efd29805229613ae1205e98c1f2fcbc2523
+  languageName: node
+  linkType: hard
+
+"@devlander/utils@npm:^0.0.72":
+  version: 0.0.72
+  resolution: "@devlander/utils@npm:0.0.72"
+  checksum: 34e67d10436c37f2009e5f9fccdb44ec79df96ac439eac1c48f7c47a2dc7e9c0f435447c442572b49ad0231520297af7dd0d684cd490b735af42b49fb0e3d227
   languageName: node
   linkType: hard
 
@@ -4722,6 +4730,13 @@ __metadata:
     color-convert: ^2.0.1
     color-string: ^1.9.0
   checksum: 0579629c02c631b426780038da929cca8e8d80a40158b09811a0112a107c62e10e4aad719843b791b1e658ab4e800558f2e87ca4522c8b32349d497ecb6adeb4
+  languageName: node
+  linkType: hard
+
+"colors@npm:^1.4.0":
+  version: 1.4.0
+  resolution: "colors@npm:1.4.0"
+  checksum: 98aa2c2418ad87dedf25d781be69dc5fc5908e279d9d30c34d8b702e586a0474605b3a189511482b9d5ed0d20c867515d22749537f7bc546256c6014f3ebdcec
   languageName: node
   linkType: hard
 
