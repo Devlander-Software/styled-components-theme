@@ -3,10 +3,8 @@ const path = require("path");
 
 module.exports = {
   globals: {
-    React: true,
     console: true,
     window: true,
-    JSX: true,
   },
   ignorePatterns: [
     "rollup.config.mjs",
@@ -22,17 +20,11 @@ module.exports = {
     project: path.join(__dirname, 'tsconfig.eslint.json'),
     ecmaVersion: 2020,
     sourceType: "module",
-    ecmaFeatures: {
-      jsx: true,
-    },
   },
   extends: [
     "eslint:recommended",
-    "plugin:jest-dom/recommended",
-    "plugin:testing-library/react",
   ],
   plugins: [
-    "testing-library",
     "promise",
     "prettier",
     "simple-import-sort",
@@ -53,14 +45,6 @@ module.exports = {
           "index",
           "type",
         ],
-        pathGroups: [
-          {
-            pattern: "react-native",
-            group: "external",
-            position: "before",
-          },
-        ],
-        pathGroupsExcludedImportTypes: [],
         alphabetize: {
           order: "asc",
           caseInsensitive: true,
@@ -85,8 +69,6 @@ module.exports = {
     "no-unreachable": "warn",
     "import/no-anonymous-default-export": "off",
     "no-eq-null": "warn",
-    "react/no-unescaped-entities": "off",
-    "no-prototype-builtins": "off",
     "@typescript-eslint/no-unused-vars": [
       "warn",
       { argsIgnorePattern: "^_", varsIgnorePattern: "^_" },
@@ -104,15 +86,6 @@ module.exports = {
     "promise/no-new-statics": "warn",
     "promise/no-return-in-finally": "warn",
     "promise/valid-params": "warn",
-    "jest/no-disabled-tests": "off",
-    "jest/no-commented-out-tests": "off",
-
-    // Naming conventions rules
-    camelcase: ["error", { properties: "always" }],
-    "@typescript-eslint/naming-convention": [
-      "error",
-      { selector: "variable", format: ["camelCase"] },
-    ],
   },
   overrides: [
     {

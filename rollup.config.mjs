@@ -8,25 +8,29 @@ import fs from "fs";
 import nodePolyfills from "rollup-plugin-polyfill-node";
 import { terser } from "rollup-plugin-terser";
 
+// Read package.json
 const packageJson = JSON.parse(fs.readFileSync("./package.json", "utf-8"));
 
-const extensions = [".js", ".jsx", ".ts", ".tsx",  ".native.js"];
+// Detect if the build is targeting web or native
+const isWeb = process.env.BUILD_TARGET === "web"; // You can set this environment variable when running the build script
+
+const extensions = [".js", ".jsx", ".ts", ".tsx", ".native.js", ".native.tsx"];
 
 // Exclude certain dependencies from being bundled
 const external = [
   "react",
   "react-dom",
+  "react-native",
   "react-native-web",
-  "lodash.isempty",
   "color"
 ];
 
-const makeExternalPredicate = externalArr => {
+const makeExternalPredicate = (externalArr) => {
   if (externalArr.length === 0) {
     return () => false;
   }
   const pattern = new RegExp(`^(${externalArr.join("|")})($|/)`);
-  return id => pattern.test(id);
+  return (id) => pattern.test(id);
 };
 
 export default {
@@ -35,11 +39,12 @@ export default {
     {
       file: packageJson.main,
       format: "umd",
-      name: "ReactNativeSharedTypes", // Replace with your library's name
+      name: "DevlanderStyledComponentsTheme", // Your library's global variable name for UMD
       globals: {
         react: "React",
-        "react-native-web": "reactNativeWeb",
-        "lodash.isempty": "isEmpty"
+        "react-dom": "ReactDOM",
+        "react-native": "ReactNative",
+        "react-native-web": "ReactNativeWeb"
       },
       sourcemap: true,
     },
@@ -51,21 +56,16 @@ export default {
   ],
   external: makeExternalPredicate(external),
   plugins: [
-    alias({
-      entries: [
-        { find: "react-native", replacement: "react-native-web" },
-        // { find: "react-native-web/dist/exports/StyleSheet", replacement: "react-native-web/dist/exports/StyleSheet/index" },
-        // { find: "react-native-web/dist/exports/View", replacement: "react-native-web/dist/exports/View/index" },
-        // { find: "react-native-web/dist/exports/Text", replacement: "react-native-web/dist/exports/Text/index" },
-        // { find: "react-native-web/dist/exports/TextInput", replacement: "react-native-web/dist/exports/TextInput/index" },
-        // { find: "react-native-web/dist/exports/Platform", replacement: "react-native-web/dist/exports/Platform/index" },
-        // { find: "react-native-web/dist/exports/Dimensions", replacement: "react-native-web/dist/exports/Dimensions/index" },
-        // { find: "react-native-web/dist/exports/Animated", replacement: "react-native-web/dist/exports/Animated/index" },
-        // { find: "react-native-web/dist/exports/Animated/AnimatedImplementation", replacement: "react-native-web/dist/exports/Animated/AnimatedImplementation/index" },
-      
-        // Define aliases if you have some
-      ],
-    }),
+    // Apply alias only for web builds
+    ...(isWeb
+      ? [
+          alias({
+            entries: [
+              { find: "react-native", replacement: "react-native-web" }, // Alias react-native to react-native-web only for web builds
+            ],
+          }),
+        ]
+      : []),
     nodeResolve({
       extensions,
       preferBuiltins: true,
@@ -80,13 +80,13 @@ export default {
       exclude: /node_modules/,
       presets: [
         "@babel/preset-env",
-        "@babel/preset-react",
+        "@babel/preset-react", // Add React preset for JSX
         "@babel/preset-typescript",
       ],
     }),
-    typescript({ tsconfig: "./tsconfig.json" }),
-    nodePolyfills(),
-    json(),
-    terser(), // Use terser for minification
+    typescript({ tsconfig: "./tsconfig.json" }), // Compile TypeScript
+    nodePolyfills(), // Polyfills for Node.js built-in modules
+    json(), // Handle JSON imports
+    terser(), // Minification
   ],
 };

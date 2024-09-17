@@ -1,18 +1,29 @@
-import type { ColorValue, TextStyle } from 'react-native';
 import { TextStylingPropsWrapper } from '../../shared/types/text-style.types';
+import type { ColorValue, TextStyle } from 'react-native';
 
 export interface TextStylePropsNative
-  extends TextStylingPropsWrapper<any, TextStyle> {
+  extends TextStylingPropsWrapper<any, any> {
   color?: TextStyle['color'];
   fontFamily?: TextStyle['fontFamily'];
   fontSize?: TextStyle['fontSize'];
   fontStyle?: TextStyle['fontStyle'];
   /**
-   * Specifies font weight. The values 'normal' and 'bold' are supported
-   * for most fonts. Not all fonts have a variant for each of the numeric
-   * values, in that case the closest one is chosen.
+   * Specifies font weight. Only the standard React Native values are supported here.
+   * This ensures compatibility with the React Native TextStyle type.
    */
-  fontWeight?: TextStyle['fontWeight'];
+  fontWeight?:
+    | 'normal'
+    | 'bold'
+    | '100'
+    | '200'
+    | '300'
+    | '400'
+    | '500'
+    | '600'
+    | '700'
+    | '800'
+    | '900'
+    | undefined;
   letterSpacing?: TextStyle['letterSpacing'];
   lineHeight?: number | undefined;
   textAlign?: 'auto' | 'left' | 'right' | 'center' | 'justify' | undefined;

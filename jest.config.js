@@ -12,10 +12,7 @@ module.exports = {
       moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
     }
   ],
-  transformIgnorePatterns: [
-    'node_modules/(?!(react-native-responsive-fontsize)/)',
-    'node_modules/(?!(react-native-iphone-x-helper)/)', // Add the missing closing parenthesis here
-  ],
+
   globals: {
     'ts-jest': {
       tsconfig: './jest.tsconfig.json',
