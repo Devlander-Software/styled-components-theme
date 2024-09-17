@@ -1547,12 +1547,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@devlander/colors@npm:^0.0.5":
-  version: 0.0.5
-  resolution: "@devlander/colors@npm:0.0.5"
+"@devlander/colors@npm:^0.0.6":
+  version: 0.0.6
+  resolution: "@devlander/colors@npm:0.0.6"
   dependencies:
     "@devlander/utils": ^0.0.66
-  checksum: 2b1fd46c2fe21501259d96bee2f72c647b3c072e5d6fbe172276285d0b3e3e4eb4caefbc4345c2c03087bf489562ded633937864eb41e7196b29cc3e04c794f7
+  checksum: 9858c072ed0d4249ff1eacac5231e6c9cbd63183f9854cea1d2d3ec45adfb9d6e044003e16d76d73292e337dc4ef5bc83f7dbae09c7c3d3a3145655fb4627825
   languageName: node
   linkType: hard
 
@@ -1565,7 +1565,7 @@ __metadata:
     "@babel/preset-react": ^7.22.15
     "@babel/preset-typescript": ^7.23.2
     "@devlander/collect-exports-for-bundle": ^1.1.68
-    "@devlander/colors": ^0.0.5
+    "@devlander/colors": ^0.0.6
     "@devlander/utils": ^0.0.66
     "@rollup/plugin-alias": ^5.0.1
     "@rollup/plugin-auto-install": ^3.0.5
