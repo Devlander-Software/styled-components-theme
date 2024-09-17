@@ -6,6 +6,7 @@ import {
   ThemeColorAttributes,
   ThemeFontAttributes
 } from './style-attributes.interfaces';
+import { TroubleShootingProps } from './troubleshoot.interface';
 
 export interface SharedTextProperties {
   textAlign?: 'auto' | 'left' | 'right' | 'center' | 'justify' | undefined;
@@ -168,7 +169,7 @@ export interface ThemedTextStylingProps<Theme, ExpectedValueType = number>
 // It is an explicit declaration that can be useful for distinguishing between simple and themed text styles.
 export interface ResolvedThemedTextStylingProps<T, U>
   extends ThemedTextStylingProps<T, U>,
-    SharedTextProperties {
+    SharedTextProperties, TroubleShootingProps {
   // You could add more specific properties here if needed.
   theme: T;
 }

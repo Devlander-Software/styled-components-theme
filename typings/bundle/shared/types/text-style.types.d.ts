@@ -3,6 +3,7 @@ import { ColorNameOrValueFromTheme } from './color.types';
 import { FontProperty } from './font-type.enum';
 import { FontTypeWeightEnum, FontWeightType } from './font-weight.enum';
 import { ThemeColorAttributes, ThemeFontAttributes } from './style-attributes.interfaces';
+import { TroubleShootingProps } from './troubleshoot.interface';
 export interface SharedTextProperties {
     textAlign?: 'auto' | 'left' | 'right' | 'center' | 'justify' | undefined;
     textTransform?: 'uppercase' | 'lowercase' | 'capitalize' | 'none' | undefined;
@@ -86,6 +87,6 @@ export interface ThemedTextStylingProps<Theme, ExpectedValueType = number> exten
     fontType?: FontProperty;
     fontWeight?: 'normal' | 'bold' | '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900' | undefined;
 }
-export interface ResolvedThemedTextStylingProps<T, U> extends ThemedTextStylingProps<T, U>, SharedTextProperties {
+export interface ResolvedThemedTextStylingProps<T, U> extends ThemedTextStylingProps<T, U>, SharedTextProperties, TroubleShootingProps {
     theme: T;
 }

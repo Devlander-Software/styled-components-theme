@@ -5,13 +5,11 @@ exports[`getStyleForImgPropsForNative returns correct CSS string with provided s
 
         border-color: rgba(255, 255, 255, 0.5);
         border-width: 2px;
-       
-        width: 300px;
 
-        height: 150px;
         width: 300px;
+        height: 150px;
         max-width: 100px;
         max-height: 200px;
 
-          border-radius: 0px 5px 10px 0px;"
+        border-radius: 0px 5px 10px 0px;"
 `;

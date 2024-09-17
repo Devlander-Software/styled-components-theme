@@ -2,6 +2,7 @@ import { ColorValue } from 'react-native';
 import { ColorNameOrValueFromTheme } from './color.types';
 import { FontProperty } from './font-type.enum';
 import { FontTypeWeightEnum, FontWeightType } from './font-weight.enum';
+import {  TroubleShootingProps } from './troubleshoot.interface';
 
 export type FlexDirectionTypes =
   | 'row'
@@ -199,4 +200,4 @@ export interface ThemedLayoutStyleProps<Theme, CSSPropertyTypes = number>
  * Comprehensive style properties derived from the theme and layout attributes.
  */
 export interface ComprehensiveStyleProps<T, U>
-  extends ThemedLayoutStyleProps<T, U> {}
+  extends ThemedLayoutStyleProps<T, U>, TroubleShootingProps {}

@@ -1,7 +1,5 @@
 import { WebTheme } from '../../../shared/types/base-theme-types';
-import { ImageStyleFromProps } from "../../../shared/types/img-style-props";
-
-
+import { ImageStyleFromProps } from '../../../shared/types/img-style-props';
 
 export const getStyleForImgPropsForWeb = ({
   backgroundColorFromTheme,
@@ -17,8 +15,9 @@ export const getStyleForImgPropsForWeb = ({
   borderWidth,
   borderBottomLeftRadius,
   borderTopLeftRadius,
-}: ImageStyleFromProps<WebTheme, number | string>): string =>
-  `
+  debug,
+}: ImageStyleFromProps<WebTheme, number | string>): string => {
+  const css = `
         ${
           backgroundColorFromTheme
             ? `background-color: ${theme.colorThemeHandler(
@@ -72,3 +71,10 @@ export const getStyleForImgPropsForWeb = ({
 
 
     `;
+
+  if (debug && typeof debug === 'boolean' && debug === true) {
+    console.log(css, 'this is css in getStyleForImgProps.web');
+  }
+
+  return css;
+};

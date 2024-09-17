@@ -2,6 +2,7 @@ import { ColorValue } from 'react-native';
 import { ColorNameOrValueFromTheme } from './color.types';
 import { FontProperty } from './font-type.enum';
 import { FontTypeWeightEnum, FontWeightType } from './font-weight.enum';
+import { TroubleShootingProps } from './troubleshoot.interface';
 export type FlexDirectionTypes = 'row' | 'column' | 'row-reverse' | 'column-reverse' | '-moz-initial' | 'inherit' | 'initial' | 'revert' | 'revert-layer' | 'unset' | undefined;
 export type JustifyContentTypes = 'flex-start' | 'flex-end' | 'center' | 'space-between' | 'space-around' | 'space-evenly' | undefined;
 export type AlignItemTypes = 'center' | 'flex-start' | 'flex-end' | 'stretch' | undefined;
@@ -143,5 +144,5 @@ export interface ThemedLayoutStyleProps<Theme, CSSPropertyTypes = number> extend
 /**
  * Comprehensive style properties derived from the theme and layout attributes.
  */
-export interface ComprehensiveStyleProps<T, U> extends ThemedLayoutStyleProps<T, U> {
+export interface ComprehensiveStyleProps<T, U> extends ThemedLayoutStyleProps<T, U>, TroubleShootingProps {
 }

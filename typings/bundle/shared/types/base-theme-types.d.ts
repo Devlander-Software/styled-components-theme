@@ -10,7 +10,8 @@ import type { FontSizePropsHandler } from './font-size-handler.type';
 import type { FontWeightType } from './font-weight.enum';
 import type { FontType, FontsInterface } from './fonts.interface';
 import type { FontSizeCap } from '../utils/cap-font-size';
-import type { AdjustColorFunc } from '@devlander/colors';
+import type { AlphaScale } from '@devlander/colors/typings/types/alpha-scale.type';
+import type { ThemeType } from '@devlander/colors/typings/types/theme.type';
 export interface FontThemeHandler<T> {
     (fontType: FontType, fontTypeWeight: FontWeightType, theme: T): string;
 }
@@ -26,7 +27,7 @@ export interface ThemedPropsToValueMapper<ThemeProps, AdditionalProps = {
     (props: ThemeProps & AdditionalProps): OutputValue;
 }
 export interface GhostStyleGenerator<T> {
-    (ghost: boolean, disabled: boolean, theme: T, colorOne: ColorNameOrValueFromTheme, colorTwo: ColorNameOrValueFromTheme): string;
+    (ghost: boolean, disabled: boolean, theme: T, colorOne: ColorNameOrValueFromTheme, colorTwo: ColorNameOrValueFromTheme, debug?: boolean): string;
 }
 export type PaddingOnThemeType = {
     paddingForScrollView: number;
@@ -40,6 +41,9 @@ export type ImageStyleGenerator<T, InputType = number> = ThemedPropsToValueMappe
 export type ButtonStyleGenerator<T, InputType = number> = ThemedPropsToValueMapper<T, ButtonStyleFromProps<T, InputType>, string>;
 export type TextStyleGenerator<T, InputType = number> = ThemedPropsToValueMapper<T, ResolvedThemedTextStylingProps<T, InputType>, string>;
 export type LayoutStyleGenerator<T, InputType = number> = ThemedPropsToValueMapper<T, ComprehensiveStyleProps<T, InputType>, string>;
+export interface AdjustColorFunc {
+    (colorValue: string, alphaValue: AlphaScale, mode: ThemeType, cssColorNames?: string[], debug?: boolean): string;
+}
 export interface BaseThemeFunctions<T, ExpectingNumOrString> {
     fontSizeCap: FontSizeCap;
     colorThemeHandler: ColorThemeHandler<T>;
@@ -62,6 +66,7 @@ export interface ThemeBase {
     darkThemeEnabled?: boolean;
     paddingOnTheme?: PaddingOnThemeType;
     elevation?: ElevationType;
+    debug?: boolean;
     deviceOnTheme: DeviceOnTheme;
 }
 export interface GenericTheme<ExpectingNumOrString> extends ThemeBase, BaseThemeFunctions<GenericTheme<ExpectingNumOrString>, ExpectingNumOrString> {

@@ -1,6 +1,6 @@
 {
   "name": "@devlander/styled-components-theme",
-  "version": "1.1.259",
+  "version": "1.1.260",
   "license": "ISC",
   "type": "commonjs",
   "main": "dist/umd/index.js",
@@ -53,11 +53,13 @@
   "peerDependencies": {
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0",
-    "react-native-web": "0.x.x"
+    "react-native-web": "0.x.x",
+    "colors": "*"
+
   },
   "dependencies": {
     "@devlander/colors": "^0.0.6",
-    "@devlander/utils": "^0.0.66"
+    "@devlander/utils": "^0.0.72"
   },
   "prettier": {
     "printWidth": 80,

@@ -1,4 +1,6 @@
+
 import { Platform } from 'react-native';
+import { logSeparator, logEnd, logFunction, logStart } from '@devlander/utils';
 import {
   NativeTheme,
   TextStyleGenerator,
@@ -18,12 +20,27 @@ export const getStyleForTextPropsForNative: TextStyleGenerator<
     textColorFromTheme,
     fontType,
     fontTypeWeight,
+    debug,
     fontWeight,
     color,
     ...restProps
   } = props;
 
-  // if there is a value for value, prioritize that over over textColorFromTheme
+  const debugModeEnabled =
+    debug && typeof debug === 'boolean' && debug === true;
+
+  if (debugModeEnabled) {
+    logStart(
+      'getStyleForTextPropsForNative',
+      'get-style-for-text-props.native'
+    );
+    logFunction(
+      'getStyleForTextPropsForNative',
+      { props },
+      '1. - Initial props'
+    );
+    logSeparator();
+  }
 
   const unitPropsHandler = theme?.unitPropsHandler ?? null;
   const colorThemeHandler = theme?.colorThemeHandler ?? null;
@@ -38,17 +55,8 @@ export const getStyleForTextPropsForNative: TextStyleGenerator<
     if (restProps.highlight) {
       return theme.colors.accent;
     }
-    if (
-      textColorFromTheme &&
-      typeof colorThemeHandler === 'function' &&
-      typeof textColorFromTheme !== 'undefined'
-    ) {
-      const color: string = theme.colorThemeHandler(
-        textColorFromTheme,
-        1,
-        theme
-      );
-      return color;
+    if (textColorFromTheme && typeof colorThemeHandler === 'function') {
+      return theme.colorThemeHandler(textColorFromTheme, 1, theme);
     }
     if (restProps.destructive) {
       return theme.colors.error;
@@ -77,10 +85,7 @@ export const getStyleForTextPropsForNative: TextStyleGenerator<
   ];
 
   const fontFamilyProperties =
-    fontType &&
-    fontTypeWeight &&
-    typeof fontTypeWeight !== 'undefined' &&
-    handleFontFromTheme
+    fontType && fontTypeWeight && handleFontFromTheme
       ? `font-family: ${handleFontFromTheme(fontType, fontTypeWeight, theme)};`
       : handleFontFromTheme
       ? `font-family: ${handleFontFromTheme(
@@ -107,7 +112,6 @@ export const getStyleForTextPropsForNative: TextStyleGenerator<
     restProps.textDecorationLine && restProps.textDecorationLine !== 'none'
       ? `text-decoration-line: ${restProps.textDecorationLine};`
       : '',
-
     restProps.flex ? `flex: ${restProps.flex};` : '',
     fontWeight ? `font-weight: ${fontWeight};` : '',
     restProps.paddingLeft
@@ -143,7 +147,6 @@ export const getStyleForTextPropsForNative: TextStyleGenerator<
     restProps.shadowOpacity
       ? `text-shadow-opacity: ${restProps.shadowOpacity};`
       : '',
-
     restProps.shadowOffsetX || restProps.shadowOffsetY
       ? `text-shadow-offset: ${unitPropsHandler(
           restProps.shadowOffsetX || 0
@@ -164,7 +167,22 @@ export const getStyleForTextPropsForNative: TextStyleGenerator<
   }
 
   const css = cssProperties.filter(Boolean).join('\n');
-  // console.log('css', css);
+
+  if (debugModeEnabled) {
+    logFunction(
+      'getStyleForTextPropsForNative',
+      { cssProperties },
+      '2. - CSS properties'
+    );
+    logSeparator();
+    logFunction(
+      'getStyleForTextPropsForNative',
+      css,
+      '3. - Final CSS before return'
+    );
+    logSeparator();
+    logEnd('getStyleForTextPropsForNative');
+  }
 
   return css;
 };

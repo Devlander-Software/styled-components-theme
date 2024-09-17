@@ -1,4 +1,5 @@
 import { ColorNameOrValueFromTheme } from './color.types';
+import { TroubleShootingProps } from './troubleshoot.interface';
 export interface ImageStyle<ValueType = number> {
     backgroundColorFromTheme: ColorNameOrValueFromTheme;
     maxWidth: ValueType;
@@ -13,8 +14,8 @@ export interface ImageStyle<ValueType = number> {
     borderBottomLeftRadius: ValueType;
     borderTopLeftRadius: ValueType;
 }
-export interface ImageStyleWithThemeGeneric<Theme, CSSPropertyTypes = number> extends ImageStyle<CSSPropertyTypes> {
+export interface ImageStyleWithThemeGeneric<Theme, CSSPropertyTypes = number> extends ImageStyle<CSSPropertyTypes>, TroubleShootingProps {
     theme: Theme;
 }
-export interface ImageStyleFromProps<T, U> extends ImageStyleWithThemeGeneric<T, U> {
+export interface ImageStyleFromProps<T, U> extends ImageStyleWithThemeGeneric<T, U>, TroubleShootingProps {
 }
