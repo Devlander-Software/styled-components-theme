@@ -1,12 +1,11 @@
-import { PaddingOnThemeType } from "../../../shared/types/base-theme-types";
-export declare const dimensionsModuleForNative: () => {
+import { PaddingOnThemeType } from '../../../shared/types/base-theme-types';
+export declare const dimensionsModuleForNative: (debug?: boolean) => {
     statusBarHeight: number;
-    windowHeight: any;
-    windowWidth: any;
-    screenHeight: any;
-    screenWidth: any;
+    windowHeight: number;
+    windowWidth: number;
+    screenHeight: number;
+    screenWidth: number;
     paddingForScrollView: number;
     paddingForScrollViewTwo: number;
     paddingObj: PaddingOnThemeType;
 };
-export default dimensionsModuleForNative;

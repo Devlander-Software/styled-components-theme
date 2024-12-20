@@ -1,5 +1,5 @@
-import type React from 'react';
 import { WebTheme } from '../../shared/types/base-theme-types';
+import type React from 'react';
 export interface HtmlSpanInterface extends Partial<React.HTMLProps<HTMLSpanElement>> {
     fontSize?: number;
     color?: string;

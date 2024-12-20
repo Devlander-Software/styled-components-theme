@@ -27,3 +27,4 @@ export declare enum TextContentTypeEnum {
     newPassword = "newPassword",
     oneTimeCode = "oneTimeCode"
 }
+export type TextContentTypeValue = `${TextContentTypeEnum}` | TextContentTypeEnum;

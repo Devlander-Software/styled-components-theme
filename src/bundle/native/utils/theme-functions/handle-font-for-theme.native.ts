@@ -1,5 +1,5 @@
-import { Platform } from 'react-native';
 import { logSeparator, logEnd, logFunction, logStart } from '@devlander/utils';
+import { Platform } from 'react-native';
 import { defaultFonts } from '../../../shared/defaults/fonts.defaults';
 import {
   FontThemeHandler,
@@ -14,11 +14,16 @@ export const handleFontFromThemeForNative: FontThemeHandler<NativeTheme> = (
   fontTypeWeight: FontWeightType = 'bold',
   theme: NativeTheme
 ): string => {
-  const debugModeEnabled = theme?.debug && typeof theme.debug === 'boolean' && theme.debug === true;
+  const debugModeEnabled =
+    theme?.debug && typeof theme.debug === 'boolean' && theme.debug === true;
 
   if (debugModeEnabled) {
     logStart('handleFontFromThemeForNative', 'font-theme-handler.native');
-    logFunction('handleFontFromThemeForNative', { fontType, fontTypeWeight }, '1. - Initial parameters');
+    logFunction(
+      'handleFontFromThemeForNative',
+      { fontType, fontTypeWeight },
+      '1. - Initial parameters'
+    );
     logSeparator();
   }
 
@@ -27,7 +32,11 @@ export const handleFontFromThemeForNative: FontThemeHandler<NativeTheme> = (
   let fontToReturn = defaultFonts.Font1.name;
 
   if (debugModeEnabled) {
-    logFunction('handleFontFromThemeForNative', { isPlatformDefined, tempFontType }, '2. - Platform and fontType check');
+    logFunction(
+      'handleFontFromThemeForNative',
+      { isPlatformDefined, tempFontType },
+      '2. - Platform and fontType check'
+    );
     logSeparator();
   }
 
@@ -45,7 +54,11 @@ export const handleFontFromThemeForNative: FontThemeHandler<NativeTheme> = (
       fontToReturn = webFont;
 
       if (debugModeEnabled) {
-        logFunction('handleFontFromThemeForNative', webFont, '3. - Web font returned');
+        logFunction(
+          'handleFontFromThemeForNative',
+          webFont,
+          '3. - Web font returned'
+        );
         logSeparator();
       }
     }
@@ -59,7 +72,11 @@ export const handleFontFromThemeForNative: FontThemeHandler<NativeTheme> = (
       fontToReturn = theme.fonts[fontType][fontTypeWeight];
 
       if (debugModeEnabled) {
-        logFunction('handleFontFromThemeForNative', fontToReturn, '4. - Non-web font returned');
+        logFunction(
+          'handleFontFromThemeForNative',
+          fontToReturn,
+          '4. - Non-web font returned'
+        );
         logSeparator();
       }
     }
@@ -67,14 +84,22 @@ export const handleFontFromThemeForNative: FontThemeHandler<NativeTheme> = (
     fontToReturn = theme.fonts.Font2.name as string;
 
     if (debugModeEnabled) {
-      logFunction('handleFontFromThemeForNative', fontToReturn, '5. - Default web font returned');
+      logFunction(
+        'handleFontFromThemeForNative',
+        fontToReturn,
+        '5. - Default web font returned'
+      );
       logSeparator();
     }
   } else {
     fontToReturn = theme.fonts.Font2.bold as string;
 
     if (debugModeEnabled) {
-      logFunction('handleFontFromThemeForNative', fontToReturn, '6. - Default font returned');
+      logFunction(
+        'handleFontFromThemeForNative',
+        fontToReturn,
+        '6. - Default font returned'
+      );
       logSeparator();
     }
   }

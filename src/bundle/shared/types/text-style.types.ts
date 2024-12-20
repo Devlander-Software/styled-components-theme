@@ -135,7 +135,7 @@ export interface ThemedTextStylingProps<Theme, ExpectedValueType = number>
   textColorFromTheme?: ColorNameOrValueFromTheme;
   textColorNameOrValueFromTheme?: ColorNameOrValueFromTheme;
   color?: string;
-  fontTypeWeight?: FontWeightType | FontTypeWeightEnum;
+  fontTypeWeight?: FontWeightType | FontTypeWeightEnum
   focused?: boolean;
   maxFontSize?: number;
   textAlign?: 'auto' | 'left' | 'right' | 'center' | 'justify' | undefined;

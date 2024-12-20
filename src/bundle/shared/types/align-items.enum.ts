@@ -5,3 +5,6 @@ export enum AlignItemsEnum {
   stretch = 'stretch',
   baseline = 'baseline',
 }
+
+
+export type AlignItemType = `${AlignItemsEnum}` | AlignItemsEnum;

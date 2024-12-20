@@ -1,3 +1,4 @@
+import React from 'react';
 import type { ColorFromTheme, ColorNameOrValueFromTheme } from './color.types';
 import type { LayoutStyleProps } from './style-attributes.interfaces';
 

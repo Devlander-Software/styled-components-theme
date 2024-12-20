@@ -1,7 +1,7 @@
-import type React from 'react';
 import { WebTheme } from '../../shared/types/base-theme-types';
 import { TextFontWeightTypesEnum } from '../../shared/types/font-weight.types';
 import { TextDecorationLineTypes } from '../../shared/types/text-decoration-line-types.enum';
+import type React from 'react';
 export interface HtmlParagraphInterface extends Partial<React.HTMLProps<HTMLParagraphElement>> {
     fontSize?: number;
     color?: string;

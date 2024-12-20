@@ -3,3 +3,6 @@ export enum ButtonVariantEnum {
   outlined = 'outlined',
   contained = 'contained',
 }
+
+
+export type ButtonVariantType = 'text' | 'outlined' | 'contained' | `${ButtonVariantEnum}` | ButtonVariantEnum;

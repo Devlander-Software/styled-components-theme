@@ -1,6 +1,6 @@
 
 
-import { CSSProperties } from "react"
+import React, { CSSProperties } from "react"
 import { AutoCapitalizeEnum } from "../../shared/types/auto-capatlize.enum"
 import { WebTheme } from '../../shared/types/base-theme-types'
 import { DataDetectorEnum } from "../../shared/types/data-detector.enum"
@@ -31,11 +31,11 @@ export interface ParagraphTag extends ThemedTextStylingProps<WebTheme, any> {
 export interface HtmlFormInputGroupProps extends Partial<HTMLInputElement> {
     opacity?: number;
     dense?: boolean;
-    renderRight?: () => JSX.Element;
+    renderRight?: () => React.JSX.Element;
     containerStyleProps?: CSSProperties;
     containerStyleFromTheme?: LayoutStyleProperties<string | number>;
   
-    renderBottom?: () => JSX.Element | null;
+    renderBottom?: () => React.JSX.Element | null;
     dataDetectorTypes?: DataDetectorEnum;
     textContentType?: TextContentTypeEnum;
     keyboardType?: KeyBoardTypeEnum;

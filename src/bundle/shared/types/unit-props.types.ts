@@ -13,8 +13,10 @@ export enum UnitOfMeasurementNative {
     PERCENT = '%',
   }
   
-  export type UnitOfMeasurement = UnitOfMeasurementNative | UnitOfMeasurementWeb;
+  export type UnitOfMeasurement = UnitOfMeasurementNative | UnitOfMeasurementWeb 
   
   export interface UnitPropsHandler {
     (units?: any, unitOfMeasurement?: UnitOfMeasurement): any;
   }
+
+

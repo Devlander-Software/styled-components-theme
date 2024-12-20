@@ -3680,3 +3680,6 @@ export type NameOfIoniconIcon =
   | 'md-woman'
   | 'md-woman-outline'
   | 'md-woman-sharp';
+
+
+  export type IoniconIconNameType = `${NameOfIoniconIcon}` |NameOfIoniconIcon

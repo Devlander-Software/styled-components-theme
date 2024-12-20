@@ -1005,3 +1005,4 @@ export declare enum FontAwesomeIconNames {
     'meetup' = 785
 }
 export type IconNames = NameOfMaterialIcon | NameOfIoniconIcon | NameOfFontAwesomeIcon;
+export type IconNamesType = `${IconNames}` | IconNames;

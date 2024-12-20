@@ -38,3 +38,4 @@ export declare enum AutoCompleteTypeEnum {
     'off' = 36,
     undefined = 37
 }
+export type AutoCompleteType = `${AutoCompleteTypeEnum}` | AutoCompleteTypeEnum;

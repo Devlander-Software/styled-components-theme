@@ -4,3 +4,5 @@ export enum AutoCapitalizeEnum {
     sentences = 'sentences',
     characters = 'characters',
   }
+
+  export type AutoCapitalizeType = `${AutoCapitalizeEnum}` | AutoCapitalizeEnum;

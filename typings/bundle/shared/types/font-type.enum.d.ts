@@ -5,4 +5,4 @@ export declare enum FontTypeEnum {
     CondensedFont = "CondensedFont"
 }
 export type FontName = 'Font1' | 'Font2' | 'Font3' | 'CondensedFont';
-export type FontProperty = FontName | FontTypeEnum;
+export type FontProperty = FontName | FontTypeEnum | `${FontTypeEnum}`;

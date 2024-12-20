@@ -3,3 +3,6 @@ export enum TextTransformTypes {
   uppercase = 'uppercase',
   lowercase = 'lowercase',
 }
+
+
+export type TextTransformType = `${TextTransformTypes}` | TextTransformTypes;

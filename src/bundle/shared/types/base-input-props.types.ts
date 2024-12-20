@@ -1,3 +1,5 @@
+import { JSX } from 'react';
+
 export interface BaseTextInputProps<
   ContainerStyleProps,
   OnChangeText,

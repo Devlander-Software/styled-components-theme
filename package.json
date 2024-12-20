@@ -1,6 +1,6 @@
 {
   "name": "@devlander/styled-components-theme",
-  "version": "1.1.261",
+  "version": "1.1.262",
   "license": "ISC",
   "type": "commonjs",
   "main": "dist/umd/index.js",
@@ -32,7 +32,6 @@
   },
   "homepage": "https://github.com/Devlander-Software/styled-components-theme#readme",
   "scripts": {
-    "check-packages-dependencies": "npx check-package-dependencies",
     "build": "yarn run prep-build && yarn run rollup",
     "test": "jest",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx ./src --fix",
@@ -42,6 +41,8 @@
     "prep-build": "npx rimraf ./dist && npx rimraf ./typings",
     "docs": "typedoc --out ./docs ./src",
     "build:index": "cd ./src && yarn run build",
+    "web": "cd ./examples/apps/react-example && yarn add @devlander/shared-react-native-types && yarn run dev",
+    "native": "cd ./examples/apps/react-native-example && yarn add @devlander/shared-react-native-types && yarn run dev",
     "test:coverage": "jest --coverage",
     "prepare": "yarn run build",
     "size": "size-limit",
@@ -50,9 +51,13 @@
     "test:failed": "jest --onlyFailures"
   },
   "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0",
+    "react-native-web": "0.x.x"
+  },
+  "dependencies": {
     "@devlander/colors": "^0.0.6",
-    "@devlander/utils": "^0.0.72",
-    "colors": "*"
+    "@devlander/utils": "^0.0.72"
   },
   "prettier": {
     "printWidth": 80,
@@ -61,14 +66,6 @@
     "trailingComma": "es5"
   },
   "author": "Landon Johnson / Devlander",
-  "dependencies": {
-    "@devlander/colors": "^0.0.6",
-    "@devlander/utils": "^0.0.72",
-    "colors": "*",
-    "react": "^18.3.1",
-    "react-native": "^0.75.3",
-    "react-native-web": "^0.19.12"
-  },
   "devDependencies": {
     "@babel/core": "^7.23.2",
     "@babel/preset-env": "^7.23.2",
@@ -81,6 +78,7 @@
     "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-typescript": "^11.1.5",
+    "@types/jest": "^29.5.13",
     "@types/react-native": "^0.72.5",
     "@typescript-eslint/eslint-plugin": "^6.9.0",
     "@typescript-eslint/parser": "^6.8.0",
@@ -100,11 +98,12 @@
     "rollup-plugin-polyfill-node": "^0.12.0",
     "rollup-plugin-terser": "^7.0.2",
     "size-limit": "^10.0.1",
-    "ts-jest": "^29.1.1",
+    "ts-jest": "^29.2.5",
     "tslib": "^2.7.0",
     "typescript": "^5.2.2"
   },
   "workspaces": [
     "./src"
-  ]
+  ],
+  "private": true
 }

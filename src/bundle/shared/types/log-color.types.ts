@@ -12,3 +12,5 @@ export enum TColor {
 }
 
 export type TColorValue = keyof typeof TColor;
+
+export type TColorType = `${TColor}` | TColor;

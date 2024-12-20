@@ -38,3 +38,5 @@ export enum AutoCompleteTypeEnum {
     'off',
     undefined,
   }
+
+  export type AutoCompleteType = `${AutoCompleteTypeEnum}` | AutoCompleteTypeEnum;

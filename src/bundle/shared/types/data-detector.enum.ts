@@ -5,3 +5,6 @@ export enum DataDetectorEnum {
     link = 'link',
     calendarEvent = 'calendarEvent',
   }
+
+
+  export type DataDetectorType = `${DataDetectorEnum}` | DataDetectorEnum;

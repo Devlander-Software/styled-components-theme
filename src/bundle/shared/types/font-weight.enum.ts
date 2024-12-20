@@ -11,4 +11,4 @@ export type FontTypeWeight = {
   bold: string;
 };
 
-export type FontWeightType = 'name' | 'light' | 'regular' | 'bold';
+export type FontWeightType = 'name' | 'light' | 'regular' | 'bold' | `${FontTypeWeightEnum}` | FontTypeWeightEnum;

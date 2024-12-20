@@ -9,6 +9,7 @@
     "jest.config.js",
     "build-script.config.js",
     "test/**/*",
+    "**/*.types.web.ts",
     "load-env.js",       
     ".eslintrc.js"       
   ],

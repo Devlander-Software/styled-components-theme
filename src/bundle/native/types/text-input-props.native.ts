@@ -1,7 +1,8 @@
-import type { TextInputProps } from 'react-native';
+import React from 'react';
 import { ViewStyle } from 'react-native';
 import { BaseTextInputProps } from '../../shared/types/base-input-props.types';
 import { LayoutStyleProps } from '../../shared/types/style-attributes.interfaces';
+import type { TextInputProps } from 'react-native';
 
 interface NativeInputProps
   extends BaseTextInputProps<
@@ -22,7 +23,7 @@ export interface FormInputGroupPropsForNative
     NativeInputProps {
   opacity?: number;
   dense?: boolean;
-  renderRight?: () => JSX.Element | null;
+  renderRight?: () => React.JSX.Element | null;
   onChangeText: TextInputProps['onChangeText'];
   onSubmitEditing: TextInputProps['onSubmitEditing'];
   keyboardType?: TextInputProps['keyboardType'];

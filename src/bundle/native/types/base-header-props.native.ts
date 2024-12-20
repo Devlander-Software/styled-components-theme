@@ -1,13 +1,15 @@
+import React from 'react';
 
-import type { TextStyle, ViewProps } from 'react-native';
 import { ColorNameOrValueFromTheme } from '../../shared/types/color.types';
 import { ThemeColorAttributes } from '../../shared/types/style-attributes.interfaces';
+import type { TextStyle, ViewProps } from 'react-native';
 
-export interface BaseHeaderPropsInterface extends Partial<ThemeColorAttributes> {
+export interface BaseHeaderPropsInterface 
+  extends Partial<ThemeColorAttributes> {
   backgroundColorFromTheme?: ColorNameOrValueFromTheme;
   subTitle?: string;
   nestedScreen?: boolean;
-  subHeader?: () => JSX.Element;
+  subHeader?: () => React.JSX.Element;
   onGoBack: () => void;
   title: string;
   applyGoBackToTitle?: boolean;
@@ -18,6 +20,6 @@ export interface BaseHeaderPropsInterface extends Partial<ThemeColorAttributes> 
   titleStyle?: TextStyle;
   containerStyle?: ViewProps;
   contentStyle?: ViewProps;
-  headerRightButton?: () => JSX.Element;
-  headerLeftButton?: () => JSX.Element;
+  headerRightButton?: () => React.JSX.Element;
+  headerLeftButton?: () => React.JSX.Element;
 }

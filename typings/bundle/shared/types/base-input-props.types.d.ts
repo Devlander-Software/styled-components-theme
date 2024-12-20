@@ -1,4 +1,4 @@
-/// <reference types="react" />
+import { JSX } from 'react';
 export interface BaseTextInputProps<ContainerStyleProps, OnChangeText, OnSubmitEditing, KeyboardType, AutoCapitalize> {
     renderBottom?: () => JSX.Element | null;
     onChangeText: OnChangeText;

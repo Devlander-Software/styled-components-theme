@@ -1,6 +1,6 @@
 {
     "name": "main",
-    "version": "1.0.199",
+    "version": "1.0.200",
     "license": "MIT",
     "main": "index.tsx",
     "engines": {
@@ -12,13 +12,23 @@
         "build": "npm run build:imports && npm run build:types"
     },
     "peerDependencies": {
-        "@devlander/colors": "*",
-        "color": "*"
+        "react": ">=16.8.0",
+        "react-dom": ">=16.8.0",
+        "react-native-web": "0.x.x"
     },
     "author": "Landon Johnson",
+    "dependencies": {
+        "lodash.isempty": "4.4.0",
+        "react-native-responsive-fontsize": "0.5.1"
+    },
     "devDependencies": {
         "@types/color": "3.0.4",
+        "color": "4.2.3",
         "hex-to-rgba": "2.0.1",
+        "lodash.isempty": "4.4.0",
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
+        "react-native-web": "^0.19.9",
         "typescript": "^5.2.2"
     }
 }

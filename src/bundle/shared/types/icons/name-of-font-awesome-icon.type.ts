@@ -785,3 +785,6 @@ export type NameOfFontAwesomeIcon =
   | 'superpowers'
   | 'wpexplorer'
   | 'meetup';
+
+
+  export type FontAwesomeIconNameType = `${NameOfFontAwesomeIcon}` | NameOfFontAwesomeIcon;

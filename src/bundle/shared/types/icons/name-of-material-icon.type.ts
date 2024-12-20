@@ -1561,3 +1561,6 @@ export type NameOfMaterialIcon =
   | 'wysiwyg'
   | 'youtube-searched-for'
   | 'zoom-out-map';
+
+
+  export type MaterialIconNameType = `${NameOfMaterialIcon}` |NameOfMaterialIcon

@@ -1015,3 +1015,6 @@ export type IconNames =
   | NameOfMaterialIcon
   | NameOfIoniconIcon
   | NameOfFontAwesomeIcon;
+
+
+  export type IconNamesType = `${IconNames}` | IconNames;

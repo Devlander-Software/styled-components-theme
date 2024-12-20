@@ -1,5 +1,8 @@
-import { AutoCapitalizeEnum } from './auto-capatlize.enum';
-import { KeyBoardTypeEnum } from './keyboard-type.enum';
+import {  AutoCapitalizeType } from './auto-capatlize.enum';
+import {
+
+  KeyboardTypeValue,
+} from './keyboard-type.enum';
 import type { BaseTextInputProps } from './base-input-props.types';
 import type { IconNames } from './icons/icon-names.enum';
 
@@ -7,8 +10,8 @@ export interface SecureInputProps<
   ContainerStyleProps = {},
   OnChangeText = (text: string) => void,
   OnSubmitEditing = (e: any) => void,
-  KeyboardType = KeyBoardTypeEnum,
-  AutoCapitalize = AutoCapitalizeEnum,
+  KeyboardType = KeyboardTypeValue,
+  AutoCapitalize = AutoCapitalizeType,
 > extends BaseTextInputProps<
     ContainerStyleProps,
     OnChangeText,

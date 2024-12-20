@@ -6,3 +6,6 @@ export enum JustifyContentEnum {
   spaceAround = 'space-around',
   spaceEvenly = 'space-evenly',
 }
+
+
+export type JustifyContentType = `${JustifyContentEnum}` | JustifyContentEnum;

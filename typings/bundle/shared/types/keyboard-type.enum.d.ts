@@ -6,3 +6,4 @@ export declare enum KeyBoardTypeEnum {
     emailAddress = "email-address",
     phonePad = "phone-pad"
 }
+export type KeyboardTypeValue = `${KeyBoardTypeEnum}` | KeyBoardTypeEnum;

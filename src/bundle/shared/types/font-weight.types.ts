@@ -11,6 +11,10 @@ export enum TextFontWeightTypesEnum {
   eightHundred = '800',
   nineHundred = '900',
   light = 'light',
+  lighter = 'lighter',
+  bolder = 'bolder',
+  inherit = 'inherit',
+  
 }
 
 export const textFontWeightTypes = [
@@ -18,4 +22,7 @@ export const textFontWeightTypes = [
   undefined,
 ];
 
-export type TextFontWeightType = typeof textFontWeightTypes;
+export type TextFontWeightType =
+  | typeof textFontWeightTypes
+  | `${TextFontWeightTypesEnum}`
+  | TextFontWeightTypesEnum       
