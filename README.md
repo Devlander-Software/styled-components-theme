@@ -1,326 +1,195 @@
 
+# Devlander's Styled Components Theme
 
+Devlander's Styled Components Theme is a powerful and type-safe solution for managing themes in React and React Native projects. This package ensures consistency, type safety, and reusable utility colors, fonts, and styles, making it an essential tool for developers looking to create scalable and maintainable design systems.
 
-# Devlander's Shared React Native Types
+## Why Use Devlander's Styled Components Theme?
 
-Devlander's team utilizes this package during the development of their React Native projects. Its primary purpose is to facilitate code reuse by sharing types across multiple projects that uses the styled-components library. 
+### Key Benefits:
+- **Type Safety**: Enforce strict types for colors, fonts, and utilities to eliminate errors and improve maintainability.
+- **Reusable Utilities**: Simplify development with pre-defined utility functions for colors, responsive font sizes, and unit conversions.
+- **Cross-Platform Support**: Ensure seamless integration and consistent themes across React and React Native projects.
+- **Standardized Design Systems**: Avoid mixing themes and naming conventions by adhering to a unified structure.
 
-# Purpose
+By using this package, development teams can establish a single source of truth for themes, eliminating redundant setup and ensuring a cohesive design system.
 
-- Promote consistency across styled components, design systems, and apps by leveraging shared utilities and types, eliminating the need to retype static types in each project.
-- Enable type sharing between React Native and React.
-- Facilitate utility sharing between React Native and React.
+## Features
+- **Strict Type Definitions**: Prevent errors with type-safe themes for colors and fonts.
+- **Dynamic Theme Switching**: Easily toggle between light and dark themes.
+- **Pre-Defined Utility Colors**: Use reusable color utilities for consistent design across projects.
+- **Responsive Font Sizes**: Built-in tools for handling responsive typography.
+- **Cross-Platform Compatibility**: Works seamlessly with both React and React Native.
 
-# Styled Components: Colors and Functions
+## Installation
 
-All theme colors and utilities are centralized in Devlander React Native Shared Types. Within this package, we provide several built-in functions:
+Add the package to your project using Yarn or npm:
 
-- **getStyleForTextProps**: Converts CSS with custom props and units.
-- **getStyleForContainerProps**: Manages predefined CSS properties and units.
-- **handleGhost**: Takes two colors and swaps them to generate ghost buttons.
-- **getStyleForImageProps**: Simplifies image styling.
-- **unitPropsHandler**: Handles units, whether expressed as strings or numbers, and appends appropriate metrics.
-- **handleFontSizeProps**: Provides responsive design flexibility by defining **fontSize** and maxFontSize for text elements.
-- **deviceOnTheme**: Reflects the current device's dimensions. This is essential when adapting UI elements based on device size. This attribute is updated within the **ThemeProvider**.
-
-# Working with Colors
-
-Throughout this project, you'll frequently encounter the **ColorFromTheme** type. Most styled components won't accept just any "color" prop with a hex value. The color input should be either a key from the **ColorsInterface** or a valid hex code present within the designated dark or light theme color set. While there are default colors within the theme, you have the flexibility to customize them during your theme initialization in **styled.d.ts**
-
-## Setup
-
-### Install
-
-Using Yarn
-
+### Yarn
 ```bash
-yarn add  @devlander/shared-react-native-types
+yarn add @devlander/styled-components-theme
 ```
 
-Or npm
-
+### npm
 ```bash
-npm install @devlander/shared-react-native-types
+npm install @devlander/styled-components-theme
 ```
 
-### Initialize the theme
+## Getting Started
 
-For traditional react
+### 1. Initialize Your Theme
 
+#### React Example
 ```typescript
-// theme.tsx
+import { createThemeForWeb } from "@devlander/styled-components-theme";
+import { lightTheme } from "./colors.util";
+import { fontOptions } from "./fonts.util";
 
-import { createThemeForWeb } from "@devlander/shared-react-native-types";
-import { fontOptions } from "./fonts";
-
-export const theme = createThemeForWeb();
-```
-
-For React Native
-
-```typescript
-import { createThemeForNative } from "@devlander/shared-react-native-types";
-import { fontOptions } from "./fonts";
-
-export const theme = createThemeForNative();
-```
-
-You can update the colors and font preferences by passing in a custom **ColorsInterface**, or **FontInterface** as well as updating the theme.
-
-```typescript
-// theme.tsx
-
-import {
-  ColorsInterface,
-  DeviceOnTheme,
-  boxShadowFuncInterface,
-  createThemeForWeb,
-} from "@devlander/shared-react-native-types";
-import { fontOptions } from "./fonts";
-
-const lightTheme: ColorsInterface = {
-  // customize your colors here
-};
-
-const fontOptions: FontInterface = {
-  // customize fonts here
-};
-
-const deviceOnTheme: DeviceOnTheme = {
-  screenWidth: 0,
-  statusBarHeight: 0,
-  screenHeight: 0,
-  isTablet: false,
-  hasNotch: false,
-  hasDynamicIsland: false,
-  platform: "ios",
-};
-
-export const themeForWeb = createThemeForWeb({
+export const theme = createThemeForWeb({
   colorPreferences: lightTheme,
   fontPreferences: fontOptions,
-  deviceOnTheme,
-});
-export const themeForNative = createThemeForNative({
-  colorPreferences: lightTheme,
-  fontPreferences: fontOptions,
-  deviceOnTheme,
 });
 ```
 
-## Import the type of theme to your styled.d.ts file
-
-What it would like if you were doing it for traditional React
-
+#### React Native Example
 ```typescript
-// this needs to be a typescript definition file
-// example styled.d.ts
-import "styled-components";
-import { themeForWeb } from "../src/theme.tsx";
+import { createThemeForNative } from "@devlander/styled-components-theme";
+import { lightTheme } from "./colors.util";
+import { fontOptions } from "./fonts.util";
+import { dimensionsModuleForNative } from "@devlander/styled-components-theme";
 
-declare module "styled-components" {
-  export type DefaultTheme = typeof themeForWeb;
-}
+export const theme = createThemeForNative({
+  colorPreferences: lightTheme,
+  fontPreferences: fontOptions,
+  deviceOnTheme: {
+    platform: "ios",
+    isTablet: false,
+    hasNotch: false,
+    statusBarHeight: 15,
+    screenWidth: dimensionsModuleForNative().screenWidth,
+    screenHeight: dimensionsModuleForNative().screenHeight,
+  },
+});
 ```
 
-What it would like if you were doing it for React Native
+### 2. Define Fonts and Colors
 
+#### Font Options Example
 ```typescript
-// this needs to be a typescript definition file
-// example styled.d.ts
-import "styled-components/native";
-import { themeForNative } from "../somefile";
+import type { FontsInterface } from "@devlander/styled-components-theme";
+import { Platform } from "react-native";
 
-declare module "styled-components/native" {
-  export type DefaultTheme = typeof themeForNative;
-}
+export const fontOptions: Partial<FontsInterface> = {
+  Roboto: {
+    light: "Roboto-Light",
+    regular: "Roboto-Regular",
+    bold: "Roboto-Bold",
+    name: Platform.OS === "web" ? '"Roboto"' : "Roboto",
+  },
+  RobotoCondensed: {
+    light: "RobotoCondensed-Light",
+    regular: "RobotoCondensed-Regular",
+    bold: "RobotoCondensed-Bold",
+    name: Platform.OS === "web" ? '"Roboto Condensed"' : "RobotoCondensed",
+  },
+  Lora: {
+    light: "Lora-Light",
+    regular: "Lora-Regular",
+    bold: "Lora-Bold",
+    name: Platform.OS === "web" ? '"Lora"' : "Lora",
+  },
+};
 ```
 
-## Create your Theme Provider using styled components
-
-The reason we have to define the theme provider outside of this package,
-is there was no good way to swap between styled-components web theme provider,
-and the native one.
-
+#### Colors Example
 ```typescript
+import { ColorsInterface } from "@devlander/styled-components-theme";
 
-import React, {
-  useCallback,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
-import { ThemeProvider  } from "styled-components/native";
-import useScreenDimensions from "../../hooks/useScreenDimensions";
-import { theme, darkTheme, lightTheme } from "./theme";
-
-// ----- Types -----
-
-// Define the shape of the Theme context and the type for the Provider's props.
-interface ThemeContextType {
-  darkThemeEnabled: boolean;
-  canToggleTheme: boolean;
-  setDarkThemeEnabled: (value: boolean) => void;
-  toggleLightDarkMode: () => void;
-}
-
-interface ThemeProviderProps {
-  systemIsDark?: boolean;
-  getValueFromStorage?: (key: string) => Promise<boolean>;
-  saveToStorage?: (key: string, value: boolean) => Promise<void>;
-  children: React.ReactNode;
-}
-
-// ----- Context -----
-
-// Default values for the context
-const defaultThemeContext: ThemeContextType = {
-  darkThemeEnabled: true,
-  canToggleTheme: false,
-  setDarkThemeEnabled: () => {},
-  toggleLightDarkMode: () => {},
+export const lightTheme: ColorsInterface = {
+  background: "#F9F9F9",
+  primary: "#4CAF50",
+  secondary: "#FF9800",
+  text: "#212121",
+  dividerColor: "#BDBDBD",
+  error: "#F44336",
+  warning: "#FFC107",
+  success: "#4CAF50",
+  surface: "#FFFFFF",
+  cardBackground: "#FAFAFA",
+  accent: "#3F51B5",
 };
 
-// Creation of the context
-const ColorThemeContext = React.createContext<ThemeContextType>(defaultThemeContext);
+export const darkTheme: ColorsInterface = {
+  background: "#121212",
+  primary: "#81C784",
+  secondary: "#FFB74D",
+  text: "#E0E0E0",
+  dividerColor: "#757575",
+  error: "#E57373",
+  warning: "#FFD54F",
+  success: "#66BB6A",
+  surface: "#1E1E1E",
+  cardBackground: "#2E2E2E",
+  accent: "#5C6BC0",
+};
+```
 
-// ----- Component -----
+### 3. Create Styled Components
 
-const ColorThemeProvider: React.FC<ThemeProviderProps> = (props) => {
-  const { children, saveToStorage, getValueFromStorage, systemIsDark } = props;
+#### BaseTextStyled Example
+```typescript
+import styled from "styled-components/native";
+import { Text } from "react-native";
+import type { NativeTheme } from "@devlander/styled-components-theme";
 
-  // Obtain screen dimensions using a custom hook
-  const screenSize = useScreenDimensions();
+export const BaseTextStyled = styled(Text)`
+  ${(props) => props.theme.textStyleGenerator(props)};
+  box-shadow: none;
+`;
 
-  // State to keep track of whether dark theme is enabled
-  const [darkThemeEnabled, setDarkThemeEnabled] = useState(true);
+BaseTextStyled.defaultProps = {
+  theme: {
+    colors: darkTheme,
+  },
+};
+```
 
-  // Toggle between light and dark theme
-  const toggleLightDarkMode = useCallback(async () => {
-    const newValue = !darkThemeEnabled;
-    setDarkThemeEnabled(newValue);
-    if (saveToStorage) await saveToStorage("darkThemeEnabled", newValue);
-  }, [darkThemeEnabled, saveToStorage]);
+#### PaddingContainerStyled Example
+```typescript
+import styled from "styled-components/native";
+import { View } from "react-native";
 
-  // On component mount, initialize theme based on the stored value or system preference
-  useEffect(() => {
-    const initialize = async () => {
-      if (getValueFromStorage) {
-        const storedValue = await getValueFromStorage("darkThemeEnabled");
-        setDarkThemeEnabled(storedValue);
-      }
-    };
+export const PaddingContainerStyled = styled(View)`
+  padding: 16px;
+  background-color: ${(props) => props.theme.colors.background};
+`;
+```
 
-    if (systemIsDark && !getValueFromStorage) {
-      setDarkThemeEnabled(true);
-    }
+### 4. Enable Dynamic Theme Switching
 
-    initialize();
-  }, [getValueFromStorage]);
+Toggle between light and dark themes:
+```typescript
+import React, { useState, createContext, useContext, useMemo } from "react";
+import { ThemeProvider } from "styled-components/native";
+import { lightTheme, darkTheme } from "./colors.util";
 
-  // Prepare values for context provider
-  const valuePayload = useMemo(() => {
-    const baseTheme = {
-      ...theme,
-      canToggleTheme: Boolean(saveToStorage && getValueFromStorage),
-      darkThemeEnabled,
-      setDarkThemeEnabled,
-      toggleLightDarkMode,
-    };
+const ThemeContext = createContext({
+  isDarkMode: false,
+  toggleTheme: () => {},
+});
 
-    return darkThemeEnabled
-      ? { ...baseTheme, colors: darkTheme }
-      : { ...baseTheme, colors: lightTheme };
-  }, [
-    darkThemeEnabled,
-    saveToStorage,
-    getValueFromStorage,
-    toggleLightDarkMode,
-  ]);
+export const ThemeProviderWithToggle: React.FC = ({ children }) => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
-  // Merge default colors with theme colors
-  const styledComponentsTheme = useMemo(() => {
-    const mergedColors = darkThemeEnabled
-      ? { ...theme.colors, ...darkTheme }
-      : { ...theme.colors, ...lightTheme };
+  const toggleTheme = () => setIsDarkMode((prev) => !prev);
 
-    return {
-      ...theme,
-      mode: "adaptive",
-      colors: mergedColors,
-      deviceOnTheme: {
-        isDesktop: screenSize.width > 768,
-        isTablet: screenSize.width > 480 && screenSize.width <= 768,
-        isMobile: screenSize.width <= 480,
-        screenWidth: screenSize.width,
-        screenHeight: screenSize.height,
-      },
-    };
-  }, [darkThemeEnabled, screenSize]);
-
+  const theme = useMemo(() => (isDarkMode ? darkTheme : lightTheme), [isDarkMode]);
 
   return (
-    <ColorThemeContext.Provider value={valuePayload}>
-      <ThemeProvider theme={styledComponentsTheme}>{children}</ThemeProvider>
-    </ColorThemeContext.Provider>
+    <ThemeContext.Provider value={{ isDarkMode, toggleTheme }}>
+      <ThemeProvider theme={theme}>{children}</ThemeProvider>
+    </ThemeContext.Provider>
   );
 };
 
-// ----- Custom Hook -----
-
-// A hook to easily access the Theme context in any component
-const useColorThemeContext = (): ThemeContextType => {
-  return useContext(ColorThemeContext);
-};
-
-// ----- Exports -----
-
-export { ColorThemeContext, ColorThemeProvider, useColorThemeContext };
-export default ColorThemeProvider;
-
-
+export const useThemeContext = () => useContext(ThemeContext);
 ```
-
-### Then wrap your app inside of it
-
-```typescript
-    import  React from 'react'
-    import ThemeProvider from './theme-provider'
-
-    const App = () => {
-        <ThemeProvider>
-        </ThemeProvider>
-    }
-
-```
-
-
-## Creating the dark colors palette Dynamically 
-```typescript
-import { generateColorsFrom } from "@devlander/shared-react-native-types";
-import type {ColorsInterface} from "@devlander/shared-react-native-types"
-// This is what you would use
-const darkColors: ColorsInterface = generateColorsFrom(lightColors, 'dark');
-
-
-```
-
-
-## To do 
-- [] run auto format imports with eslint automatically
-
-
-
-
-
-Who this package is not for. 
-- This package is not for people that are only using styled components on web, and don't plan on using it with React Native
-
-The purpose of this package is to ensure that the props and types for design systems created for both web and react native projects have the same color names, the same props, the same type of theme structure when it comes to color types, font pairings, and so it. it's to keep everything cohesive between development teams. 
-
-and there can be a standard wehn starting new projects for clients, or within the company, and there's one source of truth. 
-
-it's also meant to elminate retyping unnessary types over and over again using styled components, because if you are using styled components and typescript it can get time consuimg. and to provide the same theme provider for both web and react native applications
-
-This package also has built in methods to take care of responsive font sizes,and has methods within the theme to help convert units so things to break during production. 
